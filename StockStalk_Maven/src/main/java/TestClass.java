@@ -7,7 +7,7 @@ import yahoofinance.YahooFinance;
 import yahoofinance.histquotes.HistoricalQuote;
 import yahoofinance.histquotes.Interval;
 
-public class StockStalkMainClass {
+public class TestClass {
 
     public static void test(String[] args) {
 

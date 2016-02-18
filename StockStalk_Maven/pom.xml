@@ -40,7 +40,6 @@
 
     <build>
         <sourceDirectory>src/main/java/</sourceDirectory>
-        <testSourceDirectory>src/test/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>com.stockStalk</groupId>
@@ -49,12 +48,9 @@
                     <execution>
                         <goals>
                             <goal>compile</goal>
-                            <!--<goal>testCompile</goal>-->
                         </goals>
                         <configuration>
                             <args>
-                                <!--                <arg>-make:transitive</arg>-->
-                                <!--arg>-dependencyfile</arg-->
                                 <arg>${project.build.directory}/.scala_dependencies</arg>
                             </args>
                         </configuration>
@@ -69,10 +65,7 @@
                 <configuration>
                     <useFile>false</useFile>
                     <disableXmlReport>true</disableXmlReport>
-                    <!-- If you have classpath issue like NoDefClassError,... -->
-                    <!-- useManifestOnlyJar>false</useManifestOnlyJar -->
                     <includes>
-                        <!--            <include>**/*Test.*</include> -->
                         <include>**/*Suite.*</include>
                     </includes>
                 </configuration>
