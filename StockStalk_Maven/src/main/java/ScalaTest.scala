@@ -1,4 +1,6 @@
 import java.util.Calendar
+import org.apache.spark.rdd.RDD
+
 import collection.JavaConversions._
 
 import yahoofinance.Stock
@@ -22,13 +24,22 @@ object ScalaTest {
       println(stock.getSymbol + " - " + stock.getName + " => $" + stock.getQuote.getPrice + " (" + stock.getQuote.getChangeInPercent + "%)")
     }
     val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
-    val x = sc.parallelize(Array(1,2,3,4,5,6,7,8,9,10))
-    x.collect().foreach(println)
 
-    val from = Calendar.getInstance();
+    val percent_hist = calculatePercentChange(sc, stock)
+    val b = percent_hist.collect
+    b.foreach(println)
+  }
+
+  def calculatePercentChange(sc: SparkContext, stock:Stock): RDD[((Double, Long))] = {
+    val from = Calendar.getInstance()
     from.add(Calendar.YEAR, -1)
-    val stock_history = sc.parallelize(stock.getHistory(from, Interval.DAILY))
-    println(Interval.DAILY)
-    println(stock_history.first())
+    var prev = stock.getHistory.get(0).getClose
+    var buffer = new ArrayBuffer[Double]()
+    val hists = stock.getHistory(from, Interval.DAILY)
+    for(hist <- hists){
+      buffer += (hist.getClose.doubleValue()/prev.doubleValue() - 1) * 100
+      prev = hist.getClose
+    }
+    return sc.parallelize(buffer).zipWithIndex
   }
 }
