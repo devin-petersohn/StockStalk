@@ -9,12 +9,8 @@ import yahoofinance.histquotes.Interval;
 
 public class TestClass {
 
-    public static void test(String[] args) {
+    public static void test() {
 
-        System.out.println("Hello World");
-        Stock stock = YahooFinance.get("GOOG");
-        if(!stock.getName().equals("N/A")) {
-            System.out.println(stock.getSymbol() + " - " + stock.getName() + " => $" + stock.getQuote().getPrice() + " (" + stock.getQuote().getChangeInPercent() + "%)");
-        }
+        System.out.println("Testing to get from Scala to Java class");
     }
 }

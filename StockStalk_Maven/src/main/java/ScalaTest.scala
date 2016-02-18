@@ -1,4 +1,4 @@
-import java.util.Calendar
+import java.util.{Date, GregorianCalendar, Calendar}
 import org.apache.spark.rdd.RDD
 
 import collection.JavaConversions._
@@ -26,20 +26,26 @@ object ScalaTest {
     val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
 
     val percent_hist = calculatePercentChange(sc, stock)
+    percent_hist.saveAsObjectFile("data/DAILY")
+    //val test = sc.objectFile[(Double, Long)]("data/WEEKLY")
     val b = percent_hist.collect
     b.foreach(println)
+    TestClass.test()
   }
 
-  def calculatePercentChange(sc: SparkContext, stock:Stock): RDD[((Double, Long))] = {
-    val from = Calendar.getInstance()
-    from.add(Calendar.YEAR, -1)
-    var prev = stock.getHistory.get(0).getClose
-    var buffer = new ArrayBuffer[Double]()
-    val hists = stock.getHistory(from, Interval.DAILY)
+  def calculatePercentChange(sc: SparkContext, stock:Stock): RDD[((Date, Double))] = {
+    val from = new GregorianCalendar(2006, 0, 1)
+    val calendar = Calendar.getInstance()
+    var prev = stock.getHistory().get(0).getClose
+    var buffer = new ArrayBuffer[((Date,Double))]()
+    val hists = stock.getHistory(from, calendar, Interval.DAILY)
+    //sc.parallelize(hists).saveAsObjectFile("data/history_data")
+
+    hists.foreach(println)
     for(hist <- hists){
-      buffer += (hist.getClose.doubleValue()/prev.doubleValue() - 1) * 100
-      prev = hist.getClose
+      buffer += ((hist.getDate.getTime, (hist.getClose().doubleValue()/prev.doubleValue() - 1) * 100))
+      prev = hist.getClose()
     }
-    return sc.parallelize(buffer).zipWithIndex
+    return sc.parallelize(buffer)
   }
 }
