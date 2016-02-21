@@ -35,19 +35,20 @@ object ScalaTest {
     //percent_hist.saveAsObjectFile("data/DAILY")
     //val test = sc.objectFile[(Double, Long)]("data/WEEKLY")
 
-    var test = sc.union(convertPercentChange(percent_hist, 0.1), convertPercentChange(percent_hist2, 0.1)).map(_.swap)
+    var test = sc.union(convertPercentChange(percent_hist, 1.0), convertPercentChange(percent_hist2, 1.0)).map(_.swap)
     //val b = test.collect
     //b.foreach(println)
     var numDays = 1
     val interval = 1
     var temp = coarseGrainedAggregation(test, numDays, interval)
+    println(temp.first)
     var previous = temp
 
     while(!test.isEmpty){
+      numDays *= 2
       previous = temp
       temp = coarseGrainedAggregation(test, numDays, interval)
       test = expand(temp)
-      numDays *= 2
     }
 
     previous.collect.foreach(println)
@@ -67,7 +68,7 @@ object ScalaTest {
       .flatMap(f => Iterable(((f._1, f._2._1),f._2._2),((f._1, new Date(f._2._1.getTime + TimeUnit.DAYS.toMillis(currentNumDays * interval))),f._2._2+"*")))
       .reduceByKey((a,b) => merge(a,b)).map(z => (z._1._1, (z._2, z._1._2)))
       .filter(_._2._1.length>2 * currentNumDays)
-      .map(f => ((new Date(f._2._2.getTime + TimeUnit.DAYS.toMillis(currentNumDays * interval)), f._2._1), f._1))
+      .map(f => ((new Date(f._2._2.getTime - TimeUnit.DAYS.toMillis(currentNumDays * interval)), f._2._1), f._1))
       .groupByKey
       .filter(_._2.size>1)
   }
