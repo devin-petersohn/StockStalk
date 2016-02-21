@@ -13,9 +13,11 @@ import scala.util.control.Breaks._
 
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
+import org.apache.spark.rdd.RDD
 
 
 object ScalaTest {
+  val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
   def main(args: Array[String]) {
     println("Hello from Scala!")
     println("Hello World")
@@ -23,14 +25,13 @@ object ScalaTest {
     if (!(stock.getName == "N/A")) {
       println(stock.getSymbol + " - " + stock.getName + " => $" + stock.getQuote.getPrice + " (" + stock.getQuote.getChangeInPercent + "%)")
     }
-    val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
 
-    val percent_hist = calculatePercentChange(sc, stock)
+    val percent_hist = calculatePercentChange(stock)
     val b = percent_hist.collect
     b.foreach(println)
   }
 
-  def calculatePercentChange(sc: SparkContext, stock:Stock): RDD[((Double, Long))] = {
+  def calculatePercentChange(stock:Stock): RDD[((Double, Long))] = {
     val from = Calendar.getInstance()
     from.add(Calendar.YEAR, -1)
     var prev = stock.getHistory.get(0).getClose
@@ -42,4 +43,17 @@ object ScalaTest {
     }
     return sc.parallelize(buffer).zipWithIndex
   }
+
+  def convertPercentChange(percentRDD: RDD[((Double, Long))], threshold: Double): RDD[((String, Long))] = {
+    val base = 0.0
+    return percentRDD.map(period => ((percentToString(period._1, threshold), period._2)))
+  }
+
+  def percentToString(percent: Double, threshold: Double) : String = {
+    val base = 0.0
+
+    return ""
+  }
+
+
 }
