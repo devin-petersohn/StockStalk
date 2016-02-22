@@ -35,7 +35,7 @@ object ScalaTest {
     //percent_hist.saveAsObjectFile("data/DAILY")
     //val test = sc.objectFile[(Double, Long)]("data/WEEKLY")
 
-    var test = sc.union(convertPercentChange(percent_hist, 1.0), convertPercentChange(percent_hist2, 1.0)).map(_.swap)
+    var test = sc.union(convertPercentChange(percent_hist, 0.1), convertPercentChange(percent_hist2, 0.1)).map(_.swap)
     //val b = test.collect
     //b.foreach(println)
     var numDays = 1
@@ -65,7 +65,7 @@ object ScalaTest {
 
   def coarseGrainedAggregation(blocks: RDD[((Date, String), String)], currentNumDays: Int, interval: Int): RDD[((Date, String), Iterable[(String)])] = {
     blocks.map(_.swap)
-      .flatMap(f => Iterable(((f._1, f._2._1),f._2._2),((f._1, new Date(f._2._1.getTime + TimeUnit.DAYS.toMillis(currentNumDays * interval))),f._2._2+"*")))
+      .flatMap(f => Iterable((f._2.swap,f._1),((f._2._2, new Date(f._2._1.getTime + TimeUnit.DAYS.toMillis(currentNumDays * interval))),f._1+"*")))
       .reduceByKey((a,b) => merge(a,b)).map(z => (z._1._1, (z._2, z._1._2)))
       .filter(_._2._1.length>2 * currentNumDays)
       .map(f => ((new Date(f._2._2.getTime - TimeUnit.DAYS.toMillis(currentNumDays * interval)), f._2._1), f._1))
@@ -150,7 +150,7 @@ object ScalaTest {
       case 50 => string = "ZY"
       case _  => string = "ZZ"
     }
-    if(percent < 0) string else "-" + string
+    if(percent > 0) string else "-" + string
   }
 
 

@@ -36,6 +36,13 @@
                 <artifactId>spark-core_2.10</artifactId>
                 <version>1.4.0</version>
             </dependency>
+        <dependency>
+            <groupId>com.devinpetersohn</groupId>
+            <artifactId>com.devinpetersohn</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/libraries/YahooFinanceAPI_Serializeable.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>

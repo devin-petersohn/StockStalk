@@ -138,5 +138,14 @@
     <orderEntry type="library" name="Maven: net.razorvine:pyrolite:4.4" level="project" />
     <orderEntry type="library" name="Maven: net.sf.py4j:py4j:0.8.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.spark-project.spark:unused:1.0.0" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.devinpetersohn:com.devinpetersohn:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/src/libraries/YahooFinanceAPI_Serializeable.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
