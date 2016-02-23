@@ -16,7 +16,6 @@ hs_err_pid*
 # sbt specific
 .cache
 .history
-.lib/
 dist/*
 target/
 lib_managed/
