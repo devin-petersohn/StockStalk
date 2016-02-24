@@ -60,14 +60,17 @@ object ScalaTest {
   }
 
   def expand(rdd: RDD[((Date, String), Iterable[String])]): RDD[((Date, String), String)] = {
-    rdd.flatMap(f => f._2.map(g => (f._1, g)))
+    rdd.flatMap(f => f._2.map(g => ((f._1._1, g), f._1._2)))
   }
 
   def coarseGrainedAggregation(blocks: RDD[((Date, String), String)], currentNumDays: Int, interval: Int): RDD[((Date, String), Iterable[(String)])] = {
-    blocks.map(_.swap)
+    val x = blocks.map(_.swap)
       .flatMap(f => Iterable((f._2.swap,f._1),((f._2._2, new Date(f._2._1.getTime + TimeUnit.DAYS.toMillis(currentNumDays * interval))),f._1+"*")))
       .reduceByKey((a,b) => merge(a,b)).map(z => (z._1._1, (z._2, z._1._2)))
-      .filter(_._2._1.length>2 * currentNumDays)
+    println("_+_+_+_+_+_+_+_+_+_")
+    println(x.first)
+    println("_+_+_+_+_+_+_+_+_+_")
+    x.filter(_._2._1.length>(2 * currentNumDays)).filter(_._2._1.last != '*')
       .map(f => ((new Date(f._2._2.getTime - TimeUnit.DAYS.toMillis(currentNumDays * interval)), f._2._1), f._1))
       .groupByKey
       .filter(_._2.size>1)
@@ -82,7 +85,7 @@ object ScalaTest {
     val hists = stock.getHistory(from, calendar, Interval.DAILY)
     //sc.parallelize(hists).saveAsObjectFile("data/history_data")
 
-    hists.foreach(println)
+    //hists.foreach(println)
     for(hist <- hists){
       buffer += (((hist.getDate.getTime, stock.getSymbol), (hist.getClose.doubleValue/prev.doubleValue - 1) * 100))
       prev = hist.getClose
@@ -150,7 +153,7 @@ object ScalaTest {
       case 50 => string = "ZY"
       case _  => string = "ZZ"
     }
-    if(percent > 0) string else "-" + string
+    if(percent > 0) string else if(string.charAt(0) == 'Z') "-" + string.drop(1) else "_" + string.drop(1)
   }
 
 
