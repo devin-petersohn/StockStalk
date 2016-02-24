@@ -4,7 +4,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
 *.war
 *.ear
 
@@ -16,7 +15,6 @@ hs_err_pid*
 # sbt specific
 .cache
 .history
-.lib/
 dist/*
 target/
 lib_managed/
