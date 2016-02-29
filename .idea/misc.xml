@@ -7,6 +7,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/StockStalk_Maven/pom.xml" />
+        <option value="$PROJECT_DIR$/StockStalk_Algorithm/pom.xml" />
       </list>
     </option>
   </component>

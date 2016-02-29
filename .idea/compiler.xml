@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="stockStalk" />
+        <module name="stockstalk" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="stockStalk" target="1.8" />
+      <module name="stockstalk" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
