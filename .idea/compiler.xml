@@ -28,7 +28,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="stockStalk" target="1.8" />
-      <module name="stockstalk" target="1.5" />
+      <module name="stockstalk" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -8,5 +8,49 @@
     <artifactId>stockstalk</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <encoding>UTF-8</encoding>
+        <scala.version>2.10.3</scala.version>
+        <scalaCompatVersion>2.10</scalaCompatVersion>
+        <maven.scala.checkConsistency>false</maven.scala.checkConsistency>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.yahoofinance-api</groupId>
+            <artifactId>YahooFinanceAPI</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.javaml</groupId>
+            <artifactId>net.sf.javaml</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/javaml-0.1.7.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.devinpetersohn</groupId>
+            <artifactId>com.devinpetersohn</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/libraries/YahooFinanceAPI_Serializeable.jar</systemPath>
+        </dependency>
+    </dependencies>
 
 </project>
