@@ -25,15 +25,20 @@ object ScalaTest {
   def main(args: Array[String]) {
     var stocks = new ArrayBuffer[Stock]()
     var history = new ArrayBuffer[(Stock,util.List[HistoricalQuote])]()
-    val from = new GregorianCalendar(2006, 0, 1)
+    //val from = new GregorianCalendar(2006, 0, 1)
+    val from = Calendar.getInstance()
+    from.add(Calendar.DATE, -1)
     val to = Calendar.getInstance
     for(stock <- sANDp500) {
       stocks += YahooFinance.get(stock)
       history += ((YahooFinance.get(stock), YahooFinance.get(stock).getHistory(from, to, Interval.DAILY)))
     }
-    sc.parallelize(history).saveAsObjectFile("/usr/devin/stocks")
+    //sc.parallelize(history).saveAsObjectFile("/usr/devin/stocks")
     var x = sc.objectFile[(Stock, util.List[HistoricalQuote])]("/usr/devin/stocks")
-    x = x.filter(stock => stock._1.getName == "Google")
+    x = x.union(sc.parallelize(history)).reduceByKey((a,b) => a ++ b)
+    //have to delete previous files at /usr/devin/stocks
+    //create java code to delete
+    x.saveAsObjectFile("/usr/devin/stocks")
     /*
     println("Hello from Scala!")
 
