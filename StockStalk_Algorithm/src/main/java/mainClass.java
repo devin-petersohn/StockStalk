@@ -1,32 +1,64 @@
 /**
  * Created by ZeningZhang on 2/21/16.
  */
+import net.sf.javaml.clustering.mcl.DoubleFormat;
 import net.sf.javaml.core.Instance;
 import net.sf.javaml.core.SparseInstance;
 import net.sf.javaml.distance.dtw.DTWSimilarity;
 import net.sf.javaml.distance.fastdtw.dtw.*;
 import net.sf.javaml.distance.fastdtw.dtw.DTW;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+
 public class mainClass {
     public static void main(String[] args)
     {
-//        float[] n2 = {1.5f, 3.9f, 4.1f, 3.3f};
-//        float[] n1 = {2.1f, 2.45f, 3.673f, 4.32f, 2.05f, 1.93f, 5.67f, 6.01f};
-//        DTW dtw = new DTW(n1, n2);
-//        System.out.println(dtw);
-        Instance instanceOne= new SparseInstance(10);
-        instanceOne.put(1,1.0);
-        instanceOne.put(2,2.0);
-        instanceOne.put(3,3.0);
-        Instance instanceTwo= new SparseInstance(10);
-        instanceTwo.put(1,2.0);
-        instanceTwo.put(2,3.0);
-        instanceTwo.put(3,4.0);
+        Date d=new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.HOUR_OF_DAY,17);
+        cal.set(Calendar.MINUTE,30);
+        cal.set(Calendar.SECOND,0);
+        cal.set(Calendar.MILLISECOND,2);
+        cal.set(Calendar.MONTH,5);
+        cal.set(Calendar.YEAR,2015);
+        cal.set(Calendar.DATE,4);
+        d = cal.getTime();
+
+    }
+
+    public int makeTimeStamp(Date d)
+    {
+        Timestamp ts_now = new Timestamp(d.getTime());
+        String result;
+        result=ts_now.toString().replaceAll(":","");
+        result=result.replaceAll("-","");
+        result=result.replaceAll(" ","");
+        result=result.replaceAll("\\.","");
+        return Integer.parseInt(result);
+    }
+
+    public double computeStock(Collection<Date> stockTime1, Collection<Integer> stockPercent1,Collection<Date> stockTime2, Collection<Integer> stockPercent2)
+    {
+
+        Instance host= new SparseInstance(stockTime1.size());
+        Instance guest= new SparseInstance(stockPercent1.size());
+        if(stockTime1.size()!=stockPercent1.size() || stockTime2.size()!=stockPercent2.size() )
+        {
+            System.out.println("The size time is not the same as percentage");
+        }
+        for(Date time:stockTime1)
+        {
+            host.put(makeTimeStamp(time), Double.parseDouble(stockPercent1.toString()));
+        }
+        for(Date time: stockTime2)
+        {
+            guest.put(makeTimeStamp(time), Double.parseDouble(stockPercent1.toString()));
+        }
         DTWSimilarity ds=new DTWSimilarity();
-        DTW dtw=new DTW();
-
-        System.out.println(ds.measure(instanceOne,instanceTwo));
-
+        return ds.measure(host,guest);
     }
 
 
