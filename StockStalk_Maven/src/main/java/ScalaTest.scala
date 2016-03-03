@@ -1,4 +1,3 @@
-import java.lang.instrument.Instrumentation
 import java.util
 import java.util.concurrent.TimeUnit
 import java.util.{Date, GregorianCalendar, Calendar}
@@ -11,12 +10,10 @@ import collection.JavaConversions._
 import scala.collection.mutable.ArrayBuffer
 import scala.util.control.Breaks._
 
-
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
-
 
 object ScalaTest {
   val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
@@ -39,7 +36,7 @@ object ScalaTest {
 //    x = x.union(sc.parallelize(history)).reduceByKey((a,b) => a ++ b)
     //have to delete previous files at /usr/devin/stocks
     //create java code to delete
-//    x.saveAsObjectFile("data/stock")
+    //    x.saveAsObjectFile("data/stock")
 
     /*
     println("Hello from Scala!")

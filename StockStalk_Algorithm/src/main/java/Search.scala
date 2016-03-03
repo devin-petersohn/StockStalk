@@ -1,16 +1,19 @@
+import java.sql.Timestamp
+
 import net.sf.javaml.core.Instance
 import net.sf.javaml.core.SparseInstance
 import net.sf.javaml.distance.dtw.DTWSimilarity
 import net.sf.javaml.distance.fastdtw.dtw._
-
+import java.util.Collection
+import java.util.Date
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
+import java.sql.Timestamp
 
 object Search {
   val sc = new SparkContext(new SparkConf().setAppName("Search").setMaster("local[4]"))
-
   def main(args: Array[String]) = {
     println("Hello World")
     val instanceOne: Instance = new SparseInstance(10)
@@ -24,13 +27,6 @@ object Search {
     val ds: DTWSimilarity = new DTWSimilarity
 //    val dtw: DTW = new DTW
 
-    val stock: Stock = YahooFinance.get("GOOG")
-
-    val stock2 = YahooFinance.get("AAPL")
-    val stock3 = YahooFinance.get("Z")
-    val stockList = sc.parallelize(Array(stock2, stock3))
-
     System.out.println(ds.measure(instanceOne, instanceTwo))
-    println(stockList.collect)
   }
 }
