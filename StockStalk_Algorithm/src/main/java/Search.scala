@@ -24,8 +24,13 @@ object Search {
     val ds: DTWSimilarity = new DTWSimilarity
 //    val dtw: DTW = new DTW
 
+    val stock: Stock = YahooFinance.get("GOOG")
 
+    val stock2 = YahooFinance.get("AAPL")
+    val stock3 = YahooFinance.get("Z")
+    val stockList = sc.parallelize(Array(stock2, stock3))
 
     System.out.println(ds.measure(instanceOne, instanceTwo))
+    println(stockList.collect)
   }
 }

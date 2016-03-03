@@ -1,3 +1,4 @@
+import java.lang.instrument.Instrumentation
 import java.util
 import java.util.concurrent.TimeUnit
 import java.util.{Date, GregorianCalendar, Calendar}
@@ -5,18 +6,17 @@ import org.apache.spark.rdd.RDD
 
 import collection.JavaConversions._
 
-import yahoofinance.Stock
-import yahoofinance.YahooFinance
-import yahoofinance.histquotes.HistoricalQuote
-import yahoofinance.histquotes.Interval
+
 
 import scala.collection.mutable.ArrayBuffer
 import scala.util.control.Breaks._
+
 
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
+
 
 object ScalaTest {
   val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
@@ -30,10 +30,11 @@ object ScalaTest {
     from.add(Calendar.DATE, -1)
     val to = Calendar.getInstance
     for(stock <- sANDp500) {
-      stocks += YahooFinance.get(stock)
-      history += ((YahooFinance.get(stock), YahooFinance.get(stock).getHistory(from, to, Interval.DAILY)))
+      var temp = YahooFinance.get(stock)
+      stocks += temp
+      history += ((temp, temp.getHistory(from, to, Interval.DAILY)))
     }
-    sc.parallelize(history).saveAsObjectFile("/usr/devin/stocks")
+    sc.parallelize(history).saveAsObjectFile("data/TEST_1")
 //    var x = sc.objectFile[(Stock, util.List[HistoricalQuote])]("data/stock")
 //    x = x.union(sc.parallelize(history)).reduceByKey((a,b) => a ++ b)
     //have to delete previous files at /usr/devin/stocks
