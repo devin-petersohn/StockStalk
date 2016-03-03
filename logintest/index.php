@@ -46,15 +46,17 @@
 			else die('Incorrect username or password. Please try again.');
 			if($_SESSION['loggedin'] == true)
 				header('location: home.php');*/
-
+			if ($name=="username" && $password=="password")
+			{
+				$_SESSION['user']=$name;
+				$_SESSION['loggedin']=true;
+			}
+			else die('Incorrect username or password. Please try again.');
+			if($_SESSION['loggedin'] == true)
+				header('location: home.php');
 		}
-		if ($name=='username' && $password=='password')
-		{
-			$_SESSION['user']=$name;
-			$_SESSION['loggedin']=true;
-		}
-		else die('Incorrect username or password. Please try again.');
-		if($_SESSION['loggedin'] == true)
-				header('location: home.php');*/
+		
 	}
 	?>
+</body>
+</html>

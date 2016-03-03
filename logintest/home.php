@@ -3,11 +3,6 @@
 <head>
 </head>
 <body>
-<?php
-if($_SESSION['loggedin'] == true) //If user is logged in
-	echo "You have logged in!";
-	}
-	else header("location: index.php"); 
-?>
+<p>Welcome!</p>
 </body>
 </html>
