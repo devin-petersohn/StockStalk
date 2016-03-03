@@ -9,13 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Small Business - Start Bootstrap Template</title>
+    <title>Portfolio</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/one-page-wonder.css">
 
-    <!-- Custom CSS -->
-    <link href="css/small-business.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,13 +22,92 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+        var seriesOptions = [],
+            seriesCounter = 0,
+            names = ['MSFT', 'AAPL', 'GOOG'];
+
+        /**
+         * Create the chart when all data is loaded
+         * @returns {undefined}
+         */
+        function createChart() {
+
+//            $('#container').highcharts('StockChart', {
+            var chart = new Highcharts.StockChart({
+                chart:{
+                    renderTo: 'container'
+                },
+//                
+                rangeSelector: {
+                    selected: 4
+                },
+
+                yAxis: {
+                    labels: {
+                        formatter: function () {
+                            return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                        }
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 2,
+                        color: 'silver'
+                    }]
+                },
+
+                plotOptions: {
+                    series: {
+                        compare: 'percent'
+                    }
+                },
+
+                tooltip: {
+                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+                    valueDecimals: 2
+                },
+
+                series: seriesOptions
+            });
+        }
+
+        $.each(names, function (i, name) {
+
+            $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?',    function (data) {
+
+                seriesOptions[i] = {
+                    name: name,
+                    data: data
+                };
+
+                // As we're loading the data asynchronously, we don't know what order it will arrive. So
+                // we keep a counter and create the chart when all the data is loaded.
+                seriesCounter += 1;
+
+                if (seriesCounter === names.length) {
+                    createChart();
+                }
+            });
+        });
+    });
+    </script>
 
 </head>
+    
+
 
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -39,22 +117,59 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <img src="http://placehold.it/150x50&text=Logo" alt="">
-                </a>
+                <a class="navbar-brand" href="index.html">Stock Stalk</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="#about">Search</a>
                     </li>
                     <li>
-                        <a href="#">My Portfolio</a>
+                        <a href="#services">Chart</a>
                     </li>
                     <li>
-                        <a href="#">Search</a>
+                        <a href="portfolio.html">Portfolio</a>
                     </li>
+                    <li class="dropdown right-login">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu pull-right">
+                            <li>
+                               <div class="row">
+                                  <div class="col-md-12">
+                                    Login via
+                                    <div class="social-buttons">
+                                      <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                      <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                        
+                                    </div>
+                                                    or
+                                     <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                        <div class="form-group">
+                                           <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                           <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                        </div>
+                                        <div class="form-group">
+                                           <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                           <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                                                                 <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+                                        </div>
+                                        <div class="form-group">
+                                           <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                        </div>
+                                        <div class="checkbox">
+                                           <label>
+                                           <input type="checkbox"> keep me logged-in
+                                           </label>
+                                        </div>
+                                    </form>
+                                </div>
+                            <div class="bottom text-center">
+                            New here ? <a href="#"><b>Join Us</b></a>
+                        </div>
+                    </div>
+                </li>
+                </ul>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -67,17 +182,14 @@
 
         <!-- Heading Row -->
         <div class="row">
-            <div class="col-md-4 ">
-                <div class="history well">
-                    <h1>Recent History Here</h1>
-                    <h4>Tesla Motors, Inc.</h4>
-                    <h5>239.49</h5>
-                </div>
-            </div>
+           
             <!-- /.col-md-8 -->
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="well charts">
-                    <h1>Stock Charts Here</h1>
+                    
+
+
+                    <div id="container" style="height: 400px; min-width: 310px"></div>
                 </div>
             </div>
             <!-- /.col-md-4 -->
@@ -128,13 +240,13 @@
                                         <td class="center">X</td>
                                     </tr>
                                     <tr class="even gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                        <td class="center">X</td>
-                                        <td class="center">X</td>
+                                        <td>BMW.BE</td>
+                                        <td>BMW</td>
+                                        <td>11 Sep</td>
+                                        <td class="center">34.01</td>
+                                        <td class="center">0.53</td>
+                                        <td class="center">1.53%</td>
+                                        <td class="center">8924</td>
                                         <td class="center">X</td>
                                     </tr>
                                 </tbody>
@@ -162,8 +274,8 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
