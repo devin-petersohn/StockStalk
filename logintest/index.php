@@ -18,13 +18,10 @@
 	{
 		if (isset($_POST['submit']))
 		{
-			//connects user to database.
-			$dbconn = pg_connect("host=dbhost-pgsql.cs.missouri.edu dbname=mabrm9 user=mabrm9 password=YjH1NLY6")
-			or die("Could not connect: " . pg_last_error());
 			//retrieve user input
 			$name=$_POST['username'] or die('Input is invalid');
 			$password=$_POST['password'] or die('Input is invalid');
-			$query='SELECT * FROM lab8.authentication WHERE username=$1';
+			/*$query='SELECT * FROM lab8.authentication WHERE username=$1';
 			//Prepared statement
 			$result=pg_prepare($dbconn,'login',$query) or die("Query failed: " . pg_last_error());
 			$result=pg_execute($dbconn,'login',array($name)) or die("Query failed: " . pg_last_error());
@@ -48,9 +45,16 @@
 			}
 			else die('Incorrect username or password. Please try again.');
 			if($_SESSION['loggedin'] == true)
-				header('location: home.php');
+				header('location: home.php');*/
 
 		}
+		if ($name=='username' && $password=='password')
+		{
+			$_SESSION['user']=$name;
+			$_SESSION['loggedin']=true;
+		}
+		else die('Incorrect username or password. Please try again.');
+		if($_SESSION['loggedin'] == true)
+				header('location: home.php');*/
 	}
-	else header('location: https://babbage.cs.missouri.edu/~mabrm9/cs3380/lab8/index.php');
 	?>
