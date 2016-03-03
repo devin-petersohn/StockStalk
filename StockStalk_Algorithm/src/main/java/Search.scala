@@ -1,12 +1,19 @@
+import java.sql.Timestamp
+
 import net.sf.javaml.core.Instance
 import net.sf.javaml.core.SparseInstance
 import net.sf.javaml.distance.dtw.DTWSimilarity
 import net.sf.javaml.distance.fastdtw.dtw._
-
+import java.util.Collection
+import java.util.Date
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
+import yahoofinance.YahooFinance;
 import org.apache.spark.rdd.RDD
+import java.sql.Timestamp
+
+import yahoofinance.YahooFinance
 
 object Search {
   val sc = new SparkContext(new SparkConf().setAppName("Search").setMaster("local[4]"))
@@ -24,8 +31,9 @@ object Search {
     val ds: DTWSimilarity = new DTWSimilarity
 //    val dtw: DTW = new DTW
 
-
-
     System.out.println(ds.measure(instanceOne, instanceTwo))
   }
+
+
+
 }
