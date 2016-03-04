@@ -12,7 +12,7 @@
     <?php include "navbar.html"; ?>
     
     
-	<h1>Chart Your Stocks</h1>
+	<h1>Search Your Stocks</h1>
 	<ul id="imageGallery">
 		<li><a href="stock.jpg"><img src="stock.jpg" width="100" alt="Stocks"></a></li>
 	</ul>
