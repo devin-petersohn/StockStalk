@@ -181,3 +181,23 @@ footer {
         margin-left: 0;
     }
 }
+
+
+
+.checkbox-mystocks {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    
+    height: 210px;
+    width: 220px;
+    overflow: auto;
+    border-style: groove;
+    
+}
+
+.small-btn {
+    padding: 0px;
+}
