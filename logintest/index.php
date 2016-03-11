@@ -19,7 +19,7 @@
 		if (isset($_POST['submit']))
 		{
 			//connects user to database.
-			$dbconn = mysqli_connect("localhost", "mysql", "password","capstone");
+			$dbconn = mysqli_connect("local", "mysql", "password","capstone")
 			or die("Could not connect: " . mysqli_connect_error());
 			//retrieve user input
 			$name=$_POST['username'] or die('Input is invalid');
@@ -44,11 +44,11 @@
 			else die('Incorrect username or password. Please try again.');
 			if($_SESSION['loggedin'] == true)
 				header('location: home.php');
-
+			mysqli_close($dbconn);
 		}
 	}
 	else header('location: index.php');
-	mysqli_close($dbconn);
+	
 	?>
 </body>
 </html>
