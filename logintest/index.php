@@ -19,14 +19,14 @@
 		if (isset($_POST['submit']))
 		{
 			//connects user to database.
-			$dbconn = mysqli_connect("localhost", "mysql", "password","capstone");
+			$dbconn = mysqli_connect("local", "mysql", "password","capstone")
 			or die("Could not connect: " . mysqli_connect_error());
 			//retrieve user input
 			$name=$_POST['username'] or die('Input is invalid');
 			$password=$_POST['password'] or die('Input is invalid');
 			$query='SELECT * FROM loginInfo WHERE username=?';
 			//Prepared statement
-			$stmt=$mysqli->prepare($query) or die("Query failed");
+			$stmt=$dbconn->prepare($query) or die("Query failed");
 			$stmt->bind_param("s",$name);
 			$stmt->execute() or die ("Query failed");
 			$line = $stmt->fetch_array(MYSQLI_ASSOC); 
@@ -44,11 +44,11 @@
 			else die('Incorrect username or password. Please try again.');
 			if($_SESSION['loggedin'] == true)
 				header('location: home.php');
-
+			mysqli_close($dbconn);
 		}
 	}
 	else header('location: index.php');
-	mysqli_close($dbconn);
+	
 	?>
 </body>
 </html>

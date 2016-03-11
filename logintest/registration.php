@@ -19,7 +19,7 @@ if($_SERVER['HTTPS'])
 	if(isset($_POST['submit']))
 	{
 		//connects user to database.
-		$dbconn = mysqli_connect("localhost", "mysql", "password","capstone");
+		$dbconn = mysqli_connect('local', 'mysql', 'password','capstone');
 		$name = $_POST['username'];
 		$password = $_POST['password'];
 		if($name == NULL || $password == NULL)
@@ -32,9 +32,12 @@ if($_SERVER['HTTPS'])
 		
 		//insert into loginInfo table
 		$query = 'INSERT INTO loginInfo (username, hashpass, salt) VALUES (?, ?, ?)';
-		$stmt=$mysqli->prepare($query) or die("Query failed");
+		$stmt=$dbconn->prepare($query) or die("Query failed");
 		$stmt->bind_param("sss",$name,$pwhash,$salt);
 		$stmt->execute() or die ("Query failed");
+		//set session keys
+		$_SESSION['user'] = $name;
+		$_SESSION['loggedin'] = true;
 		//redirect user to home page
 		header('location: home.php');
 	}
