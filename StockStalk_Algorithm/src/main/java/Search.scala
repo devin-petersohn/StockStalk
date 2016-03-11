@@ -9,15 +9,11 @@ import java.util.Date
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
-import yahoofinance.YahooFinance;
 import org.apache.spark.rdd.RDD
 import java.sql.Timestamp
 
-import yahoofinance.YahooFinance
-
 object Search {
   val sc = new SparkContext(new SparkConf().setAppName("Search").setMaster("local[4]"))
-
   def main(args: Array[String]) = {
     println("Hello World")
     val instanceOne: Instance = new SparseInstance(10)
@@ -33,7 +29,4 @@ object Search {
 
     System.out.println(ds.measure(instanceOne, instanceTwo))
   }
-
-
-
 }

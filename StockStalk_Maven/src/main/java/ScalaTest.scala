@@ -5,10 +5,7 @@ import org.apache.spark.rdd.RDD
 
 import collection.JavaConversions._
 
-import yahoofinance.Stock
-import yahoofinance.YahooFinance
-import yahoofinance.histquotes.HistoricalQuote
-import yahoofinance.histquotes.Interval
+
 
 import scala.collection.mutable.ArrayBuffer
 import scala.util.control.Breaks._
@@ -19,30 +16,24 @@ import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
 
 object ScalaTest {
-//  val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
-//
-//  val sANDp500 = Array("GOOG")
   val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
 
+  val sANDp500 = Array("GOOG")
   def main(args: Array[String]) {
-    val sANDp500 = Array("MMM", "ABT", "ABBV", "ACN", "ATVI", "ADBE", "ADT")
-
     var stocks = new ArrayBuffer[Stock]()
-    var history = new ArrayBuffer[(Stock, util.List[HistoricalQuote])]()
-    val from = new GregorianCalendar(2006, 0, 1)
+    var history = new ArrayBuffer[(Stock,util.List[HistoricalQuote])]()
+    //val from = new GregorianCalendar(2006, 0, 1)
+    val from = Calendar.getInstance()
+    from.add(Calendar.DATE, -1)
     val to = Calendar.getInstance
-    for (stock <- sANDp500) {
-      stocks += YahooFinance.get(stock)
-      history += ((YahooFinance.get(stock), YahooFinance.get(stock).getHistory(from, to, Interval.DAILY)))
+    for(stock <- sANDp500) {
+      var temp = YahooFinance.get(stock)
+      stocks += temp
+      history += ((temp, temp.getHistory(from, to, Interval.DAILY)))
     }
-    sc.parallelize(history).saveAsObjectFile("data/stocks")
-    var x = sc.objectFile[(Stock, util.List[HistoricalQuote])]("data/stocks")
-    x = x.filter(stock => stock._1.getName == "Google")
-
-
-
-    //    var x = sc.objectFile[(Stock, util.List[HistoricalQuote])]("data/stock")
-    //    x = x.union(sc.parallelize(history)).reduceByKey((a,b) => a ++ b)
+    sc.parallelize(history).saveAsObjectFile("data/TEST_1")
+//    var x = sc.objectFile[(Stock, util.List[HistoricalQuote])]("data/stock")
+//    x = x.union(sc.parallelize(history)).reduceByKey((a,b) => a ++ b)
     //have to delete previous files at /usr/devin/stocks
     //create java code to delete
     //    x.saveAsObjectFile("data/stock")
@@ -84,7 +75,6 @@ object ScalaTest {
     */
     //TestClass.test()
   }
-
 
   def merge(x: String, y: String): String = {
     if(x.contains("*")) x.dropRight(1)+y else y.dropRight(1)+x
