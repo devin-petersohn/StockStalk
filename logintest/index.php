@@ -26,7 +26,7 @@
 			$password=$_POST['password'] or die('Input is invalid');
 			$query='SELECT * FROM loginInfo WHERE username=?';
 			//Prepared statement
-			$stmt=$mysqli->prepare($query) or die("Query failed");
+			$stmt=$dbconn->prepare($query) or die("Query failed");
 			$stmt->bind_param("s",$name);
 			$stmt->execute() or die ("Query failed");
 			$line = $stmt->fetch_array(MYSQLI_ASSOC); 
