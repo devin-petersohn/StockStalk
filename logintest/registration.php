@@ -19,7 +19,7 @@ if($_SERVER['HTTPS'])
 	if(isset($_POST['submit']))
 	{
 		//connects user to database.
-		$dbconn = mysqli_connect("local", "mysql", "password","capstone");
+		$dbconn = mysqli_connect("local", "mysql", "password","capstone",'3306','/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock');
 		$name = $_POST['username'];
 		$password = $_POST['password'];
 		if($name == NULL || $password == NULL)
