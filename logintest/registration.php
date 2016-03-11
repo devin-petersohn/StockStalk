@@ -35,6 +35,9 @@ if($_SERVER['HTTPS'])
 		$stmt=$mysqli->prepare($query) or die("Query failed");
 		$stmt->bind_param("sss",$name,$pwhash,$salt);
 		$stmt->execute() or die ("Query failed");
+		//set session keys
+		$_SESSION['user'] = $name;
+		$_SESSION['loggedin'] = true;
 		//redirect user to home page
 		header('location: home.php');
 	}
