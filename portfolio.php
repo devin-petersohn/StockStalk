@@ -141,7 +141,7 @@
                  <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="col-sm-4">
-                            <h4>My Portfolio</h4>
+                            <h4>My Stocks</h4>
                         </div>
                         <div class="align">
                             <button type="button" class="btn btn-success btn-circle"><i class="fa fa-link">Add Stock +</i>
