@@ -5,84 +5,320 @@
 <link rel="stylesheet" type="text/css" href="css/login.css">
 <link rel="stylesheet" type="text/css" href="css/one-page-wonder.css">
 <link rel="stylesheet" type="text/css" href="css/charts.css">
+    
+    
+    
+    
+     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    
+    <script>
+        $(function () {
+        var seriesOptions = [],
+            seriesCounter = 0,
+            names = ['MSFT', 'AAPL', 'GOOG'];
+
+        /**
+         * Create the chart when all data is loaded
+         * @returns {undefined}
+         */
+        function createChart() {
+
+//            $('#container').highcharts('StockChart', {
+            var chart = new Highcharts.StockChart({
+                chart:{
+                    renderTo: 'container'
+                },
+//                
+                rangeSelector: {
+                    selected: 4
+                },
+
+                yAxis: {
+                    labels: {
+                        formatter: function () {
+                            return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                        }
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 2,
+                        color: 'silver'
+                    }]
+                },
+
+                plotOptions: {
+                    series: {
+                        compare: 'percent'
+                    }
+                },
+
+                tooltip: {
+                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+                    valueDecimals: 2
+                },
+
+                series: seriesOptions
+            });
+        }
+
+        $.each(names, function (i, name) {
+
+            $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?',    function (data) {
+
+                seriesOptions[i] = {
+                    name: name,
+                    data: data
+                };
+
+                // As we're loading the data asynchronously, we don't know what order it will arrive. So
+                // we keep a counter and create the chart when all the data is loaded.
+                seriesCounter += 1;
+
+                if (seriesCounter === names.length) {
+                    createChart();
+                }
+            });
+        });
+    });
+    </script>
+    
+    
+    
+    
+    
+    
 </head>
 <body>
-	<!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Stock Stalk</a>
+
+    <!---Navbar call -->
+    <?php include "navbar.html"; ?>
+    
+    
+	<h1>Chart Your Stocks</h1>
+
+    
+    
+        <!-- Page Content -->
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+           
+            <!-- /.col-md-8 -->
+            <div class="col-md-9">
+                <div class="well charts">
+                    
+
+
+                    <div id="container" style="height: 400px; min-width: 310px"></div>
+                </div>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#about">Search</a>
-                    </li>
-                    <li>
-                        <a href="#services">Chart</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Portfolio</a>
-                    </li>
-                    <li class="dropdown right-login">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-                        <ul id="login-dp" class="dropdown-menu pull-right">
-                            <li>
-                               <div class="row">
-                                  <div class="col-md-12">
-                                    Login via
-                                    <div class="social-buttons">
-                                      <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                      <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+            <!-- /.col-md-4 -->
+            
+            
+                 <!-- /.col-md-8 -->
+            <div class="col-md-3">
+                
+                    <div class="panel panel-default" style="height: 440px">
+                        <div class="panel-heading">
+                            <h4>Queued Stocks</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                                <div class="checkbox-chart">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                
+                                <tbody>
+                                    <tr class="odd gradeX">
+                                        <td><input type="checkbox"> Apple </input></td>
+                                       
                                         
-                                    </div>
-                                                    or
-                                     <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                        <div class="form-group">
-                                           <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                           <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                                        </div>
-                                        <div class="form-group">
-                                           <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                           <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                                                 <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-                                        </div>
-                                        <div class="form-group">
-                                           <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                        </div>
-                                        <div class="checkbox">
-                                           <label>
-                                           <input type="checkbox"> keep me logged-in
-                                           </label>
-                                        </div>
-                                    </form>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td><input type="checkbox"> Google </input></td>
+                                       
+                                       
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td><input type="checkbox"> Apple </input></td>
+                                       
+                                        
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td><input type="checkbox"> Google </input></td>
+                                       
+                                       
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td><input type="checkbox"> Apple </input></td>
+                                       
+                                        
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td><input type="checkbox"> Google </input></td>
+                                       
+                                       
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td><input type="checkbox"> Apple </input></td>
+                                       
+                                        
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td><input type="checkbox"> Google </input></td>
+                                       
+                                       
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td><input type="checkbox"> Apple </input></td>
+                                       
+                                        
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td><input type="checkbox"> Google </input></td>
+                                       
+                                       
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td><input type="checkbox"> Apple </input></td>
+                                       
+                                        
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td><input type="checkbox"> Google </input></td>
+                                       
+                                       
+                                    </tr>
+                
+                
+                
+                                </tbody>
+                            </table>
                                 </div>
-                            <div class="bottom text-center">
-                            New here ? <a href="#"><b>Join Us</b></a>
+
+                                   <div class="bottom text-center">
+                            
+                                
+                                 <div class="form-group">
+                                           <button type="submit" class="btn btn-primary btn-block">Chart</button>
+                                        </div>
+                                
+                                
+                        </div>
+
+                        </div>
                         </div>
                     </div>
-                </li>
-                </ul>
-                </ul>
+                    
+                
             </div>
-            <!-- /.navbar-collapse -->
+                    
+
+                </div>
+            </div>
+            <!-- /.col-md-4 -->
+            
+            
+            
+            
+            
+            
+            
+            
+            
         </div>
-        <!-- /.container -->
-    </nav>
-	<h1>Chart Your Stocks</h1>
-	<ul id="imageGallery">
-		<li><a href="stock.jpg"><img src="stock.jpg" width="100" alt="Stocks"></a></li>
-	</ul>
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                 <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="col-sm-4">
+                            <h4>My Stocks</h4>
+                        </div>
+                        <div class="align">
+                            <button type="button" class="btn btn-success btn-circle"><i class="fa fa-link">Add Stock +</i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart">Delete Stock -</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="dataTable_wrapper">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Tracker</th>
+                                        <th>Name</th>
+                                        <th>Score</th>
+                                        <th>Add to Queue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX">
+                                        <td>1</td>
+                                        <td>BMW</td>
+                                        <td>BYERISCHE MOTOREN WERKE AG</td>
+                                        <td>.9</td>
+                                        <td>checkbox</td>
+                                        
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>2</td>
+                                        <td>BMW.BE</td>
+                                        <td>BMW</td>
+                                        <td>.6</td>
+                                        <td>checkbox</td>
+                                       
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+    
+    
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!--<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>-->
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
 
