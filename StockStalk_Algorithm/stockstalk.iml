@@ -145,14 +145,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Maven: com.devinpetersohn:com.devinpetersohn:1.0">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/libraries/YahooFinanceAPI_Serializeable.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="com.google.code.gson:gson:2.6.21" level="project" />
   </component>
 </module>

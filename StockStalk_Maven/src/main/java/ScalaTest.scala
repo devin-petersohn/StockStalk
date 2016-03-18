@@ -18,22 +18,27 @@ import org.apache.spark.rdd.RDD
 object ScalaTest {
   val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
 
-  val sANDp500 = Array("GOOG")
+  val sANDp500 = Array("GOOG", "AAPL")
   def main(args: Array[String]) {
     var stocks = new ArrayBuffer[Stock]()
-    var history = new ArrayBuffer[(Stock,util.List[HistoricalQuote])]()
-    //val from = new GregorianCalendar(2006, 0, 1)
+    //var history = new ArrayBuffer[(Stock,java.util.List(Double))]()
     val from = Calendar.getInstance()
-    from.add(Calendar.DATE, -1)
+    from.add(Calendar.YEAR, -1)
+    //val from = new GregorianCalendar(2006, 0, 1)
     val to = Calendar.getInstance
+    var percent_hist : RDD[(((Date, String), Double))] = sc.emptyRDD
     for(stock <- sANDp500) {
       var temp = YahooFinance.get(stock)
       stocks += temp
-      history += ((temp, temp.getHistory(from, to, Interval.DAILY)))
+      percent_hist = sc.union(percent_hist, calculatePercentChange(temp))
+      //history += percent_hist
+
     }
-    sc.parallelize(history).saveAsObjectFile("data/TEST_1")
+
+    percent_hist.saveAsObjectFile("data/STOCKS")
+    //sc.parallelize(history).saveAsObjectFile("data/TEST_1")
 //    var x = sc.objectFile[(Stock, util.List[HistoricalQuote])]("data/stock")
-//    x = x.union(sc.parallelize(history)).reduceByKey((a,b) => a ++ b)
+//    x = x.union(sc.pasaveAsObjectFilerallelize(history)).reduceByKey((a,b) => a ++ b)
     //have to delete previous files at /usr/devin/stocks
     //create java code to delete
     //    x.saveAsObjectFile("data/stock")
