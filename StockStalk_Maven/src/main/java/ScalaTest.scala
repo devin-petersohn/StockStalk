@@ -15,7 +15,9 @@ object ScalaTest {
   val sANDp500 = Vector("MMM", "ABT", "ABBV", "ACN", "ATVI", "ADBE", "ADT", "AAP", "AES", "AET", "AFL", "AMG", "A", "GAS", "APD", "ARG", "AKAM",
                         "AA", "AGN", "ALXN", "ALLE", "ADS", "ALL", "GOOGL", "GOOG", "MO", "AMZN", "AEE", "AAL", "AEP", "AXP", "AIG", "AMT", "AMP",
                         "ABC", "AME", "AMGN", "APH", "APC", "ADI", "AON", "APA", "AIV", "AAPL", "AMAT", "ADM", "AIZ", "T", "ADSK", "ADP", "AN", "AZO",
-                        "AVGO", "AVB", "AVY", "BHI", "BLL", "BAC", "BK", "BCR", "BXLT", "BAX", "BBT", "BDX", "BBBY", "BRK-B", "BBY", "BIIB", "BLK",
+                        "AVGO", "AVB", "AVY", "BHI", "BLL", "BAC")
+                        /*
+                        , "BK", "BCR", "BXLT", "BAX", "BBT", "BDX", "BBBY", "BRK-B", "BBY", "BIIB", "BLK",
                         "HRB", "BA", "BWA", "BXP", "BSX", "BMY", "BF-B", "CHRW", "CA", "CVC", "COG", "CAM", "CPB", "COF", "CAH", "HSIC", "KMX", "CCL",
                         "CAT", "CBG", "CBS", "CELG", "CNP", "CTL", "CERN", "CF", "SCHW", "CHK", "CVX", "CMG", "CB", "CHD", "CI", "XEC", "CINF", "CTAS",
                         "CSCO", "C", "CTXS", "CLX", "CME", "CMS", "COH", "KO", "CCE", "CTSH", "CL", "CPGX", "CMCSA", "CMA", "CAG", "CXO", "COP", "CNX",
@@ -40,6 +42,7 @@ object ScalaTest {
                         "USB", "UA", "UNP", "UAL", "UNH", "UPS", "URI", "UTX", "UHS", "UNM", "URBN", "VFC", "VLO", "VAR", "VTR", "VRSN", "VRSK", "VZ",
                         "VRTX", "VIAB", "V", "VNO", "VMC", "WMT", "WBA", "DIS", "WM", "WAT", "ANTM", "WFC", "HCN", "WDC", "WU", "WY", "WHR", "WFM", "WMB",
                         "WLTW", "WEC", "WYN", "WYNN", "XEL", "XRX", "XLNX", "XL", "XYL", "YHOO", "YUM", "ZBH", "ZION", "ZTS")
+                        */
 
   def getAllStocks(stock_query_list: scala.Vector[String], fromDate: Calendar, toDate: Calendar, interval: Interval, percent_threshold: Double) = {
     var stock_data = sc.parallelize(new ArrayBuffer[((String, (Long, String)))])
@@ -195,9 +198,9 @@ object ScalaTest {
 
 
     var test = sc.union(convertPercentChange(percent_hist, percent_threshold), convertPercentChange(percent_hist2, percent_threshold), convertPercentChange(percent_hist3, percent_threshold)).map(_.swap)
+*/
+    val indexes_of_dates = calculatePercentChange(YahooFinance.get("GOOG"), fromDate, toDate, interval).map(_._1._1).zipWithIndex.map(_.swap).collect.toMap
 
-    val indexes_of_dates = calculatePercentChange(stock, fromDate, toDate, interval).map(_._1._1).zipWithIndex.map(_.swap).collect.toMap
-    */
     var numDays = 1
 //    var interval = 1
     var temp = coarseGrainedAggregation(stock_data_list, numDays)
@@ -212,14 +215,23 @@ object ScalaTest {
     }
 
 
-    val results = 0
-
-    previous.collect.foreach(println)
-    /*
+    val results = previous.collect
+    var counter=0
+//    previous.collect.foreach(println)
+    print("{\"number_of_results\":"+"\"" + results.length + "\",\"results\":[")
     for(result <- results) {
-      println(result._1._2 + " => " + result._2 + " => " + indexes_of_dates.getOrElse(result._1._1, "Error").toString)
+      print("{\"result"+counter+"\":{" + "\"names\":[")
+      for(value <- result._2) {
+        print("\"" + value + "\"")
+        if(value != result._2.last) print(",")
+      }
+      //result._2.foreach(Console print "\"" + _ + "\",")
+      print("],")
+      print("\"Date Start\":" + "\"" + indexes_of_dates.getOrElse(result._1._1, "Error").toString + "\"" + "}}")
+      counter+=1
+      if(counter == results.length) print("") else print(",")
     }
-    */
+    println("]}")
 
 
     //TestClass.test()
