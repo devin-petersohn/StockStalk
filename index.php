@@ -22,27 +22,10 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->    
 
-</head>
-
-    
-    
-    
-    
-    
-    
-    
-<body>
-
-
-    
-    
+</head>   
+<body> 
     <!---Navbar call----->
     <?php include "navbar.html"; ?>
-
-    
-    
-    
-    
 
     <!-- Full Width Image Header -->
     <header class="header-image">
@@ -89,19 +72,19 @@
 
         <div class="row">
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-                <h2>Marketing Box #1</h2>
-                <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+                <img class="img-circle img-responsive img-center" src="img/search.jpg" style="width:300px; height:300px" alt="">
+                <h2>Search</h2>
+                <p>Here you can search our database of over 500 stocks. Choose from a specific date range, a particular market sector, or select stocks from your personal portfolio and compare their price change movement.</p>
             </div>
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-                <h2>Marketing Box #2</h2>
-                <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                <img class="img-circle img-responsive img-center" src="img/portfolio.jpg" style="width:300px; height:300px"alt="">
+                <h2>Your Portfolio</h2>
+                <p>Want to see how your portfolio stacks up? Add your stocks to your personal portfolio to see how diversified you are. Chose stocks from your portfolio to compare and analyze.</p>
             </div>
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/300x300" alt="">
-                <h2>Marketing Box #3</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                <img class="img-circle img-responsive img-center" src="img/chart.jpg" style="width:300px; height:300px" alt="">
+                <h2>Chart</h2>
+                <p>Compare hundreds of stocks and view in-depth details. View movement graphs and more!</p>
             </div>
         </div>
         <!-- /.row -->
@@ -112,7 +95,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Stock Stalk 2016</p>
                 </div>
             </div>
             <!-- /.row -->

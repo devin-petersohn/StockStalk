@@ -14,27 +14,26 @@
 	<input type='submit' value='Submit' name='submit'>
 	<?php
 	SESSION_START();
+
 	if(isset($_SERVER['HTTPS']))
 	{
 		if (isset($_POST['submit']))
 		{
 			//connects user to database.
-			$dbconn = mysqli_connect("local", "mysql", "password","capstone")
-			or die("Could not connect: " . mysqli_connect_error());
+			$dbconn = new mysqli('localhost', 'root', '');
 			//retrieve user input
 			$name=$_POST['username'] or die('Input is invalid');
 			$password=$_POST['password'] or die('Input is invalid');
-			$query='SELECT * FROM loginInfo WHERE username=?';
+			$query='SELECT hashpass,salt FROM capstone.loginInfo WHERE username=?';
 			//Prepared statement
 			$stmt=$dbconn->prepare($query) or die("Query failed");
 			$stmt->bind_param("s",$name);
 			$stmt->execute() or die ("Query failed");
-			$line = $stmt->fetch_array(MYSQLI_ASSOC); 
-			$salt=trim($line['salt']);
+			$stmt->bind_result($hashpass, $salt);
+			$stmt->fetch();
 			$hashpw=sha1($salt.$password);
-			
 			//check password
-			if($hashpw==$line['hashpass'])
+			if($hashpw==$hashpass)
 			{
 				$_SESSION['user']=$name;
 				$_SESSION['loggedin']=true;
