@@ -16,6 +16,8 @@ import java.util.*;
 
 import org.apache.spark.api.python.SerDeUtil;
 import org.apache.spark.rdd.RDD;
+import org.apache.spark.sql.DataFrame;
+import org.apache.spark.sql.SQLContext;
 import org.apache.spark.util.CollectionsUtils;
 import org.apache.spark.util.SystemClock;
 import scala.Tuple2;
@@ -33,7 +35,7 @@ public class mainClass implements Serializable{
         new mainClass().compareOneStockToOtherStocks("AAPL");
 
 //        mainClass mainClass=new mainClass();
-////        mainClass.compareOneStockToOtherStocks("MMM");
+//        mainClass.compareOneStockToOtherStocks("MMM");
 //        HashMap<String,Double> map=new HashMap<>();
 //
 //        map.put("AAA",0.2);
@@ -103,9 +105,13 @@ public class mainClass implements Serializable{
 //
 //        }
 
-        SparkConf conf = new SparkConf().setAppName("testSpark").setMaster("local[4]");
+        SparkConf conf = new SparkConf().setAppName("testSpark").setMaster("local[1]");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<Tuple2<Tuple2<Date, String>, Double>> data=sc.objectFile("data/STOCKS");
+//        List<Tuple2<Tuple2<Date, String>, Double>> list=data.collect();
+//        System.out.println(list.toString());
+
+
         HashMap<String,ArrayList<Date>> dateSet=new  HashMap<String,ArrayList<Date>>();
         HashMap<String,ArrayList<Double>> precentSet=new HashMap<String,ArrayList<Double>>();
         for(String s:stockList)
@@ -113,20 +119,23 @@ public class mainClass implements Serializable{
             dateSet.put(s,new ArrayList<Date>());
             precentSet.put(s,new ArrayList<Double>());
         }
+        JavaRDD<Tuple2<Tuple2<Date, String>, scala.collection.Iterable<Double>>> data1 = data.map(a -> new Tuple2(a._1, (a._2)));
+
         data.foreach(new VoidFunction<Tuple2<Tuple2<Date, String>, Double>>() {
         public void call(Tuple2<Tuple2<Date, String>, Double> arg0) throws Exception {
             String Stockname= arg0._1._2;
             Date date=arg0._1._1;
             Double percent=arg0._2;
-            dateSet.get(Stockname).add(date);
+            ArrayList<Date> dateTemp=dateSet.get(Stockname);
+            dateTemp.add(date);
+            dateSet.put(Stockname,dateTemp);
             precentSet.get(Stockname).add(percent);
         }
     });
-        Iterator it = dateSet.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
-            System.out.println(pair.getKey() + " = " + pair.getValue());
-            it.remove(); // avoids a ConcurrentModificationException
+        System.out.println(dateSet.get("AAPL"));
+        for(Date d:dateSet.get("AAPL"))
+        {
+            System.out.println(d);
         }
 
 
