@@ -144,8 +144,6 @@ object ScalaTest {
       case 50 => string = "ZY"
       case _  => string = "ZZ"
     }
-    println(percent)
-    if(percent > 0) println(string) else if(string.charAt(0) == 'Z') println("-" + string.drop(1)) else println("_" + string.drop(1))
     if(percent > 0) string else if(string.charAt(0) == 'Z') "-" + string.drop(1) else "_" + string.drop(1)
 
   }
@@ -202,9 +200,7 @@ object ScalaTest {
     val indexes_of_dates = calculatePercentChange(YahooFinance.get("GOOG"), fromDate, toDate, interval).map(_._1._1).zipWithIndex.map(_.swap).collect.toMap
 
     var numDays = 1
-//    var interval = 1
     var temp = coarseGrainedAggregation(stock_data_list, numDays)
-    println(temp.first)
     var previous = temp
     stock_data_list = expand(temp)
     while(!stock_data_list.isEmpty){
@@ -217,7 +213,7 @@ object ScalaTest {
 
     val results = previous.collect
     var counter=0
-//    previous.collect.foreach(println)
+
     print("{\"number_of_results\":"+"\"" + results.length + "\",\"results\":[")
     for(result <- results) {
       print("{\"result"+counter+"\":{" + "\"names\":[")
@@ -225,16 +221,14 @@ object ScalaTest {
         print("\"" + value + "\"")
         if(value != result._2.last) print(",")
       }
-      //result._2.foreach(Console print "\"" + _ + "\",")
       print("],")
+      print("\"Number of Intervals\":\"" + result._1._2.length/2 + "\",")
       print("\"Date Start\":" + "\"" + indexes_of_dates.getOrElse(result._1._1, "Error").toString + "\"" + "}}")
       counter+=1
-      if(counter == results.length) print("") else print(",")
+      if(counter != results.length) print(",")
     }
     println("]}")
 
-
-    //TestClass.test()
 
   }
 
