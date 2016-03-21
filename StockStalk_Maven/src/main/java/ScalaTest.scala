@@ -1,3 +1,6 @@
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
+
 import java.util.{Calendar, Date, GregorianCalendar}
 import collection.JavaConversions._
 import scala.collection.mutable.ArrayBuffer
