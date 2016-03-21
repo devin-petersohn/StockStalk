@@ -108,35 +108,7 @@ public class mainClass implements Serializable{
         SparkConf conf = new SparkConf().setAppName("testSpark").setMaster("local[1]");
         JavaSparkContext sc = new JavaSparkContext(conf);
         JavaRDD<Tuple2<Tuple2<Date, String>, Double>> data=sc.objectFile("data/STOCKS");
-//        List<Tuple2<Tuple2<Date, String>, Double>> list=data.collect();
-//        System.out.println(list.toString());
-
-
-        HashMap<String,ArrayList<Date>> dateSet=new  HashMap<String,ArrayList<Date>>();
-        HashMap<String,ArrayList<Double>> precentSet=new HashMap<String,ArrayList<Double>>();
-        for(String s:stockList)
-        {
-            dateSet.put(s,new ArrayList<Date>());
-            precentSet.put(s,new ArrayList<Double>());
-        }
-        JavaRDD<Tuple2<Tuple2<Date, String>, scala.collection.Iterable<Double>>> data1 = data.map(a -> new Tuple2(a._1, (a._2)));
-
-        data.foreach(new VoidFunction<Tuple2<Tuple2<Date, String>, Double>>() {
-        public void call(Tuple2<Tuple2<Date, String>, Double> arg0) throws Exception {
-            String Stockname= arg0._1._2;
-            Date date=arg0._1._1;
-            Double percent=arg0._2;
-            ArrayList<Date> dateTemp=dateSet.get(Stockname);
-            dateTemp.add(date);
-            dateSet.put(Stockname,dateTemp);
-            precentSet.get(Stockname).add(percent);
-        }
-    });
-        System.out.println(dateSet.get("AAPL"));
-        for(Date d:dateSet.get("AAPL"))
-        {
-            System.out.println(d);
-        }
+        List <Tuple2<Tuple2<Date,String>,Double>> list= data.collect();
 
 
 
@@ -176,22 +148,24 @@ public class mainClass implements Serializable{
         return Integer.parseInt(result);
     }
 
-    public double computeStock(Collection<Date> stockTime1, Collection<Double> stockPercent1,Collection<Date> stockTime2, Collection<Double> stockPercent2)
+    public double computeStock(List <Tuple2<Tuple2<Date,String>,Double>> t1, List <Tuple2<Tuple2<Date,String>,Double>> t2)
     {
 
-        Instance host= new SparseInstance(stockTime1.size());
-        Instance guest= new SparseInstance(stockPercent1.size());
-        if(stockTime1.size()!=stockPercent1.size() || stockTime2.size()!=stockPercent2.size() )
+        Instance host= new SparseInstance(t1.size());
+        Instance guest= new SparseInstance(t2.size());
+        if(t1.size()!=t2.size() )
         {
             System.out.println("The size time is not the same as percentage");
         }
-        for(Date time:stockTime1)
+        int count=0;
+        for(Tuple2<Tuple2<Date,String>,Double> temp1:t1)
         {
-            host.put(makeTimeStamp(time), Double.parseDouble(stockPercent1.toString()));
+            host.put(count++,temp1._2());
         }
-        for(Date time: stockTime2)
+        count=0;
+        for(Tuple2<Tuple2<Date,String>,Double> temp2:t2)
         {
-            guest.put(makeTimeStamp(time), Double.parseDouble(stockPercent1.toString()));
+            guest.put(count++,temp2._2());
         }
         DTWSimilarity ds=new DTWSimilarity();
         return ds.measure(host,guest);
