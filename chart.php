@@ -107,139 +107,66 @@
 
     
     
-        <!-- Page Content -->
+    <!-- Page Content -->
     <div class="container">
 
         <!-- Heading Row -->
         <div class="row">
            
-            <!-- /.col-md-8 -->
+            <!-- /.col-md-9 -->
             <div class="col-md-9">
                 <div class="well charts">
-                    
-
-
                     <div id="container" style="height: 400px; min-width: 310px"></div>
                 </div>
             </div>
-            <!-- /.col-md-4 -->
             
             
-                 <!-- /.col-md-8 -->
+            <!-- /.col-md-3 -->
             <div class="col-md-3">
-                
-                    <div class="panel panel-default" style="height: 440px">
-                        <div class="panel-heading">
-                            <h4>Queued Stocks</h4>
-                        </div>
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-                                <div class="checkbox-chart">
+                <div class="panel panel-default" style="height: 440px">
+                    <div class="panel-heading">
+                        <h4>Queued Stocks</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="dataTable_wrapper">
+                            
+                            <div class="checkbox-chart">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                
-                                <tbody>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                
-                
-                
+                                <tbody id="addTableRow">
+                                   
                                 </tbody>
                             </table>
-                                </div>
+                            </div>
 
-                                   <div class="bottom text-center">
-                            
-                                
-                                 <div class="form-group">
-                                           <button type="submit" class="btn btn-primary btn-block">Chart</button>
-                                        </div>
-                                
-                                
-                        </div>
+                            <div class="bottom text-center">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Chart</button>
+                                 </div>
+                            </div>
 
-                        </div>
                         </div>
                     </div>
-                    
-                
-            </div>
-                    
-
                 </div>
             </div>
-            <!-- /.col-md-4 -->
-            
-            
-            
-            
-            
-            
-            
-            
-            
         </div>
-        <!-- /.row -->
+        <!-- /.row -->   
+       
 
         <hr>
-
+       
+        <script>
+            function addToQueue(name){
+//                console.log(name);
+//                console.log(name.innerHTML);
+                var tickername = name.innerHTML;
+                var appendString = "<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>";
+                console.log(appendString);
+                $("#addTableRow").append(appendString);
+            }
+        </script>
+        
+        
+        
         <!-- Call to Action Well -->
         <div class="row">
             <div class="col-lg-12">
@@ -270,19 +197,19 @@
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td>BMW</td>
+                                        <td id="name1">BMW</td>
                                         <td>BYERISCHE MOTOREN WERKE AG</td>
                                         <td>.9</td>
-                                        <td>checkbox</td>
-                                        
+                                        <td><button onclick="addToQueue(name1)" class="btn">add to queue</button></td>
+
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
-                                        <td>BMW.BE</td>
+                                        <td id="name2">BMW.BE</td>
                                         <td>BMW</td>
                                         <td>.6</td>
-                                        <td>checkbox</td>
-                                       
+                                        <td><button onclick="addToQueue(name2)" class="btn">add to queue</button></td>
+
                                     </tr>
                                 </tbody>
                             </table>
@@ -293,8 +220,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-
-        
+    </div>
 
         <!-- Footer -->
         <footer>
