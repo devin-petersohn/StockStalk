@@ -21,10 +21,24 @@
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     
     <script>
+        
+        
         $(function () {
-        var seriesOptions = [],
+        $('#chartform').submit(function (event) {
+            event.preventDefault();
+            var tickername = [];
+            $('.chartstock').each(function (i) {
+                    if(this.checked){
+                        var name = $(this).val();
+                        tickername.push(name);
+                }
+            });
+            console.log(tickername);
+            
+        
+            var seriesOptions = [],
             seriesCounter = 0,
-            names = ['MSFT', 'AAPL', 'GOOG'];
+            names = tickername;
             
             var url = 'http://query.yahooapis.com/v1/public/yql';
             var startDate = '2015-10-01';
@@ -33,83 +47,84 @@
          * Create the chart when all data is loaded
          * @returns {undefined}
          */
-        function createChart() {
+            function createChart() {
 
-//            $('#container').highcharts('StockChart', {
-            var chart = new Highcharts.StockChart({
-                chart:{
-                    renderTo: 'container'
-                },
-//                
-                rangeSelector: {
-                    selected: 4
-                },
+    //            $('#container').highcharts('StockChart', {
+                var chart = new Highcharts.StockChart({
+                    chart:{
+                        renderTo: 'container'
+                    },
+    //                
+                    rangeSelector: {
+                        selected: 4
+                    },
 
-                yAxis: {
-                    labels: {
-                        formatter: function () {
-                            return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                    yAxis: {
+                        labels: {
+                            formatter: function () {
+                                return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                            }
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 2,
+                            color: 'silver'
+                        }]
+                    },
+
+                    plotOptions: {
+                        series: {
+                            compare: 'percent'
                         }
                     },
-                    plotLines: [{
-                        value: 0,
-                        width: 2,
-                        color: 'silver'
-                    }]
-                },
 
-                plotOptions: {
-                    series: {
-                        compare: 'percent'
-                    }
-                },
+                    tooltip: {
+                        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+                        valueDecimals: 2
+                    },
 
-                tooltip: {
-                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
-                    valueDecimals: 2
-                },
-
-                series: seriesOptions
-            });
-        }
-
-        $.each(names, function (i, name) {
-            var reformattedArray;
-            var array = [];
-            var data1 = encodeURIComponent('select * from yahoo.finance.historicaldata where symbol in ("' + name + '") and startDate = "' + startDate + '" and endDate = "' + endDate + '"');
-            $.getJSON(url, 'q=' + data1 + "&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json", function (data) {
-                console.dir(data);
-                var stockData = data.query.results.quote;
-                //console.log(stockData);
-                $.each(stockData, function( key, value ) {
-                
-                    reformattedArray = $.map(value, function(ky, val) { return ky });
-                    
-                    //console.log(reformattedArray);
-//                    array = reformattedArray[1];
-                    var someDate = reformattedArray[1];
-                    var date = Date.parse(someDate);
-                    //console.log(date);
-                    reformattedArray[1] = date;
-                    reformattedArray[2] = parseFloat(reformattedArray[2]);
-                    reformattedArray.shift();
-                    reformattedArray.splice(reformattedArray.length - 5);
-                    //console.log(reformattedArray);
-                    array.unshift(reformattedArray);   
+                    series: seriesOptions
                 });
-                //console.log(array);
-                seriesOptions[i] = {
-                    name: name,
-                    data: array
-                };
+            }
 
-                // As we're loading the data asynchronously, we don't know what order it will arrive. So
-                // we keep a counter and create the chart when all the data is loaded.
-                seriesCounter += 1;
+            $.each(names, function (i, name) {
+                var reformattedArray;
+                var array = [];
+                var data1 = encodeURIComponent('select * from yahoo.finance.historicaldata where symbol in ("' + name + '") and startDate = "' + startDate + '" and endDate = "' + endDate + '"');
+                $.getJSON(url, 'q=' + data1 + "&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json", function (data) {
+                    console.dir(data);
+                    var stockData = data.query.results.quote;
+                    //console.log(stockData);
+                    $.each(stockData, function( key, value ) {
 
-                if (seriesCounter === names.length) {
-                    createChart();
-                }
+                        reformattedArray = $.map(value, function(ky, val) { return ky });
+
+                        //console.log(reformattedArray);
+    //                    array = reformattedArray[1];
+                        var someDate = reformattedArray[1];
+                        var date = Date.parse(someDate);
+                        //console.log(date);
+                        reformattedArray[1] = date;
+                        reformattedArray[2] = parseFloat(reformattedArray[2]);
+                        reformattedArray.shift();
+                        reformattedArray.splice(reformattedArray.length - 5);
+                        //console.log(reformattedArray);
+                        array.unshift(reformattedArray);   
+                    });
+                    //console.log(array);
+                    seriesOptions[i] = {
+                        name: name,
+                        data: array
+                    };
+
+                    // As we're loading the data asynchronously, we don't know what order it will arrive. So
+                    // we keep a counter and create the chart when all the data is loaded.
+                    seriesCounter += 1;
+
+                    if (seriesCounter === names.length) {
+                        createChart();
+                    }
+                });
             });
         });
     });
@@ -153,21 +168,21 @@
                     </div>
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            
-                            <div class="checkbox-chart">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <tbody id="addTableRow">
-                                   
-                                </tbody>
-                            </table>
-                            </div>
+                            <form action="" method="POST" id="chartform">
+                                <div class="checkbox-chart">
+                                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <tbody id="addTableRow">
 
-                            <div class="bottom text-center">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block">Chart</button>
-                                 </div>
-                            </div>
+                                    </tbody>
+                                </table>
+                                </div>
 
+                                <div class="bottom text-center">
+                                    <div class="form-group">
+                                      <input name="submit" class="btn btn-primary btn-block" type="submit" value="chart" />
+                                     </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -192,7 +207,7 @@
                     }
                 }
                 if(same == 0){
-                    $("#addTableRow").append("<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>");
+                    $("#addTableRow").append("<tr><td><input type='checkbox' class='chartstock' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>");
                     array.push(tickername);
                 }
 //                var appendString = "<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>";
@@ -237,7 +252,6 @@
                                         <td>BYERISCHE MOTOREN WERKE AG</td>
                                         <td>.9</td>
                                         <td><button onclick="addToQueue(name1)" class="btn">add to queue</button></td>
-
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
@@ -245,7 +259,20 @@
                                         <td>BMW</td>
                                         <td>.6</td>
                                         <td><button onclick="addToQueue(name2)" class="btn">add to queue</button></td>
-
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>3</td>
+                                        <td id="name3">FB</td>
+                                        <td>Facebook, Inc</td>
+                                        <td>.4</td>
+                                        <td><button onclick="addToQueue(name3)" class="btn">add to queue</button></td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>2</td>
+                                        <td id="name4">GOOG</td>
+                                        <td>Alphabet Inc</td>
+                                        <td>.3</td>
+                                        <td><button onclick="addToQueue(name4)" class="btn">add to queue</button></td>
                                     </tr>
                                 </tbody>
                             </table>
