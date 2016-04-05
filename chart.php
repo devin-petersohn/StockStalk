@@ -25,7 +25,10 @@
         var seriesOptions = [],
             seriesCounter = 0,
             names = ['MSFT', 'AAPL', 'GOOG'];
-
+            
+            var url = 'http://query.yahooapis.com/v1/public/yql';
+            var startDate = '2015-10-01';
+            var endDate = '2016-03-01';
         /**
          * Create the chart when all data is loaded
          * @returns {undefined}
@@ -71,12 +74,33 @@
         }
 
         $.each(names, function (i, name) {
-
-            $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?',    function (data) {
-
+            var reformattedArray;
+            var array = [];
+            var data1 = encodeURIComponent('select * from yahoo.finance.historicaldata where symbol in ("' + name + '") and startDate = "' + startDate + '" and endDate = "' + endDate + '"');
+            $.getJSON(url, 'q=' + data1 + "&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json", function (data) {
+                console.dir(data);
+                var stockData = data.query.results.quote;
+                //console.log(stockData);
+                $.each(stockData, function( key, value ) {
+                
+                    reformattedArray = $.map(value, function(ky, val) { return ky });
+                    
+                    //console.log(reformattedArray);
+//                    array = reformattedArray[1];
+                    var someDate = reformattedArray[1];
+                    var date = Date.parse(someDate);
+                    //console.log(date);
+                    reformattedArray[1] = date;
+                    reformattedArray[2] = parseFloat(reformattedArray[2]);
+                    reformattedArray.shift();
+                    reformattedArray.splice(reformattedArray.length - 5);
+                    //console.log(reformattedArray);
+                    array.unshift(reformattedArray);   
+                });
+                //console.log(array);
                 seriesOptions[i] = {
                     name: name,
-                    data: data
+                    data: array
                 };
 
                 // As we're loading the data asynchronously, we don't know what order it will arrive. So
@@ -155,13 +179,25 @@
         <hr>
        
         <script>
+            var array = [];
+            var i;
             function addToQueue(name){
 //                console.log(name);
-//                console.log(name.innerHTML);
+                var same = 0;
+                console.log(name.innerHTML);
                 var tickername = name.innerHTML;
-                var appendString = "<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>";
-                console.log(appendString);
-                $("#addTableRow").append(appendString);
+                for(i = 0; i < array.length; i ++){            
+                    if(tickername == array[i]){
+                        same = 1
+                    }
+                }
+                if(same == 0){
+                    $("#addTableRow").append("<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>");
+                    array.push(tickername);
+                }
+//                var appendString = "<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>";
+//                console.log(appendString);
+                
             }
         </script>
         
