@@ -1,36 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="Created Cache Functionality.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/Cache_Data.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/ExchangeTimeZone.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/FxQuote.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/FxQuotesRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/FxSymbols.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/HistQuotesRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/HistoricalQuote.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/Interval.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/QuotesProperty.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/QuotesRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/Stock.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/StockDividend.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/StockQuote.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/StockQuotesData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/StockQuotesRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/StockStats.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/TestClass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/Utils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/YahooFinance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_6_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_6_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_6_21.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_google_code_gson_gson_2_6_21.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_apache_spark_spark_sql_2_10_1_4_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_apache_spark_spark_sql_2_10_1_4_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/.name" afterPath="$PROJECT_DIR$/All_Against_All/.idea/.name" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/compiler.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/compiler.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/copyright/profiles_settings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/encodings.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/encodings.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__colt_colt_1_2_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__colt_colt_1_2_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_clearspring_analytics_stream_2_5_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_clearspring_analytics_stream_2_5_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_codahale_metrics_metrics_core_3_0_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_codahale_metrics_metrics_core_3_0_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_codahale_metrics_metrics_graphite_3_0_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_codahale_metrics_metrics_graphite_3_0_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_codahale_metrics_metrics_json_3_0_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_codahale_metrics_metrics_json_3_0_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_codahale_metrics_metrics_jvm_3_0_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_codahale_metrics_metrics_jvm_3_0_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_esotericsoftware_kryo_kryo_2_21.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_esotericsoftware_kryo_kryo_2_21.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_esotericsoftware_minlog_minlog_1_2.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_esotericsoftware_minlog_minlog_1_2.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_esotericsoftware_reflectasm_reflectasm_shaded_1_07.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_esotericsoftware_reflectasm_reflectasm_shaded_1_07.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_3_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_3_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_3_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_3_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_3_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_3_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_google_guava_guava_14_0_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_google_guava_guava_14_0_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_ning_compress_lzf_1_0_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_ning_compress_lzf_1_0_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_thoughtworks_paranamer_paranamer_2_6.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_thoughtworks_paranamer_paranamer_2_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_twitter_chill_2_10_0_3_6.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_twitter_chill_2_10_0_3_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_twitter_chill_java_0_3_6.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_twitter_chill_java_0_3_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_typesafe_config_1_0_2.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_typesafe_config_1_0_2.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__com_yahoofinance_api_YahooFinanceAPI_1_3_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__com_yahoofinance_api_YahooFinanceAPI_1_3_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_7_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_7_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_beanutils_commons_beanutils_core_1_8_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_beanutils_commons_beanutils_core_1_8_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_codec_commons_codec_1_3.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_codec_commons_codec_1_3.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_configuration_commons_configuration_1_6.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_configuration_commons_configuration_1_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_digester_commons_digester_1_8.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_digester_commons_digester_1_8.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_el_commons_el_1_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_el_commons_el_1_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_httpclient_commons_httpclient_3_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_httpclient_commons_httpclient_3_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__commons_net_commons_net_2_2.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__commons_net_commons_net_2_2.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__concurrent_concurrent_1_3_4.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__concurrent_concurrent_1_3_4.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__hsqldb_hsqldb_1_8_0_10.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__hsqldb_hsqldb_1_8_0_10.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__io_netty_netty_3_6_6_Final.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__io_netty_netty_3_6_6_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__io_netty_netty_all_4_0_17_Final.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__io_netty_netty_all_4_0_17_Final.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__jline_jline_0_9_94.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__jline_jline_0_9_94.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__net_java_dev_jets3t_jets3t_0_7_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__net_java_dev_jets3t_jets3t_0_7_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__net_sf_py4j_py4j_0_8_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__net_sf_py4j_py4j_0_8_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_ant_ant_1_9_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_ant_ant_1_9_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_commons_commons_math_2_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_commons_commons_math_2_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_curator_curator_client_2_4_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_curator_curator_client_2_4_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_curator_curator_framework_2_4_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_curator_curator_framework_2_4_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_curator_curator_recipes_2_4_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_curator_curator_recipes_2_4_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_hadoop_hadoop_client_1_0_4.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_hadoop_hadoop_client_1_0_4.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_hadoop_hadoop_core_1_0_4.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_hadoop_hadoop_core_1_0_4.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_mesos_mesos_shaded_protobuf_0_18_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_mesos_mesos_shaded_protobuf_0_18_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_spark_spark_core_2_10_1_0_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_spark_spark_core_2_10_1_0_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_5.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_5.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_0_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_0_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_0_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_0_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_continuation_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_continuation_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_jndi_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_jndi_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_plus_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_plus_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_8_1_14_v20131031.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_8_1_14_v20131031.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_activation_1_1_0_v201105071233.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_activation_1_1_0_v201105071233.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_mail_glassfish_1_4_1_v201005082020.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_mail_glassfish_1_4_1_v201005082020.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_servlet_3_0_0_v201112011016.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_servlet_3_0_0_v201112011016.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_transaction_1_1_1_v201105210645.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_transaction_1_1_1_v201105210645.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_json4s_json4s_ast_2_10_3_2_6.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_json4s_json4s_ast_2_10_3_2_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_json4s_json4s_core_2_10_3_2_6.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_json4s_json4s_core_2_10_3_2_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_json4s_json4s_jackson_2_10_3_2_6.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_json4s_json4s_jackson_2_10_3_2_6.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_objenesis_objenesis_1_2.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_objenesis_objenesis_1_2.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_scala_lang_scala_compiler_2_10_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_scala_lang_scala_compiler_2_10_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_scala_lang_scala_library_2_10_3.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_scala_lang_scala_library_2_10_3.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_10_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_10_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_scala_lang_scalap_2_10_0.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_scala_lang_scalap_2_10_0.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_5.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_5.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_5.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_5.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_spark_project_akka_akka_actor_2_10_2_2_3_shaded_protobuf.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_spark_project_akka_akka_actor_2_10_2_2_3_shaded_protobuf.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_spark_project_akka_akka_remote_2_10_2_2_3_shaded_protobuf.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_spark_project_akka_akka_remote_2_10_2_2_3_shaded_protobuf.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_spark_project_akka_akka_slf4j_2_10_2_2_3_shaded_protobuf.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_spark_project_akka_akka_slf4j_2_10_2_2_3_shaded_protobuf.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_spark_project_protobuf_protobuf_java_2_4_1_shaded.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_spark_project_protobuf_protobuf_java_2_4_1_shaded.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_spark_project_pyrolite_2_0_1.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_spark_project_pyrolite_2_0_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_tachyonproject_tachyon_0_4_1_thrift.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_tachyonproject_tachyon_0_4_1_thrift.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_uncommons_maths_uncommons_maths_1_2_2a.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_uncommons_maths_uncommons_maths_1_2_2a.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_0_5.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_0_5.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__oro_oro_2_0_8.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__oro_oro_2_0_8.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/libraries/Maven__xmlenc_xmlenc_0_52.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/libraries/Maven__xmlenc_xmlenc_0_52.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/misc.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/misc.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/modules.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/modules.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/scala_compiler.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/scala_compiler.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/.idea/workspace.xml" afterPath="$PROJECT_DIR$/All_Against_All/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/pom.xml" afterPath="$PROJECT_DIR$/All_Against_All/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/ExchangeTimeZone.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/ExchangeTimeZone.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/FxQuote.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/FxQuote.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/FxQuotesRequest.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/FxQuotesRequest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/FxSymbols.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/FxSymbols.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/HistQuotesRequest.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/HistQuotesRequest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/HistoricalQuote.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/HistoricalQuote.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/Interval.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/Interval.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/QuotesProperty.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/QuotesProperty.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/QuotesRequest.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/QuotesRequest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/ScalaTest.scala" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/Stock.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/Stock.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/StockDividend.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/StockDividend.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/StockQuote.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/StockQuote.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/StockQuotesData.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/StockQuotesData.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/StockQuotesRequest.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/StockQuotesRequest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/StockStats.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/StockStats.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/TestClass.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/TestClass.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/Utils.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/Utils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/YahooFinance.java" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/YahooFinance.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/StockStalk_Maven/stockStalk.iml" afterPath="$PROJECT_DIR$/All_Against_All/All_Against_All.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/ScalaTest.scala" afterPath="$PROJECT_DIR$/StockStalk_Maven/src/main/java/ScalaTest.scala" />
     </list>
     <ignored path="StockStalk.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,11 +147,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Cache_Data.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Cache_Data.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.70359284">
+              <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -68,20 +159,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YahooFinance.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/YahooFinance.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.52907">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StockStalk_Maven/pom.xml">
+        <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-31.875">
               <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
@@ -101,7 +180,7 @@
         </entry>
       </file>
       <file leaf-file-name="ScalaTest.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/ScalaTest.scala">
+        <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
@@ -212,10 +291,6 @@
               <option name="myItemId" value="StockStalk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -224,126 +299,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk_Maven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk_Maven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cache_Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cache_Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cache_Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cache_Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -839,7 +794,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458267038822</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Created Cache Functionality.">
+      <created>1460229639738</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1460229639738</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -848,15 +809,15 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32778198" sideWeight="0.44684768" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32778198" sideWeight="0.44684768" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32778198" sideWeight="0.5531523" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22028767" sideWeight="0.51633686" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22028767" sideWeight="0.4855039" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22028767" sideWeight="0.48366314" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326268" sideWeight="0.47353888" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2121491" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2121491" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -902,13 +863,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mapreduce-client-core/2.2.0/hadoop-mapreduce-client-core-2.2.0.jar!/org/apache/hadoop/mapred/FileOutputFormat.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3560606">
-          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/yahoofinance-api/YahooFinanceAPI/1.3.0/YahooFinanceAPI-1.3.0.jar!/yahoofinance/quotes/stock/StockQuotesData.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -930,119 +884,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/stockStalk.iml">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/All_Against_All.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/TestClass.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/TestClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/ExchangeTimeZone.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ExchangeTimeZone.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/FxQuote.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/FxQuote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/FxQuotesRequest.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/FxQuotesRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16830294">
           <caret line="8" column="83" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="83" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/FxSymbols.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/FxSymbols.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08415147">
           <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/HistoricalQuote.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/HistoricalQuote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/HistQuotesRequest.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/HistQuotesRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="18" column="54" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/Interval.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/Interval.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08415147">
           <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/QuotesRequest.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/QuotesRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16830294">
           <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/StockDividend.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/StockDividend.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/StockQuote.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/StockQuote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/StockQuotesData.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/StockQuotesData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/StockQuotesRequest.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/StockQuotesRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="8" column="94" selection-start-line="8" selection-start-column="94" selection-end-line="8" selection-end-column="94" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/StockStats.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/StockStats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/Utils.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/Stock.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/Stock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
@@ -1112,7 +1066,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/YahooFinance.java">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/YahooFinance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
@@ -1171,8 +1125,6 @@
           <caret line="4" column="33" selection-start-line="3" selection-start-column="7" selection-end-line="4" selection-end-column="33" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-            <element signature="e#3808#3809#0" expanded="false" />
-            <element signature="e#3876#3877#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1320,7 +1272,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/pom.xml">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-31.875">
           <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
@@ -1328,7 +1280,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/StockStalk_Maven/src/main/java/ScalaTest.scala">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
@@ -1352,22 +1304,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/YahooFinance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.52907">
           <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70359284">
+          <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
