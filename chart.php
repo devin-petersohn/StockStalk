@@ -21,71 +21,110 @@
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     
     <script>
+        
+        
         $(function () {
-        var seriesOptions = [],
+        $('#chartform').submit(function (event) {
+            event.preventDefault();
+            var tickername = [];
+            $('.chartstock').each(function (i) {
+                    if(this.checked){
+                        var name = $(this).val();
+                        tickername.push(name);
+                }
+            });
+            console.log(tickername);
+            
+        
+            var seriesOptions = [],
             seriesCounter = 0,
-            names = ['MSFT', 'AAPL', 'GOOG'];
-
+            names = tickername;
+            
+            var url = 'http://query.yahooapis.com/v1/public/yql';
+            var startDate = '2015-10-01';
+            var endDate = '2016-03-01';
         /**
          * Create the chart when all data is loaded
          * @returns {undefined}
          */
-        function createChart() {
+            function createChart() {
 
-//            $('#container').highcharts('StockChart', {
-            var chart = new Highcharts.StockChart({
-                chart:{
-                    renderTo: 'container'
-                },
-//                
-                rangeSelector: {
-                    selected: 4
-                },
+    //            $('#container').highcharts('StockChart', {
+                var chart = new Highcharts.StockChart({
+                    chart:{
+                        renderTo: 'container'
+                    },
+    //                
+                    rangeSelector: {
+                        selected: 4
+                    },
 
-                yAxis: {
-                    labels: {
-                        formatter: function () {
-                            return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                    yAxis: {
+                        labels: {
+                            formatter: function () {
+                                return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                            }
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 2,
+                            color: 'silver'
+                        }]
+                    },
+
+                    plotOptions: {
+                        series: {
+                            compare: 'percent'
                         }
                     },
-                    plotLines: [{
-                        value: 0,
-                        width: 2,
-                        color: 'silver'
-                    }]
-                },
 
-                plotOptions: {
-                    series: {
-                        compare: 'percent'
+                    tooltip: {
+                        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+                        valueDecimals: 2
+                    },
+
+                    series: seriesOptions
+                });
+            }
+
+            $.each(names, function (i, name) {
+                var reformattedArray;
+                var array = [];
+                var data1 = encodeURIComponent('select * from yahoo.finance.historicaldata where symbol in ("' + name + '") and startDate = "' + startDate + '" and endDate = "' + endDate + '"');
+                $.getJSON(url, 'q=' + data1 + "&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json", function (data) {
+                    console.dir(data);
+                    var stockData = data.query.results.quote;
+                    //console.log(stockData);
+                    $.each(stockData, function( key, value ) {
+
+                        reformattedArray = $.map(value, function(ky, val) { return ky });
+
+                        //console.log(reformattedArray);
+    //                    array = reformattedArray[1];
+                        var someDate = reformattedArray[1];
+                        var date = Date.parse(someDate);
+                        //console.log(date);
+                        reformattedArray[1] = date;
+                        reformattedArray[2] = parseFloat(reformattedArray[2]);
+                        reformattedArray.shift();
+                        reformattedArray.splice(reformattedArray.length - 5);
+                        //console.log(reformattedArray);
+                        array.unshift(reformattedArray);   
+                    });
+                    //console.log(array);
+                    seriesOptions[i] = {
+                        name: name,
+                        data: array
+                    };
+
+                    // As we're loading the data asynchronously, we don't know what order it will arrive. So
+                    // we keep a counter and create the chart when all the data is loaded.
+                    seriesCounter += 1;
+
+                    if (seriesCounter === names.length) {
+                        createChart();
                     }
-                },
-
-                tooltip: {
-                    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
-                    valueDecimals: 2
-                },
-
-                series: seriesOptions
-            });
-        }
-
-        $.each(names, function (i, name) {
-
-            $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?',    function (data) {
-
-                seriesOptions[i] = {
-                    name: name,
-                    data: data
-                };
-
-                // As we're loading the data asynchronously, we don't know what order it will arrive. So
-                // we keep a counter and create the chart when all the data is loaded.
-                seriesCounter += 1;
-
-                if (seriesCounter === names.length) {
-                    createChart();
-                }
+                });
             });
         });
     });
@@ -107,152 +146,92 @@
 
     
     
-        <!-- Page Content -->
+    <!-- Page Content -->
     <div class="container">
 
         <!-- Heading Row -->
         <div class="row">
            
-            <!-- /.col-md-8 -->
+            <!-- /.col-md-9 -->
             <div class="col-md-9">
                 <div class="well charts">
-                    
-
-
                     <div id="container" style="height: 400px; min-width: 310px"></div>
                 </div>
             </div>
-            <!-- /.col-md-4 -->
             
             
-                 <!-- /.col-md-8 -->
+            <!-- /.col-md-3 -->
             <div class="col-md-3">
-                
-                    <div class="panel panel-default" style="height: 440px">
-                        <div class="panel-heading">
-                            <h4>Queued Stocks</h4>
-                        </div>
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
+                <div class="panel panel-default" style="height: 440px">
+                    <div class="panel-heading">
+                        <h4>Queued Stocks</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="dataTable_wrapper">
+                            <form action="" method="POST" id="chartform">
                                 <div class="checkbox-chart">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                
-                                <tbody>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><input type="checkbox"> Apple </input></td>
-                                       
-                                        
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"> Google </input></td>
-                                       
-                                       
-                                    </tr>
-                
-                
-                
-                                </tbody>
-                            </table>
+                                <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <tbody id="addTableRow">
+
+                                    </tbody>
+                                </table>
                                 </div>
 
-                                   <div class="bottom text-center">
-                            
-                                
-                                 <div class="form-group">
-                                           <button type="submit" class="btn btn-primary btn-block">Chart</button>
-                                        </div>
-                                
-                                
-                        </div>
-
-                        </div>
+                                <div class="bottom text-center">
+                                    <div class="form-group">
+                                      <input name="submit" class="btn btn-primary btn-block" type="submit" value="chart" />
+                                     </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    
-                
-            </div>
-                    
-
                 </div>
             </div>
-            <!-- /.col-md-4 -->
-            
-            
-            
-            
-            
-            
-            
-            
-            
         </div>
-        <!-- /.row -->
+        <!-- /.row -->   
+       
 
         <hr>
-
+       
+        <script>
+            var array = [];
+            var i;
+            function addToQueue(name){
+//                console.log(name);
+                var same = 0;
+                console.log(name.innerHTML);
+                var tickername = name.innerHTML;
+                for(i = 0; i < array.length; i ++){            
+                    if(tickername == array[i]){
+                        same = 1
+                    }
+                }
+                if(same == 0){
+                    $("#addTableRow").append("<tr><td><input type='checkbox' class='chartstock' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>");
+                    array.push(tickername);
+                }
+//                var appendString = "<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>";
+//                console.log(appendString);
+                
+            }
+        </script>
+        
+        
+        
         <!-- Call to Action Well -->
         <div class="row">
             <div class="col-lg-12">
-                 <div class="panel panel-default">
+                
+                <!--Results for ONE TO ALL-->
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="col-sm-4">
                             <h4>My Stocks</h4>
                         </div>
                         <div class="align">
-                            <button type="button" class="btn btn-success btn-circle"><i class="fa fa-link">Add Stock +</i>
+                            <button type="button" class="btn btn-success btn-circle"><i class="fa fa-link">Add to my portfolio +</i>
                             </button>
-                            <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart">Delete Stock -</i>
-                            </button>
+                            
                         </div>
                     </div>
                     <div class="panel-body">
@@ -270,31 +249,50 @@
                                 <tbody>
                                     <tr class="odd gradeX">
                                         <td>1</td>
-                                        <td>BMW</td>
+                                        <td id="name1">BMW</td>
                                         <td>BYERISCHE MOTOREN WERKE AG</td>
                                         <td>.9</td>
-                                        <td>checkbox</td>
-                                        
+                                        <td><button onclick="addToQueue(name1)" class="btn">add to queue</button></td>
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
-                                        <td>BMW.BE</td>
+                                        <td id="name2">BMW.BE</td>
                                         <td>BMW</td>
                                         <td>.6</td>
-                                        <td>checkbox</td>
-                                       
+                                        <td><button onclick="addToQueue(name2)" class="btn">add to queue</button></td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>3</td>
+                                        <td id="name3">FB</td>
+                                        <td>Facebook, Inc</td>
+                                        <td>.4</td>
+                                        <td><button onclick="addToQueue(name3)" class="btn">add to queue</button></td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>2</td>
+                                        <td id="name4">GOOG</td>
+                                        <td>Alphabet Inc</td>
+                                        <td>.3</td>
+                                        <td><button onclick="addToQueue(name4)" class="btn">add to queue</button></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
+                
+                <!--Results for ALL TO ALL-->
+                
+                
+                <!--Results for ONE SPECIFIC STOCK-->
+                
+                
+                
             </div>
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-
-        
+    </div>
 
         <!-- Footer -->
         <footer>

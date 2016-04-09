@@ -22,11 +22,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="All_Against_All" />
+        <module name="Cache_Data" />
         <module name="stockStalk" />
         <module name="stockstalk" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="All_Against_All" target="1.8" />
+      <module name="Cache_Data" target="1.8" />
       <module name="stockStalk" target="1.8" />
       <module name="stockstalk" target="1.8" />
     </bytecodeTargetLevel>

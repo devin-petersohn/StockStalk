@@ -15,8 +15,8 @@ object ScalaTest {
   val sANDp500 = Vector("MMM", "ABT", "ABBV", "ACN", "ATVI", "ADBE", "ADT", "AAP", "AES", "AET", "AFL", "AMG", "A", "GAS", "APD", "ARG", "AKAM",
                         "AA", "AGN", "ALXN", "ALLE", "ADS", "ALL", "GOOGL", "GOOG", "MO", "AMZN", "AEE", "AAL", "AEP", "AXP", "AIG", "AMT", "AMP",
                         "ABC", "AME", "AMGN", "APH", "APC", "ADI", "AON", "APA", "AIV", "AAPL", "AMAT", "ADM", "AIZ", "T", "ADSK", "ADP", "AN", "AZO",
-                        "AVGO", "AVB", "AVY", "BHI", "BLL", "BAC")
-                        /*
+                        "AVGO", "AVB", "AVY", "BHI", "BLL", "BAC"
+
                         , "BK", "BCR", "BXLT", "BAX", "BBT", "BDX", "BBBY", "BRK-B", "BBY", "BIIB", "BLK",
                         "HRB", "BA", "BWA", "BXP", "BSX", "BMY", "BF-B", "CHRW", "CA", "CVC", "COG", "CAM", "CPB", "COF", "CAH", "HSIC", "KMX", "CCL",
                         "CAT", "CBG", "CBS", "CELG", "CNP", "CTL", "CERN", "CF", "SCHW", "CHK", "CVX", "CMG", "CB", "CHD", "CI", "XEC", "CINF", "CTAS",
@@ -42,7 +42,7 @@ object ScalaTest {
                         "USB", "UA", "UNP", "UAL", "UNH", "UPS", "URI", "UTX", "UHS", "UNM", "URBN", "VFC", "VLO", "VAR", "VTR", "VRSN", "VRSK", "VZ",
                         "VRTX", "VIAB", "V", "VNO", "VMC", "WMT", "WBA", "DIS", "WM", "WAT", "ANTM", "WFC", "HCN", "WDC", "WU", "WY", "WHR", "WFM", "WMB",
                         "WLTW", "WEC", "WYN", "WYNN", "XEL", "XRX", "XLNX", "XL", "XYL", "YHOO", "YUM", "ZBH", "ZION", "ZTS")
-                        */
+
 
   def getAllStocks(stock_query_list: scala.Vector[String], fromDate: Calendar, toDate: Calendar, interval: Interval, percent_threshold: Double) = {
     var stock_data = sc.parallelize(new ArrayBuffer[((String, (Long, String)))])
@@ -144,8 +144,6 @@ object ScalaTest {
       case 50 => string = "ZY"
       case _  => string = "ZZ"
     }
-    println(percent)
-    if(percent > 0) println(string) else if(string.charAt(0) == 'Z') println("-" + string.drop(1)) else println("_" + string.drop(1))
     if(percent > 0) string else if(string.charAt(0) == 'Z') "-" + string.drop(1) else "_" + string.drop(1)
 
   }
@@ -202,9 +200,7 @@ object ScalaTest {
     val indexes_of_dates = calculatePercentChange(YahooFinance.get("GOOG"), fromDate, toDate, interval).map(_._1._1).zipWithIndex.map(_.swap).collect.toMap
 
     var numDays = 1
-//    var interval = 1
     var temp = coarseGrainedAggregation(stock_data_list, numDays)
-    println(temp.first)
     var previous = temp
     stock_data_list = expand(temp)
     while(!stock_data_list.isEmpty){
@@ -217,7 +213,7 @@ object ScalaTest {
 
     val results = previous.collect
     var counter=0
-//    previous.collect.foreach(println)
+
     print("{\"number_of_results\":"+"\"" + results.length + "\",\"results\":[")
     for(result <- results) {
       print("{\"result"+counter+"\":{" + "\"names\":[")
@@ -225,16 +221,14 @@ object ScalaTest {
         print("\"" + value + "\"")
         if(value != result._2.last) print(",")
       }
-      //result._2.foreach(Console print "\"" + _ + "\",")
       print("],")
+      print("\"Number of Intervals\":\"" + result._1._2.length/2 + "\",")
       print("\"Date Start\":" + "\"" + indexes_of_dates.getOrElse(result._1._1, "Error").toString + "\"" + "}}")
       counter+=1
-      if(counter == results.length) print("") else print(",")
+      if(counter != results.length) print(",")
     }
     println("]}")
 
-
-    //TestClass.test()
 
   }
 
