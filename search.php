@@ -32,10 +32,17 @@
         function showDiv1() {
             document.getElementById('oneToAll').style.display = "block";
             document.getElementById('allToAll').style.display = "none";
+            document.getElementById('specific').style.display = "none";
         }
         function showDiv2() {
             document.getElementById('allToAll').style.display = "block";
             document.getElementById('oneToAll').style.display = "none";
+            document.getElementById('specific').style.display = "none";
+        }
+        function showDiv3() {
+            document.getElementById('allToAll').style.display = "none";
+            document.getElementById('oneToAll').style.display = "none";
+            document.getElementById('specific').style.display = "block";
         }
         
         $(function() {
@@ -96,9 +103,10 @@
         <div class="row" >
             <div class="col-md-12" style="text-align:center"> 
                 <h3>Find similar stock</h3>
-                <button class="btn btn-primary" onclick="showDiv1()">Compare all stocks</button>
+                <button class="btn btn-primary" onclick="showDiv1()">Compare one stock with all others</button>
                 
-                <button class="btn btn-primary" onclick="showDiv2()">Compare one stock with all others</button>
+                <button class="btn btn-primary" onclick="showDiv2()">Compare all stocks</button>
+                <button class="btn btn-primary" onclick="showDiv3()">Search for one specific stock</button>
             </div>
         </div>
         <br><br>
@@ -148,12 +156,12 @@
             </div>
                 
         </div>
-    </div>
     
     
-    <div class="row" id="allToAll"  style="display:none;">
-            
-            
+        <!-- all to all section -->
+        <div class="row" id="allToAll"  style="display:none;">
+
+
             <!-- select sector-->
             <div class="input-group col-sm-6 col-sm-offset-3">
                 <h4>Market Sector</h4>
@@ -173,7 +181,7 @@
             <!-- choose time period-->
             <div style="height:200px;" class="input-group col-sm-6 col-sm-offset-3">
                 <h4>Choose a time period</h4>
-                
+
                 <label for="from">From</label>
                 <input style="margin-left: 5px;" type="text" id="from2" name="from" form="search">
                 <label style="margin-left: 10px;" for="to">to</label>
@@ -181,7 +189,27 @@
                 <button class="btn btn-primary" type="submit">
                     <span class="glyphicon glyphicon-search"></span>
                 </button>
-                
+
+            </div>
+
+        </div>
+    
+    
+        <!-- one specific stock -->
+        <div class="row" id="specific"  style="display:none;">
+            
+            <!-- Search box -->
+            <div id="custom-search-input">
+                <form action="load.php" method="POST" id="search">
+                    <div class="input-group col-sm-6 col-sm-offset-3">
+                        <input type="text" class="search-query form-control" name="searchbox" placeholder="Search"></input>
+                        <span class="input-group-btn">
+                            <button style="height:34px;" class="btn btn-primary" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
             </div>
                 
         </div>
