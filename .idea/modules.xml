@@ -4,8 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/All_Against_All/All_Against_All.iml" filepath="$PROJECT_DIR$/All_Against_All/All_Against_All.iml" />
       <module fileurl="file://$PROJECT_DIR$/Cache_Data/Cache_Data.iml" filepath="$PROJECT_DIR$/Cache_Data/Cache_Data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/One_Against_All/One_Against_All.iml" filepath="$PROJECT_DIR$/One_Against_All/One_Against_All.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/StockStalk.iml" filepath="$PROJECT_DIR$/.idea/StockStalk.iml" />
-      <module fileurl="file://$PROJECT_DIR$/StockStalk_Algorithm/stockstalk.iml" filepath="$PROJECT_DIR$/StockStalk_Algorithm/stockstalk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/All_Against_All/stockStalk.iml" filepath="$PROJECT_DIR$/All_Against_All/stockStalk.iml" />
     </modules>
   </component>
 </project>

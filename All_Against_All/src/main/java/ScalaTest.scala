@@ -1,6 +1,3 @@
-import com.google.gson.JsonArray
-import com.google.gson.JsonObject
-
 import java.util.{Calendar, Date, GregorianCalendar}
 import collection.JavaConversions._
 import scala.collection.mutable.ArrayBuffer
@@ -15,9 +12,7 @@ object ScalaTest {
   val sANDp500 = Vector("MMM", "ABT", "ABBV", "ACN", "ATVI", "ADBE", "ADT", "AAP", "AES", "AET", "AFL", "AMG", "A", "GAS", "APD", "ARG", "AKAM",
                         "AA", "AGN", "ALXN", "ALLE", "ADS", "ALL", "GOOGL", "GOOG", "MO", "AMZN", "AEE", "AAL", "AEP", "AXP", "AIG", "AMT", "AMP",
                         "ABC", "AME", "AMGN", "APH", "APC", "ADI", "AON", "APA", "AIV", "AAPL", "AMAT", "ADM", "AIZ", "T", "ADSK", "ADP", "AN", "AZO",
-                        "AVGO", "AVB", "AVY", "BHI", "BLL", "BAC"
-
-                        , "BK", "BCR", "BXLT", "BAX", "BBT", "BDX", "BBBY", "BRK-B", "BBY", "BIIB", "BLK",
+                        "AVGO", "AVB", "AVY", "BHI", "BLL", "BAC", "BK", "BCR", "BXLT", "BAX", "BBT", "BDX", "BBBY", "BRK-B", "BBY", "BIIB", "BLK",
                         "HRB", "BA", "BWA", "BXP", "BSX", "BMY", "BF-B", "CHRW", "CA", "CVC", "COG", "CAM", "CPB", "COF", "CAH", "HSIC", "KMX", "CCL",
                         "CAT", "CBG", "CBS", "CELG", "CNP", "CTL", "CERN", "CF", "SCHW", "CHK", "CVX", "CMG", "CB", "CHD", "CI", "XEC", "CINF", "CTAS",
                         "CSCO", "C", "CTXS", "CLX", "CME", "CMS", "COH", "KO", "CCE", "CTSH", "CL", "CPGX", "CMCSA", "CMA", "CAG", "CXO", "COP", "CNX",
@@ -72,8 +67,6 @@ object ScalaTest {
   }
 
   def calculatePercentChange(stock:Stock, fromDate: Calendar, toDate: Calendar, interval: Interval): RDD[(((Date, String), Double))] = {
-//    val from = new GregorianCalendar(2006, 0, 1)
-//    val calendar : Calendar = Calendar.getInstance
     var prev = stock.getHistory.get(0).getClose
     var buffer = new ArrayBuffer[((((Date, String)),Double))]
     val hists = stock.getHistory(fromDate, toDate, interval)
@@ -161,42 +154,6 @@ object ScalaTest {
     val stock_query_list = if(args(8) == "S&P500") sANDp500 else args.drop(8).toVector
     var stock_data_list = getAllStocks(stock_query_list, fromDate, toDate, interval, percent_threshold).map(_.swap)
 
-    /*
-    var stocks = new ArrayBuffer[Stock]()
-
-    var history = new ArrayBuffer[(Stock,util.List[HistoricalQuote])]()
-    //val from = new GregorianCalendar(2006, 0, 1)
-    val from = Calendar.getInstance()
-    from.add(Calendar.DATE, -1)
-    val to = Calendar.getInstance
-    for(stock <- sANDp500) {
-      var temp = YahooFinance.get(stock)
-      stocks += temp
-      history += ((temp, temp.getHistory(from, to, Interval.DAILY)))
-    }
-    sc.parallelize(history).saveAsObjectFile("data/TEST_1")
-//    var x = sc.objectFile[(Stock, util.List[HistoricalQuote])]("data/stock")
-//    x = x.union(sc.parallelize(history)).reduceByKey((a,b) => a ++ b)
-    //have to delete previous files at /usr/devin/stocks
-    //create java code to delete
-    //    x.saveAsObjectFile("data/stock")
- */
-
-    /*
-    val stock  = YahooFinance.get("GOOG")
-    val stock2 = YahooFinance.get("AAPL")
-    val stock3 = YahooFinance.get("MSFT")
-    if (!(stock.getName == "N/A")) {
-      println(stock.getSymbol + " - " + stock.getName + " => $" + stock.getQuote.getPrice + " (" + stock.getQuote.getChangeInPercent + "%)")
-    }
-
-    val percent_hist  = calculatePercentChange(stock , fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2)))
-    val percent_hist2 = calculatePercentChange(stock2, fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2)))
-    val percent_hist3 = calculatePercentChange(stock3, fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2)))
-
-
-    var test = sc.union(convertPercentChange(percent_hist, percent_threshold), convertPercentChange(percent_hist2, percent_threshold), convertPercentChange(percent_hist3, percent_threshold)).map(_.swap)
-*/
     val indexes_of_dates = calculatePercentChange(YahooFinance.get("GOOG"), fromDate, toDate, interval).map(_._1._1).zipWithIndex.map(_.swap).collect.toMap
 
     var numDays = 1
