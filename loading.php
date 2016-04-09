@@ -23,4 +23,24 @@
     <br>
     
     <center>
-    <div id="gameDiv"  
+    <div id="gameDiv"  style="display:none;" class="answer_list" > Insert games here.</div>
+<input id="show_button" type="button" name="answer" value="Play games while you wait?" onclick="showDiv()" />
+    </center>
+    
+    
+    
+    
+    
+	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!--<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>-->
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/quotes.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

@@ -221,16 +221,17 @@
         <!-- Call to Action Well -->
         <div class="row">
             <div class="col-lg-12">
-                 <div class="panel panel-default">
+                
+                <!--Results for ONE TO ALL-->
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="col-sm-4">
                             <h4>My Stocks</h4>
                         </div>
                         <div class="align">
-                            <button type="button" class="btn btn-success btn-circle"><i class="fa fa-link">Add Stock +</i>
+                            <button type="button" class="btn btn-success btn-circle"><i class="fa fa-link">Add to my portfolio +</i>
                             </button>
-                            <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart">Delete Stock -</i>
-                            </button>
+                            
                         </div>
                     </div>
                     <div class="panel-body">
@@ -279,6 +280,14 @@
                         </div>
                     </div>
                 </div>
+                
+                <!--Results for ALL TO ALL-->
+                
+                
+                <!--Results for ONE SPECIFIC STOCK-->
+                
+                
+                
             </div>
             <!-- /.col-lg-12 -->
         </div>
