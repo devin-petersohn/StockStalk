@@ -15,6 +15,12 @@ All of this software is free to use or open source.
 ##### Step 1: Building and Compiling required code
 NOTE: All commands must be executed from the root directory of this software package: StockStalk.
 
-We have developed scripts to automatically setup the environment and build the project executables. To begin, from the root directory type:
-`bash setup_and_deploy/setup.sh`
-The script will begin downloading and installing all Maven dependencies. This may take some time.
+We have developed scripts to automatically setup the environment and build the project executables. To begin, from the root directory execute:
+
+`bash setup_and_deploy/setup.sh <MASTER_URL> <EXECUTOR_MEM> <MASTER_MEM>`
+
+For example. If the spark master is located at 111.111.111.111:7077 and I would like to reserve 20G memory for each executor and 10G memory for the master, I would execute:
+
+`bash setup_and_deploy/setup.sh spark://111.111.111.111:7077 20G 10G`
+
+The script will begin downloading and installing all Maven dependencies and cache the previous 20 years of stock data for the S&P500. This may take some time.
