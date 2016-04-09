@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Cache_Data/Cache_Data.iml" filepath="$PROJECT_DIR$/Cache_Data/Cache_Data.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/StockStalk.iml" filepath="$PROJECT_DIR$/.idea/StockStalk.iml" />
       <module fileurl="file://$PROJECT_DIR$/StockStalk_Maven/stockStalk.iml" filepath="$PROJECT_DIR$/StockStalk_Maven/stockStalk.iml" />
       <module fileurl="file://$PROJECT_DIR$/StockStalk_Algorithm/stockstalk.iml" filepath="$PROJECT_DIR$/StockStalk_Algorithm/stockstalk.iml" />
