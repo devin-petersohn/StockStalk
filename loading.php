@@ -7,7 +7,42 @@
 <body>
 
     <!---Navbar call----->
-    
+    <?php 
+        $searchtype = $_POST['searchtype'];
+        echo $searchtype;
+        if(strcmp($searchtype,"onetoall")==0){
+            $ticker1 = $_POST['searchbox1'];
+            $sector1 = $_POST['sector1'];
+            $fromDate1 = $_POST['from1'];
+            $toDate1 = $_POST['to1'];
+            
+            echo $ticker1;
+            echo $sector1;
+            echo $fromDate1;
+            echo $toDate1;
+        }
+        if(strcmp($searchtype,"alltoall")==0){
+            $sector2 = $_POST['sector2'];
+            $fromDate2 = $_POST['from2'];
+            $toDate2 = $_POST['to2'];
+          
+            echo $sector2;
+            echo $fromDate2;
+            echo $toDate2;
+        }
+        if(strcmp($searchtype,"specific")==0){
+            $ticker2 = $_POST['searchbox2'];
+            $fromDate3 = $_POST['from3'];
+            $toDate3 = $_POST['to3'];
+            
+            echo $ticker2;
+            echo $fromDate3;
+            echo $toDate3;
+        }
+
+        
+
+    ?>
     
     <h2 class="quotes">Searching for your stocks...</h2>
     <h2 class="quotes">The hamster's wheels are running, please wait.</h2>
