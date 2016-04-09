@@ -15,5 +15,5 @@ MASTER_MEM=$3
 
 
 #Do the initial caching of data. Get all data for last 20 years.
-spark-submit --master $MASTER --driver-memory $MASTER_MEM --executor_memory $EXEC_MEM --class Cache_Data Cache_Data/target/cache_data-1.0-SNAPSHOT.jar INITIAL
+spark-submit --master ${MASTER} --driver-memory ${MASTER_MEM} --executor-memory ${EXEC_MEM} --class Cache_Data Cache_Data/target/cache_data-1.0-SNAPSHOT.jar INITIAL
 
