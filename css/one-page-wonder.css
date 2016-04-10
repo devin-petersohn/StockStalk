@@ -200,6 +200,30 @@ footer {
     
 }
 
+
+.checkbox-queuestocks {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    
+    height: 250px;
+    width: 220px;
+    overflow: auto;
+    border-style: hidden;
+    
+}
+
+
+.delete-btn{
+    float:right;
+}
+
 .small-btn {
     padding: 0px;
+}
+
+.moveup {
+    margin-top: 0px;
 }
