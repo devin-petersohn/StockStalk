@@ -28,6 +28,17 @@
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
     
+    <style type="text/css">
+        a:hover {
+        cursor:pointer;
+        }
+        a:active {
+            color: gray;
+        }
+        a:visited {
+            color: black;
+        }
+    </style>
     
 
 </head>
@@ -87,8 +98,8 @@
                                 </thead>
                                 <tbody class="tableBody">
                                     <tr class="odd gradeX">
-                                        <td class="tick">BMW</td>
-                                        <td><a href="stockDetail.php" class="test-link">BYERISCHE MOTOREN WERKE AG</a></td>
+                                        <td><a class="tick">BMW</a></td>
+                                        <td class="test-link">BYERISCHE MOTOREN WERKE AG</td>
                                         <td>1 Jan</td>
                                         <td>N/A</td>
                                         <td class="center">0.00$</td>
@@ -97,8 +108,8 @@
                                         <td class="center">X</td>
                                     </tr>
                                     <tr class="even gradeC">
-                                        <td class="tick">AAPL</td>
-                                        <td><a href="stockDetail.php" class="test-link">Apple</a></td>
+                                        <td><a class="tick">AAPL</a></td>
+                                        <td class="test-link">Apple</td>
                                         <td>11 Sep</td>
                                         <td class="center">34.01</td>
                                         <td class="center">0.53</td>
@@ -107,8 +118,8 @@
                                         <td class="center">X</td>
                                     </tr>
                                     <tr class="odd gradeX">
-                                        <td class="tick">GOOG</td>
-                                        <td><a href="stockDetail.php" class="test-link">Google</a></td>
+                                        <td><a class="tick">GOOG</a></td>
+                                        <td class="test-link">Google</td>
                                         <td>1 Jan</td>
                                         <td>N/A</td>
                                         <td class="center">0.00$</td>
@@ -117,8 +128,8 @@
                                         <td class="center">X</td>
                                     </tr>
                                     <tr class="even gradeC">
-                                        <td class="tick">Z</td>
-                                        <td><a href="stockDetail.php" class="test-link">Zillow</a></td>
+                                        <td><a class="tick">Z</a></td>
+                                        <td class="test-link">Zillow</td>
                                         <td>11 Sep</td>
                                         <td class="center">34.01</td>
                                         <td class="center">0.53</td>
@@ -154,137 +165,135 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; StockStalk 2016</p>
                 </div>
             </div>
         </footer>
 
     </div>
     <!-- /.container -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="js/colorbox/jquery.colorbox-min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/bootstrap.min.js"></script>
-<script>
-    $(".test-link").colorbox({width:"60%", height:"400px", inline:true, href:"#test-content"});
-</script>
-<script>
-function GetCellValues() {
-        /*$('#dataTables-example tr').each(function() {
-            var customerId = $(this).find(".test-link").html();  
-            alert(customerId);  
-        });*/
-    $(function () {
-            var tickername = [];
-            $('.tableBody tr').each(function (i) {
-                        var customerId = $(this).find(".tick").html();
-                        tickername.push(customerId);
-                
-            });
-            console.log(tickername);
-            
-        
-            var seriesOptions = [],
-            seriesCounter = 0,
-            names = tickername;
-            
-            var url = 'http://query.yahooapis.com/v1/public/yql';
-            var startDate = '2015-10-01';
-            var endDate = '2016-03-01';
-        /**
-         * Create the chart when all data is loaded
-         * @returns {undefined}
-         */
-            function createChart() {
-
-    //            $('#container').highcharts('StockChart', {
-                var chart = new Highcharts.StockChart({
-                    chart:{
-                        renderTo: 'container'
-                    },
-    //                
-                    rangeSelector: {
-                        selected: 4
-                    },
-
-                    yAxis: {
-                        labels: {
-                            formatter: function () {
-                                return (this.value > 0 ? ' + ' : '') + this.value + '%';
-                            }
-                        },
-                        plotLines: [{
-                            value: 0,
-                            width: 2,
-                            color: 'silver'
-                        }]
-                    },
-
-                    plotOptions: {
-                        series: {
-                            compare: 'percent'
-                        }
-                    },
-
-                    tooltip: {
-                        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
-                        valueDecimals: 2
-                    },
-
-                    series: seriesOptions
-                });
-            }
-
-            $.each(names, function (i, name) {
-                var reformattedArray;
-                var array = [];
-                var data1 = encodeURIComponent('select * from yahoo.finance.historicaldata where symbol in ("' + name + '") and startDate = "' + startDate + '" and endDate = "' + endDate + '"');
-                $.getJSON(url, 'q=' + data1 + "&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json", function (data) {
-                    console.dir(data);
-                    var stockData = data.query.results.quote;
-                    //console.log(stockData);
-                    $.each(stockData, function( key, value ) {
-
-                        reformattedArray = $.map(value, function(ky, val) { return ky });
-
-                        //console.log(reformattedArray);
-    //                    array = reformattedArray[1];
-                        var someDate = reformattedArray[1];
-                        var date = Date.parse(someDate);
-                        //console.log(date);
-                        reformattedArray[1] = date;
-                        reformattedArray[2] = parseFloat(reformattedArray[2]);
-                        reformattedArray.shift();
-                        reformattedArray.splice(reformattedArray.length - 5);
-                        //console.log(reformattedArray);
-                        array.unshift(reformattedArray);   
-                    });
-                    //console.log(array);
-                    seriesOptions[i] = {
-                        name: name,
-                        data: array
-                    };
-
-                    // As we're loading the data asynchronously, we don't know what order it will arrive. So
-                    // we keep a counter and create the chart when all the data is loaded.
-                    seriesCounter += 1;
-
-                    if (seriesCounter === names.length) {
-                        createChart();
-                    }
-                });
-            });
-    });
-        
-    }
-    </script>
-    
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<!--<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>-->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/colorbox/jquery.colorbox-min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+        $(".test-link").colorbox({width:"60%", height:"400px", inline:true, href:"#test-content"});
+    </script>
+
+<script>
+function GetCellValues() {
+    $(function () {
+        var tickername = [];
+        $('.tableBody tr').each(function (i) {
+            var customerId = $(this).find(".tick").html();
+            tickername.push(customerId);
+        });
+        //console.log(tickername);
+            
+    var seriesOptions = [],
+    seriesCounter = 0,
+    names = tickername;
+            
+    var url = 'http://query.yahooapis.com/v1/public/yql';
+    var startDate = '2015-10-01';
+    var endDate = '2016-03-01';
+    /**
+    * Create the chart when all data is loaded
+    * @returns {undefined}
+    */
+    function createChart() {
+    //$('#container').highcharts('StockChart', {
+        var chart = new Highcharts.StockChart({
+        chart:{
+            renderTo: 'container'
+        },                
+        rangeSelector: {
+            selected: 4
+        },
+        yAxis: {
+            labels: {
+                formatter: function () {
+                    return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                }
+            },
+        plotLines: [{
+            value: 0,
+            width: 2,
+            color: 'silver'
+            }]
+        },
+
+        plotOptions: {
+            series: {
+                compare: 'percent'
+            }
+        },
+
+        tooltip: {
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+            valueDecimals: 2
+        },
+
+        series: seriesOptions
+                });
+            }
+
+    $.each(names, function (i, name) {
+        var reformattedArray;
+        var array = [];
+        var data1 = encodeURIComponent('select * from yahoo.finance.historicaldata where symbol in ("' + name + '") and startDate = "' + startDate + '" and endDate = "' + endDate + '"');
+        $.getJSON(url, 'q=' + data1 + "&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json", function (data) {
+            console.dir(data);
+            var stockData = data.query.results.quote;
+            //console.log(stockData);
+            $.each(stockData, function( key, value ) {
+                reformattedArray = $.map(value, function(ky, val) { return ky });
+                //console.log(reformattedArray);
+                //array = reformattedArray[1];
+                var someDate = reformattedArray[1];
+                var date = Date.parse(someDate);
+                //console.log(date);
+                reformattedArray[1] = date;
+                reformattedArray[2] = parseFloat(reformattedArray[2]);
+                reformattedArray.shift();
+                reformattedArray.splice(reformattedArray.length - 5);
+                //console.log(reformattedArray);
+                array.unshift(reformattedArray);   
+            });
+            //console.log(array);
+            seriesOptions[i] = {
+                name: name,
+                data: array
+            };
+
+    // As we're loading the data asynchronously, we don't know what order it will arrive. So
+    // we keep a counter and create the chart when all the data is loaded.
+    seriesCounter += 1;
+
+    if (seriesCounter === names.length) {
+        createChart();
+    }
+    });
+    });
+    });
+        
+    }
+
+    
+    $(".tick").click(function(event) {
+        var text = $(event.target).text();
+        console.log(text);
+        var url = "http://finance.yahoo.com/q?uhb=uh3_finance_vert&fr=&type=2button&s=" + text
+        window.open(url,'_blank');
+    });
+        
+    
+    </script>
+
 
 
 </body>
