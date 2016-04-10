@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-MASTER=$1
+h=$1
 EXEC_MEM=$2
 MASTER_MEM=$3
 

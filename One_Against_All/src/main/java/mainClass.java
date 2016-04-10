@@ -88,19 +88,18 @@ public class mainClass implements Serializable{
         JsonObject stockLists=new JsonObject();
         JsonArray stock=new JsonArray();
         for (Map.Entry<String, Double> entry : sorted.entrySet()) {
-            System.out.println(entry.getKey()+" "+ entry.getValue());
             stockLists.addProperty(entry.getKey(),entry.getValue());
         }
+        System.out.println(stockLists);
         // try-with-resources statement based on post comment below :)
-        String fileName = stockName+"file1.txt";
-        try (FileWriter file = new FileWriter(fileName)) {
-            file.write(stockLists.toString());
-            System.out.println("Successfully Copied JSON Object to File...");
-            System.out.println("\nJSON Object: " + stockLists);
-        }
-        catch (IOException e){
-
-        }
+//        String fileName = stockName+"file1.txt";
+//        try (FileWriter file = new FileWriter(fileName)) {
+//            file.write(stockLists.toString());
+//            System.out.println(stockLists);
+//        }
+//        catch (IOException e){
+//
+//        }
 
     }
 

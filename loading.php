@@ -20,6 +20,7 @@
             echo $sector1;
             echo $fromDate1;
             echo $toDate1;
+            shell_exec(‘spark-submit --master local[4] One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar'+ " " +$ticker1 +" " + $fromDate1+ " " +  $toDate1 + " > output.json")
         }
         if(strcmp($searchtype,"alltoall")==0){
             $sector2 = $_POST['sector2'];
