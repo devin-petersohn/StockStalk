@@ -19,6 +19,7 @@
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="js/queues.js"></script>
     
     <script>
         
@@ -166,20 +167,33 @@
                     <div class="panel-heading">
                         <h4>Queued Stocks</h4>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body moveup">
                         <div class="dataTable_wrapper">
                             <form action="" method="POST" id="chartform">
                                 <div class="checkbox-chart">
                                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <tbody id="addTableRow">
+                                    <div class="delete-btn" onclick="toggle_visibility('hideMe')"><button>Delete</button></div>
+                                    
+                                    <tbody id="addTableRow" class="checkbox-queuestocks">
 
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
                                     </tbody>
+                                    
                                 </table>
                                 </div>
 
                                 <div class="bottom text-center">
                                     <div class="form-group">
-                                      <input name="submit" class="btn btn-primary btn-block" type="submit" value="chart" />
+                                      <input name="submit" class="btn btn-primary btn-block" type="submit" value="Chart" />
+                                    
                                      </div>
                                 </div>
                             </form>
@@ -193,6 +207,7 @@
 
         <hr>
        
+        <!--
         <script>
             var array = [];
             var i;
@@ -215,7 +230,7 @@
                 
             }
         </script>
-        
+        -->
         
         
         <!-- Call to Action Well -->
@@ -229,7 +244,9 @@
                             <h4>My Stocks</h4>
                         </div>
                         <div class="align">
-                            <button type="button" class="btn btn-success btn-circle"><i class="fa fa-link">Add to my portfolio +</i>
+
+                           <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart">Delete Stock -</i>
+
                             </button>
                             
                         </div>
@@ -244,6 +261,7 @@
                                         <th>Name</th>
                                         <th>Score</th>
                                         <th>Add to Queue</th>
+                                        <th>Add to Portfolio</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -253,6 +271,7 @@
                                         <td>BYERISCHE MOTOREN WERKE AG</td>
                                         <td>.9</td>
                                         <td><button onclick="addToQueue(name1)" class="btn">add to queue</button></td>
+                                        <td><button onclick="addToQueueMS(name1)" class="btn">X</button></td>
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
@@ -260,6 +279,7 @@
                                         <td>BMW</td>
                                         <td>.6</td>
                                         <td><button onclick="addToQueue(name2)" class="btn">add to queue</button></td>
+                                        <td><button onclick="addToQueueMS(name2)" class="btn">X</button></td>
                                     </tr>
                                     <tr class="odd gradeX">
                                         <td>3</td>
@@ -267,6 +287,7 @@
                                         <td>Facebook, Inc</td>
                                         <td>.4</td>
                                         <td><button onclick="addToQueue(name3)" class="btn">add to queue</button></td>
+                                        <td><button onclick="addToQueueMS(name3)" class="btn">X</button></td>
                                     </tr>
                                     <tr class="even gradeC">
                                         <td>2</td>
@@ -274,6 +295,55 @@
                                         <td>Alphabet Inc</td>
                                         <td>.3</td>
                                         <td><button onclick="addToQueue(name4)" class="btn">add to queue</button></td>
+                                        <td><button onclick="addToQueueMS(name4)" class="btn">X</button></td>
+                                    </tr>
+                                                                        <tr class="odd gradeX">
+                                        <td>1</td>
+                                        <td id="name5">test1</td>
+                                        <td>BYERISCHE MOTOREN WERKE AG</td>
+                                        <td>.9</td>
+                                        <td><button onclick="addToQueue(name5)" class="btn">add to queue</button></td>
+                                        <td><button onclick="addToQueueMS(name5)" class="btn">X</button></td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>2</td>
+                                        <td id="name6">test2</td>
+                                        <td>BMW</td>
+                                        <td>.6</td>
+                                        <td><button onclick="addToQueue(name6)" class="btn">add to queue</button></td>
+                                        <td><button onclick="addToQueueMS(name6)" class="btn">X</button></td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>3</td>
+                                        <td id="name7">test3</td>
+                                        <td>Facebook, Inc</td>
+                                        <td>.4</td>
+                                        <td><button onclick="addToQueue(name7)" class="btn">add to queue</button></td>
+                                        <td><button onclick="addToQueueMS(name7)" class="btn">X</button></td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>2</td>
+                                        <td id="name8">test4</td>
+                                        <td>Alphabet Inc</td>
+                                        <td>.3</td>
+                                        <td><button onclick="addToQueue(name8)" class="btn">add to queue</button></td>
+                                        <td><button onclick="addToQueueMS(name8)" class="btn">X</button></td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>3</td>
+                                        <td id="name9">test5</td>
+                                        <td>Facebook, Inc</td>
+                                        <td>.4</td>
+                                        <td><button onclick="addToQueue(name9)" class="btn">add to queue</button></td>
+                                        <td><button onclick="addToQueueMS(name9)" class="btn">X</button></td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>2</td>
+                                        <td id="name10">test6</td>
+                                        <td>Alphabet Inc</td>
+                                        <td>.3</td>
+                                        <td><button onclick="addToQueue(name10)" class="btn">add to queue</button></td>
+                                        <td><button onclick="addToQueueMS(name10)" class="btn">X</button></td>
                                     </tr>
                                 </tbody>
                             </table>
