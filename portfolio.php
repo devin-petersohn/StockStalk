@@ -58,7 +58,7 @@
             <!-- /.col-md-8 -->
             <div class="col-md-12">
                 <div class="well charts">
-                    <!--<p><a href="#" onClick="GetCellValues();">Top Text</a></p>-->
+                    <h4 style="text-align:center;">My Portfolio</h4>
                     
 
 
@@ -160,15 +160,7 @@
             </div>
         </div>
         
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; StockStalk 2016</p>
-                </div>
-            </div>
-        </footer>
+    <?php include "footer.html"; ?>   
 
     </div>
     <!-- /.container -->
