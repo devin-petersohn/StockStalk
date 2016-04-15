@@ -140,7 +140,7 @@
 <body>
 
     <!---Navbar call -->
-    <?php include "navbar.html"; ?>
+    <?php include "navbar.php"; ?>
     
     
 	<h1>Chart Your Stocks</h1>
