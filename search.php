@@ -9,7 +9,7 @@
 <body>
 
     <!---Navbar call----->
-    <?php include "navbar.html"; ?>
+    <?php include "navbar.php"; ?>
     
     
 	<h1>Search Your Stocks</h1>
