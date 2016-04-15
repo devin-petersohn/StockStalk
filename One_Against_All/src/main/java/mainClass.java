@@ -1,20 +1,18 @@
 /**
  * Created by ZeningZhang on 2/21/16.
  */
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.sf.javaml.core.Instance;
-import net.sf.javaml.core.SparseInstance;
-import net.sf.javaml.distance.dtw.DTWSimilarity;
-import org.apache.spark.*;
-import org.apache.spark.api.java.*;
-import java.io.FileWriter;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaSparkContext;
+import scala.Tuple2;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.*;
-import scala.Tuple2;
 public class mainClass implements Serializable{
     private ArrayList<String> stockNameList=new ArrayList<>();
     private ArrayList<Date> sampleDate;
