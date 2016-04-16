@@ -64,7 +64,7 @@
                     <archive>
                         <manifest>
                             <!-- Jar file entry point -->
-                            <mainClass>Cache_Data</mainClass>
+                            <mainClass>CacheData</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
