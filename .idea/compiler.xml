@@ -25,6 +25,7 @@
         <module name="All_Against_All" />
         <module name="cache_data" />
         <module name="Cache_Data" />
+        <module name="CacheData" />
         <module name="One_Against_All" />
         <module name="stockstalk" />
         <module name="stockStalk" />
@@ -34,6 +35,7 @@
       <module name="All_Against_All" target="1.8" />
       <module name="Cache_Data" target="1.8" />
       <module name="cache_data" target="1.8" />
+      <module name="CacheData" target="1.8" />
       <module name="One_Against_All" target="1.8" />
       <module name="stockStalk" target="1.8" />
       <module name="stockstalk" target="1.8" />
