@@ -7,7 +7,30 @@
 <body>
 
 
-    <?php 
+ 
+    <div id="loading"> 
+    <h2 class="quotes">Searching for your stocks...</h2>
+    <h2 class="quotes">The hamster's wheels are running, please wait.</h2>
+    
+    <br>
+    
+    <center>
+          <img src="img/ldin.gif" width="150" height="150" alt="loading, please wait">
+    </center>
+
+    <h4>It could take a little while to gather all of your results. There's a lot of stocks to search through to find the perfect match for you! <br> <b>Please do not hit the back button or refresh.</b></h4>
+    
+    <br>
+    </div>
+    <center>
+    <div id="gameDiv"  style="display:none;" class="answer_list" > Insert games here.</div>
+<input id="show_button" type="button" name="answer" value="Play games while you wait?" onclick="showDiv()" />
+    </center>
+
+       <?php 
+        // ob_flush();
+        // sleep(2000);
+        // session_start();
         $searchtype = $_POST['searchtype'];
         echo $searchtype;
         if(strcmp($searchtype,"onetoall")==0){
@@ -15,7 +38,6 @@
             $sector1 = $_POST['sector1'];
             $fromDate1 = $_POST['from1'];
             $toDate1 = $_POST['to1'];
-            
             echo $ticker1;
             echo $sector1;
             echo $fromDate1;
@@ -26,7 +48,6 @@
             $sector2 = $_POST['sector2'];
             $fromDate2 = $_POST['from2'];
             $toDate2 = $_POST['to2'];
-          
             echo $sector2;
             echo $fromDate2;
             echo $toDate2;
@@ -44,24 +65,6 @@
         
 
     ?>
-    
-    <h2 class="quotes">Searching for your stocks...</h2>
-    <h2 class="quotes">The hamster's wheels are running, please wait.</h2>
-    
-    <br>
-    
-    <center>
-          <img src="img/ldin.gif" width="150" height="150" alt="loading, please wait">
-    </center>
-
-    <h4>It could take a little while to gather all of your results. There's a lot of stocks to search through to find the perfect match for you! <br> <b>Please do not hit the back button or refresh.</b></h4>
-    
-    <br>
-    
-    <center>
-    <div id="gameDiv"  style="display:none;" class="answer_list" > Insert games here.</div>
-<input id="show_button" type="button" name="answer" value="Play games while you wait?" onclick="showDiv()" />
-    </center>
     
     
     

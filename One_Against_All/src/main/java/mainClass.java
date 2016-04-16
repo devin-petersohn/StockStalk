@@ -7,7 +7,7 @@ import com.google.gson.JsonObject;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 import scala.Tuple2;
-
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
@@ -93,6 +93,10 @@ public class mainClass implements Serializable{
 //         try-with-resources statement based on post comment below :)
 
         String fileName = "temp.json";
+        if(new File(fileName).exists())
+        {
+            new File(fileName).delete();
+        }
 
         try (FileWriter file = new FileWriter(fileName)) {
             file.write(stockLists.toString());
