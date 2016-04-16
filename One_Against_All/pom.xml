@@ -38,13 +38,13 @@
 
 
 
-        <dependency>
-            <groupId>net.sf.javaml</groupId>
-            <artifactId>net.sf.javaml</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/javaml-0.1.7.jar</systemPath>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>net.sf.javaml</groupId>-->
+            <!--<artifactId>net.sf.javaml</artifactId>-->
+            <!--<version>1.0</version>-->
+            <!--<scope>system</scope>-->
+            <!--<systemPath>${project.basedir}/libs/javaml-0.1.7.jar</systemPath>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -56,5 +56,26 @@
 
 
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <!-- DO NOT include log4j.properties file in your Jar -->
+                    <excludes>
+                        <exclude>**/log4j.properties</exclude>
+                    </excludes>
+                    <archive>
+                        <manifest>
+                            <!-- Jar file entry point -->
+                            <mainClass>mainClass</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>
