@@ -19,11 +19,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-          <groupId>org.scala-lang</groupId>
-          <artifactId>scala-library</artifactId>
-          <version>${scala.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -35,6 +30,11 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.10</artifactId>
             <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
         </dependency>
 
     </dependencies>
@@ -71,7 +71,25 @@
                     </includes>
                 </configuration>
             </plugin>
-        </plugins>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <configuration>
+                            <!-- DO NOT include log4j.properties file in your Jar -->
+                            <excludes>
+                                <exclude>**/log4j.properties</exclude>
+                            </excludes>
+                            <archive>
+                                <manifest>
+                                    <!-- Jar file entry point -->
+                                    <mainClass>ScalaTest</mainClass>
+                                </manifest>
+                            </archive>
+                        </configuration>
+                    </plugin>
+
+                </plugins>
     </build>
 
         </project>

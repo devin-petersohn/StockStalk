@@ -17,7 +17,6 @@ hs_err_pid*
 .cache
 .history
 dist/*
-target/
 lib_managed/
 src_managed/
 project/boot/

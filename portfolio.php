@@ -47,7 +47,8 @@
 
 <body onload="GetCellValues()">    
         <!---Navbar call----->
-    <?php include "navbar.html"; ?>
+
+    <?php include "navbar.php"; ?>
 
     <!-- Page Content -->
     <div class="container">
