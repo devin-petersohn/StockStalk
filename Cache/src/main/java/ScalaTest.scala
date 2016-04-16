@@ -8,10 +8,10 @@ import java.io._
 
 
 object ScalaTest {
-  //val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
-  val sc = new SparkContext()
+  val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
+  //val sc = new SparkContext()
 
-  val sANDp500 = scala.collection.immutable.Vector("MMM", "ABT", "ABBV", "ACN", "ATVI", "ADBE", "ADT", "AAP", "AES", "AET", "AFL", "AMG", "A",
+  val sANDp500 = Vector("MMM", "ABT", "ABBV", "ACN", "ATVI", "ADBE", "ADT", "AAP", "AES", "AET", "AFL", "AMG", "A",
     "GAS", "APD", "ARG", "AKAM","AA", "AGN", "ALXN", "ALLE", "ADS", "ALL", "GOOGL", "GOOG", "MO", "AMZN", "AEE", "AAL", "AEP",
     "AXP", "AIG", "AMT", "AMP", "ABC", "AME", "AMGN", "APH", "APC", "ADI", "AON", "APA", "AIV", "AAPL", "AMAT", "ADM", "AIZ", "T",
     "ADSK", "ADP", "AN", "AZO", "AVGO", "AVB", "AVY", "BHI", "BLL", "BAC", "BK", "BCR", "BXLT", "BAX", "BBT", "BDX", "BBBY", "BRK-B",
