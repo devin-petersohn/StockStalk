@@ -1,11 +1,7 @@
 import java.sql.Timestamp
 import java.util
+import java.util.Calendar
 
-import net.sf.javaml.core.Instance
-import net.sf.javaml.core.SparseInstance
-import net.sf.javaml.distance.dtw.DTWSimilarity
-import net.sf.javaml.distance.fastdtw.dtw._
-import java.util.{Calendar, GregorianCalendar, Collection, Date}
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
@@ -36,6 +32,7 @@ object Search {
     var stocks = new ArrayBuffer[Stock]()
     var history = new ArrayBuffer[(Stock,util.List[HistoricalQuote])]()
     //val from = new GregorianCalendar(2006, 0, 1)
+
     val from = Calendar.getInstance()
     from.add(Calendar.DATE, -1)
     val to = Calendar.getInstance
@@ -47,12 +44,13 @@ object Search {
     sc.parallelize(history).saveAsObjectFile("data/TEST_1")
   }
 
-  def calculatePercentChange(stock:Stock): RDD[(((Date, String), Double))] = {
-    val from = new GregorianCalendar(2006, 0, 1)
-    val calendar = Calendar.getInstance
-    var prev = stock.getHistory.get(0).getClose
-    var buffer = new ArrayBuffer[((((Date, String)),Double))]
-    val hists = stock.getHistory(from, calendar, Interval.DAILY)
+
+//  def calculatePercentChange(stock:Stock): RDD[(((Date, String), Double))] = {
+//    val from = new GregorianCalendar(2006, 0, 1)
+//    val calendar = Calendar.getInstance
+//    var prev = stock.getHistory.get(0).getClose
+//    var buffer = new ArrayBuffer[((((Date, String)),Double))]
+//    val hists = stock.getHistory(from, calendar, Interval.DAILY)
     //sc.parallelize(hists).saveAsObjectFile("data/history_data")
 
     //hists.foreach(println)
@@ -60,6 +58,6 @@ object Search {
 //      buffer += (((hist.getDate.getTime, stock.getSymbol), (hist.getClose.doubleValue/prev.doubleValue - 1) * 100))
 //      prev = hist.getClose
 //    }
-    sc.parallelize(buffer)
-  }
+//    sc.parallelize(buffer)
+//  }
 }
