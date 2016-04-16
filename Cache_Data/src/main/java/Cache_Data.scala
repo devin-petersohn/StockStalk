@@ -8,7 +8,7 @@ import java.io._
 
 
 
-object Cache_Data {
+object CacheData {
   //val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
   val sc = new SparkContext()
 

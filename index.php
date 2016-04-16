@@ -25,7 +25,7 @@
 </head>   
 <body> 
     <!---Navbar call----->
-    <?php include "navbar.html"; ?>
+    <?php include "navbar.php"; ?>
 
     <!-- Full Width Image Header -->
     <header class="header-image">
