@@ -28,7 +28,6 @@
         <module name="CacheData" />
         <module name="One_Against_All" />
         <module name="stockstalk" />
-        <module name="stockStalk" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

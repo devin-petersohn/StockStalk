@@ -2,8 +2,127 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache_Data/CacheData.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/copyright/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__colt_colt_1_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_clearspring_analytics_stream_2_5_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_codahale_metrics_metrics_core_3_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_codahale_metrics_metrics_graphite_3_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_codahale_metrics_metrics_json_3_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_codahale_metrics_metrics_jvm_3_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_esotericsoftware_kryo_kryo_2_21.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_esotericsoftware_minlog_minlog_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_esotericsoftware_reflectasm_reflectasm_shaded_1_07.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_google_guava_guava_14_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_ning_compress_lzf_1_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_thoughtworks_paranamer_paranamer_2_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_twitter_chill_2_10_0_3_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_twitter_chill_java_0_3_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_typesafe_config_1_0_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__com_yahoofinance_api_YahooFinanceAPI_1_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_7_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_beanutils_commons_beanutils_core_1_8_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_codec_commons_codec_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_configuration_commons_configuration_1_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_digester_commons_digester_1_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_el_commons_el_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_httpclient_commons_httpclient_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__commons_net_commons_net_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__concurrent_concurrent_1_3_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__hsqldb_hsqldb_1_8_0_10.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__io_netty_netty_3_6_6_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__io_netty_netty_all_4_0_17_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__jline_jline_0_9_94.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__net_java_dev_jets3t_jets3t_0_7_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__net_sf_py4j_py4j_0_8_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_ant_ant_1_9_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_commons_commons_math_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_curator_curator_client_2_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_curator_curator_framework_2_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_curator_curator_recipes_2_4_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_hadoop_hadoop_client_1_0_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_hadoop_hadoop_core_1_0_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_mesos_mesos_shaded_protobuf_0_18_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_spark_spark_core_2_10_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_continuation_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_jndi_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_plus_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_8_1_14_v20131031.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_activation_1_1_0_v201105071233.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_mail_glassfish_1_4_1_v201005082020.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_servlet_3_0_0_v201112011016.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_eclipse_jetty_orbit_javax_transaction_1_1_1_v201105210645.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_json4s_json4s_ast_2_10_3_2_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_json4s_json4s_core_2_10_3_2_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_json4s_json4s_jackson_2_10_3_2_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_objenesis_objenesis_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_scala_lang_scala_compiler_2_10_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_scala_lang_scala_library_2_10_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_scala_lang_scala_reflect_2_10_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_scala_lang_scalap_2_10_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_spark_project_akka_akka_actor_2_10_2_2_3_shaded_protobuf.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_spark_project_akka_akka_remote_2_10_2_2_3_shaded_protobuf.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_spark_project_akka_akka_slf4j_2_10_2_2_3_shaded_protobuf.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_spark_project_protobuf_protobuf_java_2_4_1_shaded.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_spark_project_pyrolite_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_tachyonproject_tachyon_0_4_1_thrift.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_uncommons_maths_uncommons_maths_1_2_2a.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__org_xerial_snappy_snappy_java_1_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__oro_oro_2_0_8.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/libraries/Maven__xmlenc_xmlenc_0_52.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/scala_compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/ExchangeTimeZone.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/FxQuote.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/FxQuotesRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/FxSymbols.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/HistQuotesRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/HistoricalQuote.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/Interval.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/QuotesProperty.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/QuotesRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/ScalaTest.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/Stock.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/StockDividend.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/StockQuote.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/StockQuotesData.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/StockQuotesRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/StockStats.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/TestClass.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/Utils.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/src/main/java/YahooFinance.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache/stockStalk.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/CacheData.iml" afterPath="$PROJECT_DIR$/Cache_Data/CacheData.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
     </list>
     <ignored path="StockStalk.iws" />
@@ -51,8 +170,8 @@
       <file leaf-file-name="CacheData.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.86538464">
-              <caret line="67" column="7" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.7952468">
+              <caret line="66" column="10" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -95,28 +214,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-18.25">
               <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ScalaTest.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Cache/src/main/java/ScalaTest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Cache/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -1026,7 +1123,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460845800594</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Working on getting command line working">
+      <created>1460846431462</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1460846431462</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1417,36 +1520,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cache/src/main/java/ExchangeTimeZone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16453382">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cache/src/main/java/ScalaTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cache/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1461,8 +1538,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86538464">
-          <caret line="67" column="7" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.7952468">
+          <caret line="66" column="10" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
