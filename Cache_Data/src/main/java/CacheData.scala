@@ -1,3 +1,5 @@
+import org.apache.hadoop.mapred.InvalidInputException
+
 import scala.collection.mutable.ArrayBuffer
 import java.util._
 import org.apache.spark.SparkContext
@@ -43,9 +45,13 @@ object CacheData {
 
 
   def delete(file: File) {
-    if (file.isDirectory)
-      Option(file.listFiles).map(_.toList).getOrElse(Nil).foreach(delete)
-    file.delete
+    try {
+      if (file.isDirectory)
+        Option(file.listFiles).map(_.toList).getOrElse(Nil).foreach(delete)
+      file.delete
+    } catch {
+      case InvalidInputException => println("Does not exist")
+    }
   }
 
   def main(args: Array[String]) {
@@ -55,7 +61,11 @@ object CacheData {
       val to = Calendar.getInstance
       for(stock <- sANDp500) {
         val temp = YahooFinance.get(stock)
-        delete(new File("data/" + stock))
+        try {
+          delete(new File("data/" + stock))
+        } catch {
+        case InvalidInputException => println("Does not exist")
+      }
         sc.parallelize(ArrayBuffer(temp, temp.getHistory(from, to, Interval.DAILY))).saveAsObjectFile("data/" + stock)
       }
     } else {
