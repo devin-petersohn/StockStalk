@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup_and_deploy/setup.sh" afterPath="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/pom.xml" afterPath="$PROJECT_DIR$/Cache_Data/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
     </list>
     <ignored path="StockStalk.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,11 +32,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="setup.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="setup.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49751243">
-              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37284896">
+              <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CacheData.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="71" column="3" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScalaTest.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -92,15 +133,16 @@
         <option value="$PROJECT_DIR$/All_Against_All/src/main/java/AllAgainstAll.scala" />
         <option value="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/loading.php" />
-        <option value="$PROJECT_DIR$/All_Against_All/pom.xml" />
-        <option value="$PROJECT_DIR$/Cache_Data/pom.xml" />
         <option value="$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java" />
         <option value="$PROJECT_DIR$/One_Against_All/pom.xml" />
         <option value="$PROJECT_DIR$/search.php" />
         <option value="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
+        <option value="$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala" />
+        <option value="$PROJECT_DIR$/All_Against_All/pom.xml" />
+        <option value="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
+        <option value="$PROJECT_DIR$/Cache_Data/pom.xml" />
       </list>
     </option>
   </component>
@@ -307,7 +349,7 @@
       <recent name="$PROJECT_DIR$/StockStalk_Maven/src/libraries" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ScalaTest">
+  <component name="RunManager" selected="Application.Cache_Data">
     <configuration default="false" name="ScalaTest" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="ScalaTest" />
@@ -347,7 +389,7 @@
     </configuration>
     <configuration default="false" name="Cache_Data" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Cache_Data" />
+      <option name="MAIN_CLASS_NAME" value="CacheData" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -703,9 +745,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.ScalaTest" />
-        <item index="1" class="java.lang.String" itemvalue="Application.mainClass" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Cache_Data" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Cache_Data" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ScalaTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.mainClass" />
         <item index="3" class="java.lang.String" itemvalue="Application.Search" />
         <item index="4" class="java.lang.String" itemvalue="Scala Console.Scala Console" />
       </list>
@@ -883,7 +925,55 @@
       <option name="project" value="LOCAL" />
       <updated>1460828298071</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Adding more to setup script">
+      <created>1460828377384</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1460828377384</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Adding more to setup script">
+      <created>1460835463532</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1460835463532</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Working on getting command line working">
+      <created>1460835572846</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1460835572846</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Working on getting command line working">
+      <created>1460835739937</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1460835739937</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Working on getting command line working">
+      <created>1460835998232</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1460835998232</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Working on getting command line working">
+      <created>1460836335921</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1460836335921</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Working on getting command line working">
+      <created>1460836583126</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1460836583126</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Working on getting command line working">
+      <created>1460836729331</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1460836729331</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -894,9 +984,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32778198" sideWeight="0.4394846" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2602579" sideWeight="0.5375" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32590857" sideWeight="0.5388889" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2602579" sideWeight="0.4625" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2602579" sideWeight="0.4625" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32590857" sideWeight="0.4611111" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21180555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -904,14 +995,13 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32590857" sideWeight="0.46388888" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20018116" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -941,7 +1031,9 @@
     <MESSAGE value="New changelist" />
     <MESSAGE value="Updating setup script for fast and easy deployment." />
     <MESSAGE value="Merge branch 'master' of https://github.com/devin-petersohn/StockStalk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;All_Against_All/All_Against_All.iml&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/devin-petersohn/StockStalk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;All_Against_All/All_Against_All.iml&#10;" />
+    <MESSAGE value="Adding more to setup script" />
+    <MESSAGE value="Working on getting command line working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on getting command line working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -959,7 +1051,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala">
+    <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
@@ -1231,33 +1323,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.119760476">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1284,14 +1353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="19" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loading.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1310,8 +1371,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49751243">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="3" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37284896">
+          <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
           <folding />
         </state>
       </provider>
