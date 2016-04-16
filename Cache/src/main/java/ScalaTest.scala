@@ -4,10 +4,6 @@ import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
 
 
-import java.io._
-
-
-
 object ScalaTest {
   val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
   //val sc = new SparkContext()
@@ -41,12 +37,13 @@ object ScalaTest {
     "VRTX", "VIAB", "V", "VNO", "VMC", "WMT", "WBA", "DIS", "WM", "WAT", "ANTM", "WFC", "HCN", "WDC", "WU", "WY", "WHR", "WFM", "WMB",
     "WLTW", "WEC", "WYN", "WYNN", "XEL", "XRX", "XLNX", "XL", "XYL", "YHOO", "YUM", "ZBH", "ZION", "ZTS")
 
-
+/*
   def delete(file: File) {
     if (file.isDirectory)
       Option(file.listFiles).map(_.toList).getOrElse(Nil).foreach(delete)
     file.delete
   }
+*/
 
   def main(args: Array[String]) {
     if(args.length != 0){
@@ -55,7 +52,7 @@ object ScalaTest {
       val to = Calendar.getInstance
       for(stock <- sANDp500) {
         val temp = YahooFinance.get(stock)
-        delete(new File("data/" + stock))
+  //      delete(new File("data/" + stock))
         sc.parallelize(ArrayBuffer(temp, temp.getHistory(from, to, Interval.DAILY))).saveAsObjectFile("data/" + stock)
       }
     } else {
