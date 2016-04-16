@@ -50,7 +50,6 @@ object CacheData {
         Option(file.listFiles).map(_.toList).getOrElse(Nil).foreach(delete)
       file.delete
     } catch {
-      case _: InvalidInputException => println("Does not exist")
       case _: _ => println("Exists")
     }
   }
@@ -65,7 +64,6 @@ object CacheData {
         try {
           delete(new File("data/" + stock))
         } catch {
-          case _: InvalidInputException => println("Does not exist")
           case _: _ => println("Exists")
         }
         sc.parallelize(ArrayBuffer(temp, temp.getHistory(from, to, Interval.DAILY))).saveAsObjectFile("data/" + stock)
