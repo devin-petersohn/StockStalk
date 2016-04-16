@@ -75,7 +75,11 @@ object CacheData {
       for (stock <- sANDp500) {
         val temp = YahooFinance.get(stock)
         val current_stock = sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/" + stock)
-        delete(new File("data/" + stock))
+        try {
+          delete(new File("data/" + stock))
+        } catch {
+          case _: _ => println("Exists")
+        }
         sc.union(current_stock, sc.parallelize(ArrayBuffer((temp, temp.getHistory(from, to, Interval.DAILY))))).groupByKey.saveAsObjectFile("data/" + stock)
       }
     }
