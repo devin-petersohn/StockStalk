@@ -1,6 +1,7 @@
 import scala.collection.mutable.ArrayBuffer
 import java.util._
-import org.apache.spark.{SparkContext, SparkConf}
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkConf
 
 
 import java.io._
