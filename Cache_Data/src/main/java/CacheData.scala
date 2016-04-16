@@ -50,7 +50,8 @@ object CacheData {
         Option(file.listFiles).map(_.toList).getOrElse(Nil).foreach(delete)
       file.delete
     } catch {
-      case InvalidInputException => println("Does not exist")
+      case _: InvalidInputException => println("Does not exist")
+      case _: _ => println("Exists")
     }
   }
 
