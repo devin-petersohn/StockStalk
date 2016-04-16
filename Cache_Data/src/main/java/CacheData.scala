@@ -64,8 +64,8 @@ object CacheData {
         try {
           delete(new File("data/" + stock))
         } catch {
-          case InvalidInputException => println("Does not exist")
-          case _ => println("Exists")
+          case _: InvalidInputException => println("Does not exist")
+          case _: _ => println("Exists")
         }
         sc.parallelize(ArrayBuffer(temp, temp.getHistory(from, to, Interval.DAILY))).saveAsObjectFile("data/" + stock)
       }
