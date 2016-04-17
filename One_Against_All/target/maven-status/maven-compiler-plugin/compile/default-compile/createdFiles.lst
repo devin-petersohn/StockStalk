@@ -12,6 +12,7 @@ AbstractInstance.class
 StockQuote.class
 AbstractInstance$InstanceValueIterator.class
 HistoricalQuote.class
+MyFirstAPI.class
 DTW.class
 DistanceMeasure.class
 ExchangeTimeZone.class
@@ -26,3 +27,4 @@ FxQuotesRequest.class
 DTWSimilarity.class
 StockQuotesData.class
 Instance.class
+MyBean.class

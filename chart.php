@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <html>
 <head>
 <title>Chart Your Stocks</title>
@@ -22,8 +26,23 @@
     <script src="js/queues.js"></script>
     
     <script>
-        
-        
+        $( document ).ready(function() {
+            $.getJSON( "temp.json", function( data ) {
+            var items = [];
+            var i= 1;
+            $.each( data, function( key, val ) {
+                var temp = "<tr class='odd 'gradeX><td>"+i+"</td><td id='name"+i+"'>"+key+"</td><td>Unknown</td><td>"+val+"</td><td><button onclick='addToQueue(name"+i+")' class='btn'>add to queue</button></td><td><button onclick='addToQueueMS(name1)'' class='btn'>X</button></td></tr>";
+                items.push( temp);
+                i++;
+                
+            });
+            $("#ranking").append(items);
+
+            console.log(items);
+        });
+        });
+
+
         $(function () {
         $('#chartform').submit(function (event) {
             event.preventDefault();
@@ -253,7 +272,7 @@
                     </div>
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="ranking">
                                 <thead>
                                     <tr>
                                         <th>Rank</th>
@@ -265,7 +284,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
+<!--                                     <tr class="odd gradeX">
                                         <td>1</td>
                                         <td id="name1">BMW</td>
                                         <td>BYERISCHE MOTOREN WERKE AG</td>
@@ -344,7 +363,7 @@
                                         <td>.3</td>
                                         <td><button onclick="addToQueue(name10)" class="btn">add to queue</button></td>
                                         <td><button onclick="addToQueueMS(name10)" class="btn">X</button></td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>

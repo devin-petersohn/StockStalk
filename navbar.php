@@ -1,4 +1,69 @@
+<?php
+	session_start();
+	$log_display = $_SESSION['username'] ? "Logout" : " ";
+	$href_page = $_SESSION['username'] ? "logout.php" : " ";
+	
+	if (isset( $_POST['Submit'])){
+		$username = htmlspecialchars($_POST['username']);
+		$password = htmlspecialchars($_POST['password']);
+		
+		//sees if username and password are correct
+	  if(checkUserPass($username,$password)==1){
+	  	$_SESSION['username'] = $username;
+	  }else 
+	   		echo "<br><div align=center><h4>Invalid username or password,  please try again</h4></div>"; 	
+		
+  }
+  
+  function checkUserPass($username,$password) {
+		
+			//$dbconn =pg_connect("servername=dbhost-mysql.cs.missouri.edu username=mmhkwc password=RgS8HC6L") or die("Could not connect: " . pg_last_error());
+      $servername = "dbhost-mysql.cs.missouri.edu";
+        $uname = "mmhkwc";
+        $pword = "RgS8HC6L";
 
+// Create connection
+$dbconn = new mysqli($servername, $uname, $pword);
+			
+      
+      $query="SELECT hashpass, salt FROM mmhkwc.loginInfo WHERE username=?";
+//Prepared statement
+			$stmt=$dbconn->prepare($query) or die("Query failed");
+			$stmt->bind_param("s",$username);
+			$stmt->execute() or die ("Query failed");
+			$stmt->bind_result($hashpass, $salt);
+			$stmt->fetch();
+			$hashpw=sha1($salt.$password);
+			if($hashpw==$hashpass)
+			{
+				return 1;
+			}
+    else{
+                return 0;
+    }
+      
+      /*
+      
+			$query = "SELECT password_hash FROM spices.Users WHERE username LIKE $1";
+			pg_prepare($dbconn,"login",$query);
+			
+			$username = pg_escape_string(htmlspecialchars($username));
+			$password = pg_escape_string(htmlspecialchars(sha1($password)));
+			$result = pg_execute($dbconn, "login", array($username));
+			$line = pg_fetch_array($result, null, PGSQL_ASSOC);
+			$pass = $line['password_hash'];
+			
+	if($pass === $password){   
+		return 1;
+	}else{
+		return 0;
+	}
+	*/ 
+      
+	}
+	
+  
+?>	
 
 <html>
 <head>
@@ -116,6 +181,41 @@
                                         
                                     </div>
                                                     or
+                                      
+                                      
+                                      
+                                      
+                                <form class="form-signin" id='login' action="<?= $_SERVER['PHP_SELF'] ?>" method='post'>
+                                    <?php  if($_SESSION['username']){?>
+			                             <li>
+                                             <?php echo ucfirst($_SESSION['username']); ?>'s Account
+                                         </li>
+			                         <?php } ?>
+                                    
+                                    <li><a href= <?=$href_page?> ><?=$log_display ?></a></li>
+                                    
+                                     <input type="text" name="username" class="form-control" id="username" placeholder="Username" required autofocus>
+                                    </br>
+                                    <input type="password" name="password" class="form-control" id="password"placeholder="Password" required>
+                                    </br>
+                                    <button class="btn btn-lg btn-primary btn-block" type="Submit" name='Submit' value='Submit'>Sign in</button> 
+                                   <span class="clearfix"></span>
+                                      
+                                      
+                                </form>    
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      <!--
                                      <form class="form" role="form" method="post" action="fun.php" accept-charset="UTF-8" id="login-nav">
                                         <div class="form-group">
                                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
@@ -134,7 +234,10 @@
                                            <input type="checkbox"> keep me logged-in
                                            </label>
                                         </div>
-                                    </form>
+                                    </form> -->
+
+
+
                                 </div>
                             <div class="bottom text-center">
                             New here ? <a href="#"><b>Join Us</b></a>
@@ -146,10 +249,4 @@
                           
                     
                     
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-</body>
+  
