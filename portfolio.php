@@ -71,7 +71,7 @@ if ($result->num_rows > 0) {
     </style>
     
 
-
+<script>
         $.each(names, function (i, name) {
 
             $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?',    function (data) {
@@ -224,34 +224,6 @@ if ($result->num_rows > 0) {
                                         <td class="center">1.53%</td>
                                         <td class="center">8924</td>
                                         <td class="center">X</td>
-
-                                        <td>1</td>
-                                        <td id="name1">BMW</td>
-                                        <td>BYERISCHE MOTOREN WERKE AG</td>
-                                        <td>.9</td>
-                                        <td><button onclick="addToMyStocks(name1)" class="btn">add to queue</button></td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td id="name2">BMW.BE</td>
-                                        <td>BMW</td>
-                                        <td>.6</td>
-                                        <td><button onclick="addToMyStocks(name2)" class="btn">add to queue</button></td>
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td>3</td>
-                                        <td id="name3">FB</td>
-                                        <td>Facebook, Inc</td>
-                                        <td>.4</td>
-                                        <td><button onclick="addToMyStocks(name3)" class="btn">add to queue</button></td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td id="name4">GOOG</td>
-                                        <td>Alphabet Inc</td>
-                                        <td>.3</td>
-                                        <td><button onclick="addToMyStocks(name4)" class="btn">add to queue</button></td>
-
                                     </tr>
                                 </tbody>
                             </table>
