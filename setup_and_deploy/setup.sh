@@ -6,6 +6,10 @@ sudo apt-get -y update
 sudo apt-get -y install git
 sudo apt-get -y install maven
 
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get -y update
+sudo apt-get -y install oracle-java8-installer
+
 sudo apt-get -y install apache2
 
 
@@ -23,7 +27,7 @@ cd StockStalk
 (cd One_Against_All && mvn package)
 
 #Do the initial caching of data. Get all data for last 20 years.
-spark-submit --class CacheData Cache_Data/target/cache_data-1.0-SNAPSHOT.jar INITIAL
+spark-submit --class CacheData Cache_Data/target/CacheData-1.0-SNAPSHOT.jar INITIAL
 
 
 
