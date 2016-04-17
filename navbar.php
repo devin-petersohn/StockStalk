@@ -247,6 +247,13 @@ $dbconn = new mysqli($servername, $uname, $pword);
                 </ul>
                         </li>
                           
-                    
+            
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+</body>               
                     
   
