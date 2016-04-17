@@ -22,8 +22,6 @@ src_managed/
 project/boot/
 project/plugins/project/
 
-/StockStalk_Maven/target
-# Scala-IDE specific
 .scala_dependencies
 .worksheet
 .DS_Store

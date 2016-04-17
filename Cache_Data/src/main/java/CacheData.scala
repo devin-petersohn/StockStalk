@@ -11,8 +11,8 @@ import java.io._
 
 
 object CacheData {
-  //val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
-  val sc = new SparkContext()
+  val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
+  //val sc = new SparkContext()
 
   val sANDp500 = scala.collection.immutable.Vector("MMM", "ABT", "ABBV", "ACN", "ATVI", "ADBE", "ADT", "AAP", "AES", "AET", "AFL", "AMG", "A",
                         "GAS", "APD", "ARG", "AKAM","AA", "AGN", "ALXN", "ALLE", "ADS", "ALL", "GOOGL", "GOOG", "MO", "AMZN", "AEE", "AAL", "AEP",
@@ -50,7 +50,7 @@ object CacheData {
         Option(file.listFiles).map(_.toList).getOrElse(Nil).foreach(delete)
       file.delete
     } catch {
-      case _: _ => println("Exists")
+      case _ : Throwable => println("Exists")
     }
   }
 
@@ -64,7 +64,7 @@ object CacheData {
         try {
           delete(new File("data/" + stock))
         } catch {
-          case _: _ => println("Exists")
+          case _ : Throwable => println("Exists")
         }
         sc.parallelize(ArrayBuffer(temp, temp.getHistory(from, to, Interval.DAILY))).saveAsObjectFile("data/" + stock)
       }
@@ -72,13 +72,14 @@ object CacheData {
       val from = Calendar.getInstance()
       from.add(Calendar.DATE, -1)
       val to = Calendar.getInstance
+      val current_stock = sc.parallelize(new ArrayBuffer[(Stock, java.util.List[HistoricalQuote])])
       for (stock <- sANDp500) {
         val temp = YahooFinance.get(stock)
-        val current_stock = sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/" + stock)
         try {
+          val current_stock = sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/" + stock)
           delete(new File("data/" + stock))
         } catch {
-          case _: _ => println("Exists")
+          case _ : Throwable => println("Exists")
         }
         sc.union(current_stock, sc.parallelize(ArrayBuffer((temp, temp.getHistory(from, to, Interval.DAILY))))).groupByKey.saveAsObjectFile("data/" + stock)
       }
