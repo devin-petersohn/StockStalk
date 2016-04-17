@@ -2,8 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/CacheData-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/Cache_Data/target/CacheData-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/ExchangeTimeZone.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/ExchangeTimeZone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/FxQuote.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/FxQuote.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/FxQuotesRequest.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/FxQuotesRequest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/FxSymbols.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/FxSymbols.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/HistQuotesRequest.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/HistQuotesRequest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/HistoricalQuote.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/HistoricalQuote.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Interval.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/Interval.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/QuotesProperty.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/QuotesProperty.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/QuotesRequest.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/QuotesRequest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Stock.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/Stock.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockDividend.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/StockDividend.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuote.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuote.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuotesData.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuotesData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuotesRequest.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuotesRequest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockStats.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/StockStats.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/TestClass.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/TestClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Utils.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/Utils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/YahooFinance.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/YahooFinance.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/CacheData.iml" afterPath="$PROJECT_DIR$/Cache_Data/CacheData.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/pom.xml" afterPath="$PROJECT_DIR$/Cache_Data/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/Cache_Data/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup_and_deploy/setup.sh" afterPath="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
     </list>
     <manually-removed-from-ignored>
@@ -40,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -91,8 +113,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35756853">
-              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.37544698">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -794,12 +816,6 @@
       <option name="number" value="Default" />
       <updated>1456106797728</updated>
     </task>
-    <task id="LOCAL-00006" summary="Adding example to other project">
-      <created>1456709060253</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1456709060253</updated>
-    </task>
     <task id="LOCAL-00007" summary="Fixing a major bug that would not allow Spark to run. Currently implementing the Serializable class.">
       <created>1458260569855</created>
       <option name="number" value="00007" />
@@ -1088,7 +1104,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460934253982</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Working on getting command line working">
+      <created>1460934560119</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1460934560119</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1513,7 +1535,7 @@
     <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1528,8 +1550,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35756853">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.37544698">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
