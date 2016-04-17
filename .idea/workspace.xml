@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/CacheData-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_library_2_10_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_scala_lang_scala_library_2_10_3.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/CacheData.iml" afterPath="$PROJECT_DIR$/Cache_Data/CacheData.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/pom.xml" afterPath="$PROJECT_DIR$/Cache_Data/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup_and_deploy/setup.sh" afterPath="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
     </list>
     <manually-removed-from-ignored>
       <directory path="$PROJECT_DIR$/Cache_Data/target/classes/" />
@@ -47,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -98,8 +91,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75089395">
-              <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.35756853">
+              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -801,12 +794,6 @@
       <option name="number" value="Default" />
       <updated>1456106797728</updated>
     </task>
-    <task id="LOCAL-00005" summary="Adding example to other project">
-      <created>1456708878446</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1456708878446</updated>
-    </task>
     <task id="LOCAL-00006" summary="Adding example to other project">
       <created>1456709060253</created>
       <option name="number" value="00006" />
@@ -1095,7 +1082,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460933447186</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Working on getting command line working">
+      <created>1460934253982</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1460934253982</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1499,14 +1492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1525,6 +1510,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.0">
@@ -1535,8 +1528,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75089395">
-          <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.35756853">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
       </provider>
