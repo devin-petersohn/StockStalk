@@ -105,13 +105,7 @@ $dbconn = new mysqli($servername, $uname, $pword);
                     
                     
                       <ul class="nav navbar-nav navbar-right">
-        <!-- THE MY STOCKS BUTTON ----------------------->
-                    <!--Bare Bones
-                    <li class="dropdown right-login">
-                        
-                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>My Stocks</b> <span class="caret"></span></a> 
-                        
-                    </li>   ---------->
+        
                     
                         <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>My Stocks</b> <span class="caret"></span></a>
@@ -167,13 +161,14 @@ $dbconn = new mysqli($servername, $uname, $pword);
                         
                         
                         
-        <!-- THE LOGIN BUTTON ----------------------->
+        <!-- THE LOGIN BUTTON -->
                         <li class="dropdown navbar-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
                         <ul id="login-dp" class="dropdown-menu pull-right">
                             <li>
                                <div class="row">
                                   <div class="col-md-12">
+                                    <div <?php if ($_SESSION['username']){ echo 'style="display:none;"'; } ?>>
                                     Login via
                                     <div class="social-buttons">
                                       <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
@@ -181,67 +176,48 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                         
                                     </div>
                                                     or
-                                      
+                                    </div>
                                       
                                       
                                       
                                 <form class="form-signin" id='login' action="<?= $_SERVER['PHP_SELF'] ?>" method='post'>
-                                    <?php  if($_SESSION['username']){?>
+                                    <?php  
+                                      if($_SESSION['username']){
+                                    ?>
 			                             <li>
-                                             <?php echo ucfirst($_SESSION['username']); ?>'s Account
-                                         </li>
-			                         <?php } ?>
+                                      Welcome, <?php echo ucfirst($_SESSION['username']); ?>!
+                                   </li>
+			                             <?php 
+
+                                      }
+
+                                    ?>
                                     
                                     <li><a href= <?=$href_page?> ><?=$log_display ?></a></li>
-                                    
-                                     <input type="text" name="username" class="form-control" id="username" placeholder="Username" required autofocus>
-                                    </br>
-                                    <input type="password" name="password" class="form-control" id="password"placeholder="Password" required>
-                                    </br>
-                                    <button class="btn btn-lg btn-primary btn-block" type="Submit" name='Submit' value='Submit'>Sign in</button> 
-                                   <span class="clearfix"></span>
-                                      
+                                    <div <?php if ($_SESSION['username']){ echo 'style="display:none;"'; } ?>>
+                                         <input type="text" name="username" class="form-control" id="username" placeholder="Username" required autofocus>
+                                        </br>
+                                        <input type="password" name="password" class="form-control" id="password"placeholder="Password" required>
+                                        </br>
+                                        <button class="btn btn-lg btn-primary btn-block" type="Submit" name='Submit' value='Submit'>Sign in</button> 
+                                       <span class="clearfix"></span>
+                                    </div>  
                                       
                                 </form>    
                                       
                                       
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      
-                                      <!--
-                                     <form class="form" role="form" method="post" action="fun.php" accept-charset="UTF-8" id="login-nav">
-                                        <div class="form-group">
-                                           <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                           <input name="username" class="form-control" placeholder="Username" required>
-                                        </div>
-                                        <div class="form-group">
-                                           <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                           <input name="password" type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                                                 <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-                                        </div>
-                                        <div class="form-group">
-                                           <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                        </div>
-                                        <div class="checkbox">
-                                           <label>
-                                           <input type="checkbox"> keep me logged-in
-                                           </label>
-                                        </div>
-                                    </form> -->
 
 
 
                                 </div>
-                            <div class="bottom text-center">
-                            New here ? <a href="#"><b>Join Us</b></a>
-                        </div>
+                                <div <?php if ($_SESSION['username']){ echo 'style="display:none;"'; } ?>>
+                                    <div class="bottom text-center">
+                              
+                                    New here ? <a href="#"><b>Join Us</b></a>
+                              
+                                    </div>
+                                </div>
+
                     </div>
                 </li>
                 </ul>
