@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/cache_data-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Cache_Data$$anonfun$delete$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Cache_Data$$anonfun$delete$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Cache_Data$$anonfun$delete$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Cache_Data$$anonfun$main$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Cache_Data$$anonfun$main$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Cache_Data$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Cache_Data.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/pom.xml" afterPath="$PROJECT_DIR$/Cache_Data/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup_and_deploy/setup.sh" afterPath="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
-    </list>
+    <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="" />
     <manually-removed-from-ignored>
       <directory path="$PROJECT_DIR$/Cache_Data/target/classes/" />
       <directory path="$PROJECT_DIR$/All_Against_All/target/" />
@@ -120,6 +104,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -833,12 +818,6 @@
       <option name="number" value="Default" />
       <updated>1456106797728</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added example for saving file to scala">
-      <created>1456706919714</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1456706919714</updated>
-    </task>
     <task id="LOCAL-00003" summary="Updating example code for automatically getting data from Yahoo Finance API.">
       <created>1456708052809</created>
       <option name="number" value="00003" />
@@ -1127,7 +1106,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460925615906</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Working on getting command line working">
+      <created>1460928011232</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1460928011232</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="ToolWindowManager">
