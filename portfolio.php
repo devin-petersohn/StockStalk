@@ -1,3 +1,32 @@
+<?php
+    session_start();
+
+    include "navbar.php";
+    $servername = "dbhost-mysql.cs.missouri.edu";
+        $uname = "mmhkwc";
+        $pword = "RgS8HC6L";
+
+// Create connection
+$dbconn = new mysqli($servername, $uname, $pword);
+
+  
+    $uname = $_SESSION['username'];
+    $mes2 = "SELECT * FROM mmhkwc.portfolio WHERE username='".$uname."'";
+    $result = $dbconn->query($mes2);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "username: " . $row["username"]. " - ticker: " . $row["ticker"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,6 +125,44 @@
             });
         });
     });
+        
+        
+        
+        //Adding the moving function for stocks//
+        
+                   var array = [];
+            var i;
+            function addToMyStocks(name){
+//                console.log(name);
+                var same = 0;
+                console.log(name.innerHTML);
+                var tickername = name.innerHTML;
+                for(i = 0; i < array.length; i ++){            
+                    if(tickername == array[i]){
+                        same = 1
+                    }
+                }
+                if(same == 0){
+                    $("#addTableRowMS").append("<tr><td><input type='checkbox' class='chartstock' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>");
+                    array.push(tickername);
+                }
+//                var appendString = "<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>";
+//                console.log(appendString);
+                
+            }
+        
+        //End moving function//
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     </script>
 
 </head>
@@ -108,7 +175,6 @@
     
     
         <!---Navbar call----->
-    <?php include "navbar.php"; ?>
     
     
     
@@ -155,36 +221,41 @@
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Symbol</th>
+                                        <th>Rank</th>
+                                        <th>Tracker</th>
                                         <th>Name</th>
-                                        <th>Time</th>
-                                        <th>Trade</th>
-                                        <th>Change</th>
-                                        <th>% Chg</th>
-                                        <th>Volume</th>
-                                        <th>Intraday</th>
+                                        <th>Score</th>
+                                        <th>Add to Queue</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
-                                        <td>BMW</td>
+                                        <td>1</td>
+                                        <td id="name1">BMW</td>
                                         <td>BYERISCHE MOTOREN WERKE AG</td>
-                                        <td>1 Jan</td>
-                                        <td>N/A</td>
-                                        <td class="center">0.00$</td>
-                                        <td class="center">0.00%</td>
-                                        <td class="center">0</td>
-                                        <td class="center">X</td>
+                                        <td>.9</td>
+                                        <td><button onclick="addToMyStocks(name1)" class="btn">add to queue</button></td>
                                     </tr>
                                     <tr class="even gradeC">
-                                        <td>BMW.BE</td>
+                                        <td>2</td>
+                                        <td id="name2">BMW.BE</td>
                                         <td>BMW</td>
-                                        <td>11 Sep</td>
-                                        <td class="center">34.01</td>
-                                        <td class="center">0.53</td>
-                                        <td class="center">1.53%</td>
-                                        <td class="center">8924</td>
-                                        <td class="center">X</td>
+                                        <td>.6</td>
+                                        <td><button onclick="addToMyStocks(name2)" class="btn">add to queue</button></td>
+                                    </tr>
+                                    <tr class="odd gradeX">
+                                        <td>3</td>
+                                        <td id="name3">FB</td>
+                                        <td>Facebook, Inc</td>
+                                        <td>.4</td>
+                                        <td><button onclick="addToMyStocks(name3)" class="btn">add to queue</button></td>
+                                    </tr>
+                                    <tr class="even gradeC">
+                                        <td>2</td>
+                                        <td id="name4">GOOG</td>
+                                        <td>Alphabet Inc</td>
+                                        <td>.3</td>
+                                        <td><button onclick="addToMyStocks(name4)" class="btn">add to queue</button></td>
                                     </tr>
                                 </tbody>
                             </table>
