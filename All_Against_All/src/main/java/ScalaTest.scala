@@ -43,10 +43,9 @@ object ScalaTest {
     for(stock <- stock_query_list) {
       //val x = convertPercentChange(calculatePercentChange(YahooFinance.get(stock), fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
 
-      val quotes = sc.objectFile[(String, scala.collection.immutable.List[HistoricalQuote])]("data/" + stock)
-        .map(f => f._2.toIterable).collect.flatten.sortBy(f => f.getDate.getTimeInMillis)
+      val quotes = sc.objectFile[(Date, Double)]("data/" + stock).sortBy(f => f._1.getTime).filter(f => f._1.getTime > fromDate.getTime.getTime && f._1.getTime < toDate.getTime.getTime).zipWithIndex.map(f => (f._1._2, (f._2,stock)))
 
-      val x = convertPercentChange(calculatePercentChange(stock, quotes, fromDate, toDate).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
+      val x = convertPercentChange(quotes, percent_threshold)
       stock_data = sc.union(stock_data, x)
     }
     stock_data
@@ -158,13 +157,13 @@ object ScalaTest {
     val percent_threshold = args(6).toDouble
     val interval: Interval =
       if(args(7) == "Daily") Interval.DAILY
-      else if(args(7) == "Weekly") Interval.WEEKLY
-      else Interval.MONTHLY
+      else if(args(7) == "Weekly") sys.exit(-1)
+      else sys.exit(-1)
 
     val stock_query_list = if(args(8) == "SP500") sANDp500 else args.drop(8).toVector
     var stock_data_list = getAllStocks(stock_query_list, fromDate, toDate, interval, percent_threshold).map(_.swap)
 
-    val indexes_of_dates = sc.objectFile[(Stock, scala.collection.immutable.List[HistoricalQuote])]("data/AAPL").flatMap(_._2).collect.sortBy(f => f.getDate.getTimeInMillis).zipWithIndex.map(f => (f._2.toLong, f._1)).toMap
+    val indexes_of_dates = sc.objectFile[(Date, Double)]("data/AAPL").sortBy(f => f._1.getTime).filter(f => f._1.getTime > fromDate.getTime.getTime && f._1.getTime < toDate.getTime.getTime).zipWithIndex.map(f => (f._2.toLong, f._1)).collect.toMap
 
     var numDays = 1
     var temp = coarseGrainedAggregation(stock_data_list, numDays)

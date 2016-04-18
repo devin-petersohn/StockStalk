@@ -1,4 +1,5 @@
 import org.apache.hadoop.mapred.InvalidInputException
+import org.apache.spark.rdd.RDD
 
 import scala.collection.mutable.ArrayBuffer
 import java.util._
@@ -52,6 +53,19 @@ object CacheData {
     }
   }
 
+  def calculatePercentChange(stock: Stock, fromDate: Calendar, toDate: Calendar, interval: Interval): RDD[(Date, Double)] = {
+    var prev = stock.getHistory.get(0).getClose
+    //val hists = filterDate(quote, fromDate, toDate)
+    //var prev = hists(0).getClose
+    var buffer = new ArrayBuffer[(Date,Double)]
+    val hists = stock.getHistory(fromDate, toDate, interval)
+    for(hist <- hists){
+      buffer += ((hist.getDate.getTime, (hist.getClose.doubleValue/prev.doubleValue - 1) * 100))
+      prev = hist.getClose
+    }
+    sc.parallelize(buffer)
+  }
+
   def main(args: Array[String]) {
     if(args.length != 0){
       val from = Calendar.getInstance
@@ -64,22 +78,22 @@ object CacheData {
         } catch {
           case _ : Throwable => println("Exists")
         }
-        sc.parallelize(ArrayBuffer(temp, temp.getHistory(from, to, Interval.DAILY))).saveAsObjectFile("data/" + stock)
+        calculatePercentChange(temp, from, to, Interval.DAILY).saveAsObjectFile("data/" + stock)
       }
     } else {
       val from = Calendar.getInstance()
       from.add(Calendar.DATE, -1)
       val to = Calendar.getInstance
-      val current_stock = sc.parallelize(new ArrayBuffer[(String, scala.collection.immutable.List[HistoricalQuote])])
+      val current_stock = sc.parallelize(new ArrayBuffer[(Date, Double)])
       for (stock <- sANDp500) {
         val temp = YahooFinance.get(stock)
         try {
-          val current_stock = sc.objectFile[(String, java.util.List[HistoricalQuote])]("data/" + stock)
+          val current_stock = sc.objectFile[(Date, Double)]("data/" + stock)
           delete(new File("data/" + stock))
         } catch {
           case _ : Throwable => println("Exists")
         }
-        sc.union(current_stock, sc.parallelize(ArrayBuffer((stock, temp.getHistory(from, to, Interval.DAILY).toList)))).groupByKey.saveAsObjectFile("data/" + stock)
+        sc.union(current_stock, calculatePercentChange(temp, from, to, Interval.DAILY)).saveAsObjectFile("data/" + stock)
       }
     }
     sys.exit(0)
