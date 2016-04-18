@@ -43,7 +43,7 @@ object ScalaTest {
     var stock_data = sc.parallelize(new ArrayBuffer[((String, (Long, String)))])
     for(stock <- stock_query_list) {
       //val x = convertPercentChange(calculatePercentChange(YahooFinance.get(stock), fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
-      val x = convertPercentChange(calculatePercentChange(stock, sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/"+stock).flatMap(_._2).collect.sortBy(f => f.getDate.getTimeInMillis), fromDate, toDate).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
+      val x = convertPercentChange(calculatePercentChange(stock, sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/"+stock).map(_._2).collect.flatten.sortBy(f => f.getDate.getTimeInMillis), fromDate, toDate).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
       stock_data = sc.union(stock_data, x)
     }
     stock_data
@@ -158,7 +158,7 @@ object ScalaTest {
       else if(args(7) == "Weekly") Interval.WEEKLY
       else Interval.MONTHLY
 
-    val stock_query_list = if(args(8) == "S&P500") sANDp500 else args.drop(8).toVector
+    val stock_query_list = if(args(8) == "SP500") sANDp500 else args.drop(8).toVector
     var stock_data_list = getAllStocks(stock_query_list, fromDate, toDate, interval, percent_threshold).map(_.swap)
 
     val indexes_of_dates = sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/AAPL").flatMap(_._2).collect.sortBy(f => f.getDate.getTimeInMillis).zipWithIndex.map(f => (f._2.toLong, f._1)).toMap
