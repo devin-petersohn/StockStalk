@@ -43,9 +43,7 @@ object ScalaTest {
     for(stock <- stock_query_list) {
       //val x = convertPercentChange(calculatePercentChange(YahooFinance.get(stock), fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
 
-      val quotes = sc.objectFile[(Stock, scala.collection.immutable.List[HistoricalQuote])]("data/" + stock).map(_._2.toArray[HistoricalQuote](new reflect.ClassTag[HistoricalQuote] {
-        override def runtimeClass: HistoricalQuote = HistoricalQuote
-      })).collect.flatten.sortBy(f => f.getDate.getTimeInMillis)
+      val quotes = sc.objectFile[(Stock, scala.collection.immutable.List[HistoricalQuote])]("data/" + stock).map(f => f._2.toIterable).collect.flatten.sortBy(f => f.getDate.getTimeInMillis)
 
       val x = convertPercentChange(calculatePercentChange(stock, quotes, fromDate, toDate).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
       stock_data = sc.union(stock_data, x)
