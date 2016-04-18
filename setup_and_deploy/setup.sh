@@ -20,14 +20,14 @@ sudo apt-get -y install jenkins
 
 cd StockStalk
 
+#Relocate all web files to the web server files location
 sudo cp -r www/* /var/www/html
 
 #MySQL and set up the database
 sudo apt-get -y install mysql-server
-
 mysql -uroot -e "create database stockstalk"
-
 mysql -uroot -h localhost stockstalk < setup_and_deploy/stockstalkdump.sql
+
 
 (cd All_Against_All && mvn clean)
 (cd All_Against_All && mvn install)
@@ -43,6 +43,4 @@ mysql -uroot -h localhost stockstalk < setup_and_deploy/stockstalkdump.sql
 
 #Do the initial caching of data. Get all data for last 20 years.
 spark-submit --class CacheData Cache_Data/target/CacheData-1.0-SNAPSHOT.jar INITIAL
-
-
 
