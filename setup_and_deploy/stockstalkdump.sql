@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 17, 2016 at 10:05 PM
+-- Generation Time: Apr 19, 2016 at 01:43 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `loginInfo`
 --
 
-CREATE TABLE `loginInfo`(
+CREATE TABLE `loginInfo` (
   `username` varchar(25) NOT NULL,
   `Name` varchar(30) DEFAULT NULL,
   `hashpass` varchar(255) DEFAULT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE `loginInfo`(
 -- Dumping data for table `loginInfo`
 --
 
-INSERT IGNORE INTO `loginInfo` (`username`, `Name`, `hashpass`, `salt`) VALUES
+INSERT INTO `loginInfo` (`username`, `Name`, `hashpass`, `salt`) VALUES
 ('123', NULL, '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
 ('mabrm9', NULL, 'pass', 'word'),
 ('mac', NULL, '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083');
@@ -48,7 +48,7 @@ INSERT IGNORE INTO `loginInfo` (`username`, `Name`, `hashpass`, `salt`) VALUES
 -- Table structure for table `portfolio`
 --
 
-CREATE TABLE `portfolio`(
+CREATE TABLE `portfolio` (
   `username` varchar(25) NOT NULL,
   `ticker` varchar(10) NOT NULL,
   `amount` float DEFAULT NULL
@@ -57,10 +57,24 @@ CREATE TABLE `portfolio`(
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `search_history`
+--
+
+CREATE TABLE `search_history` (
+  `username` varchar(25) NOT NULL,
+  `search_date` datetime NOT NULL,
+  `search_type` varchar(10) NOT NULL,
+  `search_parameter` varchar(6) NOT NULL,
+  `filepath` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `stocks`
 --
 
-CREATE TABLE `stocks`(
+CREATE TABLE `stocks` (
   `ticker` varchar(10) CHARACTER SET latin1 NOT NULL,
   `name` varchar(45) CHARACTER SET latin1 NOT NULL,
   `sector` varchar(35) CHARACTER SET latin1 DEFAULT NULL
@@ -70,7 +84,7 @@ CREATE TABLE `stocks`(
 -- Dumping data for table `stocks`
 --
 
-INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
+INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('A', 'Agilent Technologies Inc', 'Health Care'),
 ('AA', 'Alcoa Inc', 'Materials'),
 ('AAL', 'American Airlines Group', 'Industrials'),
@@ -583,28 +597,44 @@ INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 --
 -- Indexes for table `loginInfo`
 --
-ALTER IGNORE TABLE `loginInfo`
+ALTER TABLE `loginInfo`
   ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `portfolio`
 --
-ALTER IGNORE TABLE `portfolio`
+ALTER TABLE `portfolio`
   ADD PRIMARY KEY (`username`,`ticker`),
   ADD KEY `ticker` (`ticker`);
 
 --
+-- Indexes for table `search_history`
+--
+ALTER TABLE `search_history`
+  ADD PRIMARY KEY (`username`);
+
+--
 -- Indexes for table `stocks`
 --
-ALTER IGNORE TABLE `stocks`
+ALTER TABLE `stocks`
   ADD PRIMARY KEY (`ticker`);
+
+--
+-- Constraints for dumped tables
+--
 
 --
 -- Constraints for table `portfolio`
 --
-ALTER IGNORE TABLE `portfolio`
+ALTER TABLE `portfolio`
   ADD CONSTRAINT `portfolio_ibfk_1` FOREIGN KEY (`username`) REFERENCES `loginInfo` (`username`),
   ADD CONSTRAINT `portfolio_ibfk_2` FOREIGN KEY (`ticker`) REFERENCES `stocks` (`ticker`);
+
+--
+-- Constraints for table `search_history`
+--
+ALTER TABLE `search_history`
+  ADD CONSTRAINT `search_history_ibfk_1` FOREIGN KEY (`username`) REFERENCES `loginInfo` (`username`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
