@@ -1,21 +1,33 @@
 #!/usr/bin/env bash
 
-echo "Please wait for packages to be installed"
 
+#Git and Maven
 sudo apt-get -y update
 sudo apt-get -y install git
 sudo apt-get -y install maven
 
+#Clone the remote repository
+git clone https://github.com/devin-petersohn/StockStalk.git
+
+#Apache Server and relocation of web pages
 sudo apt-get -y install apache2
 
+#Jenkins and setup the daily caching of data
 wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
 sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo apt-get -y update
 sudo apt-get -y install jenkins
 
-git clone https://github.com/devin-petersohn/StockStalk.git
-
 cd StockStalk
+
+sudo cp -r www/* /var/www/html
+
+#MySQL and set up the database
+sudo apt-get -y install mysql-server
+
+mysql -uroot -e "create database stockstalk"
+
+mysql -uroot -h localhost stockstalk < setup_and_deploy/stockstalkdump.sql
 
 (cd All_Against_All && mvn clean)
 (cd All_Against_All && mvn install)
