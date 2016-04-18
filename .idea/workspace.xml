@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/All_Against_All/pom.xml" afterPath="$PROJECT_DIR$/All_Against_All/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup_and_deploy/setup.sh" afterPath="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
     </list>
+    <ignored path="$PROJECT_DIR$/All_Against_All/target/classes/" />
+    <ignored path="$PROJECT_DIR$/All_Against_All/target/maven-archiver/" />
+    <ignored path="$PROJECT_DIR$/All_Against_All/target/maven-status/" />
     <manually-removed-from-ignored>
       <directory path="$PROJECT_DIR$/Cache_Data/target/classes/" />
       <directory path="$PROJECT_DIR$/All_Against_All/target/" />
@@ -40,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -63,7 +66,41 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#925#926#0" expanded="false" />
+                <element signature="e#954#955#0" expanded="false" />
+                <element signature="e#998#999#0" expanded="false" />
+                <element signature="e#1034#1035#0" expanded="false" />
+                <element signature="e#1071#1072#0" expanded="false" />
+                <element signature="e#1098#1099#0" expanded="false" />
+                <element signature="e#1140#1141#0" expanded="false" />
+                <element signature="e#1172#1173#0" expanded="false" />
+                <element signature="e#1207#1208#0" expanded="false" />
+                <element signature="e#1234#1235#0" expanded="false" />
+                <element signature="e#1278#1279#0" expanded="false" />
+                <element signature="e#1310#1311#0" expanded="false" />
+                <element signature="e#1406#1407#0" expanded="false" />
+                <element signature="e#1432#1433#0" expanded="false" />
+                <element signature="e#1474#1475#0" expanded="false" />
+                <element signature="e#1504#1505#0" expanded="false" />
+                <element signature="e#1606#1607#0" expanded="false" />
+                <element signature="e#1633#1634#0" expanded="false" />
+                <element signature="e#1677#1678#0" expanded="false" />
+                <element signature="e#1709#1710#0" expanded="false" />
+                <element signature="e#1745#1746#0" expanded="false" />
+                <element signature="e#1773#1774#0" expanded="false" />
+                <element signature="e#1819#1820#0" expanded="false" />
+                <element signature="e#1853#1854#0" expanded="false" />
+                <element signature="e#2291#2292#0" expanded="false" />
+                <element signature="e#2322#2323#0" expanded="false" />
+                <element signature="e#2374#2375#0" expanded="false" />
+                <element signature="e#2414#2415#0" expanded="false" />
+                <element signature="e#2445#2446#0" expanded="false" />
+                <element signature="e#2474#2475#0" expanded="false" />
+                <element signature="e#2516#2517#0" expanded="false" />
+                <element signature="e#2552#2553#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,20 +115,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-32.5">
-              <caret line="52" column="46" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.23325358">
+              <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScalaTest.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ScalaTest.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6976744">
+            <state vertical-scroll-proportion="0.0">
               <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
@@ -166,14 +203,14 @@
         <option value="$PROJECT_DIR$/One_Against_All/pom.xml" />
         <option value="$PROJECT_DIR$/search.php" />
         <option value="$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala" />
-        <option value="$PROJECT_DIR$/All_Against_All/pom.xml" />
         <option value="$PROJECT_DIR$/Cache/src/main/java/ScalaTest.scala" />
         <option value="$PROJECT_DIR$/Cache/pom.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
         <option value="$PROJECT_DIR$/Cache_Data/pom.xml" />
         <option value="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
         <option value="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
+        <option value="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
+        <option value="$PROJECT_DIR$/All_Against_All/pom.xml" />
       </list>
     </option>
   </component>
@@ -766,12 +803,6 @@
       <option name="number" value="Default" />
       <updated>1456106797728</updated>
     </task>
-    <task id="LOCAL-00008" summary="Added stock list">
-      <created>1458266076380</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1458266076380</updated>
-    </task>
     <task id="LOCAL-00009" summary="Added json functionality">
       <created>1458267038822</created>
       <option name="number" value="00009" />
@@ -1060,7 +1091,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460935046962</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Forcing exit at the ends of scripts. Also, added support for cache in All_Against_All.">
+      <created>1460943888853</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1460943888853</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1121,7 +1158,8 @@
     <MESSAGE value="Adding more to setup script" />
     <MESSAGE value="Working on getting command line working" />
     <MESSAGE value="Finally Maven is allowing compile to jar from Java 1.7." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finally Maven is allowing compile to jar from Java 1.7." />
+    <MESSAGE value="Forcing exit at the ends of scripts. Also, added support for cache in All_Against_All." />
+    <option name="LAST_COMMIT_MESSAGE" value="Forcing exit at the ends of scripts. Also, added support for cache in All_Against_All." />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1462,27 +1500,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/HistoricalQuote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#925#926#0" expanded="false" />
+            <element signature="e#954#955#0" expanded="false" />
+            <element signature="e#998#999#0" expanded="false" />
+            <element signature="e#1034#1035#0" expanded="false" />
+            <element signature="e#1071#1072#0" expanded="false" />
+            <element signature="e#1098#1099#0" expanded="false" />
+            <element signature="e#1140#1141#0" expanded="false" />
+            <element signature="e#1172#1173#0" expanded="false" />
+            <element signature="e#1207#1208#0" expanded="false" />
+            <element signature="e#1234#1235#0" expanded="false" />
+            <element signature="e#1278#1279#0" expanded="false" />
+            <element signature="e#1310#1311#0" expanded="false" />
+            <element signature="e#1406#1407#0" expanded="false" />
+            <element signature="e#1432#1433#0" expanded="false" />
+            <element signature="e#1474#1475#0" expanded="false" />
+            <element signature="e#1504#1505#0" expanded="false" />
+            <element signature="e#1606#1607#0" expanded="false" />
+            <element signature="e#1633#1634#0" expanded="false" />
+            <element signature="e#1677#1678#0" expanded="false" />
+            <element signature="e#1709#1710#0" expanded="false" />
+            <element signature="e#1745#1746#0" expanded="false" />
+            <element signature="e#1773#1774#0" expanded="false" />
+            <element signature="e#1819#1820#0" expanded="false" />
+            <element signature="e#1853#1854#0" expanded="false" />
+            <element signature="e#2291#2292#0" expanded="false" />
+            <element signature="e#2322#2323#0" expanded="false" />
+            <element signature="e#2374#2375#0" expanded="false" />
+            <element signature="e#2414#2415#0" expanded="false" />
+            <element signature="e#2445#2446#0" expanded="false" />
+            <element signature="e#2474#2475#0" expanded="false" />
+            <element signature="e#2516#2517#0" expanded="false" />
+            <element signature="e#2552#2553#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1496,21 +1552,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
+    <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.5">
-          <caret line="52" column="46" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6976744">
+        <state vertical-scroll-proportion="0.0">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23325358">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>

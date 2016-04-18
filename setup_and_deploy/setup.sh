@@ -13,12 +13,15 @@ git clone https://github.com/devin-petersohn/StockStalk.git
 
 cd StockStalk
 
+(cd All_Against_All && mvn clean)
 (cd All_Against_All && mvn install)
 (cd All_Against_All && mvn package)
 
+(cd Cache_Data && mvn clean)
 (cd Cache_Data && mvn install)
 (cd Cache_Data && mvn package)
 
+(cd One_Against_All && mvn clean)
 (cd One_Against_All && mvn install)
 (cd One_Against_All && mvn package)
 
