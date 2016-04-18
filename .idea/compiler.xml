@@ -31,10 +31,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="All_Against_All" target="1.8" />
+      <module name="All_Against_All" target="1.7" />
       <module name="Cache_Data" target="1.8" />
       <module name="cache_data" target="1.8" />
-      <module name="CacheData" target="1.8" />
+      <module name="CacheData" target="1.7" />
       <module name="One_Against_All" target="1.8" />
       <module name="stockStalk" target="1.8" />
       <module name="stockstalk" target="1.8" />

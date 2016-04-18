@@ -6,7 +6,7 @@
         $uname = "mmhkwc";
         $pword = "RgS8HC6L";
 
-// Create connection
+/* Create connection
 $dbconn = new mysqli($servername, $uname, $pword);
 
   
@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-
+*/
     
 ?>
 
@@ -71,7 +71,7 @@ if ($result->num_rows > 0) {
     </style>
     
 
-
+<script>
         $.each(names, function (i, name) {
 
             $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?',    function (data) {
@@ -171,7 +171,51 @@ if ($result->num_rows > 0) {
                             
                         </div>
                     </div>
+
                     <div class="panel-body">
+                        <div class="dataTable_wrapper">
+                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>Ticker</th>
+                                        <th>Username</th>
+                                        <th>Current Price</th>
+                                        <th>Score</th>
+                                    </tr>
+                                </thead>
+                               <tbody class="tableBody">
+                    
+                    <?php
+                    //Create connection
+                    $dbconn = new mysqli($servername, $uname, $pword);
+                    $uname = $_SESSION['username'];
+                    $mes2 = "SELECT * FROM mmhkwc.portfolio WHERE username='".$uname."'";
+                    $result = $dbconn->query($mes2);
+
+                    if ($result->num_rows > 0) {
+                        // output data of each row
+                        while($row = $result->fetch_assoc()) {
+                            echo "<tr class='odd gradeX'>";
+                            echo "<td><a class='tick'>" . $row["ticker"] . "</a></td>";
+                            echo "<td>" . $row["username"] . "</td>";
+                            echo "<td> </td>";
+                            echo "<td> </td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr class='odd gradeX'>";
+                        echo "<td><a class='tick'>0 Results Found</a></td>";
+                        echo "</tr>";
+                    }
+                    ?>          
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                   <!-- <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
@@ -183,6 +227,7 @@ if ($result->num_rows > 0) {
                                         <th>Add to Queue</th>
                                     </tr>
                                 </thead>
+                            
                                 <tbody class="tableBody">
                                     <tr class="odd gradeX">
 
@@ -224,39 +269,12 @@ if ($result->num_rows > 0) {
                                         <td class="center">1.53%</td>
                                         <td class="center">8924</td>
                                         <td class="center">X</td>
-
-                                        <td>1</td>
-                                        <td id="name1">BMW</td>
-                                        <td>BYERISCHE MOTOREN WERKE AG</td>
-                                        <td>.9</td>
-                                        <td><button onclick="addToMyStocks(name1)" class="btn">add to queue</button></td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td id="name2">BMW.BE</td>
-                                        <td>BMW</td>
-                                        <td>.6</td>
-                                        <td><button onclick="addToMyStocks(name2)" class="btn">add to queue</button></td>
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td>3</td>
-                                        <td id="name3">FB</td>
-                                        <td>Facebook, Inc</td>
-                                        <td>.4</td>
-                                        <td><button onclick="addToMyStocks(name3)" class="btn">add to queue</button></td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>2</td>
-                                        <td id="name4">GOOG</td>
-                                        <td>Alphabet Inc</td>
-                                        <td>.3</td>
-                                        <td><button onclick="addToMyStocks(name4)" class="btn">add to queue</button></td>
-
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div>-->
+
                 </div>
             </div>
             <!-- /.col-lg-12 -->
@@ -288,9 +306,6 @@ if ($result->num_rows > 0) {
 
     <script src="js/colorbox/jquery.colorbox-min.js" type="text/javascript" charset="utf-8"></script>
 
-    <script>
-        $(".test-link").colorbox({width:"60%", height:"400px", inline:true, href:"#test-content"});
-    </script>
 
 <script>
 function GetCellValues() {

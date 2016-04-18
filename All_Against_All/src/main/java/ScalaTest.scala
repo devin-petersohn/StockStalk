@@ -1,7 +1,6 @@
 import java.util.{Calendar, Date, GregorianCalendar}
-import collection.JavaConversions._
 import scala.collection.mutable.ArrayBuffer
-
+import reflect.ClassTag
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd._
@@ -42,7 +41,11 @@ object ScalaTest {
   def getAllStocks(stock_query_list: scala.Vector[String], fromDate: Calendar, toDate: Calendar, interval: Interval, percent_threshold: Double) = {
     var stock_data = sc.parallelize(new ArrayBuffer[((String, (Long, String)))])
     for(stock <- stock_query_list) {
-      val x = convertPercentChange(calculatePercentChange(YahooFinance.get(stock), fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
+      //val x = convertPercentChange(calculatePercentChange(YahooFinance.get(stock), fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
+
+      val quotes = sc.objectFile[(Date, Double)]("data/" + stock).sortBy(f => f._1.getTime).filter(f => f._1.getTime > fromDate.getTime.getTime && f._1.getTime < toDate.getTime.getTime).zipWithIndex.map(f => (f._1._2, (f._2,stock)))
+
+      val x = convertPercentChange(quotes, percent_threshold)
       stock_data = sc.union(stock_data, x)
     }
     stock_data
@@ -66,12 +69,18 @@ object ScalaTest {
       .filter(_._2.size>1)
   }
 
-  def calculatePercentChange(stock:Stock, fromDate: Calendar, toDate: Calendar, interval: Interval): RDD[(((Date, String), Double))] = {
-    var prev = stock.getHistory.get(0).getClose
+  def filterDate(quote: Array[HistoricalQuote], fromDate: Calendar, toDate: Calendar) : Array[HistoricalQuote] = {
+    quote.filter(f => f.getDate.getTimeInMillis < toDate.getTimeInMillis && f.getDate.getTimeInMillis > fromDate.getTimeInMillis)
+  }
+
+  def calculatePercentChange(symbol: String, quote: Array[HistoricalQuote], fromDate: Calendar, toDate: Calendar): RDD[(((Date, String), Double))] = {
+    //var prev = stock.getHistory.get(0).getClose
+    val hists = filterDate(quote, fromDate, toDate)
+    var prev = hists(0).getClose
     var buffer = new ArrayBuffer[((((Date, String)),Double))]
-    val hists = stock.getHistory(fromDate, toDate, interval)
+    //val hists = stock.getHistory(fromDate, toDate, interval)
     for(hist <- hists){
-      buffer += (((hist.getDate.getTime, stock.getSymbol), (hist.getClose.doubleValue/prev.doubleValue - 1) * 100))
+      buffer += (((hist.getDate.getTime, symbol), (hist.getClose.doubleValue/prev.doubleValue - 1) * 100))
       prev = hist.getClose
     }
     sc.parallelize(buffer)
@@ -148,13 +157,13 @@ object ScalaTest {
     val percent_threshold = args(6).toDouble
     val interval: Interval =
       if(args(7) == "Daily") Interval.DAILY
-      else if(args(7) == "Weekly") Interval.WEEKLY
-      else Interval.MONTHLY
+      else if(args(7) == "Weekly") sys.exit(-1)
+      else sys.exit(-1)
 
-    val stock_query_list = if(args(8) == "S&P500") sANDp500 else args.drop(8).toVector
+    val stock_query_list = if(args(8) == "SP500") sANDp500 else args.drop(8).toVector
     var stock_data_list = getAllStocks(stock_query_list, fromDate, toDate, interval, percent_threshold).map(_.swap)
 
-    val indexes_of_dates = calculatePercentChange(YahooFinance.get("GOOG"), fromDate, toDate, interval).map(_._1._1).zipWithIndex.map(_.swap).collect.toMap
+    val indexes_of_dates = sc.objectFile[(Date, Double)]("data/AAPL").sortBy(f => f._1.getTime).filter(f => f._1.getTime > fromDate.getTime.getTime && f._1.getTime < toDate.getTime.getTime).zipWithIndex.map(f => (f._2.toLong, f._1)).collect.toMap
 
     var numDays = 1
     var temp = coarseGrainedAggregation(stock_data_list, numDays)
@@ -186,7 +195,7 @@ object ScalaTest {
     }
     println("]}")
 
-
+    sys.exit(0)
   }
 
 }

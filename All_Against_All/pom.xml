@@ -10,8 +10,8 @@
 
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
         <encoding>UTF-8</encoding>
         <scala.version>2.10.3</scala.version>
         <scalaCompatVersion>2.10</scalaCompatVersion>
@@ -19,12 +19,6 @@
     </properties>
 
     <dependencies>
-
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.6.2</version>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.spark</groupId>
@@ -40,25 +34,41 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>src/main/java/</sourceDirectory>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
         <plugins>
-            <!--<plugin>-->
-                <!--<groupId>com.stockStalk</groupId>-->
-                <!--<artifactId>scala-maven-plugin</artifactId>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<goals>-->
-                            <!--<goal>compile</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<args>-->
-                                <!--<arg>${project.build.directory}/.scala_dependencies</arg>-->
-                            <!--</args>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration><mainClass>com.stockStalk.ScalaTest</mainClass></configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.1.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <!--<goal>testCompile</goal>-->
+                        </goals>
+                        <configuration>
+                            <args>
+                                <!--                <arg>-make:transitive</arg>-->
+                                <arg>-dependencyfile</arg>
+                                <arg>${project.build.directory}/.scala_dependencies</arg>
+                            </args>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <launchers>
+                        <launcher>
+                            <id>sample</id>
+                            <!-- This is to set the main to App.scala-->
+                            <mainClass>ScalaTest</mainClass>
+                            <args>
+                                <arg>${basedir}</arg>
+                            </args>
+                        </launcher>
+                    </launchers>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -66,30 +76,15 @@
                 <configuration>
                     <useFile>false</useFile>
                     <disableXmlReport>true</disableXmlReport>
+                    <!-- If you have classpath issue like NoDefClassError,... -->
+                    <!-- useManifestOnlyJar>false</useManifestOnlyJar -->
                     <includes>
+                        <!--            <include>**/*Test.*</include> -->
                         <include>**/*Suite.*</include>
                     </includes>
                 </configuration>
             </plugin>
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-jar-plugin</artifactId>
-                        <configuration>
-                            <!-- DO NOT include log4j.properties file in your Jar -->
-                            <excludes>
-                                <exclude>**/log4j.properties</exclude>
-                            </excludes>
-                            <archive>
-                                <manifest>
-                                    <!-- Jar file entry point -->
-                                    <mainClass>ScalaTest</mainClass>
-                                </manifest>
-                            </archive>
-                        </configuration>
-                    </plugin>
-
-                </plugins>
+        </plugins>
     </build>
 
 </project>
