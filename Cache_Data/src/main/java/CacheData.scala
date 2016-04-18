@@ -4,11 +4,8 @@ import scala.collection.mutable.ArrayBuffer
 import java.util._
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
-
-
+import scala.collection.JavaConversions._
 import java.io._
-
-
 
 object CacheData {
   val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
@@ -72,7 +69,7 @@ object CacheData {
       val from = Calendar.getInstance()
       from.add(Calendar.DATE, -1)
       val to = Calendar.getInstance
-      val current_stock = sc.parallelize(new ArrayBuffer[(Stock, java.util.List[HistoricalQuote])])
+      val current_stock = sc.parallelize(new ArrayBuffer[(Stock, Array[HistoricalQuote])])
       for (stock <- sANDp500) {
         val temp = YahooFinance.get(stock)
         try {
@@ -81,7 +78,7 @@ object CacheData {
         } catch {
           case _ : Throwable => println("Exists")
         }
-        sc.union(current_stock, sc.parallelize(ArrayBuffer((temp, temp.getHistory(from, to, Interval.DAILY))))).groupByKey.saveAsObjectFile("data/" + stock)
+        sc.union(current_stock, sc.parallelize(ArrayBuffer((temp, temp.getHistory(from, to, Interval.DAILY).toArray[HistoricalQuote])))).groupByKey.saveAsObjectFile("data/" + stock)
       }
     }
     sys.exit(0)
