@@ -161,7 +161,7 @@ object ScalaTest {
     val stock_query_list = if(args(8) == "S&P500") sANDp500 else args.drop(8).toVector
     var stock_data_list = getAllStocks(stock_query_list, fromDate, toDate, interval, percent_threshold).map(_.swap)
 
-    val indexes_of_dates = sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/AAPL").flatMap(_._2).collect.sorted.zipWithIndex.map(f => (f._2.toLong, f._1)).toMap
+    val indexes_of_dates = sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/AAPL").flatMap(_._2).collect.sortBy(f => f.getDate.getTimeInMillis).zipWithIndex.map(f => (f._2.toLong, f._1)).toMap
 
     var numDays = 1
     var temp = coarseGrainedAggregation(stock_data_list, numDays)
