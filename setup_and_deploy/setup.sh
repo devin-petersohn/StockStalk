@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
+
 #Git and Maven
 sudo apt-get -y update
 sudo apt-get -y install git
 sudo apt-get -y install maven
+
+#Clone the remote repository
+git clone https://github.com/devin-petersohn/StockStalk.git
 
 #Apache Server and relocation of web pages
 sudo apt-get -y install apache2
@@ -14,13 +18,16 @@ sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources
 sudo apt-get -y update
 sudo apt-get -y install jenkins
 
+cd StockStalk
+
+sudo cp -r www/* /var/www/html
+
 #MySQL and set up the database
 sudo apt-get -y install mysql-server
 
-#Setting up StockStalk and building the source
-git clone https://github.com/devin-petersohn/StockStalk.git
+mysql -uroot -e "create database stockstalk"
 
-cd StockStalk
+mysql -uroot -h localhost stockstalk < setup_and_deploy/stockstalkdump.sql
 
 (cd All_Against_All && mvn clean)
 (cd All_Against_All && mvn install)
