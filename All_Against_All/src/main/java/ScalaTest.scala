@@ -43,7 +43,7 @@ object ScalaTest {
     var stock_data = sc.parallelize(new ArrayBuffer[((String, (Long, String)))])
     for(stock <- stock_query_list) {
       //val x = convertPercentChange(calculatePercentChange(YahooFinance.get(stock), fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
-      val x = convertPercentChange(calculatePercentChange(stock, sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/"+stock).map(_._2).collect.flatten.sortBy(f => f.getDate.getTimeInMillis), fromDate, toDate).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
+      val x = convertPercentChange(calculatePercentChange(stock, sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/"+stock).map(_._2.toArray[HistoricalQuote]).collect.flatten.sortBy(f => f.getDate.getTimeInMillis), fromDate, toDate).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
       stock_data = sc.union(stock_data, x)
     }
     stock_data
