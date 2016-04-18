@@ -70,16 +70,16 @@ object CacheData {
       val from = Calendar.getInstance()
       from.add(Calendar.DATE, -1)
       val to = Calendar.getInstance
-      val current_stock = sc.parallelize(new ArrayBuffer[(Stock, scala.collection.immutable.List[HistoricalQuote])])
+      val current_stock = sc.parallelize(new ArrayBuffer[(String, scala.collection.immutable.List[HistoricalQuote])])
       for (stock <- sANDp500) {
         val temp = YahooFinance.get(stock)
         try {
-          val current_stock = sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/" + stock)
+          val current_stock = sc.objectFile[(String, java.util.List[HistoricalQuote])]("data/" + stock)
           delete(new File("data/" + stock))
         } catch {
           case _ : Throwable => println("Exists")
         }
-        sc.union(current_stock, sc.parallelize(ArrayBuffer((temp, temp.getHistory(from, to, Interval.DAILY).toList)))).groupByKey.saveAsObjectFile("data/" + stock)
+        sc.union(current_stock, sc.parallelize(ArrayBuffer((stock, temp.getHistory(from, to, Interval.DAILY).toList)))).groupByKey.saveAsObjectFile("data/" + stock)
       }
     }
     sys.exit(0)
