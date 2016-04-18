@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/CacheData-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/Cache_Data/target/CacheData-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/ExchangeTimeZone.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/ExchangeTimeZone.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/FxQuote.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/FxQuote.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/FxQuotesRequest.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/FxQuotesRequest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/FxSymbols.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/FxSymbols.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/HistQuotesRequest.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/HistQuotesRequest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/HistoricalQuote.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/HistoricalQuote.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Interval.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/Interval.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/QuotesProperty.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/QuotesProperty.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/QuotesRequest.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/QuotesRequest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Stock.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/Stock.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockDividend.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/StockDividend.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuote.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuote.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuotesData.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuotesData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuotesRequest.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuotesRequest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockStats.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/StockStats.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/TestClass.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/TestClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Utils.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/Utils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/YahooFinance.class" afterPath="$PROJECT_DIR$/Cache_Data/target/classes/YahooFinance.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/CacheData.iml" afterPath="$PROJECT_DIR$/Cache_Data/CacheData.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/pom.xml" afterPath="$PROJECT_DIR$/Cache_Data/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/Cache_Data/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup_and_deploy/setup.sh" afterPath="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
     </list>
     <manually-removed-from-ignored>
       <directory path="$PROJECT_DIR$/Cache_Data/target/classes/" />
@@ -72,10 +50,20 @@
         <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+              <caret line="78" column="85" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="85" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HistoricalQuote.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/HistoricalQuote.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,27 +81,29 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.0">
-              <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="33" selection-end-column="20" />
+            <state vertical-scroll-proportion="-32.5">
+              <caret line="52" column="46" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScalaTest.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ScalaTest.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-              <folding />
+            <state vertical-scroll-proportion="0.6976744">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37544698">
+            <state vertical-scroll-proportion="-13.125">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
@@ -170,7 +160,6 @@
         <option value="$PROJECT_DIR$/Cache_Data/src/main/java/ScalaTest.scala" />
         <option value="$PROJECT_DIR$/setup_and_deploy/test.sh" />
         <option value="$PROJECT_DIR$/All_Against_All/src/main/java/AllAgainstAll.scala" />
-        <option value="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/loading.php" />
         <option value="$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java" />
@@ -180,10 +169,11 @@
         <option value="$PROJECT_DIR$/All_Against_All/pom.xml" />
         <option value="$PROJECT_DIR$/Cache/src/main/java/ScalaTest.scala" />
         <option value="$PROJECT_DIR$/Cache/pom.xml" />
-        <option value="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
         <option value="$PROJECT_DIR$/Cache_Data/pom.xml" />
+        <option value="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
+        <option value="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
       </list>
     </option>
   </component>
@@ -261,7 +251,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Cache_Data" />
+              <option name="myItemId" value="All_Against_All" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -275,47 +265,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Cache_Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cache_Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cache_Data" />
+              <option name="myItemId" value="All_Against_All" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -816,12 +766,6 @@
       <option name="number" value="Default" />
       <updated>1456106797728</updated>
     </task>
-    <task id="LOCAL-00007" summary="Fixing a major bug that would not allow Spark to run. Currently implementing the Serializable class.">
-      <created>1458260569855</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1458260569855</updated>
-    </task>
     <task id="LOCAL-00008" summary="Added stock list">
       <created>1458266076380</created>
       <option name="number" value="00008" />
@@ -1110,7 +1054,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460934560119</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Finally Maven is allowing compile to jar from Java 1.7.">
+      <created>1460935046962</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1460935046962</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1121,10 +1071,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326268" sideWeight="0.42797974" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32551098" sideWeight="0.55637366" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32778198" sideWeight="0.55637366" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25889477" sideWeight="0.45237" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32551098" sideWeight="0.4436263" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32778198" sideWeight="0.4436263" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2116889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1170,7 +1120,8 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/devin-petersohn/StockStalk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;All_Against_All/All_Against_All.iml&#10;" />
     <MESSAGE value="Adding more to setup script" />
     <MESSAGE value="Working on getting command line working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on getting command line working" />
+    <MESSAGE value="Finally Maven is allowing compile to jar from Java 1.7." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally Maven is allowing compile to jar from Java 1.7." />
     <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1212,7 +1163,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,7 +1197,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1287,13 +1242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08415147">
           <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/HistoricalQuote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12622721">
-          <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1514,24 +1462,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1540,19 +1470,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
+    <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.0">
-          <caret line="32" column="21" selection-start-line="32" selection-start-column="21" selection-end-line="33" selection-end-column="20" />
+        <state vertical-scroll-proportion="-13.125">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/HistoricalQuote.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37544698">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="78" column="85" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="85" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.5">
+          <caret line="52" column="46" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6976744">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

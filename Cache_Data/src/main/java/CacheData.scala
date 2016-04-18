@@ -84,5 +84,6 @@ object CacheData {
         sc.union(current_stock, sc.parallelize(ArrayBuffer((temp, temp.getHistory(from, to, Interval.DAILY))))).groupByKey.saveAsObjectFile("data/" + stock)
       }
     }
+    sys.exit(0)
   }
 }
