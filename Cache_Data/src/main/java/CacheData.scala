@@ -1,18 +1,17 @@
 import org.apache.hadoop.mapred.InvalidInputException
+import org.apache.spark.rdd.RDD
 
 import scala.collection.mutable.ArrayBuffer
 import java.util._
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
-
-
+import scala.collection.JavaConversions._
+import collection.mutable._
 import java.io._
 
-
-
 object CacheData {
-  //val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
-  val sc = new SparkContext()
+  val sc = new SparkContext(new SparkConf().setAppName("Testing_Scala").setMaster("local[4]"))
+  //val sc = new SparkContext()
 
   val sANDp500 = scala.collection.immutable.Vector("MMM", "ABT", "ABBV", "ACN", "ATVI", "ADBE", "ADT", "AAP", "AES", "AET", "AFL", "AMG", "A",
                         "GAS", "APD", "ARG", "AKAM","AA", "AGN", "ALXN", "ALLE", "ADS", "ALL", "GOOGL", "GOOG", "MO", "AMZN", "AEE", "AAL", "AEP",
@@ -50,8 +49,21 @@ object CacheData {
         Option(file.listFiles).map(_.toList).getOrElse(Nil).foreach(delete)
       file.delete
     } catch {
-      case _: _ => println("Exists")
+      case _ : Throwable => println("Exists")
     }
+  }
+
+  def calculatePercentChange(stock: Stock, fromDate: Calendar, toDate: Calendar, interval: Interval): RDD[(Date, Double)] = {
+    var prev = stock.getHistory.get(0).getClose
+    //val hists = filterDate(quote, fromDate, toDate)
+    //var prev = hists(0).getClose
+    var buffer = new ArrayBuffer[(Date,Double)]
+    val hists = stock.getHistory(fromDate, toDate, interval)
+    for(hist <- hists){
+      buffer += ((hist.getDate.getTime, (hist.getClose.doubleValue/prev.doubleValue - 1) * 100))
+      prev = hist.getClose
+    }
+    sc.parallelize(buffer)
   }
 
   def main(args: Array[String]) {
@@ -64,24 +76,26 @@ object CacheData {
         try {
           delete(new File("data/" + stock))
         } catch {
-          case _: _ => println("Exists")
+          case _ : Throwable => println("Exists")
         }
-        sc.parallelize(ArrayBuffer(temp, temp.getHistory(from, to, Interval.DAILY))).saveAsObjectFile("data/" + stock)
+        calculatePercentChange(temp, from, to, Interval.DAILY).saveAsObjectFile("data/" + stock)
       }
     } else {
       val from = Calendar.getInstance()
       from.add(Calendar.DATE, -1)
       val to = Calendar.getInstance
+      val current_stock = sc.parallelize(new ArrayBuffer[(Date, Double)])
       for (stock <- sANDp500) {
         val temp = YahooFinance.get(stock)
-        val current_stock = sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/" + stock)
         try {
+          val current_stock = sc.objectFile[(Date, Double)]("data/" + stock)
           delete(new File("data/" + stock))
         } catch {
-          case _: _ => println("Exists")
+          case _ : Throwable => println("Exists")
         }
-        sc.union(current_stock, sc.parallelize(ArrayBuffer((temp, temp.getHistory(from, to, Interval.DAILY))))).groupByKey.saveAsObjectFile("data/" + stock)
+        sc.union(current_stock, calculatePercentChange(temp, from, to, Interval.DAILY)).saveAsObjectFile("data/" + stock)
       }
     }
+    sys.exit(0)
   }
 }

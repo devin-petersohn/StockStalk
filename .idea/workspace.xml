@@ -2,43 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/ExchangeTimeZone.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/FxQuote.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/FxQuotesRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/FxSymbols.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/HistQuotesRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/HistoricalQuote.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Interval.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/QuotesProperty.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/QuotesRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Stock.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockDividend.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuote.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuotesData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockQuotesRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/StockStats.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/TestClass.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/Utils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Cache_Data/target/classes/YahooFinance.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/mainClass.class" afterPath="$PROJECT_DIR$/One_Against_All/target/classes/mainClass.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java" afterPath="$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search.php" afterPath="$PROJECT_DIR$/search.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/One_Against_All/pom.xml" afterPath="$PROJECT_DIR$/One_Against_All/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup_and_deploy/setup.sh" afterPath="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
     </list>
-    <ignored path="StockStalk.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path="/production/StockStalk/" />
-    <ignored path="/test/StockStalk/" />
-    <ignored path="$PROJECT_DIR$/StockStalk_Maven/target/" />
-    <ignored path="$PROJECT_DIR$/StockStalk_Algorithm/target/" />
-    <ignored path="$PROJECT_DIR$/All_Against_All/target/" />
-    <ignored path="$PROJECT_DIR$/One_Against_All/target/" />
-    <ignored path="$PROJECT_DIR$/Cache_Data/target/classes/" />
-    <ignored path="$PROJECT_DIR$/Cache_Data/target/maven-archiver/" />
-    <ignored path="$PROJECT_DIR$/Cache_Data/target/maven-status/" />
-    <ignored path="$PROJECT_DIR$/Cache/target/" />
+    <ignored path="$PROJECT_DIR$/All_Against_All/target/classes/" />
+    <ignored path="$PROJECT_DIR$/All_Against_All/target/maven-archiver/" />
+    <ignored path="$PROJECT_DIR$/All_Against_All/target/maven-status/" />
     <manually-removed-from-ignored>
+      <directory path="$PROJECT_DIR$/Cache_Data/target/classes/" />
+      <directory path="$PROJECT_DIR$/All_Against_All/target/" />
+      <directory path="$PROJECT_DIR$/One_Against_All/target/" />
+      <directory path="$PROJECT_DIR$/Cache_Data/target/maven-status/" />
+      <directory path="$PROJECT_DIR$/StockStalk_Algorithm/target/" />
+      <directory path="/production/StockStalk/" />
+      <directory path="$PROJECT_DIR$/Cache/target/" />
+      <directory path="/test/StockStalk/" />
       <directory path="$PROJECT_DIR$/Cache_Data/target/" />
+      <directory path="$PROJECT_DIR$/StockStalk_Maven/target/" />
+      <directory path="$PROJECT_DIR$/Cache_Data/target/maven-archiver/" />
     </manually-removed-from-ignored>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,23 +39,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mainClass.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java">
+      <file leaf-file-name="setup.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7411765">
-              <caret line="101" column="39" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
+      <file leaf-file-name="stockstalkdump.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup_and_deploy/stockstalkdump.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.407408">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -83,9 +63,19 @@
         <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+              <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Search.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/One_Against_All/src/main/java/Search.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
               <folding>
-                <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#0#25#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,8 +84,18 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.5555556">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/One_Against_All/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.19396552">
+              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -104,8 +104,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.625">
-              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,10 +115,8 @@
         <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="144" selection-start-line="23" selection-start-column="144" selection-end-line="23" selection-end-column="144" />
-              <folding>
-                <element signature="e#0#52#0" expanded="true" />
-              </folding>
+              <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+              <caret line="87" column="12" selection-start-line="35" selection-start-column="0" selection-end-line="87" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -143,6 +141,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -182,20 +181,22 @@
         <option value="$PROJECT_DIR$/Cache_Data/src/main/java/ScalaTest.scala" />
         <option value="$PROJECT_DIR$/setup_and_deploy/test.sh" />
         <option value="$PROJECT_DIR$/All_Against_All/src/main/java/AllAgainstAll.scala" />
-        <option value="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/loading.php" />
-        <option value="$PROJECT_DIR$/One_Against_All/pom.xml" />
+        <option value="$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java" />
         <option value="$PROJECT_DIR$/search.php" />
-        <option value="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
         <option value="$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala" />
-        <option value="$PROJECT_DIR$/All_Against_All/pom.xml" />
-        <option value="$PROJECT_DIR$/Cache_Data/pom.xml" />
         <option value="$PROJECT_DIR$/Cache/src/main/java/ScalaTest.scala" />
         <option value="$PROJECT_DIR$/Cache/pom.xml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Cache_Data/pom.xml" />
+        <option value="$PROJECT_DIR$/All_Against_All/pom.xml" />
         <option value="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
-        <option value="$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java" />
+        <option value="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
+        <option value="$PROJECT_DIR$/setup_and_deploy/capstonev4.sql" />
+        <option value="$PROJECT_DIR$/setup_and_deploy/stockstalkdump.sql" />
+        <option value="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
+        <option value="$PROJECT_DIR$/One_Against_All/pom.xml" />
       </list>
     </option>
   </component>
@@ -212,10 +213,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
-    <option name="y" value="76" />
-    <option name="width" value="1440" />
-    <option name="height" value="740" />
+    <option name="x" value="290" />
+    <option name="y" value="23" />
+    <option name="width" value="2215" />
+    <option name="height" value="1413" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -243,7 +244,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -272,7 +272,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="One_Against_All" />
+              <option name="myItemId" value="setup_and_deploy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -287,42 +287,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="One_Against_All" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StockStalk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="One_Against_All" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,6 +325,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/setup_and_deploy" />
+      <recent name="$PROJECT_DIR$/All_Against_All/src" />
       <recent name="$PROJECT_DIR$/StockStalk_Maven/src/main/java" />
       <recent name="$PROJECT_DIR$/StockStalk_Maven/src/libraries" />
     </key>
@@ -365,12 +338,12 @@
       <recent name="$PROJECT_DIR$/StockStalk_Maven/src/libraries" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.mainClass">
+  <component name="RunManager" selected="Application.ScalaTest">
     <configuration default="false" name="ScalaTest" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="ScalaTest" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="2015 1 1 2016 1 1 1.0 Daily S&amp;P500" />
+      <option name="PROGRAM_PARAMETERS" value="2015 1 1 2016 1 1 1.0 Daily SP500" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -400,7 +373,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="mainClass" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="GOOGL 2013-05-03 2015-05-03" />
+      <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -429,9 +402,9 @@
     <configuration default="false" name="CacheData" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="CacheData" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -525,6 +498,17 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <module name="" />
       <envs />
       <method />
@@ -734,6 +718,19 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
+      <setting name="environment" value="" />
+      <setting name="specsToExecute" value="" />
+      <setting name="tags" value="" />
+      <setting name="parallelNodes" value="" />
+      <setting name="execInParallel" value="false" />
+      <setting name="programParameters" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="moduleName" value="" />
+      <envMap />
+      <setting name="rowsRange" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -758,11 +755,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.mainClass" />
-        <item index="1" class="java.lang.String" itemvalue="Application.CacheData" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ScalaTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.ScalaTest (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Cache_Data" />
+        <item index="0" class="java.lang.String" itemvalue="Application.CacheData" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ScalaTest" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ScalaTest (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Cache_Data" />
+        <item index="4" class="java.lang.String" itemvalue="Application.mainClass" />
       </list>
     </recent_temporary>
   </component>
@@ -781,174 +778,6 @@
       <created>1456106797728</created>
       <option name="number" value="Default" />
       <updated>1456106797728</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Some minor changes to scala code">
-      <created>1456295374790</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1456295374790</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added example for saving file to scala">
-      <created>1456706919714</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1456706919714</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Updating example code for automatically getting data from Yahoo Finance API.">
-      <created>1456708052809</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1456708052809</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Changing Maven pom.xml to allow for spark and scala code for other search functionalities">
-      <created>1456708574651</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1456708574651</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Adding example to other project">
-      <created>1456708878446</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1456708878446</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Adding example to other project">
-      <created>1456709060253</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1456709060253</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Fixing a major bug that would not allow Spark to run. Currently implementing the Serializable class.">
-      <created>1458260569855</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1458260569855</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added stock list">
-      <created>1458266076380</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1458266076380</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Added json functionality">
-      <created>1458267038822</created>
-      <option name="number" value="00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1458267038822</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Created Cache Functionality.">
-      <created>1460229639738</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1460229639738</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Refactoring Code to clean up.">
-      <created>1460230677291</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1460230677291</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Fixing issues with IDE.">
-      <created>1460230861690</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1460230861690</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Fixing issues with IDE.">
-      <created>1460231044473</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1460231044473</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Merge branch 'master' of https://github.com/devin-petersohn/StockStalk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;">
-      <created>1460232598499</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1460232598499</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Merge branch 'master' of https://github.com/devin-petersohn/StockStalk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;">
-      <created>1460233443239</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1460233443239</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Merge branch 'master' of https://github.com/devin-petersohn/StockStalk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;">
-      <created>1460234328778</created>
-      <option name="number" value="00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1460234328778</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Merge branch 'master' of https://github.com/devin-petersohn/StockStalk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;">
-      <created>1460235929927</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1460235929927</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Updating setup script for fast and easy deployment.">
-      <created>1460236797422</created>
-      <option name="number" value="00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1460236797423</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Updating setup script for fast and easy deployment.">
-      <created>1460316402086</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1460316402086</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Updating setup script for fast and easy deployment.">
-      <created>1460682378234</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1460682378234</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Updating setup script for fast and easy deployment.">
-      <created>1460682754302</created>
-      <option name="number" value="00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1460682754302</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Updating setup script for fast and easy deployment.">
-      <created>1460682840977</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1460682840977</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Updating setup script for fast and easy deployment.">
-      <created>1460683183434</created>
-      <option name="number" value="00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1460683183434</updated>
-    </task>
-    <task id="LOCAL-00024" summary="New changelist">
-      <created>1460683314798</created>
-      <option name="number" value="00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1460683314798</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Updating setup script for fast and easy deployment.">
-      <created>1460683897498</created>
-      <option name="number" value="00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1460683897498</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Merge branch 'master' of https://github.com/devin-petersohn/StockStalk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;All_Against_All/All_Against_All.iml&#10;">
-      <created>1460828298071</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1460828298071</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Adding more to setup script">
-      <created>1460828377384</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1460828377384</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Adding more to setup script">
-      <created>1460835463532</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1460835463532</updated>
     </task>
     <task id="LOCAL-00029" summary="Working on getting command line working">
       <created>1460835572846</created>
@@ -1064,35 +893,215 @@
       <option name="project" value="LOCAL" />
       <updated>1460846431462</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Working on getting command line working">
+      <created>1460925032403</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1460925032403</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Working on getting command line working">
+      <created>1460925359698</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1460925359698</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Working on getting command line working">
+      <created>1460925615902</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1460925615906</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Working on getting command line working">
+      <created>1460928011232</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1460928011232</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Working on getting command line working">
+      <created>1460928041765</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1460928041766</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Working on getting command line working">
+      <created>1460933447186</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1460933447186</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Working on getting command line working">
+      <created>1460934253982</created>
+      <option name="number" value="00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1460934253982</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Working on getting command line working">
+      <created>1460934560119</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1460934560119</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Finally Maven is allowing compile to jar from Java 1.7.">
+      <created>1460935046962</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1460935046962</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Forcing exit at the ends of scripts. Also, added support for cache in All_Against_All.">
+      <created>1460943888853</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1460943888853</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Making compatible with Java 1.7">
+      <created>1460944028807</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1460944028808</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Making compatible with Java 1.7">
+      <created>1460944200874</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1460944200874</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Making compatible with Java 1.7">
+      <created>1460944293098</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1460944293098</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Making compatible with Java 1.7">
+      <created>1460944421978</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1460944421979</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Making compatible with Java 1.7">
+      <created>1460944486334</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1460944486334</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Making compatible with Java 1.7">
+      <created>1460945094248</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1460945094248</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Making compatible with Java 1.7">
+      <created>1460945378845</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1460945378845</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Making compatible with Java 1.7">
+      <created>1460945684222</created>
+      <option name="number" value="00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1460945684222</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Making compatible with Java 1.7">
+      <created>1460946244772</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1460946244772</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Making compatible with Java 1.7">
+      <created>1460946294980</created>
+      <option name="number" value="00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1460946294980</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Making compatible with Java 1.7">
+      <created>1460946916778</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1460946916779</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Making compatible with Java 1.7">
+      <created>1460947658622</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1460947658622</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Making compatible with Java 1.7">
+      <created>1460949533724</created>
+      <option name="number" value="00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1460949533724</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Making compatible with Java 1.7">
+      <created>1460950473307</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1460950473307</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Making compatible with Java 1.7">
+      <created>1460952859200</created>
+      <option name="number" value="00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1460952859200</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Making compatible with Java 1.7">
+      <created>1460953244090</created>
+      <option name="number" value="00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1460953244090</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Making compatible with Java 1.7">
+      <created>1460954206402</created>
+      <option name="number" value="00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1460954206402</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Making compatible with Java 1.7">
+      <created>1460957723636</created>
+      <option name="number" value="00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1460957723636</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Making compatible with Java 1.7">
+      <created>1461020768507</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1461020768507</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Making compatible with Java 1.7">
+      <created>1461020779462</created>
+      <option name="number" value="00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1461020779462</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="76" width="1440" height="740" extended-state="0" />
+    <frame x="290" y="23" width="2215" height="1413" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637855" sideWeight="0.4340278" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32577476" sideWeight="0.42521858" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32488823" sideWeight="0.5472222" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25813776" sideWeight="0.5747814" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25782415" sideWeight="0.45416668" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32488823" sideWeight="0.45277777" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2585034" sideWeight="0.45052922" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21180555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20018116" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21076852" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32778198" sideWeight="0.4436263" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20018116" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1124,7 +1133,11 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/devin-petersohn/StockStalk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;All_Against_All/All_Against_All.iml&#10;" />
     <MESSAGE value="Adding more to setup script" />
     <MESSAGE value="Working on getting command line working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on getting command line working" />
+    <MESSAGE value="Finally Maven is allowing compile to jar from Java 1.7." />
+    <MESSAGE value="Forcing exit at the ends of scripts. Also, added support for cache in All_Against_All." />
+    <MESSAGE value="Making compatible with Java 1.7" />
+    <option name="LAST_COMMIT_MESSAGE" value="Making compatible with Java 1.7" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1135,6 +1148,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1155,9 +1176,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1189,9 +1208,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1234,13 +1251,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08415147">
           <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/HistoricalQuote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12622721">
-          <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1304,13 +1314,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12622721">
           <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/Stock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1391,17 +1394,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.001194">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,51 +1416,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/STOCKS/._SUCCESS.crc">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/Stock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.104166664">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/One_Against_All/pom.xml">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/loading.php">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/search.php">
+    <entry file="file://$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2736318">
-          <caret line="110" column="32" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="32" />
-          <folding />
+        <state vertical-scroll-proportion="0.24418604">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/HistoricalQuote.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-          <folding />
+        <state vertical-scroll-proportion="0.55813956">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
+    <entry file="file://$PROJECT_DIR$/One_Against_All/src/main/java/Search.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="144" selection-start-line="23" selection-start-column="144" selection-end-line="23" selection-end-column="144" />
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1471,44 +1466,48 @@
     <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5555556">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="69" column="25" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cache_Data/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="12" selection-start-line="35" selection-start-column="0" selection-end-line="87" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup_and_deploy/stockstalkdump.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.407408">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java">
+    <entry file="file://$PROJECT_DIR$/One_Against_All/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7411765">
-          <caret line="101" column="39" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.19396552">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
