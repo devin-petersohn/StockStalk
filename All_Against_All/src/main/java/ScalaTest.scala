@@ -1,5 +1,4 @@
 import java.util.{Calendar, Date, GregorianCalendar}
-import scala.collection.JavaConversions._
 import scala.collection.mutable.ArrayBuffer
 import reflect.ClassTag
 import org.apache.spark.SparkContext
@@ -44,7 +43,7 @@ object ScalaTest {
     for(stock <- stock_query_list) {
       //val x = convertPercentChange(calculatePercentChange(YahooFinance.get(stock), fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
 
-      val quotes = sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/"+stock).map(_._2).collect.flatten.sortBy(f => f.getDate.getTimeInMillis)
+      val quotes = sc.objectFile[(Stock, Array[HistoricalQuote])]("data/"+stock).map(_._2).collect.flatten.sortBy(f => f.getDate.getTimeInMillis)
 
       val x = convertPercentChange(calculatePercentChange(stock, quotes, fromDate, toDate).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
       stock_data = sc.union(stock_data, x)
@@ -164,7 +163,7 @@ object ScalaTest {
     val stock_query_list = if(args(8) == "SP500") sANDp500 else args.drop(8).toVector
     var stock_data_list = getAllStocks(stock_query_list, fromDate, toDate, interval, percent_threshold).map(_.swap)
 
-    val indexes_of_dates = sc.objectFile[(Stock, java.util.List[HistoricalQuote])]("data/AAPL").flatMap(_._2).collect.sortBy(f => f.getDate.getTimeInMillis).zipWithIndex.map(f => (f._2.toLong, f._1)).toMap
+    val indexes_of_dates = sc.objectFile[(Stock, Array[HistoricalQuote])]("data/AAPL").flatMap(_._2).collect.sortBy(f => f.getDate.getTimeInMillis).zipWithIndex.map(f => (f._2.toLong, f._1)).toMap
 
     var numDays = 1
     var temp = coarseGrainedAggregation(stock_data_list, numDays)

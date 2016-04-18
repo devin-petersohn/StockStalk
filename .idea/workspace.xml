@@ -4,7 +4,6 @@
     <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" afterPath="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" afterPath="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/All_Against_All/target/classes/" />
     <ignored path="$PROJECT_DIR$/All_Against_All/target/maven-archiver/" />
@@ -49,10 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CacheData.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CacheData.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8372093">
+            <state vertical-scroll-proportion="0.0">
               <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
@@ -125,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScalaTest.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ScalaTest.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="41" />
+              <caret line="0" column="52" selection-start-line="0" selection-start-column="52" selection-end-line="0" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -207,8 +206,8 @@
         <option value="$PROJECT_DIR$/Cache_Data/pom.xml" />
         <option value="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
         <option value="$PROJECT_DIR$/All_Against_All/pom.xml" />
-        <option value="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
         <option value="$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala" />
+        <option value="$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala" />
       </list>
     </option>
   </component>
@@ -820,12 +819,6 @@
       <option name="number" value="Default" />
       <updated>1456106797728</updated>
     </task>
-    <task id="LOCAL-00017" summary="Merge branch 'master' of https://github.com/devin-petersohn/StockStalk&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;">
-      <created>1460235929927</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1460235929927</updated>
-    </task>
     <task id="LOCAL-00018" summary="Updating setup script for fast and easy deployment.">
       <created>1460236797422</created>
       <option name="number" value="00018" />
@@ -1114,7 +1107,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460945684222</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Making compatible with Java 1.7">
+      <created>1460946244772</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1460946244772</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1580,21 +1579,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Cache_Data/src/main/java/CacheData.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8372093">
+        <state vertical-scroll-proportion="0.0">
           <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/ScalaTest.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="52" selection-start-line="0" selection-start-column="52" selection-end-line="0" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
