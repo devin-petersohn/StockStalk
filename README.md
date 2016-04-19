@@ -5,6 +5,7 @@
 The setup script included in this repository is designed for setting up all dependencies and software requirements, building the sources, and beginning to cache the data in a Microsoft Azure HDInsight environment. There is no guarantee that this script will work for any other environment.
 
 The following software will be downloaded:
+
 * Apache Maven 3
 * MySQL
 * PHP
@@ -32,6 +33,7 @@ Eg: `ssh -L 8080:10.0.14:80 username@<servername>-ssh.azurehdinsight.net`
 In this example, 8080 is the local port that will forward all traffic to the cluster head node (indicated by the ip address) port 80. You must use your credentials to ssh into your HDInsight allocation to access this content.
 
 In order to access the web server set up on your cluster allocation you must use port forwarding. It is simple to implement port forwarding:
+
     1.  Use the port forwarding command output from the setup script. Remember to replace the username with your username and servername with the name of your HDInsight allocation name.
     2.  Using a web browser, navigate to `localhost:8080`. Simply type this address into the navigation bar.
     3.  From here you are ready to begin using StockStalk

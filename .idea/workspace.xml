@@ -66,7 +66,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
               <first_editor vertical-scroll-proportion="0.117056854">
-                <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+                <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -757,12 +757,6 @@
       <option name="number" value="Default" />
       <updated>1456106797728</updated>
     </task>
-    <task id="LOCAL-00036" summary="Working on getting command line working">
-      <created>1460837881812</created>
-      <option name="number" value="00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1460837881812</updated>
-    </task>
     <task id="LOCAL-00037" summary="Working on getting command line working">
       <created>1460838026224</created>
       <option name="number" value="00037" />
@@ -1051,7 +1045,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461066521834</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Finished testing setup script. Everything working as intended.">
+      <created>1461066577667</created>
+      <option name="number" value="00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1461066577667</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1504,7 +1504,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
           <first_editor vertical-scroll-proportion="0.117056854">
-            <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+            <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
