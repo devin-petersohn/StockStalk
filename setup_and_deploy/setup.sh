@@ -44,9 +44,11 @@ sudo cp -r www/* /var/www/html
 #Do the initial caching of data. Get all data for last 20 years.
 spark-submit --class CacheData Cache_Data/target/CacheData-1.0-SNAPSHOT.jar INITIAL
 
-echo "Type the following command into a new terminal connection from your local machine:
+echo "
+Type the following command into a new terminal connection from your local machine:
 "
 echo "ssh -L 8080:`(/sbin/ifconfig $1 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' | head -n 1)`:80 username@<servername>-ssh.azurehdinsight.net
+
 "
 echo "You may access this application through a web browser using the following address:"
 echo "localhost:8080"
