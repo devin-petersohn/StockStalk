@@ -27,7 +27,7 @@
     
     <script>
         $( document ).ready(function() {
-            $.getJSON( "temp.json", function( data ) {
+            $.getJSON( "temp_data/.json", function( data ) {
             var items = [];
             var i= 1;
             $.each( data, function( key, val ) {
