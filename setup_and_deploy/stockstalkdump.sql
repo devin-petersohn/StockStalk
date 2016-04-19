@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 19, 2016 at 03:19 AM
+-- Generation Time: Apr 19, 2016 at 04:29 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -28,7 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `loginInfo` (
   `username` varchar(25) NOT NULL,
-  `Name` varchar(30) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `email` varchar(25) NOT NULL,
   `hashpass` varchar(255) DEFAULT NULL,
   `salt` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -37,10 +38,10 @@ CREATE TABLE `loginInfo` (
 -- Dumping data for table `loginInfo`
 --
 
-INSERT INTO `loginInfo` (`username`, `Name`, `hashpass`, `salt`) VALUES
-('123', NULL, '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
-('mabrm9', NULL, 'pass', 'word'),
-('mac', NULL, '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083');
+INSERT INTO `loginInfo` (`username`, `name`, `email`, `hashpass`, `salt`) VALUES
+('123', NULL, '123@yahoo.com', '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
+('mabrm9', NULL, 'MAL', 'pass', 'word'),
+('mac', NULL, 'mac@yahoo.com', '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083');
 
 -- --------------------------------------------------------
 
