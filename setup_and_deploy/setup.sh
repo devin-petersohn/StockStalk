@@ -9,7 +9,8 @@ sudo apt-get -y install maven
 git clone https://github.com/devin-petersohn/StockStalk.git
 
 #MySQL and set up the database
-sudo apt-get -y install mysql-server
+export DEBIAN_FRONTEND=noninteractive
+sudo -E apt-get -q -y install mysql-server
 mysql -uroot -e "create database stockstalk"
 mysql -uroot -h localhost stockstalk < setup_and_deploy/stockstalkdump.sql
 
