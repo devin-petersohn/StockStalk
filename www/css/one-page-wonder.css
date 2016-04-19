@@ -16,7 +16,7 @@ body {
 .header-image {
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: left;
     background-color: white;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -40,6 +40,14 @@ body {
     background: #05AABE;
     background: rgba(5,170,190,0.9);
     color: #22F292;
+}
+
+.col-sm-14 h3 {
+    font-size: 50px;
+    background: #05AABE;
+    background: rgba(5,170,190,0.9);
+    color: #22F292;
+    text-align: center;
 }
 
 .featurette-divider {
@@ -226,4 +234,11 @@ footer {
 
 .moveup {
     margin-top: 0px;
+}
+
+
+.container h1 {
+    font-size: 100px;
+    color: #22F292;
+    text-align: center;
 }

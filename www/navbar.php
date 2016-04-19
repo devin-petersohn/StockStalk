@@ -18,15 +18,17 @@
   function checkUserPass($username,$password) {
 		
 			//$dbconn =pg_connect("servername=dbhost-mysql.cs.missouri.edu username=mmhkwc password=RgS8HC6L") or die("Could not connect: " . pg_last_error());
-      $servername = "dbhost-mysql.cs.missouri.edu";
-        $uname = "mmhkwc";
-        $pword = "RgS8HC6L";
+      $servername = "localhost";
+        $uname = "root";
+        $pword = "";
+
 
 // Create connection
 $dbconn = new mysqli($servername, $uname, $pword);
+      
 			
       
-      $query="SELECT hashpass, salt FROM mmhkwc.loginInfo WHERE username=?";
+      $query="SELECT hashpass, salt FROM stockstalk.loginInfo WHERE username=?";
 //Prepared statement
 			$stmt=$dbconn->prepare($query) or die("Query failed");
 			$stmt->bind_param("s",$username);
@@ -95,8 +97,11 @@ $dbconn = new mysqli($servername, $uname, $pword);
                     <li>
                         <a href="chart.php">Chart</a>
                     </li>
-                    <li>
-                        <a href="portfolio.php">Portfolio</a>
+                    
+                    <li <?php if (!$_SESSION['username']){ echo 'style="display:none;"'; } ?>>
+                        
+                            <a href="portfolio.php">Portfolio</a>
+                       
                     </li>
                     
                      </ul>
@@ -187,13 +192,14 @@ $dbconn = new mysqli($servername, $uname, $pword);
 			                             <li>
                                       Welcome, <?php echo ucfirst($_SESSION['username']); ?>!
                                    </li>
+                                    <li><a href= <?=$href_page?> ><?=$log_display ?></a></li>
 			                             <?php 
 
                                       }
 
                                     ?>
                                     
-                                    <li><a href= <?=$href_page?> ><?=$log_display ?></a></li>
+                                    
                                     <div <?php if ($_SESSION['username']){ echo 'style="display:none;"'; } ?>>
                                          <input type="text" name="username" class="form-control" id="username" placeholder="Username" required autofocus>
                                         </br>
@@ -213,7 +219,7 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                 <div <?php if ($_SESSION['username']){ echo 'style="display:none;"'; } ?>>
                                     <div class="bottom text-center">
                               
-                                    New here ? <a href="#"><b>Join Us</b></a>
+                                    New here ? <a href="register.php"><b>Join Us</b></a>
                               
                                     </div>
                                 </div>
@@ -230,6 +236,7 @@ $dbconn = new mysqli($servername, $uname, $pword);
         </div>
         <!-- /.container -->
     </nav>
-</body>               
+</body>   
+</html>
                     
   

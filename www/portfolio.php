@@ -2,9 +2,10 @@
     session_start();
 
     include "navbar.php";
-    $servername = "dbhost-mysql.cs.missouri.edu";
-        $uname = "mmhkwc";
-        $pword = "RgS8HC6L";
+    $servername = "hn0-stocks";
+        $uname = "root";
+        $pword = "";
+
 
 /* Create connection
 $dbconn = new mysqli($servername, $uname, $pword);
@@ -187,7 +188,7 @@ if ($result->num_rows > 0) {
                     
                     <?php
                     //Create connection
-                    $dbconn = new mysqli($servername, $uname, $pword);
+                    $dbconn = new mysqli($servername, $uname, $pword, $dbase);
                     $uname = $_SESSION['username'];
                     $mes2 = "SELECT * FROM mmhkwc.portfolio WHERE username='".$uname."'";
                     $result = $dbconn->query($mes2);
