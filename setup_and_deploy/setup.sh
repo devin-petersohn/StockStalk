@@ -11,6 +11,8 @@ git clone https://github.com/devin-petersohn/StockStalk.git
 
 #Apache Server and relocation of web pages
 sudo apt-get -y install apache2
+sudo apt-get -y install php5 libapache2-mod-php5
+sudo /etc/init.d/apache2 restart
 
 #Jenkins and setup the daily caching of data
 wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
@@ -44,3 +46,9 @@ mysql -uroot -h localhost stockstalk < setup_and_deploy/stockstalkdump.sql
 #Do the initial caching of data. Get all data for last 20 years.
 spark-submit --class CacheData Cache_Data/target/CacheData-1.0-SNAPSHOT.jar INITIAL
 
+echo "Type the following command into a new terminal connection from your local machine:
+"
+echo "ssh 8080:`/sbin/ifconfig $1 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' | head -n 1`:80 username@<servername>
+"
+echo "You may access this application through a web browser using the following address:"
+echo "localhost:8080"
