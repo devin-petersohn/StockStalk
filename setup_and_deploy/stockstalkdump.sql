@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 19, 2016 at 01:43 AM
+-- Generation Time: Apr 19, 2016 at 03:19 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -161,6 +161,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('CA', 'CA, Inc.', 'Information Technology'),
 ('CAG', 'ConAgra Foods Inc.', 'Consumer Staples'),
 ('CAH', 'Cardinal Health Inc.', 'Health Care'),
+('CAM', 'Camellia PLC', 'Consumer Staples'),
 ('CAT', 'Caterpillar Inc.', 'Industrials'),
 ('CB', 'Chubb Limited', 'Financials'),
 ('CBG', 'CBRE Group', 'Financials'),
@@ -187,6 +188,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('CMS', 'CMS Energy', 'Utilities'),
 ('CNC', 'Centene Corporation', 'Health Care'),
 ('CNP', 'CenterPoint Energy', 'Utilities'),
+('CNX', 'Consol Energy Inc.', 'Energy'),
 ('COF', 'Capital One Financial', 'Financials'),
 ('COG', 'Cabot Oil & Gas', 'Energy'),
 ('COH', 'Coach Inc.', 'Consumer Discretionary'),
@@ -249,6 +251,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('ES', 'Eversource Energy', 'Utilities'),
 ('ESRX', 'Express Scripts', 'Health Care'),
 ('ESS', 'Essex Property Trust Inc', 'Financials'),
+('ESV', 'Ensco PLC', 'Energy'),
 ('ETFC', 'E*Trade', 'Financials'),
 ('ETN', 'Eaton Corporation', 'Industrials'),
 ('ETR', 'Entergy Corp.', 'Utilities'),
@@ -286,6 +289,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('GIS', 'General Mills', 'Consumer Staples'),
 ('GLW', 'Corning Inc.', 'Industrials'),
 ('GM', 'General Motors', 'Consumer Discretionary'),
+('GMCR', 'Keurig Green Mountain', 'Consumer Staples'),
 ('GME', 'GameStop Corp.', 'Consumer Discretionary'),
 ('GOOG', 'Alphabet Inc Class C', 'Information Technology'),
 ('GOOGL', 'Alphabet Inc Class A', 'Information Technology'),
@@ -454,6 +458,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('PNC', 'PNC Financial Services', 'Financials'),
 ('PNR', 'Pentair Ltd.', 'Industrials'),
 ('PNW', 'Pinnacle West Capital', 'Utilities'),
+('POM', 'Pepco Holdings Inc.', 'Energy'),
 ('PPG', 'PPG Industries', 'Materials'),
 ('PPL', 'PPL Corp.', 'Utilities'),
 ('PRGO', 'Perrigo', 'Health Care'),
@@ -563,7 +568,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('WAT', 'Waters Corporation', 'Health Care'),
 ('WBA', 'Walgreens Boots Alliance', 'Consumer Staples'),
 ('WDC', 'Western Digital', 'Information Technology'),
-('WEC', 'Wisconsin Energy Corporation', 'Utilities'),
+('WEC', 'WEC Energy Group Inc', 'Utilities'),
 ('WFC', 'Wells Fargo', 'Financials'),
 ('WFM', 'Whole Foods Market', 'Consumer Staples'),
 ('WHR', 'Whirlpool Corp.', 'Consumer Discretionary'),
@@ -578,7 +583,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('WYNN', 'Wynn Resorts Ltd', 'Consumer Discretionary'),
 ('XEC', 'Cimarex Energy', 'Energy'),
 ('XEL', 'Xcel Energy Inc', 'Utilities'),
-('XL', 'XL Capital', 'Financials'),
+('XL', 'XL Catlin', 'Financials'),
 ('XLNX', 'Xilinx Inc', 'Information Technology'),
 ('XOM', 'Exxon Mobil Corp.', 'Energy'),
 ('XRAY', 'Dentsply Sirona', 'Health Care'),
