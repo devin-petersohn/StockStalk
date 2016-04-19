@@ -92,7 +92,7 @@ public class mainClass implements Serializable{
         System.out.println(stockLists);
 //         try-with-resources statement based on post comment below :)
 
-        String fileName = "tempFiles/OneVsAlltemp.json";
+        String fileName = "temp_data/OneVsAlltemp.json";
         if(new File(fileName).exists())
         {
             new File(fileName).delete();

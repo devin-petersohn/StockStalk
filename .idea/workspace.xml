@@ -2,25 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6c4c266-1d11-42af-ad4e-505734e3ad8a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/AbstractInstance$InstanceValueIterator.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/AbstractInstance.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/AbstractSimilarity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/DTW.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/DTWSimilarity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/DenseInstance.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/DistanceMeasure.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/ExchangeTimeZone.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/FxQuote.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/FxQuotesRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/FxSymbols.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/HistQuotesRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/HistoricalQuote.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/Instance.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/Interval.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/QuotesProperty.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/QuotesRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/SparseInstance.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/Stock.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/StockDividend.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/StockQuote.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/StockQuotesData.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/StockQuotesRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/StockStats.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/Utils.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/YahooFinance.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/mainClass$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/One_Against_All/target/classes/mainClass.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/One_Against_All/pom.xml" afterPath="$PROJECT_DIR$/One_Against_All/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup_and_deploy/setup.sh" afterPath="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java" afterPath="$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/chart.php" afterPath="$PROJECT_DIR$/www/chart.php" />
     </list>
     <ignored path="$PROJECT_DIR$/All_Against_All/target/classes/" />
     <ignored path="$PROJECT_DIR$/All_Against_All/target/maven-archiver/" />
     <ignored path="$PROJECT_DIR$/All_Against_All/target/maven-status/" />
+    <ignored path="$PROJECT_DIR$/One_Against_All/target/classes/" />
+    <ignored path="$PROJECT_DIR$/One_Against_All/target/maven-archiver/" />
+    <ignored path="$PROJECT_DIR$/One_Against_All/target/maven-status/" />
     <manually-removed-from-ignored>
       <directory path="$PROJECT_DIR$/Cache_Data/target/classes/" />
-      <directory path="$PROJECT_DIR$/All_Against_All/target/" />
+      <directory path="$PROJECT_DIR$/StockStalk_Maven/target/" />
+      <directory path="$PROJECT_DIR$/Cache_Data/target/maven-archiver/" />
       <directory path="$PROJECT_DIR$/One_Against_All/target/" />
-      <directory path="$PROJECT_DIR$/Cache_Data/target/maven-status/" />
-      <directory path="$PROJECT_DIR$/StockStalk_Algorithm/target/" />
+      <directory path="$PROJECT_DIR$/Cache_Data/target/" />
       <directory path="/production/StockStalk/" />
       <directory path="$PROJECT_DIR$/Cache/target/" />
       <directory path="/test/StockStalk/" />
-      <directory path="$PROJECT_DIR$/Cache_Data/target/" />
-      <directory path="$PROJECT_DIR$/StockStalk_Maven/target/" />
-      <directory path="$PROJECT_DIR$/Cache_Data/target/maven-archiver/" />
+      <directory path="$PROJECT_DIR$/Cache_Data/target/maven-status/" />
+      <directory path="$PROJECT_DIR$/All_Against_All/target/" />
+      <directory path="$PROJECT_DIR$/StockStalk_Algorithm/target/" />
     </manually-removed-from-ignored>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,11 +72,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="mainClass.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5837838">
+              <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="setup.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.2222223">
+              <caret line="4" column="12" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/search.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chart.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/chart.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setup_and_deploy/test.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.1111112">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -69,43 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Search.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/One_Against_All/src/main/java/Search.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#25#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/One_Against_All/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19396552">
-              <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/All_Against_All/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.9583333">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -183,7 +224,6 @@
         <option value="$PROJECT_DIR$/All_Against_All/src/main/java/AllAgainstAll.scala" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/loading.php" />
-        <option value="$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java" />
         <option value="$PROJECT_DIR$/search.php" />
         <option value="$PROJECT_DIR$/Cache_Data/src/main/java/Cache_Data.scala" />
         <option value="$PROJECT_DIR$/Cache/src/main/java/ScalaTest.scala" />
@@ -196,7 +236,9 @@
         <option value="$PROJECT_DIR$/setup_and_deploy/capstonev4.sql" />
         <option value="$PROJECT_DIR$/setup_and_deploy/stockstalkdump.sql" />
         <option value="$PROJECT_DIR$/setup_and_deploy/setup.sh" />
+        <option value="$PROJECT_DIR$/www/chart.php" />
         <option value="$PROJECT_DIR$/One_Against_All/pom.xml" />
+        <option value="$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java" />
       </list>
     </option>
   </component>
@@ -213,10 +255,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="290" />
+    <option name="x" value="57" />
     <option name="y" value="23" />
-    <option name="width" value="2215" />
-    <option name="height" value="1413" />
+    <option name="width" value="1440" />
+    <option name="height" value="740" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -243,7 +285,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -259,6 +300,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="StockStalk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StockStalk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StockStalk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -290,9 +345,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StockStalk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StockStalk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="One_Against_All" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StockStalk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StockStalk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="One_Against_All" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -338,7 +438,7 @@
       <recent name="$PROJECT_DIR$/StockStalk_Maven/src/libraries" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ScalaTest">
+  <component name="RunManager" selected="Application.mainClass">
     <configuration default="false" name="ScalaTest" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="ScalaTest" />
@@ -373,7 +473,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="mainClass" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="GOOGL 2013-05-03 2015-05-03" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -498,17 +598,6 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
       <module name="" />
       <envs />
       <method />
@@ -718,19 +807,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
-      <setting name="environment" value="" />
-      <setting name="specsToExecute" value="" />
-      <setting name="tags" value="" />
-      <setting name="parallelNodes" value="" />
-      <setting name="execInParallel" value="false" />
-      <setting name="programParameters" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="moduleName" value="" />
-      <envMap />
-      <setting name="rowsRange" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -755,11 +831,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.CacheData" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ScalaTest" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ScalaTest (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Cache_Data" />
-        <item index="4" class="java.lang.String" itemvalue="Application.mainClass" />
+        <item index="0" class="java.lang.String" itemvalue="Application.mainClass" />
+        <item index="1" class="java.lang.String" itemvalue="Application.CacheData" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ScalaTest" />
+        <item index="3" class="java.lang.String" itemvalue="Application.ScalaTest (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Cache_Data" />
       </list>
     </recent_temporary>
   </component>
@@ -1077,32 +1153,35 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="290" y="23" width="2215" height="1413" extended-state="0" />
+    <frame x="57" y="23" width="1440" height="740" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32577476" sideWeight="0.42521858" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32488823" sideWeight="0.41458333" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25813776" sideWeight="0.5747814" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32637855" sideWeight="0.5590278" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2585034" sideWeight="0.45052922" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25782415" sideWeight="0.44791666" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32637855" sideWeight="0.4409722" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21076852" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21041666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32778198" sideWeight="0.4436263" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20018116" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.php" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1402,13 +1481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup_and_deploy/test.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1439,13 +1511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24418604">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/All_Against_All/src/main/java/HistoricalQuote.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.55813956">
@@ -1457,9 +1522,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1495,18 +1558,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/setup_and_deploy/test.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.1111112">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/setup_and_deploy/setup.sh">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2222223">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/search.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/chart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/One_Against_All/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19396552">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        <state vertical-scroll-proportion="-2.9583333">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/One_Against_All/src/main/java/mainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5837838">
+          <caret line="94" column="36" selection-start-line="94" selection-start-column="36" selection-end-line="94" selection-end-column="36" />
           <folding />
         </state>
       </provider>
