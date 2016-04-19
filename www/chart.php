@@ -27,11 +27,11 @@
     
     <script>
         $( document ).ready(function() {
-            $.getJSON( "temp.json", function( data ) {
+            $.getJSON( "../temp_data/OneVsAlltemp.json", function( data ) {
             var items = [];
             var i= 1;
             $.each( data, function( key, val ) {
-                var temp = "<tr class='odd 'gradeX><td>"+i+"</td><td id='name"+i+"'>"+key+"</td><td>Unknown</td><td>"+val+"</td><td><button onclick='addToQueue(name"+i+")' class='btn'>add to queue</button></td><td><button onclick='addToQueueMS(name1)'' class='btn'>X</button></td></tr>";
+                var temp = "<tr class='odd 'gradeX><td>"+i+"</td><td id='name"+i+"'>"+key+"</td><td>Unknown</td><td>"+val+"</td><td><button onclick='addToQueue(name"+i+")' class='btn'>add to queue</button></td><td><button onclick='addToQueueMS(name"+i+")'' class='btn'>＋</button></td></tr>";
                 items.push( temp);
                 i++;
                 
@@ -159,7 +159,10 @@
 <body>
 
     <!---Navbar call -->
-    <?php include "navbar.php"; ?>
+    <?php 
+        include "navbar.php";
+        $user = $_SESSION['username'];
+    ?>
     
     
 	<h1>Chart Your Stocks</h1>
@@ -226,31 +229,39 @@
 
         <hr>
        
-        <!--
+
         <script>
-            var array = [];
-            var i;
-            function addToQueue(name){
-//                console.log(name);
-                var same = 0;
-                console.log(name.innerHTML);
-                var tickername = name.innerHTML;
-                for(i = 0; i < array.length; i ++){            
-                    if(tickername == array[i]){
-                        same = 1
-                    }
+        var arrayMS = [];
+        var m;
+        var user = "<?php echo $user; ?>"
+        function addToQueueMS(name){
+            var same = 0;
+            var tickername = name.innerHTML;
+            for(m = 0; m < arrayMS.length; m ++){            
+                if(tickername == arrayMS[m]){
+                    same = 1
                 }
-                if(same == 0){
-                    $("#addTableRow").append("<tr><td><input type='checkbox' class='chartstock' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>");
-                    array.push(tickername);
-                }
-//                var appendString = "<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>";
-//                console.log(appendString);
-                
             }
+            if(same == 0){
+                $("#addTableRowMS").append("<tr><td><input type='checkbox' class='chartstock' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>");
+                arrayMS.push(tickername);
+                console.log(name.innerHTML);
+            }
+            $.ajax({
+                type: "POST",
+                url: "PortfolioAdd.php",
+                data: {action:'add', tickername: tickername, username: user}, 
+                dataType: "json",
+                success: function(response){
+                    alert(response.msg);
+                },
+                error: function(){
+                    alert("Unexpected error! Try again.");
+                }
+                });
+        }
+
         </script>
-        -->
-        
         
         <!-- Call to Action Well -->
         <div class="row">

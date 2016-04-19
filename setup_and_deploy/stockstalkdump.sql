@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 17, 2016 at 10:05 PM
+-- Generation Time: Apr 19, 2016 at 04:29 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -26,9 +26,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `loginInfo`
 --
 
-CREATE TABLE `loginInfo`(
+CREATE TABLE `loginInfo` (
   `username` varchar(25) NOT NULL,
-  `Name` varchar(30) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `email` varchar(25) NOT NULL,
   `hashpass` varchar(255) DEFAULT NULL,
   `salt` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -37,10 +38,10 @@ CREATE TABLE `loginInfo`(
 -- Dumping data for table `loginInfo`
 --
 
-INSERT IGNORE INTO `loginInfo` (`username`, `Name`, `hashpass`, `salt`) VALUES
-('123', NULL, '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
-('mabrm9', NULL, 'pass', 'word'),
-('mac', NULL, '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083');
+INSERT INTO `loginInfo` (`username`, `name`, `email`, `hashpass`, `salt`) VALUES
+('123', NULL, '123@yahoo.com', '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
+('mabrm9', NULL, 'MAL', 'pass', 'word'),
+('mac', NULL, 'mac@yahoo.com', '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083');
 
 -- --------------------------------------------------------
 
@@ -48,7 +49,7 @@ INSERT IGNORE INTO `loginInfo` (`username`, `Name`, `hashpass`, `salt`) VALUES
 -- Table structure for table `portfolio`
 --
 
-CREATE TABLE `portfolio`(
+CREATE TABLE `portfolio` (
   `username` varchar(25) NOT NULL,
   `ticker` varchar(10) NOT NULL,
   `amount` float DEFAULT NULL
@@ -57,10 +58,24 @@ CREATE TABLE `portfolio`(
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `search_history`
+--
+
+CREATE TABLE `search_history` (
+  `username` varchar(25) NOT NULL,
+  `search_date` datetime NOT NULL,
+  `search_type` varchar(10) NOT NULL,
+  `search_parameter` varchar(6) NOT NULL,
+  `filepath` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `stocks`
 --
 
-CREATE TABLE `stocks`(
+CREATE TABLE `stocks` (
   `ticker` varchar(10) CHARACTER SET latin1 NOT NULL,
   `name` varchar(45) CHARACTER SET latin1 NOT NULL,
   `sector` varchar(35) CHARACTER SET latin1 DEFAULT NULL
@@ -70,7 +85,7 @@ CREATE TABLE `stocks`(
 -- Dumping data for table `stocks`
 --
 
-INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
+INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('A', 'Agilent Technologies Inc', 'Health Care'),
 ('AA', 'Alcoa Inc', 'Materials'),
 ('AAL', 'American Airlines Group', 'Industrials'),
@@ -147,6 +162,7 @@ INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('CA', 'CA, Inc.', 'Information Technology'),
 ('CAG', 'ConAgra Foods Inc.', 'Consumer Staples'),
 ('CAH', 'Cardinal Health Inc.', 'Health Care'),
+('CAM', 'Camellia PLC', 'Consumer Staples'),
 ('CAT', 'Caterpillar Inc.', 'Industrials'),
 ('CB', 'Chubb Limited', 'Financials'),
 ('CBG', 'CBRE Group', 'Financials'),
@@ -173,6 +189,7 @@ INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('CMS', 'CMS Energy', 'Utilities'),
 ('CNC', 'Centene Corporation', 'Health Care'),
 ('CNP', 'CenterPoint Energy', 'Utilities'),
+('CNX', 'Consol Energy Inc.', 'Energy'),
 ('COF', 'Capital One Financial', 'Financials'),
 ('COG', 'Cabot Oil & Gas', 'Energy'),
 ('COH', 'Coach Inc.', 'Consumer Discretionary'),
@@ -235,6 +252,7 @@ INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('ES', 'Eversource Energy', 'Utilities'),
 ('ESRX', 'Express Scripts', 'Health Care'),
 ('ESS', 'Essex Property Trust Inc', 'Financials'),
+('ESV', 'Ensco PLC', 'Energy'),
 ('ETFC', 'E*Trade', 'Financials'),
 ('ETN', 'Eaton Corporation', 'Industrials'),
 ('ETR', 'Entergy Corp.', 'Utilities'),
@@ -272,6 +290,7 @@ INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('GIS', 'General Mills', 'Consumer Staples'),
 ('GLW', 'Corning Inc.', 'Industrials'),
 ('GM', 'General Motors', 'Consumer Discretionary'),
+('GMCR', 'Keurig Green Mountain', 'Consumer Staples'),
 ('GME', 'GameStop Corp.', 'Consumer Discretionary'),
 ('GOOG', 'Alphabet Inc Class C', 'Information Technology'),
 ('GOOGL', 'Alphabet Inc Class A', 'Information Technology'),
@@ -440,6 +459,7 @@ INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('PNC', 'PNC Financial Services', 'Financials'),
 ('PNR', 'Pentair Ltd.', 'Industrials'),
 ('PNW', 'Pinnacle West Capital', 'Utilities'),
+('POM', 'Pepco Holdings Inc.', 'Energy'),
 ('PPG', 'PPG Industries', 'Materials'),
 ('PPL', 'PPL Corp.', 'Utilities'),
 ('PRGO', 'Perrigo', 'Health Care'),
@@ -549,7 +569,7 @@ INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('WAT', 'Waters Corporation', 'Health Care'),
 ('WBA', 'Walgreens Boots Alliance', 'Consumer Staples'),
 ('WDC', 'Western Digital', 'Information Technology'),
-('WEC', 'Wisconsin Energy Corporation', 'Utilities'),
+('WEC', 'WEC Energy Group Inc', 'Utilities'),
 ('WFC', 'Wells Fargo', 'Financials'),
 ('WFM', 'Whole Foods Market', 'Consumer Staples'),
 ('WHR', 'Whirlpool Corp.', 'Consumer Discretionary'),
@@ -564,7 +584,7 @@ INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('WYNN', 'Wynn Resorts Ltd', 'Consumer Discretionary'),
 ('XEC', 'Cimarex Energy', 'Energy'),
 ('XEL', 'Xcel Energy Inc', 'Utilities'),
-('XL', 'XL Capital', 'Financials'),
+('XL', 'XL Catlin', 'Financials'),
 ('XLNX', 'Xilinx Inc', 'Information Technology'),
 ('XOM', 'Exxon Mobil Corp.', 'Energy'),
 ('XRAY', 'Dentsply Sirona', 'Health Care'),
@@ -583,28 +603,44 @@ INSERT IGNORE INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 --
 -- Indexes for table `loginInfo`
 --
-ALTER IGNORE TABLE `loginInfo`
+ALTER TABLE `loginInfo`
   ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `portfolio`
 --
-ALTER IGNORE TABLE `portfolio`
+ALTER TABLE `portfolio`
   ADD PRIMARY KEY (`username`,`ticker`),
   ADD KEY `ticker` (`ticker`);
 
 --
+-- Indexes for table `search_history`
+--
+ALTER TABLE `search_history`
+  ADD PRIMARY KEY (`username`);
+
+--
 -- Indexes for table `stocks`
 --
-ALTER IGNORE TABLE `stocks`
+ALTER TABLE `stocks`
   ADD PRIMARY KEY (`ticker`);
+
+--
+-- Constraints for dumped tables
+--
 
 --
 -- Constraints for table `portfolio`
 --
-ALTER IGNORE TABLE `portfolio`
+ALTER TABLE `portfolio`
   ADD CONSTRAINT `portfolio_ibfk_1` FOREIGN KEY (`username`) REFERENCES `loginInfo` (`username`),
   ADD CONSTRAINT `portfolio_ibfk_2` FOREIGN KEY (`ticker`) REFERENCES `stocks` (`ticker`);
+
+--
+-- Constraints for table `search_history`
+--
+ALTER TABLE `search_history`
+  ADD CONSTRAINT `search_history_ibfk_1` FOREIGN KEY (`username`) REFERENCES `loginInfo` (`username`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
