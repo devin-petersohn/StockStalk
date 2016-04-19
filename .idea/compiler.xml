@@ -23,8 +23,8 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="All_Against_All" />
-        <module name="cache_data" />
         <module name="Cache_Data" />
+        <module name="cache_data" />
         <module name="CacheData" />
         <module name="stockstalk" />
       </profile>
