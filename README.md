@@ -34,9 +34,9 @@ In this example, 8080 is the local port that will forward all traffic to the clu
 
 In order to access the web server set up on your cluster allocation you must use port forwarding. It is simple to implement port forwarding:
 
-    1.  Use the port forwarding command output from the setup script. Remember to replace the username with your username and servername with the name of your HDInsight allocation name.
-    2.  Using a web browser, navigate to `localhost:8080`. Simply type this address into the navigation bar.
-    3.  From here you are ready to begin using StockStalk
+1.  Use the port forwarding command output from the setup script. Remember to replace the username with your username and servername with the name of your HDInsight allocation name.
+2.  Using a web browser, navigate to `localhost:8080`. Simply type this address into the navigation bar.
+3.  From here you are ready to begin using StockStalk
 
 Currently, Microsoft Azure HDInsight does not support a web server through traditional web browser access. While setting up the port forwarding is an additional step and may seem annoying, it can also provide additional security to your application and protect your cluster from being bombarded by queries. This software is set up and intended for personal use, so you will likely have to change some things to host this software for anyone. 
 
