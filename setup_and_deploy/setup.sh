@@ -18,6 +18,7 @@ sudo apt-get -y install apache2
 sudo apt-get -y install php5 libapache2-mod-php5
 sudo apt-get -y install php5-mysql
 sudo /etc/init.d/apache2 restart
+sudo rm /var/www/html/index.html
 
 #Jenkins and setup the daily caching of data
 wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
