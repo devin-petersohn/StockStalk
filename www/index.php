@@ -32,7 +32,7 @@
 
     <!-- Full Width Image Header -->
     <div>
-        <img src="stocklogo2.png">
+        <img src="img/stocklogo2.png">
     </div>
 
    <!-- Page Content -->
