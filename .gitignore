@@ -4,3 +4,6 @@
 
 target/
 logintest/
+temp_data/
+data/
+.idea/
