@@ -35,10 +35,10 @@
         $searchtype = $_GET['searchtype'];
         echo $searchtype;
         if(strcmp($searchtype,"onetoall")==0){
-            $ticker1 = $_POST['searchbox1'];
-            $sector1 = $_POST['sector1'];
-            $fromDate1 = $_POST['from1'];
-            $toDate1 = $_POST['to1'];
+            $ticker1 = $_GET['searchbox1'];
+            $sector1 = $_GET['sector1'];
+            $fromDate1 = $_GET['from1'];
+            $toDate1 = $_GET['to1'];
             echo $ticker1;
             echo $sector1;
             echo $fromDate1;
@@ -61,10 +61,10 @@
             
         }
         if(strcmp($searchtype,"specific")==0){
-            $ticker2 = $_POST['searchbox2'];
-            $fromDate3 = $_POST['from3'];
-            $toDate3 = $_POST['to3'];
-            echo $_POST['ticker'];
+            $ticker2 = $_GET['searchbox2'];
+            $fromDate3 = $_GET['from3'];
+            $toDate3 = $_GET['to3'];
+            echo $_GET['ticker'];
             
             echo $ticker2;
             echo $fromDate3;

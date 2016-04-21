@@ -216,7 +216,7 @@
             
             <!-- Search box -->
             <div id="custom-search-input">
-                <form action="loading.php" method="POST" id="search1">
+                <form action="loading.php" method="GET" id="search1">
                     <div class="input-group col-sm-6 col-sm-offset-3">
                         <input type="text" class="search-query form-control" name="searchbox1" placeholder="Search"></input>
                         <span class="input-group-btn">
@@ -342,7 +342,7 @@
             
             <!-- Search box -->
             <div id="custom-search-input">
-                <form action="loading.php" method="POST" id="search3">
+                <form action="loading.php" method="GET" id="search3">
                     <div class="input-group col-sm-6 col-sm-offset-3">
                         <input type="text" class="search-query form-control" name="searchbox2" placeholder="Search"></input>
                         <span class="input-group-btn">
