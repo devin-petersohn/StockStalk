@@ -6,4 +6,4 @@ target/
 logintest/
 temp_data/
 data/
-*.iml
+.idea/
