@@ -42,4 +42,4 @@ Currently, Microsoft Azure HDInsight does not support a web server through tradi
 
 ##### Step 3: Navigating the Web UI
 
-TODO
+You do not have to have to create an account to search, however creating an account provides two useful features: the ability to view your past search history and keep a 'portfolio' for tracking and search abilities. 

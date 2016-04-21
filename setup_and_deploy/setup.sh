@@ -11,7 +11,7 @@ git clone https://github.com/devin-petersohn/StockStalk.git
 #MySQL and set up the database
 sudo DEBIAN_FRONTEND=noninteractive apt-get -q -y install mysql-server
 mysql -uroot -e "create database stockstalk"
-mysql -uroot -h localhost stockstalk < setup_and_deploy/stockstalkdump.sql
+mysql -uroot -h localhost stockstalk < StockStalk/setup_and_deploy/stockstalkdump.sql
 
 #Apache Server and relocation of web pages
 sudo apt-get -y install apache2
@@ -45,7 +45,7 @@ sudo cp -r www/* /var/www/html
 spark-submit --class CacheData Cache_Data/target/CacheData-1.0-SNAPSHOT.jar INITIAL
 
 echo "
-Type the following command into a new terminal connection from your local machine:
+Type the following command into a terminal connection from your local machine:
 "
 echo "ssh -L 8080:`(/sbin/ifconfig $1 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}' | head -n 1)`:80 username@<servername>-ssh.azurehdinsight.net
 
