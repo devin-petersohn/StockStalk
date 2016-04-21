@@ -23,17 +23,11 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="All_Against_All" />
-        <module name="Cache_Data" />
         <module name="cache_data" />
+        <module name="Cache_Data" />
         <module name="CacheData" />
-        <module name="stockstalk" />
-      </profile>
-      <profile default="false" name="Annotation profile for One_Against_All" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
         <module name="One_Against_All" />
+        <module name="stockstalk" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -41,7 +35,7 @@
       <module name="Cache_Data" target="1.8" />
       <module name="cache_data" target="1.8" />
       <module name="CacheData" target="1.7" />
-      <module name="One_Against_All" target="1.8" />
+      <module name="One_Against_All" target="1.7" />
       <module name="stockStalk" target="1.8" />
       <module name="stockstalk" target="1.8" />
     </bytecodeTargetLevel>
