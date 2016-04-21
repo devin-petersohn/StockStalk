@@ -69,7 +69,7 @@ object CacheData {
   def main(args: Array[String]) {
     if(args.length != 0){
       val from = Calendar.getInstance
-      from.add(Calendar.YEAR, -20)
+      from.add(Calendar.YEAR, -1)
       val to = Calendar.getInstance
       for(stock <- sANDp500) {
         val temp = YahooFinance.get(stock)
