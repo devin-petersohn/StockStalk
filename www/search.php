@@ -4,123 +4,33 @@
 <html>
 <head>
 <title>Chart Your Stocks</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/login.css">
-<link rel="stylesheet" type="text/css" href="css/one-page-wonder.css">
-<link rel="stylesheet" type="text/css" href="css/charts.css">
-<style type="text/css">
-body {
-/*  font: normal 14px/100% "Andale Mono", AndaleMono, monospace;
-*//*  color: #fff;
-  padding: 50px;
-  width: 300px;
-  margin: 0 auto;
-  background-color: #374954;
-*/}
+<script src="js/jquery-2.2.3.min.js"></script>
 
-
-
-a {
-  color: #fff;
-}
-dl{
-    margin-top: 20;
-}
-
-.dropdown dd,
-.dropdown dt {
-  margin: 0px;
-  padding: 0px;
-}
-
-.dropdown ul {
-  margin: -1px 0 0 0;
-}
-
-.dropdown dd {
-  position: relative;
-}
-
-.dropdown a,
-.dropdown a:visited {
-  color: #fff;
-  text-decoration: none;
-  outline: none;
-  font-size: 12px;
-}
-
-.dropdown dt a {
-  background-color: #4F6877;
-  display: block;
-  padding: 8px 20px 5px 10px;
-  min-height: 25px;
-  line-height: 24px;
-  overflow: hidden;
-  border: 0;
-  width: 272px;
-}
-
-.dropdown dt a span,
-.multiSel span {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0 3px 2px 0;
-}
-
-.dropdown dd ul {
-  background-color: #4F6877;
-  border: 0;
-  color: #fff;
-  display: none;
-  left: 0px;
-  padding: 2px 15px 2px 5px;
-  position: absolute;
-  top: 2px;
-  width: 280px;
-  list-style: none;
-  height: 100px;
-  overflow: auto;
-}
-
-.dropdown span.value {
-  display: none;
-}
-
-.dropdown dd ul li a {
-  padding: 5px;
-  display: block;
-}
-
-.dropdown dd ul li a:hover {
-  background-color: #fff;
-}
-
-
-</style>
 
 </head>
 <body>
 
-    <!---Navbar call----->
-    <?php include "navbar.php"; ?>
-    
-    
+    <?php include "navbar.php"; ?>    
 	<h1>Search Your Stocks</h1>
 	<ul id="imageGallery">
 		<li><a href="stock.jpg"><img src="stock.jpg" width="100" alt="Stocks"></a></li>
 	</ul>
 
-	<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<!--<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>-->
-    <!-- jquery for datepicker -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/one-page-wonder.css">
+    <link rel="stylesheet" type="text/css" href="css/charts.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    
-    
+
+    <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css"/>
+
+
     <script>
 
         function showDiv1() {
@@ -141,42 +51,25 @@ dl{
         
         $(function() {
 
-            $("#selectSector").click(function() {
-            $('#sector').slideToggle('fast');
-        });
+            var arrRecord=[];
+             $(document).ready(function() {
+                
+                $('#filtering').multiselect({
+                    includeSelectAllOption: true,
+                    enableFiltering: true
+                //     onChange: function(element, checked) {
+                //     if (checked ===;\ true) {
+                //         //action taken here if true
+                //         arrRecord = arrRecord+element;
+                //         console.log(arrRecord);
 
-          // $("#sector").slideToggle('fast');
-          
+                //     }
+                // }
+                    });
+            });
+             
+        
 
-        $("#selectSector").on('click', function() {
-          $("#sector").hide();
-        });
-
-        function getSelectedValue(id) {
-          return $("#" + id).find("dt a span.value").html();
-        }
-
-        $(document).bind('click', function(e) {
-          var $clicked = $(e.target);
-          if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
-        });
-
-        $('.mutliSelect input[type="checkbox"]').on('click', function() {
-
-          var title = $(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
-            title = $(this).val() + ",";
-
-          if ($(this).is(':checked')) {
-            var html = '<span title="' + title + '">' + title + '</span>';
-            $('.multiSel').append(html);
-            $(".hida").hide();
-          } else {
-            $('span[title="' + title + '"]').remove();
-            var ret = $(".hida");
-            $('.dropdown dt a').append(ret);
-
-          }
-        });
 
         var tickers = ["MMM", "ABT", "ABBV", "ACN", "ATVI", "ADBE", "ADT", "AAP", "AES", "AET", "AFL", "AMG", "A", "GAS", "APD", "ARG", "AKAM",
                         "AA", "AGN", "ALXN", "ALLE", "ADS", "ALL", "GOOGL", "GOOG", "MO", "AMZN", "AEE", "AAL", "AEP", "AXP", "AIG", "AMT", "AMP",
@@ -208,11 +101,24 @@ dl{
                         "WLTW", "WEC", "WYN", "WYNN", "XEL", "XRX", "XLNX", "XL", "XYL", "YHOO", "YUM", "ZBH", "ZION", "ZTS"];
             $.each( tickers, function( key, value ) {
               // console.log(key+value);
-                var node = '<li><input type="checkbox" value="'+value+'" />'+value+'</li>';
-                $("#sector").append(node);
+
+                var node = '<option value="'+value+'">'+value+'</option>';
+                $("#filtering").append(node);
 
 
             });
+
+            
+            $("#submitButton").click(function(){
+                var tickers = $(".multiselect,dropdown-toggle,btn,btn-default").attr("title");
+                var fromdate = $('#from2').val();
+                var todate = $('#to2').val();
+                var sector = $('#sector2').val();
+                var searchtype = "alltoall";
+                window.location.href = "loading.php?tickers=" + tickers + "&from=" + fromdate + "&to=" +todate + "&sector=" + sector + "&searchtype="+ searchtype;
+
+            
+        });
             $( "#from1" ).datepicker({
                 defaultDate: "-1w",
                 changeMonth: true,
@@ -285,8 +191,11 @@ dl{
       });
       </script>
 
+
+
+      
+
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
     
     <br><br>
     <div class="container">
@@ -306,7 +215,7 @@ dl{
             
             <!-- Search box -->
             <div id="custom-search-input">
-                <form action="loading.php" method="POST" id="search1">
+                <form action="loading.php" method="GET" id="search1">
                     <div class="input-group col-sm-6 col-sm-offset-3">
                         <input type="text" class="search-query form-control" name="searchbox1" placeholder="Search"></input>
                         <span class="input-group-btn">
@@ -357,11 +266,11 @@ dl{
 
             <!-- select sector-->
 
-            <form action="loading.php" method="POST" id="search2">
-                <div class="input-group col-sm-6 col-sm-offset-3">
+<!--             <form action="loading.php" method="POST" id="search2">
+ -->                <div class="input-group col-sm-6 col-sm-offset-3">
                     <h4>Market Sector</h4>
                     <input type="hidden" name="searchtype" value="alltoall">
-                    <select style="width:100%;height:25px; text-align: left;" name="sector2" class="btn btn-default" type="button">
+                    <select style="width:100%;height:25px; text-align: left;" name="sector2" class="btn btn-default" type="button" id="sector2">
                         <option value="All">All</option>
                         <option value="Technology">Technology</option>
                         <option value="Finance">Finance</option>
@@ -372,7 +281,7 @@ dl{
                         <option value="Utilities">Utilities</option>
                     </select>
 
-                    <dl class="dropdown"> 
+                    <!-- <dl class="dropdown"> 
   
                     <dt>
                     <a href="#" id="selectSector">
@@ -384,7 +293,7 @@ dl{
                     <dd>
                         <div class="mutliSelect">
                             <ul id="sector">
-                                <!-- <li>
+                                <li>
                                     <input type="checkbox" value="Apple" />Apple</li>
                                 <li>
                                     <input type="checkbox" value="Blackberry" />Blackberry</li>
@@ -395,11 +304,15 @@ dl{
                                 <li>
                                     <input type="checkbox" value="Motorola" />Motorola</li>
                                 <li>
-                                    <input type="checkbox" value="Nokia" />Nokia</li> -->
+                                    <input type="checkbox" value="Nokia" />Nokia</li>
                             </ul>
                         </div>
                     </dd>
                 </dl>
+ -->
+                <br><br><br>
+                <select id="filtering" multiple="multiple">
+                </select>
 
 
                     
@@ -415,12 +328,12 @@ dl{
                     <input style="margin-left: 5px;" type="text" id="from2" name="from2">
                     <label style="margin-left: 10px;" for="to">to</label>
                     <input style="margin-left: 5px;" type="text" id="to2" name="to2">
-                    <button class="btn btn-primary" type="submit">
+                    <button class="btn btn-primary" type="submit" id='submitButton'>
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </div>
-            </form>
-        </div>
+<!--             </form>
+ -->        </div>
     
     
         <!-- one specific stock -->
@@ -428,7 +341,7 @@ dl{
             
             <!-- Search box -->
             <div id="custom-search-input">
-                <form action="loading.php" method="POST" id="search3">
+                <form action="loading.php" method="GET" id="search3">
                     <div class="input-group col-sm-6 col-sm-offset-3">
                         <input type="text" class="search-query form-control" name="searchbox2" placeholder="Search"></input>
                         <span class="input-group-btn">

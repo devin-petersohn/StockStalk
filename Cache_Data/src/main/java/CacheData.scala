@@ -1,12 +1,9 @@
-import org.apache.hadoop.mapred.InvalidInputException
 import org.apache.spark.rdd.RDD
-
 import scala.collection.mutable.ArrayBuffer
 import java.util._
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
 import scala.collection.JavaConversions._
-import collection.mutable._
 import java.io._
 
 object CacheData {
@@ -55,8 +52,6 @@ object CacheData {
 
   def calculatePercentChange(stock: Stock, fromDate: Calendar, toDate: Calendar, interval: Interval): RDD[(Date, Double)] = {
     var prev = stock.getHistory.get(0).getClose
-    //val hists = filterDate(quote, fromDate, toDate)
-    //var prev = hists(0).getClose
     var buffer = new ArrayBuffer[(Date,Double)]
     val hists = stock.getHistory(fromDate, toDate, interval)
     for(hist <- hists){

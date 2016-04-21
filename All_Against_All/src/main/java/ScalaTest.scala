@@ -1,6 +1,6 @@
+import java.io.{IOException, FileWriter}
 import java.util.{Calendar, Date, GregorianCalendar}
 import scala.collection.mutable.ArrayBuffer
-import reflect.ClassTag
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd._
@@ -41,7 +41,6 @@ object ScalaTest {
   def getAllStocks(stock_query_list: scala.Vector[String], fromDate: Calendar, toDate: Calendar, interval: Interval, percent_threshold: Double) = {
     var stock_data = sc.parallelize(new ArrayBuffer[((String, (Long, String)))])
     for(stock <- stock_query_list) {
-      //val x = convertPercentChange(calculatePercentChange(YahooFinance.get(stock), fromDate, toDate, interval).map(_.swap).zipWithIndex.map(f => (f._1._1, (f._2, f._1._2._2))), percent_threshold)
 
       val quotes = sc.objectFile[(Date, Double)]("data/" + stock).sortBy(f => f._1.getTime).filter(f => f._1.getTime > fromDate.getTime.getTime && f._1.getTime < toDate.getTime.getTime).zipWithIndex.map(f => (f._1._2, (f._2,stock)))
 
@@ -74,11 +73,9 @@ object ScalaTest {
   }
 
   def calculatePercentChange(symbol: String, quote: Array[HistoricalQuote], fromDate: Calendar, toDate: Calendar): RDD[(((Date, String), Double))] = {
-    //var prev = stock.getHistory.get(0).getClose
     val hists = filterDate(quote, fromDate, toDate)
     var prev = hists(0).getClose
     var buffer = new ArrayBuffer[((((Date, String)),Double))]
-    //val hists = stock.getHistory(fromDate, toDate, interval)
     for(hist <- hists){
       buffer += (((hist.getDate.getTime, symbol), (hist.getClose.doubleValue/prev.doubleValue - 1) * 100))
       prev = hist.getClose
@@ -179,22 +176,48 @@ object ScalaTest {
 
     val results = previous.collect
     var counter=0
-
+    var jsonString = "{\"number_of_results\":"+"\"" + results.length + "\",\"results\":["
     print("{\"number_of_results\":"+"\"" + results.length + "\",\"results\":[")
     for(result <- results) {
+      jsonString = jsonString + "{\"result"+counter+"\":{" + "\"names\":["
       print("{\"result"+counter+"\":{" + "\"names\":[")
       for(value <- result._2) {
+        jsonString = jsonString + "\"" + value + "\""
         print("\"" + value + "\"")
-        if(value != result._2.last) print(",")
+        if(value != result._2.last) {
+          jsonString = jsonString + ","
+          print(",")
+        }
       }
+      jsonString = jsonString + "],"
       print("],")
+      jsonString = jsonString + "\"Number of Intervals\":\"" + result._1._2.length/2 + "\","
       print("\"Number of Intervals\":\"" + result._1._2.length/2 + "\",")
+      jsonString = jsonString + "\"Date Start\":" + "\"" + indexes_of_dates.getOrElse(result._1._1, "Error").toString + "\"" + "}}"
       print("\"Date Start\":" + "\"" + indexes_of_dates.getOrElse(result._1._1, "Error").toString + "\"" + "}}")
       counter+=1
-      if(counter != results.length) print(",")
+      if(counter != results.length) {
+        jsonString = jsonString + ","
+        print(",")
+      }
     }
+    jsonString = jsonString + "]}"
     println("]}")
+    var filename: String = "temp_data/AllvsAll_"
+    for(arg <- args) {
+      filename = filename + "_" + arg
+    }
+    filename = filename + ".json"
+    try {
+      val file: FileWriter = new FileWriter(filename)
+      try {
+        file.write(jsonString)
+      }
+      catch {
+        case e: IOException => {sys.exit(-1)}
+      } finally if (file != null) file.close()
 
+    }
     sys.exit(0)
   }
 

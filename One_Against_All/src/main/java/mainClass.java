@@ -52,6 +52,7 @@ public class mainClass implements Serializable{
             Calendar from = new GregorianCalendar(startYear, startMonth-1, startDay);
             Calendar to = new GregorianCalendar(endYear, endMonth-1, endDay);
 
+
             List<HistoricalQuote> his1 = stock1.getHistory(from,to,Interval.DAILY);
             List<HistoricalQuote> his2 = stock1.getHistory(from,to,Interval.DAILY);
 

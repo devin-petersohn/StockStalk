@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 19, 2016 at 04:29 AM
+-- Generation Time: Apr 21, 2016 at 03:12 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -26,10 +26,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `loginInfo`
 --
 
-CREATE TABLE `loginInfo` (
+CREATE TABLE IF NOT EXISTS `loginInfo` (
   `username` varchar(25) NOT NULL,
   `name` varchar(30) DEFAULT NULL,
-  `email` varchar(25) NOT NULL,
   `hashpass` varchar(255) DEFAULT NULL,
   `salt` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -38,10 +37,11 @@ CREATE TABLE `loginInfo` (
 -- Dumping data for table `loginInfo`
 --
 
-INSERT INTO `loginInfo` (`username`, `name`, `email`, `hashpass`, `salt`) VALUES
-('123', NULL, '123@yahoo.com', '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
-('mabrm9', NULL, 'MAL', 'pass', 'word'),
-('mac', NULL, 'mac@yahoo.com', '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083');
+INSERT INTO `loginInfo` (`username`, `name`, `hashpass`, `salt`) VALUES
+('123', NULL, '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
+('mabrm9', NULL, 'pass', 'word'),
+('mac', NULL, '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083')
+ON DUPLICATE KEY UPDATE username=username;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ INSERT INTO `loginInfo` (`username`, `name`, `email`, `hashpass`, `salt`) VALUES
 -- Table structure for table `portfolio`
 --
 
-CREATE TABLE `portfolio` (
+CREATE TABLE IF NOT EXISTS `portfolio` (
   `username` varchar(25) NOT NULL,
   `ticker` varchar(10) NOT NULL,
   `amount` float DEFAULT NULL
@@ -61,7 +61,7 @@ CREATE TABLE `portfolio` (
 -- Table structure for table `search_history`
 --
 
-CREATE TABLE `search_history` (
+CREATE TABLE IF NOT EXISTS `search_history` (
   `username` varchar(25) NOT NULL,
   `search_date` datetime NOT NULL,
   `search_type` varchar(10) NOT NULL,
@@ -75,11 +75,11 @@ CREATE TABLE `search_history` (
 -- Table structure for table `stocks`
 --
 
-CREATE TABLE `stocks` (
-  `ticker` varchar(10) CHARACTER SET latin1 NOT NULL,
-  `name` varchar(45) CHARACTER SET latin1 NOT NULL,
-  `sector` varchar(35) CHARACTER SET latin1 DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `stocks` (
+  `ticker` varchar(10) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `sector` varchar(35) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stocks`
@@ -594,7 +594,8 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('YUM', 'Yum! Brands Inc', 'Consumer Discretionary'),
 ('ZBH', 'Zimmer Biomet Holdings', 'Health Care'),
 ('ZION', 'Zions Bancorp', 'Financials'),
-('ZTS', 'Zoetis', 'Health Care');
+('ZTS', 'Zoetis', 'Health Care') 
+ON DUPLICATE KEY UPDATE ticker=ticker;
 
 --
 -- Indexes for dumped tables
