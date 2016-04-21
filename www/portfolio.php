@@ -2,9 +2,7 @@
     session_start();
 
     include "navbar.php";
-    $servername = "hn0-stocks";
-        $uname = "root";
-        $pword = "";
+    include "connect.php";
 
 
 /* Create connection
@@ -161,6 +159,30 @@ if ($result->num_rows > 0) {
         <!-- /.row -->
 
         <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Add Stocks to Your Portfolio</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method="POST" name="myStocks">
+                        <?php
+                        $getStocks = "SELECT ticker FROM mcs526.stocks ORDER BY ticker ASC ";
+                        $result = $dbconn->query($getStocks);
+                         echo "<select id='myTick'>";
+                            while($row = $result->fetch_assoc()) {
+                                echo "<option value='".$row['ticker']."'>".$row["ticker"]."</option>";
+                             }
+                             echo "</select>";
+                        ?>
+                        <button type="button" onclick="addToPort()">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
 
         <!-- Call to Action Well -->
         <div class="row">
@@ -188,9 +210,9 @@ if ($result->num_rows > 0) {
                     
                     <?php
                     //Create connection
-                    $dbconn = new mysqli($servername, $uname, $pword, $dbase);
+                    $dbconn = new mysqli($servername, $connectUname, $connectPass);
                     $uname = $_SESSION['username'];
-                    $mes2 = "SELECT * FROM mmhkwc.portfolio WHERE username='".$uname."'";
+                    $mes2 = "SELECT * FROM mcs526.portfolio WHERE username='".$uname."'";
                     $result = $dbconn->query($mes2);
 
                     if ($result->num_rows > 0) {
@@ -214,67 +236,6 @@ if ($result->num_rows > 0) {
                             </table>
                         </div>
                     </div>
-
-
-                   <!-- <div class="panel-body">
-                        <div class="dataTable_wrapper">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Rank</th>
-                                        <th>Tracker</th>
-                                        <th>Name</th>
-                                        <th>Score</th>
-                                        <th>Add to Queue</th>
-                                    </tr>
-                                </thead>
-                            
-                                <tbody class="tableBody">
-                                    <tr class="odd gradeX">
-
-                                        <td><a class="tick">BMW</a></td>
-                                        <td class="test-link">BYERISCHE MOTOREN WERKE AG</td>
-                                        <td>1 Jan</td>
-                                        <td>N/A</td>
-                                        <td class="center">0.00$</td>
-                                        <td class="center">0.00%</td>
-                                        <td class="center">0</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><a class="tick">AAPL</a></td>
-                                        <td class="test-link">Apple</td>
-                                        <td>11 Sep</td>
-                                        <td class="center">34.01</td>
-                                        <td class="center">0.53</td>
-                                        <td class="center">1.53%</td>
-                                        <td class="center">8924</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                    <tr class="odd gradeX">
-                                        <td><a class="tick">GOOG</a></td>
-                                        <td class="test-link">Google</td>
-                                        <td>1 Jan</td>
-                                        <td>N/A</td>
-                                        <td class="center">0.00$</td>
-                                        <td class="center">0.00%</td>
-                                        <td class="center">0</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><a class="tick">Z</a></td>
-                                        <td class="test-link">Zillow</td>
-                                        <td>11 Sep</td>
-                                        <td class="center">34.01</td>
-                                        <td class="center">0.53</td>
-                                        <td class="center">1.53%</td>
-                                        <td class="center">8924</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>-->
 
                 </div>
             </div>
@@ -407,6 +368,7 @@ function GetCellValues() {
         
     }
 
+
     
     $(".tick").click(function(event) {
         var text = $(event.target).text();
@@ -414,7 +376,8 @@ function GetCellValues() {
         var url = "http://finance.yahoo.com/q?uhb=uh3_finance_vert&fr=&type=2button&s=" + text
         window.open(url,'_blank');
     });
-        
+
+   
     
     </script>
 
