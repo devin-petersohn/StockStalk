@@ -10,7 +10,7 @@ $password = $_POST['password'];
     echo $username;
     echo $password;
 //3.1.2 Checking the values are existing in the database or not
-$query="SELECT hashpass, salt FROM mmhkwc.loginInfo WHERE username=?";
+$query="SELECT hashpass, salt FROM stockstalk.loginInfo WHERE username=?";
 //Prepared statement
 			$stmt=$conn->prepare($query) or die("Query failed");
 			$stmt->bind_param("s",$username);

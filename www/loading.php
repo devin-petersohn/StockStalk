@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>Loading Results</title>
+<script src="js/jquery-2.2.3.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/load-page.css">
 </head>
@@ -31,7 +32,7 @@
         // ob_flush();
         // sleep(2000);
         // session_start();
-        $searchtype = $_POST['searchtype'];
+        $searchtype = $_GET['searchtype'];
         echo $searchtype;
         if(strcmp($searchtype,"onetoall")==0){
             $ticker1 = $_POST['searchbox1'];
@@ -45,17 +46,25 @@
             shell_exec("spark-submit --master local[4] One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar"." ".$ticker1." ".$fromDate1." ".$toDate1." > output.json");
         }
         if(strcmp($searchtype,"alltoall")==0){
-            $sector2 = $_POST['sector2'];
-            $fromDate2 = $_POST['from2'];
-            $toDate2 = $_POST['to2'];
-            echo $sector2;
-            echo $fromDate2;
-            echo $toDate2;
+            // if (isset($_GET["tickers"]) && isset($_GET["from"]) && isset($_GET["to"]) && isset($_GET["sector"]))
+            // {
+                $tickers = $_GET['tickers'];
+                $from = $_GET['from'];
+                $to = $_GET['to'];
+                $sector = $_GET['sector'];
+                echo $tickers;
+                echo $from;
+                echo $to;
+                echo $sector;
+                shell_exec("spark-submit --master local[4] All_Against_All/target/");
+            // }
+            
         }
         if(strcmp($searchtype,"specific")==0){
             $ticker2 = $_POST['searchbox2'];
             $fromDate3 = $_POST['from3'];
             $toDate3 = $_POST['to3'];
+            echo $_POST['ticker'];
             
             echo $ticker2;
             echo $fromDate3;

@@ -2,6 +2,7 @@
 $servername = "dbhost-mysql.cs.missouri.edu";
 $username = "mmhkwc";
 $password = "RgS8HC6L";
+$dbase = "stockstalk";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password);
