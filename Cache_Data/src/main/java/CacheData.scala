@@ -55,8 +55,6 @@ object CacheData {
 
   def calculatePercentChange(stock: Stock, fromDate: Calendar, toDate: Calendar, interval: Interval): RDD[(Date, Double)] = {
     var prev = stock.getHistory.get(0).getClose
-    //val hists = filterDate(quote, fromDate, toDate)
-    //var prev = hists(0).getClose
     var buffer = new ArrayBuffer[(Date,Double)]
     val hists = stock.getHistory(fromDate, toDate, interval)
     for(hist <- hists){
@@ -69,7 +67,7 @@ object CacheData {
   def main(args: Array[String]) {
     if(args.length != 0){
       val from = Calendar.getInstance
-      from.add(Calendar.YEAR, -1)
+      from.add(Calendar.YEAR, -20)
       val to = Calendar.getInstance
       for(stock <- sANDp500) {
         val temp = YahooFinance.get(stock)
