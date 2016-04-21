@@ -2,6 +2,79 @@
     session_start();
 
 
+if (isset( $_POST['Submit'])){
+		$username = htmlspecialchars($_POST['username']);
+		$password = htmlspecialchars($_POST['password']);
+		$username = htmlspecialchars($_POST['email']);
+		//check if the name exists
+		if(checkUsername($username)==0)
+		{
+			addUser($username,$password,$email);               //adds user into database
+			$_SESSION['username'] = $username;
+			header("Location: home.php");
+		}
+		else
+			echo "Username is already taken taken";
+	}
+	
+	function checkUsername($username){
+        
+        include "connect.php";
+      
+      // Create connection
+      $dbconn = new mysqli($servername, $connectUname, $connectPass);
+
+      // Check connection
+      if ($dbconn->connect_error) {
+        die("Connection failed: " . $dbconn->connect_error);
+      }
+      
+      $query="SELECT * FROM mmhkwc.loginInfo WHERE username LIKE ?";
+//Prepared statement
+			$stmt=$dbconn->prepare($query) or die("Query failed");
+			$stmt->bind_param("s",$username);
+			$stmt->execute() or die ("Query failed");
+			$stmt->store_result();
+			if($stmt->num_rows==0)
+			{
+				return 0;
+			}
+    else{
+                return 1;
+    }
+      
+      
+	}
+	
+        
+        
+        /*
+		$username = pg_escape_string(htmlspecialchars($username));
+		$query = "SELECT * FROM spices.Users where username LIKE $1";
+		pg_prepare($dbconn, "check_u_name",$query);
+		$result = pg_execute($dbconn,"check_u_name",array($username));
+		if(pg_num_rows($result)==0)
+			return 0;
+		else
+			return 1;
+            
+            */
+	}
+	function addUser($username,$password, $email){
+		
+        
+        /*
+		$username = pg_escape_string(htmlspecialchars($username));
+		$password = pg_escape_string(htmlspecialchars(sha1($password)));
+		$email = pg_escape_string(htmlspecialchars($email));
+		$query = "INSERT INTO spices.Users (username, password_hash, email) VALUES ($1,$2,$3)";
+		pg_prepare($dbconn, "add_user_auth",$query);
+	
+		pg_execute($dbconn,"add_user_auth",array($username,$password, $email));
+        
+        */
+	}
+
 
 
 
@@ -31,7 +104,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->  
     
-    
+    <!--
     <style type="text/css">
 #loginForm .has-error .control-label,
 #loginForm .has-error .help-block,
@@ -45,47 +118,16 @@
     color: #18bc9c;
 }
 </style>
-    
+    -->
     
     
     
     <script>
-$(document).ready(function() {
-    $('#loginForm').formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            username: {
-                validators: {
-                    notEmpty: {
-                        message: 'The username is required'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 30,
-                        message: 'The username must be more than 6 and less than 30 characters long'
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            password: {
-                validators: {
-                    notEmpty: {
-                        message: 'The password is required'
-                    }
-                }
-            }
-        }
-    });
-});
-</script>
+        $(document).ready(function() {
+     
+            $('#myForm').validator('validate');
+        };
+    </script>
 
 </head>   
 <body> 
@@ -98,28 +140,46 @@ $(document).ready(function() {
                 
                 <h1>Register An Account</h1>
                                 
-                    <label>Username:</label>
-                    <input type="text" name="username" class="form-control" id="username" placeholder="Username" required autofocus>
-                    </br>
-                    <label>Password:</label>
-                    <input type="password" name="password" class="form-control" id="password"placeholder="Password" required>
-                    </br>
-                    <label>Verify Password:</label>
-                    <input type="password" name="password" class="form-control" id="password"placeholder="Verify Password" required>
-                    </br>
-                    <label>First Name:</label>
-                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name" required autofocus>
-                    </br>
-                    <label>Email Address:</label>
-					<input type="email" name="email" class="form-control" id="email" placeholder="example@mail.example.edu" value="" required>
-                    </br>
-                    <label><input type="checkbox" value="">  I agree to the <a href="#">Terms and Conditions</a></label>
-                    </br>
-                    <button class="btn btn-lg btn-primary btn-block" type="Submit" name='Submit' value='Submit'>Sign in</button> 
-                    </br>
-                    </br>
-            </div>
-    </header>
+
+ <form data-toggle="validator" role="form">
+     
+    <div class="form-group has-feedback">
+    <label for="inputEmail" class="control-label">Email:</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="That email address is invalid." required>
+    <div class="help-block with-errors"></div>
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+  </div>
+     
+  <div class="form-group">
+    <label for="inputName" class="control-label">First Name:</label>
+    <input type="text" class="form-control" id="inputName" placeholder="Jane" required>
+  </div>
+   
+     
+  <div class="form-group has-feedback">
+    <label for="inputPassword" class="control-label">Password:</label>
+    <div class="form-group has-feedback">
+      <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+      <div class="help-block">Minimum of 6 characters</div>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group has-feedback">
+    <label for="inputPassword" class="control-label">Verify Password:</label>
+      <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+      <div class="help-block with-errors"></div>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    </div>
+     
+  </div>
+  <div class="form-group p-all">
+    <button class="btn btn-lg btn-primary btn-block" type="Submit" name='Submit' value='Submit'>Sign in</button> 
+  </div>
+</form>
+
+        </div>
+        </header>
 
    <!-- Page Content -->
     <div class="container">
@@ -179,6 +239,8 @@ $(document).ready(function() {
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+<script src="js/validator.js"></script>
+
 
 </body>
 

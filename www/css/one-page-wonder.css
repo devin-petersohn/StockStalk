@@ -6,12 +6,9 @@
 
 body {
     margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    background: #05aabe;
+    background-color: #7ecca9;
+    background-image: url("http://www.transparenttextures.com/patterns/brushed-alum-dark.png");
 }
-
-
-
-
 
 .header-image {
     display: block;
@@ -236,9 +233,17 @@ footer {
     margin-top: 0px;
 }
 
-
+.p-left {
+    padding-left: 15px;
+}
 .container h1 {
-    font-size: 100px;
+    font-size: 90px;
     color: #22F292;
     text-align: center;
+}
+
+.p-all{
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }

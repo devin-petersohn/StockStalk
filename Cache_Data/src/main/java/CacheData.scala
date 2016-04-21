@@ -1,12 +1,9 @@
-import org.apache.hadoop.mapred.InvalidInputException
 import org.apache.spark.rdd.RDD
-
 import scala.collection.mutable.ArrayBuffer
 import java.util._
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkConf
 import scala.collection.JavaConversions._
-import collection.mutable._
 import java.io._
 
 object CacheData {
