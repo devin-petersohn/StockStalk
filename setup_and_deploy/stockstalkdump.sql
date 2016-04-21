@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS `loginInfo` (
 INSERT INTO `loginInfo` (`username`, `name`, `hashpass`, `salt`) VALUES
 ('123', NULL, '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
 ('mabrm9', NULL, 'pass', 'word'),
-('mac', NULL, '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083');
+('mac', NULL, '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083')
+ON DUPLICATE KEY UPDATE username=username;
 
 -- --------------------------------------------------------
 
@@ -593,7 +594,8 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('YUM', 'Yum! Brands Inc', 'Consumer Discretionary'),
 ('ZBH', 'Zimmer Biomet Holdings', 'Health Care'),
 ('ZION', 'Zions Bancorp', 'Financials'),
-('ZTS', 'Zoetis', 'Health Care');
+('ZTS', 'Zoetis', 'Health Care') 
+ON DUPLICATE KEY UPDATE ticker=ticker;
 
 --
 -- Indexes for dumped tables
