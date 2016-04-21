@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="Maven 1" modules="CacheData">
+      <parameters>
+        <parameter value="-dependencyfile" />
+        <parameter value="$PROJECT_DIR$/Cache_Data/target/.scala_dependencies" />
+      </parameters>
+    </profile>
+    <profile name="Maven 2" modules="All_Against_All">
+      <parameters>
+        <parameter value="-dependencyfile" />
+        <parameter value="$PROJECT_DIR$/All_Against_All/target/.scala_dependencies" />
+      </parameters>
+    </profile>
+    <profile name="Maven 3" modules="One_Against_All">
+      <parameters>
+        <parameter value="-dependencyfile" />
+        <parameter value="$PROJECT_DIR$/One_Against_All/target/.scala_dependencies" />
+      </parameters>
+    </profile>
+  </component>
+</project>

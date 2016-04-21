@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/All_Against_All/All_Against_All.iml" filepath="$PROJECT_DIR$/All_Against_All/All_Against_All.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cache_Data/CacheData.iml" filepath="$PROJECT_DIR$/Cache_Data/CacheData.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cache_Data/Cache_Data.iml" filepath="$PROJECT_DIR$/Cache_Data/Cache_Data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/One_Against_All/One_Against_All.iml" filepath="$PROJECT_DIR$/One_Against_All/One_Against_All.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/StockStalk.iml" filepath="$PROJECT_DIR$/.idea/StockStalk.iml" />
+    </modules>
+  </component>
+</project>
