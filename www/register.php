@@ -3,19 +3,30 @@
 
 
 if (isset( $_POST['Submit'])){
-		$username = htmlspecialchars($_POST['username']);
-		$password = htmlspecialchars($_POST['password']);
-		$username = htmlspecialchars($_POST['email']);
-		//check if the name exists
-		if(checkUsername($username)==0)
-		{
-			addUser($username,$password,$email);               //adds user into database
-			$_SESSION['username'] = $username;
-			header("Location: home.php");
-		}
-		else
-			echo "Username is already taken taken";
-	}
+		include "connect.php";
+      
+      // Create connection
+      $dbconn = new mysqli($servername, $connectUname, $connectPass);
+
+      // Check connection
+      if ($dbconn->connect_error) {
+        die("Connection failed: " . $dbconn->connect_error);
+         }
+        $name = $dbconn->real_escape_string(htmlspecialchars($_POST['name']));
+        $username = $dbconn->real_escape_string(htmlspecialchars($_POST['email']));
+        $password = $dbconn->real_escape_string(htmlspecialchars($_POST['password']));
+        
+        $email = $dbconn->real_escape_string(htmlspecialchars($_POST['email']));
+        //check if the name exists
+        if(checkUsername($username)==0)
+        {
+            addUser($username,$password,$email,$name);               //adds user into database
+            $_SESSION['username'] = $username;
+            header("Location: index.php");
+        }
+        else
+            echo "Username is already taken";
+    }
 	
 	function checkUsername($username){
         
@@ -31,49 +42,48 @@ if (isset( $_POST['Submit'])){
       
       $query="SELECT * FROM mmhkwc.loginInfo WHERE username LIKE ?";
 //Prepared statement
-			$stmt=$dbconn->prepare($query) or die("Query failed");
-			$stmt->bind_param("s",$username);
-			$stmt->execute() or die ("Query failed");
-			$stmt->store_result();
-			if($stmt->num_rows==0)
-			{
-				return 0;
-			}
-    else{
+			$stmt=$dbconn->prepare($query) or die("PreQuery failed");
+            $stmt->bind_param("s",$username);
+            $stmt->execute() or die ("Query failed");
+            $stmt->store_result();
+            if($stmt->num_rows==0)
+            {
+                return 0;
+            }
+             else{
                 return 1;
+            }
+      
+      
     }
-      
-      
-	}
 	
+
+	function addUser($username,$password, $email, $name){
         
-        
-        /*
-		$username = pg_escape_string(htmlspecialchars($username));
-		$query = "SELECT * FROM spices.Users where username LIKE $1";
-		pg_prepare($dbconn, "check_u_name",$query);
-		$result = pg_execute($dbconn,"check_u_name",array($username));
-		if(pg_num_rows($result)==0)
-			return 0;
-		else
-			return 1;
-            
-            */
-	}
-	function addUser($username,$password, $email){
-		
-        
-        /*
-		$username = pg_escape_string(htmlspecialchars($username));
-		$password = pg_escape_string(htmlspecialchars(sha1($password)));
-		$email = pg_escape_string(htmlspecialchars($email));
-		$query = "INSERT INTO spices.Users (username, password_hash, email) VALUES ($1,$2,$3)";
-		pg_prepare($dbconn, "add_user_auth",$query);
-	
-		pg_execute($dbconn,"add_user_auth",array($username,$password, $email));
-        
-        */
-	}
+        include "connect.php";
+      
+      // Create connection
+      $dbconn = new mysqli($servername, $connectUname, $connectPass);
+
+      // Check connection
+      if ($dbconn->connect_error) {
+        die("Connection failed: " . $dbconn->connect_error);
+      }
+        //hash and salt password
+        mt_srand();
+        $salt = mt_rand();
+        echo "<p> salt is $salt </p>";
+        echo "<p> password is $password </p>";
+        $pwhash = sha1($salt.$password);
+        //insert into loginInfo table
+        $query = "INSERT INTO capstone.loginInfo (username,name, hashpass, salt) VALUES (?,?,?, ?)";
+        $stmt=$dbconn->prepare($query) or die("Prepared statement error");
+        $stmt->bind_param("ssss",$username,$name,$pwhash,$salt);
+        $stmt->execute() or die ("Execute Query failed");
+        //set session keys
+        $_SESSION['user'] = $name;
+
+    }
 
 
 
@@ -141,11 +151,11 @@ if (isset( $_POST['Submit'])){
                 <h1>Register An Account</h1>
                                 
 
- <form data-toggle="validator" role="form">
+ <form data-toggle="validator" role="form" method='POST' action='register.php'>
      
     <div class="form-group has-feedback">
     <label for="inputEmail" class="control-label">Email:</label>
-    <input type="email" class="form-control" id="inputEmail" placeholder="Email" data-error="That email address is invalid." required>
+    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" data-error="That email address is invalid." required>
     <div class="help-block with-errors"></div>
             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
@@ -153,14 +163,14 @@ if (isset( $_POST['Submit'])){
      
   <div class="form-group">
     <label for="inputName" class="control-label">First Name:</label>
-    <input type="text" class="form-control" id="inputName" placeholder="Jane" required>
+    <input type="text" name="name" class="form-control" id="inputName" placeholder="Jane" required>
   </div>
    
      
   <div class="form-group has-feedback">
     <label for="inputPassword" class="control-label">Password:</label>
     <div class="form-group has-feedback">
-      <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+      <input type="password" name="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
       <div class="help-block">Minimum of 6 characters</div>
         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
     </div>
@@ -174,7 +184,7 @@ if (isset( $_POST['Submit'])){
      
   </div>
   <div class="form-group p-all">
-    <button class="btn btn-lg btn-primary btn-block" type="Submit" name='Submit' value='Submit'>Sign in</button> 
+    <button class="btn btn-lg btn-primary btn-block" type="Submit" name='Submit' value='Submit'>Register</button> 
   </div>
 </form>
 
