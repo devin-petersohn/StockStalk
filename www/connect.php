@@ -1,5 +1,5 @@
 <?php
-$servername = "dbhost-mysql.cs.missouri.edu";
+/*$servername = "dbhost-mysql.cs.missouri.edu";
 $connectUname = "mmhkwc";
 $connectPass = "RgS8HC6L";
 
@@ -10,22 +10,26 @@ $conn = new mysqli($servername, $connectUname, $connectPass);
 if ($dbconn->connect_error) {
     die("Connection failed: " . $dbconn->connect_error);
 }
+*/
 
-
-
-
-
-/*
-      $servername = "localhost";
-        $uname = "root";
-        $pword = "";
-
+$servername = "localhost";
+$connectUname = "root";
+$connectPass = "";
+$db = "stockstalk";
 
 // Create connection
-$dbconn = new mysqli($servername, $uname, $pword);
+$dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
+
+// Check connection
+if ($dbconn->connect_error) {
+    die("Connection failed: " . $dbconn->connect_error);
+}
 
 
-*/
+
+
+
+
 
 
 

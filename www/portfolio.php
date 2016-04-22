@@ -1,42 +1,10 @@
 <?php
-    session_start();
-
     include "navbar.php";
     include "connect.php";
-
-
-/* Create connection
-$dbconn = new mysqli($servername, $uname, $pword);
-
-  
-    $uname = $_SESSION['username'];
-    $mes2 = "SELECT * FROM mmhkwc.portfolio WHERE username='".$uname."'";
-    $result = $dbconn->query($mes2);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "username: " . $row["username"]. " - ticker: " . $row["ticker"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}
-*/
-    
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
     <title>Portfolio</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -44,33 +12,16 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" type="text/css" href="js/colorbox/example1/colorbox.css" />
     <link rel="stylesheet" type="text/css" href="css/one-page-wonder.css">
 
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
     <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-    
-    <style type="text/css">
-        a:hover {
-        cursor:pointer;
-        }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
-        a:active {
-            color: gray;
-        }
-        a:visited {
-            color: black;
-        }
-    </style>
-    
 
-<script>
+    <script>
         $.each(names, function (i, name) {
 
             $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=' + name.toLowerCase() + '-c.json&callback=?',    function (data) {
@@ -119,69 +70,103 @@ if ($result->num_rows > 0) {
         //End moving function//
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
     </script>
 
+
+
 </head>
-    
-
-
-<body onload="GetCellValues()">    
-        <!---Navbar call----->
-
-
+<body onload="GetCellValues()">   
     <!-- Page Content -->
     <div class="container">
-
         <!-- Heading Row -->
         <div class="row">
-           
             <!-- /.col-md-8 -->
             <div class="col-md-12">
                 <div class="well charts">
                     <h4 style="text-align:center;">My Portfolio</h4>
-                    
-
-
                     <div id="container" style="height: 400px; min-width: 310px"></div>
                 </div>
             </div>
-            <!-- /.col-md-4 -->
         </div>
-        <!-- /.row -->
-
-        <hr>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="background:black; color:white;">
                         <h3>Add Stocks to Your Portfolio</h3>
                     </div>
                     <div class="panel-body">
-                        <form method="POST" name="myStocks">
-                        <?php
-                        $getStocks = "SELECT ticker FROM mcs526.stocks ORDER BY ticker ASC ";
-                        $result = $dbconn->query($getStocks);
-                         echo "<select id='myTick'>";
-                            while($row = $result->fetch_assoc()) {
-                                echo "<option value='".$row['ticker']."'>".$row["ticker"]."</option>";
-                             }
-                             echo "</select>";
-                        ?>
-                        <button type="button" onclick="addToPort()">Submit</button>
-                        </form>
+                        <div class="container">
+                            <form role="form" action="#" method="POST">
+                            <div class="form-group">
+                                <?php
+                                $getStocks = "SELECT ticker, name FROM stocks ORDER BY ticker ASC ";
+                                $result = $dbconn->query($getStocks);
+                                 echo "<select class='form-control' name='myTick' style='width:50%;'>";
+                                    while($row = $result->fetch_assoc()) {
+                                        echo "<option value='".$row['ticker']."'>".$row['ticker']." - ".$row['name']."</option>";
+                                     }
+                                     echo "</select>";
+                                ?>
+                                <input name="amount" type="text" class="form-control" placeholder="Amount" aria-describedby="basic-addon1" style="width:50%;">
+                                <input type="submit" name="submit" value="Submit" />
+                            </div>
+                            </form>
+                            <?php
+                                if(isset($_POST['submit'])){
+                                    $selected_val = $_POST['myTick'];  // Storing Selected Value In Variable
+                                    $amount = $_POST['amount'];
+
+                                    $dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
+                                    $uname = $_SESSION['username'];
+                                    $mes2 = "INSERT INTO portfolio (username, ticker, amount) VALUES('".$uname."', '".$selected_val."', '".$amount."');";
+                                    $result = $dbconn->query($mes2);
+                                    if($result){
+                                        echo $amount ." shares of " .$selected_val." have been added to your portfolio";
+                                    }
+                                }
+                            ?>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background:black; color:white;">
+                        <h3>Delete Stocks from Portfolio</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="container">
+                            <form role="form" action="#" method="POST">
+                            <div class="form-group">
+                                <?php
+                                $getStocks = "SELECT ticker FROM portfolio WHERE username='".$_SESSION['username']."' ORDER BY ticker ASC ";
+                                $result = $dbconn->query($getStocks);
+                                 echo "<select class='form-control' name='myTick' style='width:50%;'>";
+                                    while($row = $result->fetch_assoc()) {
+                                        echo "<option value='".$row['ticker']."'>".$row['ticker']."</option>";
+                                     }
+                                     echo "</select>";
+                                ?>
+                                <input type="submit" name="delete" value="Delete" />
+                            </div>
+                            </form>
+                            <?php
+                                if(isset($_POST['delete'])){
+                                    $delete_val = $_POST['myTick'];  // Storing Selected Value In Variable
+
+                                    $dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
+                                    $uname = $_SESSION['username'];
+                                    $delStock = "DELETE FROM portfolio WHERE ticker='".$delete_val."';";
+                                    $result = $dbconn->query($delStock);
+                    
+                                }
+                            ?>
+                        </div>    
                     </div>
                 </div>
             </div>
         </div>
+
         <hr>
 
         <!-- Call to Action Well -->
@@ -202,34 +187,38 @@ if ($result->num_rows > 0) {
                                     <tr>
                                         <th>Ticker</th>
                                         <th>Username</th>
-                                        <th>Current Price</th>
-                                        <th>Score</th>
+                                        <th>Amount</th>
+                                        <th>Name</th>
+                                        <th>Sector</th>
+                                        <th>Remove</th>
                                     </tr>
                                 </thead>
                                <tbody class="tableBody">
                     
                     <?php
                     //Create connection
-                    $dbconn = new mysqli($servername, $connectUname, $connectPass);
+                    $dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
                     $uname = $_SESSION['username'];
-                    $mes2 = "SELECT * FROM mcs526.portfolio WHERE username='".$uname."'";
+                    $mes2 = "SELECT portfolio.username, portfolio.ticker, portfolio.amount, stocks.name, stocks.sector FROM portfolio INNER JOIN stocks ON portfolio.ticker=stocks.ticker WHERE username='".$uname."';";
                     $result = $dbconn->query($mes2);
 
                     if ($result->num_rows > 0) {
                         // output data of each row
                         while($row = $result->fetch_assoc()) {
                             echo "<tr class='odd gradeX'>";
-                            echo "<td><a class='tick'>" . $row["ticker"] . "</a></td>";
+                            echo "<td><a class='tick' name='ticky'>" . $row["ticker"] . "</a></td>";
                             echo "<td>" . $row["username"] . "</td>";
-                            echo "<td> </td>";
-                            echo "<td> </td>";
-                            echo "</tr>";
+                            echo "<td>" . $row["amount"] . "</td>";
+                            echo "<td>" . $row["name"] . "</td>";
+                            echo "<td>" . $row["sector"] . "</td>";
+                            echo "<td><input type='submit' name='delete' value='Delete' onclick='delFromPort()'/></td>";
                         }
                     } else {
                         echo "<tr class='odd gradeX'>";
                         echo "<td><a class='tick'>0 Results Found</a></td>";
                         echo "</tr>";
                     }
+
                     ?>          
 
                                 </tbody>
@@ -242,34 +231,12 @@ if ($result->num_rows > 0) {
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-
-        <div style="display: none;">
-            <div id="test-content">
-                <div style="float:left; width:50%; padding: 10px;">
-                    <img src="img/stock.png" style="width:100%;">
-                </div>
-            <div style="float:left; width:50%; padding: 10px;">
-                <h1 style="color:black;">Stock Name: </h1>
-                <h1 style="color:black;">Stock Description: </h1>
-                <h1 style="color:black;">Misc Info: </h1>
-            </div>
-            </div>
-        </div>
         
     <?php include "footer.html"; ?>   
 
     </div>
-    <!-- /.container -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/colorbox/jquery.colorbox-min.js" type="text/javascript" charset="utf-8"></script>
-
-
-<script>
+    <script>
 function GetCellValues() {
     $(function () {
         var tickername = [];
@@ -367,8 +334,6 @@ function GetCellValues() {
     });
         
     }
-
-
     
     $(".tick").click(function(event) {
         var text = $(event.target).text();
@@ -377,12 +342,8 @@ function GetCellValues() {
         window.open(url,'_blank');
     });
 
-   
-    
     </script>
 
 
-
 </body>
-
 </html>

@@ -295,7 +295,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-<!--                                     <tr class="odd gradeX">
+                                     <tr class="odd gradeX">
                                         <td>1</td>
                                         <td id="name1">BMW</td>
                                         <td>BYERISCHE MOTOREN WERKE AG</td>
