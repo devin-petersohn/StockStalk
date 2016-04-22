@@ -6,7 +6,7 @@ if (isset( $_POST['Submit'])){
 		include "connect.php";
       
       // Create connection
-      $dbconn = new mysqli($servername, $connectUname, $connectPass);
+      $dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
 
       // Check connection
       if ($dbconn->connect_error) {
@@ -33,14 +33,14 @@ if (isset( $_POST['Submit'])){
         include "connect.php";
       
       // Create connection
-      $dbconn = new mysqli($servername, $connectUname, $connectPass);
+      $dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
 
       // Check connection
       if ($dbconn->connect_error) {
         die("Connection failed: " . $dbconn->connect_error);
       }
       
-      $query="SELECT * FROM mmhkwc.loginInfo WHERE username LIKE ?";
+      $query="SELECT * FROM loginInfo WHERE username=?";
 //Prepared statement
 			$stmt=$dbconn->prepare($query) or die("PreQuery failed");
             $stmt->bind_param("s",$username);
@@ -63,7 +63,7 @@ if (isset( $_POST['Submit'])){
         include "connect.php";
       
       // Create connection
-      $dbconn = new mysqli($servername, $connectUname, $connectPass);
+      $dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
 
       // Check connection
       if ($dbconn->connect_error) {
@@ -76,7 +76,7 @@ if (isset( $_POST['Submit'])){
         echo "<p> password is $password </p>";
         $pwhash = sha1($salt.$password);
         //insert into loginInfo table
-        $query = "INSERT INTO capstone.loginInfo (username,name, hashpass, salt) VALUES (?,?,?, ?)";
+        $query = "INSERT INTO loginInfo (username,name, hashpass, salt) VALUES (?,?,?, ?)";
         $stmt=$dbconn->prepare($query) or die("Prepared statement error");
         $stmt->bind_param("ssss",$username,$name,$pwhash,$salt);
         $stmt->execute() or die ("Execute Query failed");
@@ -141,7 +141,7 @@ if (isset( $_POST['Submit'])){
 
 </head>   
 <body> 
-    <!---Navbar call----->
+    <!--Navbar call-->
     <?php include "navbar.php"; ?>
 
     <!-- Full Width Image Header -->

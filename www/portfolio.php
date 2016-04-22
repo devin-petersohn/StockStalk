@@ -91,7 +91,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background:black; color:white;">
+                    <div class="panel-heading" style="background:#333; color:white;">
                         <h3>Add Stocks to Your Portfolio</h3>
                     </div>
                     <div class="panel-body">
@@ -101,13 +101,13 @@
                                 <?php
                                 $getStocks = "SELECT ticker, name FROM stocks ORDER BY ticker ASC ";
                                 $result = $dbconn->query($getStocks);
-                                 echo "<select class='form-control' name='myTick' style='width:50%;'>";
+                                 echo "<select class='form-control' name='myTick'>";
                                     while($row = $result->fetch_assoc()) {
                                         echo "<option value='".$row['ticker']."'>".$row['ticker']." - ".$row['name']."</option>";
                                      }
                                      echo "</select>";
                                 ?>
-                                <input name="amount" type="text" class="form-control" placeholder="Amount" aria-describedby="basic-addon1" style="width:50%;">
+                                <input name="amount" type="text" class="form-control" placeholder="Amount" aria-describedby="basic-addon1">
                                 <input type="submit" name="submit" value="Submit" />
                             </div>
                             </form>
@@ -131,7 +131,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="background:black; color:white;">
+                    <div class="panel-heading" style="background:#333; color:white;">
                         <h3>Delete Stocks from Portfolio</h3>
                     </div>
                     <div class="panel-body">
@@ -141,7 +141,7 @@
                                 <?php
                                 $getStocks = "SELECT ticker FROM portfolio WHERE username='".$_SESSION['username']."' ORDER BY ticker ASC ";
                                 $result = $dbconn->query($getStocks);
-                                 echo "<select class='form-control' name='myTick' style='width:50%;'>";
+                                 echo "<select class='form-control' name='myTick'>";
                                     while($row = $result->fetch_assoc()) {
                                         echo "<option value='".$row['ticker']."'>".$row['ticker']."</option>";
                                      }
@@ -173,7 +173,7 @@
         <div class="row">
             <div class="col-lg-12">
                  <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="background:#333; color:white">
                         <h4>My Stocks</h4>
                         <div class="col-sm-4">
                             
