@@ -60,7 +60,10 @@
     
     <script>
         $( document ).ready(function() {
-            var homeDir = "/";
+            var current_user = <?php
+            echo trim(shell_exec('whoami'));
+            ?>;
+            var homeDir = "/home/"+current_user+"/StockStalk/";
             var data = <?php
             $searchtype = $_GET['searchtype'];
             // echo $searchtype;
