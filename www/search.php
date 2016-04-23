@@ -20,8 +20,9 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/one-page-wonder.css">
-    <link rel="stylesheet" type="text/css" href="css/charts.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="css/charts.css">
+
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -215,7 +216,7 @@
             
             <!-- Search box -->
             <div id="custom-search-input">
-                <form action="loading.php" method="POST" id="search1">
+                <form action="loading.php" method="GET" id="search1">
                     <div class="input-group col-sm-6 col-sm-offset-3">
                         <input type="text" class="search-query form-control" name="searchbox1" placeholder="Search"></input>
                         <span class="input-group-btn">
@@ -341,7 +342,7 @@
             
             <!-- Search box -->
             <div id="custom-search-input">
-                <form action="loading.php" method="POST" id="search3">
+                <form action="loading.php" method="GET" id="search3">
                     <div class="input-group col-sm-6 col-sm-offset-3">
                         <input type="text" class="search-query form-control" name="searchbox2" placeholder="Search"></input>
                         <span class="input-group-btn">

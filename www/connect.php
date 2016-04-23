@@ -1,14 +1,43 @@
 <?php
-$servername = "dbhost-mysql.cs.missouri.edu";
-$username = "mmhkwc";
-$password = "RgS8HC6L";
-$dbase = "stockstalk";
+/*$servername = "dbhost-mysql.cs.missouri.edu";
+$connectUname = "mmhkwc";
+$connectPass = "RgS8HC6L";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli($servername, $connectUname, $connectPass);
 
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+if ($dbconn->connect_error) {
+    die("Connection failed: " . $dbconn->connect_error);
+}
+*/
+
+$servername = "localhost";
+$connectUname = "root";
+$connectPass = "";
+$db = "stockstalk";
+
+// Create connection
+$dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
+
+// Check connection
+if ($dbconn->connect_error) {
+    die("Connection failed: " . $dbconn->connect_error);
+}
+
+
+
+
+
+
+
+
+
+
+
 ?>
+
+
+
+
+

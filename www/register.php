@@ -2,6 +2,89 @@
     session_start();
 
 
+if (isset( $_POST['Submit'])){
+		include "connect.php";
+      
+      // Create connection
+      $dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
+
+      // Check connection
+      if ($dbconn->connect_error) {
+        die("Connection failed: " . $dbconn->connect_error);
+         }
+        $name = $dbconn->real_escape_string(htmlspecialchars($_POST['name']));
+        $username = $dbconn->real_escape_string(htmlspecialchars($_POST['email']));
+        $password = $dbconn->real_escape_string(htmlspecialchars($_POST['password']));
+        
+        $email = $dbconn->real_escape_string(htmlspecialchars($_POST['email']));
+        //check if the name exists
+        if(checkUsername($username)==0)
+        {
+            addUser($username,$password,$email,$name);               //adds user into database
+            $_SESSION['username'] = $username;
+            header("Location: index.php");
+        }
+        else
+            echo "Username is already taken";
+    }
+	
+	function checkUsername($username){
+        
+        include "connect.php";
+      
+      // Create connection
+      $dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
+
+      // Check connection
+      if ($dbconn->connect_error) {
+        die("Connection failed: " . $dbconn->connect_error);
+      }
+      
+      $query="SELECT * FROM loginInfo WHERE username=?";
+//Prepared statement
+			$stmt=$dbconn->prepare($query) or die("PreQuery failed");
+            $stmt->bind_param("s",$username);
+            $stmt->execute() or die ("Query failed");
+            $stmt->store_result();
+            if($stmt->num_rows==0)
+            {
+                return 0;
+            }
+             else{
+                return 1;
+            }
+      
+      
+    }
+	
+
+	function addUser($username,$password, $email, $name){
+        
+        include "connect.php";
+      
+      // Create connection
+      $dbconn = new mysqli($servername, $connectUname, $connectPass, $db);
+
+      // Check connection
+      if ($dbconn->connect_error) {
+        die("Connection failed: " . $dbconn->connect_error);
+      }
+        //hash and salt password
+        mt_srand();
+        $salt = mt_rand();
+        echo "<p> salt is $salt </p>";
+        echo "<p> password is $password </p>";
+        $pwhash = sha1($salt.$password);
+        //insert into loginInfo table
+        $query = "INSERT INTO loginInfo (username,name, hashpass, salt) VALUES (?,?,?, ?)";
+        $stmt=$dbconn->prepare($query) or die("Prepared statement error");
+        $stmt->bind_param("ssss",$username,$name,$pwhash,$salt);
+        $stmt->execute() or die ("Execute Query failed");
+        //set session keys
+        $_SESSION['user'] = $name;
+
+    }
+
 
 
 
@@ -31,7 +114,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->  
     
-    
+    <!--
     <style type="text/css">
 #loginForm .has-error .control-label,
 #loginForm .has-error .help-block,
@@ -45,51 +128,20 @@
     color: #18bc9c;
 }
 </style>
-    
+    -->
     
     
     
     <script>
-$(document).ready(function() {
-    $('#loginForm').formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            username: {
-                validators: {
-                    notEmpty: {
-                        message: 'The username is required'
-                    },
-                    stringLength: {
-                        min: 6,
-                        max: 30,
-                        message: 'The username must be more than 6 and less than 30 characters long'
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.]+$/,
-                        message: 'The username can only consist of alphabetical, number, dot and underscore'
-                    }
-                }
-            },
-            password: {
-                validators: {
-                    notEmpty: {
-                        message: 'The password is required'
-                    }
-                }
-            }
-        }
-    });
-});
-</script>
+        $(document).ready(function() {
+     
+            $('#myForm').validator('validate');
+        };
+    </script>
 
 </head>   
 <body> 
-    <!---Navbar call----->
+    <!--Navbar call-->
     <?php include "navbar.php"; ?>
 
     <!-- Full Width Image Header -->
@@ -98,28 +150,46 @@ $(document).ready(function() {
                 
                 <h1>Register An Account</h1>
                                 
-                    <label>Username:</label>
-                    <input type="text" name="username" class="form-control" id="username" placeholder="Username" required autofocus>
-                    </br>
-                    <label>Password:</label>
-                    <input type="password" name="password" class="form-control" id="password"placeholder="Password" required>
-                    </br>
-                    <label>Verify Password:</label>
-                    <input type="password" name="password" class="form-control" id="password"placeholder="Verify Password" required>
-                    </br>
-                    <label>First Name:</label>
-                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name" required autofocus>
-                    </br>
-                    <label>Email Address:</label>
-					<input type="email" name="email" class="form-control" id="email" placeholder="example@mail.example.edu" value="" required>
-                    </br>
-                    <label><input type="checkbox" value="">  I agree to the <a href="#">Terms and Conditions</a></label>
-                    </br>
-                    <button class="btn btn-lg btn-primary btn-block" type="Submit" name='Submit' value='Submit'>Sign in</button> 
-                    </br>
-                    </br>
-            </div>
-    </header>
+
+ <form data-toggle="validator" role="form" method='POST' action='register.php'>
+     
+    <div class="form-group has-feedback">
+    <label for="inputEmail" class="control-label">Email:</label>
+    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" data-error="That email address is invalid." required>
+    <div class="help-block with-errors"></div>
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+  </div>
+     
+  <div class="form-group">
+    <label for="inputName" class="control-label">First Name:</label>
+    <input type="text" name="name" class="form-control" id="inputName" placeholder="Jane" required>
+  </div>
+   
+     
+  <div class="form-group has-feedback">
+    <label for="inputPassword" class="control-label">Password:</label>
+    <div class="form-group has-feedback">
+      <input type="password" name="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+      <div class="help-block">Minimum of 6 characters</div>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    <div class="form-group has-feedback">
+    <label for="inputPassword" class="control-label">Verify Password:</label>
+      <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+      <div class="help-block with-errors"></div>
+        <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+    </div>
+    </div>
+     
+  </div>
+  <div class="form-group p-all">
+    <button class="btn btn-lg btn-primary btn-block" type="Submit" name='Submit' value='Submit'>Register</button> 
+  </div>
+</form>
+
+        </div>
+        </header>
 
    <!-- Page Content -->
     <div class="container">
@@ -179,6 +249,8 @@ $(document).ready(function() {
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+<script src="js/validator.js"></script>
+
 
 </body>
 

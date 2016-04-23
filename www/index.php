@@ -27,18 +27,13 @@
 
 </head>   
 <body> 
-    <!---Navbar call----->
+    <!---Navbar call-->
     <?php include "navbar.php"; ?>
 
     <!-- Full Width Image Header -->
-    <header class="header-image">
-        <div class="headline">
-            <div class="container">
-                <h1>Stock Stalk</h1>
-                <h2>Will Knock Your Socks Off</h2>
-            </div>
-        </div>
-    </header>
+    <div>
+        <img src="img/stocklogo2.png" style="width:100%; height:100%;">
+    </div>
 
    <!-- Page Content -->
     <div class="container">

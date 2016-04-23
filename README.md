@@ -1,7 +1,7 @@
 # StockStalk
-### Setup Instructions
+## Setup Instructions
 
-##### Step 0: Required Environment
+#### Step 0: Required Environment
 The setup script included in this repository is designed for setting up all dependencies and software requirements, building the sources, and beginning to cache the data in a Microsoft Azure HDInsight environment. There is no guarantee that this script will work for any other environment.
 
 The following software will be downloaded:
@@ -15,7 +15,7 @@ The following software will be downloaded:
 
 All of this software is free to use or open source.
 
-##### Step 1: Installing Dependencies and Building the Source
+#### Step 1: Installing Dependencies and Building the Source
 NOTE: It is recommend that you download the script `setup_and_deploy/setup.sh` and run directly from your home directory on your Microsoft Azure allocation. The script automatically clones the repository for you, so if you wish to clone the repo yourself, you must change the `setup.sh` bash script to account for this. 
 
 We have developed scripts to automatically setup the environment and build the project executables. To begin, from your home directory execute:
@@ -24,7 +24,7 @@ We have developed scripts to automatically setup the environment and build the p
 
 The script will begin downloading and installing the software listed above, it will also build the source and cache the previous 20 years of stock data for the S&P500. The entire setup takes between 40 minutes and 1 hour using a 3 node cluster.
 
-##### Step 2: Port Forwarding and Accessing Web UI
+#### Step 2: Port Forwarding and Accessing Web UI
 
 When the script is finished, there will be a couple of instructions to follow in order to access the web interface of the application.
 
@@ -40,6 +40,26 @@ In order to access the web server set up on your cluster allocation you must use
 
 Currently, Microsoft Azure HDInsight does not support a web server through traditional web browser access. While setting up the port forwarding is an additional step and may seem annoying, it can also provide additional security to your application and protect your cluster from being bombarded by queries. This software is set up and intended for personal use, so you will likely have to change some things to host this software for anyone. 
 
-##### Step 3: Navigating the Web UI
+#### Step 3: Navigating the Web UI
 
-TODO
+You do not have to have to create an account to search, however creating an account provides two useful features: the ability to view your past search history and keep a 'portfolio' for tracking and search abilities. 
+
+#### Creating an Account
+From the home page, click the login button in the navigation bar at the top of the page. This navigation bar will be useful for moving between page. If you'd like, you can login using Facebook or Google, or you can create an account. Once you create an account you can log in and begin using the application.
+
+#### Portfolio
+To get to your portfolio, click 'Portfolio' from the navigation bar. In your portfolio, you can look at the historical chart of any number of stocks you'd like to see together. You are free to add as many stocks as you'd like from the S&P500 to your portfolio.
+
+#### Search
+There are 3 searches available in this application:
+
+##### All against All
+In this search type, you are looking to find the longest period of time that any 2+ stocks moved very similarly. You may choose any number of stocks in the S&P500, or even search among all S&P500 stocks.
+
+    NOTE: The more stocks you add the longer this search will take. Please be aware of this.
+
+##### One against All
+In this search type, you are looking to score a stocks price movement against that off all other stocks in the S&P500.
+
+##### Single Stock Search
+In Single Stock search, you will look at the chart of a single stock. 
