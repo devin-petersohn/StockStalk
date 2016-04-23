@@ -27,6 +27,7 @@ sudo apt-get -y update
 sudo apt-get -y install jenkins
 
 cd StockStalk
+mkdir -p temp_data
 
 #Relocate all web files to the web server files location
 sudo cp -r www/* /var/www/html
