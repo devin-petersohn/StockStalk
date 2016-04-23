@@ -33,12 +33,10 @@
             $toDate1 = $_GET['to'];
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
-
-            $homeDir = "";
-            //chdir($homeDir);
-            shell_exec("cd /home/`whoami`/StockStalk/; spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
-            //shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
-            //shell_exec("spark-submit --class Search One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
+            $homeDir = "/Users/mac/Documents/capstone/StockStalk";
+            // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
+            chdir($homeDir);
+            shell_exec("spark-submit --class Search One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
 
         }
         if(strcmp($searchtype,"alltoall")==0){
@@ -49,11 +47,10 @@
             $toDate1 = $_GET['to'];
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
-            $homeDir = "";
-            //chdir($homeDir);
-            shell_exec("cd /home/`whoami`/StockStalk/; spark-submit --class ScalaTest All_Against_All/target/stockStalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." "."1.0 "."Daily ".$ticker1);
-            //shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
-            //shell_exec("spark-submit --class ScalaTest All_Against_All/target/stockStalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." "."1.0 "."Daily ".$ticker1);
+            $homeDir = "/Users/mac/Documents/capstone/StockStalk";
+            // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
+            chdir($homeDir);
+            shell_exec("spark-submit --class ScalaTest All_Against_All/target/stockStalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." "."1.0 "."Daily ".$ticker1);
 
         }
     ?>
@@ -345,13 +342,12 @@
             $.ajax({
                 type: "POST",
                 url: "PortfolioAdd.php",
-                data: {action:'add', tickername: tickername, username: user}, 
-                dataType: "json",
+                data: {action:"add", tickername: tickername, username: user}, 
                 success: function(response){
-                    alert(response.msg);
+                    alert(response);
                 },
                 error: function(){
-                    alert("Unexpected error! Try again.");
+                    alert("Unexpected error. Try again");
                 }
                 });
         }
@@ -390,7 +386,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-<!--                                     <tr class="odd gradeX">
+                                    <!--<tr class="odd gradeX">
                                         <td>1</td>
                                         <td id="name1">BMW</td>
                                         <td>BYERISCHE MOTOREN WERKE AG</td>
