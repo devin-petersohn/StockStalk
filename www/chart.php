@@ -58,7 +58,7 @@
     <script>
         $( document ).ready(function() {
             var current_user = <?php
-            echo trim(shell_exec('whoami'));
+            echo get_current_user();
             ?>;
             var homeDir = "/home/"+current_user+"/StockStalk/";
             var data = <?php
