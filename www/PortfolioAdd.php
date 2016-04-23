@@ -1,53 +1,25 @@
 <?php 
     include "connect.php";
-    
-//if($_SERVER['HTTPS'])
-//{
-//
-//	if(isset($_POST['submit']))
-//	{
-//		//connects user to database.
-//		$dbconn = new mysqli('localhost', 'root', '');
-//		$name = $_POST['username'];
-//        
-//		$ticker = $_POST['tickername'];
-//		if($ticker == NULL || $name == NULL)
-//			die('All fields required');
-//		addToPortfolio($ticker,$name, $dbconn);	
-//	}
-//}
-    if($conn){
-        if($_POST['action'] == 'add')
-        {
+
+    if($dbconn){
+        if($_POST['action'] == 'add') {
             $name = $_POST['username'];
             $ticker = $_POST['tickername'];
-            
-            
-            $sql = "INSERT INTO mmhkwc.portfolio (username, ticker) VALUES ('".$name."', '".$ticker."')";
-            if ($conn->query($sql) === TRUE) {
-                $arr = array(
-                    "msg" => htmlentities("Add ".$ticker." to portfolio successfully"),
-                );
-                echo json_encode($arr);
-            } else {
-                if($name == NULL){
-                    $arr = array(
-                        "msg" => htmlentities("You need to log in First!"),
-                    );
-                    echo json_encode($arr);
-                }else if ($conn->error == "Duplicate entry '".$name."-".$ticker."' for key 'PRIMARY'"){
-                    $arr = array(
-                        "msg" => htmlentities($ticker." has already in your portfolio!"),
-                    );
-                    echo json_encode($arr);
+            $sql = "INSERT INTO portfolio (username, ticker) VALUES ('".$name."', '".$ticker."')";
+            if ($dbconn->query($sql) === TRUE) {
+                echo "Added ".$ticker." to portfolio successfully";
+            } 
+            else {
+                 if($name == NULL){
+                    echo "you need to log in first!";
+                }
+                else if ($dbconn->error == "Duplicate entry '".$name."-".$ticker."' for key 'PRIMARY'"){
+                    echo $ticker." is already in your portfolio!";
+                }
+                else{
+                    echo "Error adding ".$ticker." to portfolio.";
                 }
             }
-
         }
     }
-
-
-//function errorMessage(){
-//	echo "<p> Sorry. Something went wrong on our end. </p>";
-//}
 ?>
