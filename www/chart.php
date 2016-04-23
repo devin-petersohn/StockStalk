@@ -33,7 +33,7 @@
             $toDate1 = $_GET['to'];
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
-            $homeDir = "/Users/mac/Documents/capstone/StockStalk";
+            $homeDir = "/home/".get_current_user()."/StockStalk";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
             chdir($homeDir);
             shell_exec("spark-submit --class Search One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
@@ -47,7 +47,7 @@
             $toDate1 = $_GET['to'];
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
-            $homeDir = "/Users/mac/Documents/capstone/StockStalk";
+            $homeDir = "/home/".get_current_user()."/StockStalk";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
             chdir($homeDir);
             shell_exec("spark-submit --class ScalaTest All_Against_All/target/stockStalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." "."1.0 "."Daily ".$ticker1);
