@@ -20,8 +20,9 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/one-page-wonder.css">
-    <link rel="stylesheet" type="text/css" href="css/charts.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="css/charts.css">
+
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">

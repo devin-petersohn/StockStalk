@@ -50,7 +50,6 @@
                 $sector = $_GET['sector'];
                 echo '['.'"'.$tickers.'",'.'"'.$sector.'",'.'"'.$from.'",'.'"'.$to.'",'.'"'.$searchtype.'"'.']';
             // }
-            
         }
         if(strcmp($searchtype,"specific")==0){
             $ticker2 = $_GET['searchbox2'];
