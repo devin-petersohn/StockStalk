@@ -58,7 +58,8 @@
     <script>
         $( document ).ready(function() {
             var current_user = <?php
-            echo get_current_user();
+            $processUser = posix_getpwuid(posix_geteuid());
+            "'"print $processUser['name']"'";
             ?>;
             var homeDir = "/home/"+current_user+"/StockStalk/";
             var data = <?php
