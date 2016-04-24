@@ -33,7 +33,8 @@
             $toDate1 = $_GET['to'];
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
-            $homeDir = "..";
+
+            $homeDir = "/home/".get_current_user()."/StockStalk";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
             chdir($homeDir);
             shell_exec("spark-submit --master local[4] --class Search One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
@@ -47,7 +48,8 @@
             $toDate1 = $_GET['to'];
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
-            $homeDir = "..";
+
+            $homeDir = "/home/".get_current_user()."/StockStalk";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
             chdir($homeDir);
             shell_exec("spark-submit --class ScalaTest All_Against_All/target/stockStalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." "."1.0 "."Daily ".$ticker1);
@@ -57,7 +59,11 @@
     
     <script>
         $( document ).ready(function() {
-            var homeDir = "/";
+            var current_user = <?php
+            $processUser = posix_getpwuid(posix_geteuid());
+            "'"print $processUser['name']"'";
+            ?>;
+            var homeDir = "/home/"+current_user+"/StockStalk/";
             var data = <?php
             $searchtype = $_GET['searchtype'];
             // echo $searchtype;
@@ -433,13 +439,12 @@
             $.ajax({
                 type: "POST",
                 url: "PortfolioAdd.php",
-                data: {action:'add', tickername: tickername, username: user}, 
-                dataType: "json",
+                data: {action:"add", tickername: tickername, username: user}, 
                 success: function(response){
-                    alert(response.msg);
+                    alert(response);
                 },
                 error: function(){
-                    alert("Unexpected error! Try again.");
+                    alert("Unexpected error. Try again");
                 }
                 });
         }
@@ -478,7 +483,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-<!--                                     <tr class="odd gradeX">
+                                    <!--<tr class="odd gradeX">
                                         <td>1</td>
                                         <td id="name1">BMW</td>
                                         <td>BYERISCHE MOTOREN WERKE AG</td>
