@@ -33,10 +33,10 @@
             $toDate1 = $_GET['to'];
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
-            $homeDir = "/Users/mac/Documents/capstone/StockStalk";
+            $homeDir = "..";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
             chdir($homeDir);
-            shell_exec("spark-submit --class Search One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
+            shell_exec("spark-submit --master local[4] --class Search One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
 
         }
         if(strcmp($searchtype,"alltoall")==0){
@@ -47,7 +47,7 @@
             $toDate1 = $_GET['to'];
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
-            $homeDir = "/Users/mac/Documents/capstone/StockStalk";
+            $homeDir = "..";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
             chdir($homeDir);
             shell_exec("spark-submit --class ScalaTest All_Against_All/target/stockStalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." "."1.0 "."Daily ".$ticker1);
@@ -88,6 +88,9 @@
             echo '['.'"'.$ticker2.'",'.'"'.$fromDate3.'",'.'"'.$toDate3.'",'.'"'.$searchtype.'"'.']';
           
         }
+        if(strcmp($searchtype,"")==0){
+            echo "[]";
+        }
          ?>;
          console.log(data);
          var jsonPath = "";
@@ -95,9 +98,97 @@
           return str.replace(new RegExp(find, 'g'), replace);
         }
 
-            if(data[4]=="specific")
+            if(data[3]=="specific")
             {
- 
+                var tickername = data[0];
+                var tickerList = [];
+                tickerList.push(tickername);
+                console.log(tickerList);
+                var seriesOptions = [];
+                seriesCounter = 0;
+                names = tickerList;
+                var url = 'http://query.yahooapis.com/v1/public/yql';
+                var startDate = '2015-10-01';
+                var endDate = '2016-03-01';
+                function createChart() {
+
+    //            $('#container').highcharts('StockChart', {
+                var chart = new Highcharts.StockChart({
+                    chart:{
+                        renderTo: 'container'
+                    },
+    //                
+                    rangeSelector: {
+                        selected: 4
+                    },
+
+                    yAxis: {
+                        labels: {
+                            formatter: function () {
+                                return (this.value > 0 ? ' + ' : '') + this.value + '%';
+                            }
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 2,
+                            color: 'silver'
+                        }]
+                    },
+
+                    plotOptions: {
+                        series: {
+                            compare: 'percent'
+                        }
+                    },
+
+                    tooltip: {
+                        pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+                        valueDecimals: 2
+                    },
+
+                    series: seriesOptions
+                });
+            }
+
+            $.each(names, function (i, name) {
+                var reformattedArray;
+                var array = [];
+                var data1 = encodeURIComponent('select * from yahoo.finance.historicaldata where symbol in ("' + name + '") and startDate = "' + startDate + '" and endDate = "' + endDate + '"');
+                $.getJSON(url, 'q=' + data1 + "&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json", function (data) {
+                    console.dir(data);
+                    var stockData = data.query.results.quote;
+                    //console.log(stockData);
+                    $.each(stockData, function( key, value ) {
+
+                        reformattedArray = $.map(value, function(ky, val) { return ky });
+
+                        //console.log(reformattedArray);
+    //                    array = reformattedArray[1];
+                        var someDate = reformattedArray[1];
+                        var date = Date.parse(someDate);
+                        //console.log(date);
+                        reformattedArray[1] = date;
+                        reformattedArray[2] = parseFloat(reformattedArray[2]);
+                        reformattedArray.shift();
+                        reformattedArray.splice(reformattedArray.length - 5);
+                        //console.log(reformattedArray);
+                        array.unshift(reformattedArray);   
+                    });
+                    //console.log(array);
+                    seriesOptions[i] = {
+                        name: name,
+                        data: array
+                    };
+
+                    // As we're loading the data asynchronously, we don't know what order it will arrive. So
+                    // we keep a counter and create the chart when all the data is loaded.
+                    seriesCounter += 1;
+
+                    if (seriesCounter === names.length) {
+                        createChart();
+                    }
+                });
+            });
             }
             else{
                 fromDates = data[2].split("-");
