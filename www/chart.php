@@ -59,11 +59,8 @@
     
     <script>
         $( document ).ready(function() {
-            var current_user = <?php
-            $processUser = posix_getpwuid(posix_geteuid());
-            "'"print $processUser['name']"'";
-            ?>;
-            var homeDir = "/home/"+current_user+"/StockStalk/";
+            
+            var homeDir = "/";
             var data = <?php
             $searchtype = $_GET['searchtype'];
             // echo $searchtype;
@@ -114,8 +111,8 @@
                 seriesCounter = 0;
                 names = tickerList;
                 var url = 'http://query.yahooapis.com/v1/public/yql';
-                var startDate = '2015-10-01';
-                var endDate = '2016-03-01';
+                var startDate = data[1];
+                var endDate = data[2];
                 function createChart() {
 
     //            $('#container').highcharts('StockChart', {
