@@ -16,7 +16,9 @@ The following software will be downloaded:
 All of this software is free to use or open source.
 
 #### Step 1: Installing Dependencies and Building the Source
-NOTE: It is recommend that you download the script `setup_and_deploy/setup.sh` and run directly from your home directory on your Microsoft Azure allocation. The script automatically clones the repository for you, so if you wish to clone the repo yourself, you must change the `setup.sh` bash script to account for this. 
+NOTE: It is recommend that you download the script `setup_and_deploy/setup.sh` and run directly from your home directory on your Microsoft Azure allocation. The script automatically clones the repository for you, so if you wish to clone the repo yourself or use a different version, you must change the `setup.sh` bash script to account for this. From your home directory type:
+
+`wget raw.githubusercontent.com/devin-petersohn/StockStalk/master/setup_and_deploy/setup.sh`
 
 We have developed scripts to automatically setup the environment and build the project executables. To begin, from your home directory execute:
 
