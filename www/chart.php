@@ -37,6 +37,16 @@
             $homeDir = "/home/".get_current_user()."/StockStalk";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
             chdir($homeDir);
+            $usr=$_SESSION['username'];
+            if(!file_exists('user_data'))
+            {
+                mkdir('user_data');
+            }
+            if(!file_exists('user_data/'.$usr))
+            {
+                mkdir('user_data/'.$usr);
+            }
+
             shell_exec("spark-submit --master local[4] --class Search One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
 
         }
@@ -53,6 +63,16 @@
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
             chdir($homeDir);
             shell_exec("spark-submit --class ScalaTest All_Against_All/target/stockStalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." "."1.0 "."Daily ".$ticker1);
+            $usr=$_SESSION['username'];
+            if(!file_exists('user_data'))
+            {
+                mkdir('user_data');
+            }
+            if(!file_exists('user_data/'.$usr))
+            {
+                mkdir('user_data/'.$usr);
+            }
+            copy("temp_data/AllvsAll_".$fromDates[0]."_".$fromDates[1]."_".$fromDates[2]."_".$toDates[0]."_".$toDates[1]."_".$toDates[2]."_1.0_Daily_".$ticker1.".json","user_data/".$usr."/AllvsAll_".$fromDates[0]."_".$fromDates[1]."_".$fromDates[2]."_".$toDates[0]."_".$toDates[1]."_".$toDates[2]."_1.0_Daily_".$ticker1.".json");
 
         }
     ?>
@@ -156,8 +176,15 @@
             $.each(names, function (i, name) {
                 var reformattedArray;
                 var array = [];
-                var data1 = encodeURIComponent('select * from yahoo.finance.historicaldata where symbol in ("' + name + '") and startDate = "' + startDate + '" and endDate = "' + endDate + '"');
-                $.getJSON(url, 'q=' + data1 + "&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json", function (data) {
+                // var data1 = encodeURIComponent('select * from yahoo.finance.historicaldata where symbol in ("' + name + '") and startDate = "' + startDate + '" and endDate = "' + endDate + '"');
+                // console.log(data1);
+                var urlYahoo = 'q=select * from yahoo.finance.historicaldata '+
+                'where symbol = "' + name + '" ' +
+                'and startDate = "'+startDate+'" and endDate = "'+endDate+'"&' + 
+                'format=json&diagnostics=true&' +
+                'env=store://datatables.org/alltableswithkeys';
+                var URLYahooEncoded = encodeURI(urlYahoo);
+                $.getJSON(url,URLYahooEncoded , function (data) {
                     console.dir(data);
                     var stockData = data.query.results.quote;
                     //console.log(stockData);

@@ -177,7 +177,7 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                     Login via
                                     <div class="social-buttons">
                                       <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                      <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                      <a href="#" class="btn btn-tw"><i class="fa fa-google"></i> GOOGLE</a>
                                         
                                     </div>
                                                     or
