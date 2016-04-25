@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.6.0
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 21, 2016 at 03:12 AM
+-- Generation Time: Apr 25, 2016 at 04:12 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -26,8 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `loginInfo`
 --
 
-CREATE TABLE IF NOT EXISTS `loginInfo` (
-  `username` varchar(25) NOT NULL,
+CREATE TABLE `loginInfo` (
+  `username` varchar(40) NOT NULL,
   `name` varchar(30) DEFAULT NULL,
   `hashpass` varchar(255) DEFAULT NULL,
   `salt` varchar(30) NOT NULL
@@ -38,10 +38,7 @@ CREATE TABLE IF NOT EXISTS `loginInfo` (
 --
 
 INSERT INTO `loginInfo` (`username`, `name`, `hashpass`, `salt`) VALUES
-('123', NULL, '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
-('mabrm9', NULL, 'pass', 'word'),
-('mac', NULL, '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083')
-ON DUPLICATE KEY UPDATE username=username;
+('123', '123', '860baa83b58359f8603ee9173505ddfe12288896', '1638636655');
 
 -- --------------------------------------------------------
 
@@ -49,11 +46,18 @@ ON DUPLICATE KEY UPDATE username=username;
 -- Table structure for table `portfolio`
 --
 
-CREATE TABLE IF NOT EXISTS `portfolio` (
+CREATE TABLE `portfolio` (
   `username` varchar(25) NOT NULL,
   `ticker` varchar(10) NOT NULL,
   `amount` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `portfolio`
+--
+
+INSERT INTO `portfolio` (`username`, `ticker`, `amount`) VALUES
+('123', 'AAP', 3);
 
 -- --------------------------------------------------------
 
@@ -61,11 +65,11 @@ CREATE TABLE IF NOT EXISTS `portfolio` (
 -- Table structure for table `search_history`
 --
 
-CREATE TABLE IF NOT EXISTS `search_history` (
+CREATE TABLE `search_history` (
   `username` varchar(25) NOT NULL,
   `search_date` datetime NOT NULL,
-  `search_type` varchar(10) NOT NULL,
-  `search_parameter` varchar(6) NOT NULL,
+  `search_type` varchar(25) NOT NULL,
+  `search_parameter` varchar(1500) NOT NULL,
   `filepath` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -75,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `search_history` (
 -- Table structure for table `stocks`
 --
 
-CREATE TABLE IF NOT EXISTS `stocks` (
+CREATE TABLE `stocks` (
   `ticker` varchar(10) NOT NULL,
   `name` varchar(45) NOT NULL,
   `sector` varchar(35) DEFAULT NULL
@@ -239,7 +243,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('ECL', 'Ecolab Inc.', 'Materials'),
 ('ED', 'Consolidated Edison', 'Utilities'),
 ('EFX', 'Equifax Inc.', 'Financials'),
-('EIX', 'Edison Int''l', 'Utilities'),
+('EIX', 'Edison Int\'l', 'Utilities'),
 ('EL', 'Estee Lauder Cos.', 'Consumer Staples'),
 ('EMC', 'EMC Corp.', 'Information Technology'),
 ('EMN', 'Eastman Chemical', 'Materials'),
@@ -258,7 +262,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('ETR', 'Entergy Corp.', 'Utilities'),
 ('EW', 'Edwards Lifesciences', 'Health Care'),
 ('EXC', 'Exelon Corp.', 'Utilities'),
-('EXPD', 'Expeditors Int''l', 'Industrials'),
+('EXPD', 'Expeditors Int\'l', 'Industrials'),
 ('EXPE', 'Expedia Inc.', 'Consumer Discretionary'),
 ('EXR', 'Extra Space Storage', 'Financials'),
 ('F', 'Ford Motor', 'Consumer Discretionary'),
@@ -301,7 +305,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('GT', 'Goodyear Tire & Rubber', 'Consumer Discretionary'),
 ('GWW', 'Grainger (W.W.) Inc.', 'Industrials'),
 ('HAL', 'Halliburton Co.', 'Energy'),
-('HAR', 'Harman Int''l Industries', 'Consumer Discretionary'),
+('HAR', 'Harman Int\'l Industries', 'Consumer Discretionary'),
 ('HAS', 'Hasbro Inc.', 'Consumer Discretionary'),
 ('HBAN', 'Huntington Bancshares', 'Financials'),
 ('HBI', 'Hanesbrands Inc', 'Consumer Discretionary'),
@@ -313,7 +317,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('HIG', 'Hartford Financial Svc.Gp.', 'Financials'),
 ('HOG', 'Harley-Davidson', 'Consumer Discretionary'),
 ('HOLX', 'Hologic', 'Health Care'),
-('HON', 'Honeywell Int''l Inc.', 'Industrials'),
+('HON', 'Honeywell Int\'l Inc.', 'Industrials'),
 ('HOT', 'Starwood Hotels & Resorts', 'Consumer Discretionary'),
 ('HP', 'Helmerich & Payne', 'Energy'),
 ('HPE', 'Hewlett Packard Enterprise', 'Information Technology'),
@@ -356,7 +360,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('KO', 'The Coca Cola Company', 'Consumer Staples'),
 ('KORS', 'Michael Kors Holdings', 'Consumer Discretionary'),
 ('KR', 'Kroger Co.', 'Consumer Staples'),
-('KSS', 'Kohl''s Corp.', 'Consumer Discretionary'),
+('KSS', 'Kohl\'s Corp.', 'Consumer Discretionary'),
 ('KSU', 'Kansas City Southern', 'Industrials'),
 ('L', 'Loews Corp.', 'Financials'),
 ('LB', 'L Brands Inc.', 'Consumer Discretionary'),
@@ -369,22 +373,22 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('LM', 'Legg Mason', 'Financials'),
 ('LMT', 'Lockheed Martin Corp.', 'Industrials'),
 ('LNC', 'Lincoln National', 'Financials'),
-('LOW', 'Lowe''s Cos.', 'Consumer Discretionary'),
+('LOW', 'Lowe\'s Cos.', 'Consumer Discretionary'),
 ('LRCX', 'Lam Research', 'Information Technology'),
 ('LUK', 'Leucadia National Corp.', 'Financials'),
 ('LUV', 'Southwest Airlines', 'Industrials'),
 ('LVLT', 'Level 3 Communications', 'Telecommunications Services'),
 ('LYB', 'LyondellBasell', 'Materials'),
-('M', 'Macy''s Inc.', 'Consumer Discretionary'),
+('M', 'Macy\'s Inc.', 'Consumer Discretionary'),
 ('MA', 'Mastercard Inc.', 'Information Technology'),
 ('MAC', 'Macerich', 'Financials'),
-('MAR', 'Marriott Int''l.', 'Consumer Discretionary'),
+('MAR', 'Marriott Int\'l.', 'Consumer Discretionary'),
 ('MAS', 'Masco Corp.', 'Industrials'),
 ('MAT', 'Mattel Inc.', 'Consumer Discretionary'),
-('MCD', 'McDonald''s Corp.', 'Consumer Discretionary'),
+('MCD', 'McDonald\'s Corp.', 'Consumer Discretionary'),
 ('MCHP', 'Microchip Technology', 'Information Technology'),
 ('MCK', 'McKesson Corp.', 'Health Care'),
-('MCO', 'Moody''s Corp', 'Financials'),
+('MCO', 'Moody\'s Corp', 'Financials'),
 ('MDLZ', 'Mondelez International', 'Consumer Staples'),
 ('MDT', 'Medtronic plc', 'Health Care'),
 ('MET', 'MetLife Inc.', 'Financials'),
@@ -436,10 +440,10 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('OKE', 'ONEOK', 'Energy'),
 ('OMC', 'Omnicom Group', 'Consumer Discretionary'),
 ('ORCL', 'Oracle Corp.', 'Information Technology'),
-('ORLY', 'O''Reilly Automotive', 'Consumer Discretionary'),
+('ORLY', 'O\'Reilly Automotive', 'Consumer Discretionary'),
 ('OXY', 'Occidental Petroleum', 'Energy'),
 ('PAYX', 'Paychex Inc.', 'Information Technology'),
-('PBCT', 'People''s United Financial', 'Financials'),
+('PBCT', 'People\'s United Financial', 'Financials'),
 ('PBI', 'Pitney-Bowes', 'Industrials'),
 ('PCAR', 'PACCAR Inc.', 'Industrials'),
 ('PCG', 'PG&E Corp.', 'Utilities'),
@@ -594,8 +598,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('YUM', 'Yum! Brands Inc', 'Consumer Discretionary'),
 ('ZBH', 'Zimmer Biomet Holdings', 'Health Care'),
 ('ZION', 'Zions Bancorp', 'Financials'),
-('ZTS', 'Zoetis', 'Health Care') 
-ON DUPLICATE KEY UPDATE ticker=ticker;
+('ZTS', 'Zoetis', 'Health Care');
 
 --
 -- Indexes for dumped tables
