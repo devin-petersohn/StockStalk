@@ -70,7 +70,38 @@ $dbconn = new mysqli($servername, $uname, $pword);
 <html>
 <head>
 
-<script src="js/queues.js"></script>    
+<script src="js/queues.js"></script> 
+    <meta name="google-signin-cookiepolicy" content="single_host_origin" />
+<meta name="google-signin-requestvisibleactions" content="https://schema.org/AddAction" />
+<meta name="google-signin-client_id" content="530255349944-p7s3mbjiv8j2hj74panami9gsr4l0113.apps.googleusercontent.com">
+
+<meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"> </script>
+    <script>
+        function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+  $('#beforeLogin').hide();
+  $('#afterLogin').show();
+  $('#loginStatus').text(profile.getName());
+}
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+      $('#beforeLogin').show();
+      $('#afterLogin').hide();
+      $('#loginStatus').text("Login");
+    });
+  }
+
+    </script>
+
     </head>
     
     <body>
@@ -164,20 +195,27 @@ $dbconn = new mysqli($servername, $uname, $pword);
                         
                         
                         
-                        
+                         
                         
         <!-- THE LOGIN BUTTON -->
+
+
+
+
+
                         <li class="dropdown navbar-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b id="loginStatus">Login</b> <span class="caret"></span></a>
                         <ul id="login-dp" class="dropdown-menu pull-right">
-                            <li>
+                            <li id="beforeLogin">
                                <div class="row">
                                   <div class="col-md-12">
                                     <div <?php if ($_SESSION['username']){ echo 'style="display:none;"'; } ?>>
                                     Login via
                                     <div class="social-buttons">
                                       <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                      <a href="#" class="btn btn-tw"><i class="fa fa-google"></i> GOOGLE</a>
+                                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+
                                         
                                     </div>
                                                     or
@@ -189,11 +227,11 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                     <?php  
                                       if($_SESSION['username']){
                                     ?>
-			                             <li>
+                                   <li>
                                       Welcome, <?php echo ucfirst($_SESSION['username']); ?>!
                                    </li>
                                     <li><a href= <?=$href_page?> ><?=$log_display ?></a></li>
-			                             <?php 
+                                   <?php 
 
                                       }
 
@@ -225,6 +263,10 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                 </div>
 
                     </div>
+                </li>
+                <li id ="afterLogin" display="none">
+                    success!    <a href="#" onclick="signOut();">Sign out</a>
+
                 </li>
                 </ul>
                         </li>
