@@ -71,7 +71,7 @@ object Search {
     ds.measure(host, guest)
   }
 
-  def main(args: Array[String]) = {
+  def main(args: Array[String]) {
     val fromDate: Calendar = new GregorianCalendar(args(0).toInt, args(1).toInt, args(2).toInt)
     val toDate: Calendar = new GregorianCalendar(args(3).toInt, args(4).toInt, args(5).toInt)
     val query: String = args(6)
