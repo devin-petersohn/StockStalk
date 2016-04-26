@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <meta name="google-signin-cookiepolicy" content="single_host_origin" />
+<meta name="google-signin-requestvisibleactions" content="https://schema.org/AddAction" />
+<meta name="google-signin-client_id" content="530255349944-p7s3mbjiv8j2hj74panami9gsr4l0113.apps.googleusercontent.com">
+
+<meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"> </script>
+
+  </head>
+  <body>
+    <a href="#" onclick="signIn();" class="g-signin2" data-theme="dark">Sign in</a>
+    <a href="#" onclick="signOut();">Sign out</a>
+
+
+    <script>
+    function signIn() {
+    // gapi.load('auth2', function() {
+    auth2 = gapi.auth2.init({
+        client_id: '530255349944-p7s3mbjiv8j2hj74panami9gsr4l0113.apps.googleusercontent.com',
+        fetch_basic_profile: true,
+    });
+      // Sign the user in, and then retrieve their ID.
+      auth2.signIn().then(function() {
+        if (auth2.isSignedIn.get()) {
+          var profile = auth2.currentUser.get().getBasicProfile();
+          console.log(auth2.currentUser.get().getAuthResponse().id_token);
+          console.log('ID: ' + profile.getId());
+          console.log('Full Name: ' + profile.getName());
+          console.log('Given Name: ' + profile.getGivenName());
+          console.log('Family Name: ' + profile.getFamilyName());
+          console.log('Image URL: ' + profile.getImageUrl());
+          console.log('Email: ' + profile.getEmail());
+}
+      });
+    // });
+  }
+
+    </script>
+
+  <script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+  </body>
+</html>

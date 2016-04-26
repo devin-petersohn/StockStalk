@@ -51,8 +51,8 @@ object Search {
         stock_data = sc.union(stock_data, quotes)
       }
     }
-    val query_data = sc.objectFile[(Date, Double)]("data/"+stock_query).sortBy(f => f._1.getTime).filter(f => f._1.getTime > fromDate.getTime.getTime && f._1.getTime < toDate.getTime.getTime).zipWithIndex.map(f => (stock_query, (f._2, f._1._2))).groupByKey
-    stock_data.map(f => (f._1, calculate_similarity(f._2, query_data.first._2))).collect.sortBy(_._2 * -1)
+    val query_data = sc.objectFile[(Date, Double)]("data/"+stock_query).sortBy(f => f._1.getTime).filter(f => f._1.getTime > fromDate.getTime.getTime && f._1.getTime < toDate.getTime.getTime).zipWithIndex.map(f => (stock_query, (f._2, f._1._2))).groupByKey.first._2
+    stock_data.map(f => (f._1, calculate_similarity(f._2, query_data))).collect.sortBy(_._2 * -1)
   }
 
   def calculate_similarity(t1: Iterable[(Long, Double)], t2: Iterable[(Long, Double)]): Double ={
@@ -71,7 +71,7 @@ object Search {
     ds.measure(host, guest)
   }
 
-  def main(args: Array[String]) = {
+  def main(args: Array[String]) {
     val fromDate: Calendar = new GregorianCalendar(args(0).toInt, args(1).toInt, args(2).toInt)
     val toDate: Calendar = new GregorianCalendar(args(3).toInt, args(4).toInt, args(5).toInt)
     val query: String = args(6)
