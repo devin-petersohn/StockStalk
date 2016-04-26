@@ -85,9 +85,20 @@ $dbconn = new mysqli($servername, $uname, $pword);
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail());
+  var info = [];
+  info.push(profile.getName());
+  info.push(profile.getEmail());
+
+  $.post('setSession.php', {googleInfo: info});
+
   $('#beforeLogin').hide();
   $('#afterLogin').show();
   $('#loginStatus').text(profile.getName());
+  console.log(
+      <?php
+          echo '"The session is '.$_SESSION['username'].'"';
+      ?>
+    );
 }
 
 function signOut() {
@@ -97,10 +108,23 @@ function signOut() {
       $('#beforeLogin').show();
       $('#afterLogin').hide();
       $('#loginStatus').text("Login");
+      $.post('setSession.php', {googleInfo: null});
+      console.log(
+      <?php
+          echo '"The session is '.$_SESSION['username'].'"';
+      ?>
+    );
+
     });
   }
 
     </script>
+    <style type="text/css">
+      #GoogleBtn{
+        width: 50%;
+        float:right;
+      }
+    </style>
 
     </head>
     
@@ -213,7 +237,7 @@ function signOut() {
                                     Login via
                                     <div class="social-buttons">
                                       <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                                      <div class="g-signin2" data-onsuccess="onSignIn" id="GoogleBtn"></div>
 
 
                                         
@@ -264,7 +288,7 @@ function signOut() {
 
                     </div>
                 </li>
-                <li id ="afterLogin" display="none">
+                <li id =" " display="none">
                     success!    <a href="#" onclick="signOut();">Sign out</a>
 
                 </li>
