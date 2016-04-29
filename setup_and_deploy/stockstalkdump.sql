@@ -26,24 +26,13 @@ SET time_zone = "+00:00";
 -- Table structure for table `loginInfo`
 --
 
-CREATE TABLE `loginInfo` (
+CREATE TABLE IF NOT EXISTS `loginInfo` (
   `username` varchar(40) NOT NULL,
   `name` varchar(30) DEFAULT NULL,
   `hashpass` varchar(255) DEFAULT NULL,
   `salt` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `loginInfo`
---
-
-INSERT INTO `loginInfo` (`username`, `name`, `hashpass`, `salt`) VALUES
-('123', NULL, '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
-('mabrm9', NULL, 'pass', 'word'),
-('mabrm9@mail.missouri.edu', 'Malcolm', 'a5578f0eafecf8c36dc4162ac0418e68d384378d', '1347313578'),
-('mac', NULL, '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083'),
-('mac1117@yahoo.com', 'Malcolm Bouchee', '7938bb54941f3ac5ec9080872493df0633315983', '401383325'),
-('mac@yahoo.com', 'Malcolm', 'cca547ee5cc607ff52ffa071e2ffc13f425c49cd', '275608982');
 
 -- --------------------------------------------------------
 
@@ -51,18 +40,11 @@ INSERT INTO `loginInfo` (`username`, `name`, `hashpass`, `salt`) VALUES
 -- Table structure for table `portfolio`
 --
 
-CREATE TABLE `portfolio` (
+CREATE TABLE IF NOT EXISTS `portfolio` (
   `username` varchar(25) NOT NULL,
   `ticker` varchar(10) NOT NULL,
   `amount` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `portfolio`
---
-
-INSERT INTO `portfolio` (`username`, `ticker`, `amount`) VALUES
-('123', 'AAP', 3);
 
 -- --------------------------------------------------------
 
@@ -70,7 +52,7 @@ INSERT INTO `portfolio` (`username`, `ticker`, `amount`) VALUES
 -- Table structure for table `search_history`
 --
 
-CREATE TABLE `search_history` (
+CREATE TABLE IF NOT EXISTS `search_history` (
   `searchID` int(10) UNSIGNED NOT NULL,
   `search_date` datetime NOT NULL,
   `search_type` varchar(25) NOT NULL,
@@ -78,13 +60,6 @@ CREATE TABLE `search_history` (
   `filepath` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `search_history`
---
-
-INSERT INTO `search_history` (`searchID`, `search_date`, `search_type`, `search_parameter`, `filepath`) VALUES
-(1, '2016-04-25 00:00:00', 'All against All', 'GOOG', '/test/testing.txt'),
-(2, '2016-04-26 00:00:00', 'One against all', 'FACE', '/test2/testing2.txt');
 
 -- --------------------------------------------------------
 
@@ -92,7 +67,7 @@ INSERT INTO `search_history` (`searchID`, `search_date`, `search_type`, `search_
 -- Table structure for table `stocks`
 --
 
-CREATE TABLE `stocks` (
+CREATE TABLE IF NOT EXISTS `stocks` (
   `ticker` varchar(10) NOT NULL,
   `name` varchar(45) NOT NULL,
   `sector` varchar(35) DEFAULT NULL
@@ -611,7 +586,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('YUM', 'Yum! Brands Inc', 'Consumer Discretionary'),
 ('ZBH', 'Zimmer Biomet Holdings', 'Health Care'),
 ('ZION', 'Zions Bancorp', 'Financials'),
-('ZTS', 'Zoetis', 'Health Care');
+('ZTS', 'Zoetis', 'Health Care') ON DUPLICATE KEY UPDATE ticker = ticker;
 
 -- --------------------------------------------------------
 
@@ -624,13 +599,6 @@ CREATE TABLE `userHasSearch` (
   `searchID` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `userHasSearch`
---
-
-INSERT INTO `userHasSearch` (`username`, `searchID`) VALUES
-('123', 1),
-('mabrm9', 2);
 
 --
 -- Indexes for dumped tables
