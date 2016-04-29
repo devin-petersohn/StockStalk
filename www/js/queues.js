@@ -23,27 +23,27 @@ function addToQueue(name){
 
 
 //Function for adding to Navbar My Stocks//
-var arrayMS = [];
-var m;
+// var arrayMS = [];
+// var m;
 
-function addToQueueMS(name){
-    var same = 0;
-    console.log(name.innerHTML);
-    var tickername = name.innerHTML;
-    for(m = 0; m < arrayMS.length; m ++){            
-        if(tickername == arrayMS[m]){
-            same = 1
-        }
-    }
-    if(same == 0){
-        $("#addTableRowMS").append("<tr><td><input type='checkbox' class='chartstock' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>");
-        arrayMS.push(tickername);
-        console.log(name.innerHTML);
-    }
-//                var appendString = "<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>";
-//                console.log(appendString);
+// function addToQueueMS(name){
+//     var same = 0;
+//     console.log(name.innerHTML);
+//     var tickername = name.innerHTML;
+//     for(m = 0; m < arrayMS.length; m ++){            
+//         if(tickername == arrayMS[m]){
+//             same = 1
+//         }
+//     }
+//     if(same == 0){
+//         $("#addTableRowMS").append("<tr><td><input type='checkbox' class='chartstock' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>");
+//         arrayMS.push(tickername);
+//         console.log(name.innerHTML);
+//     }
+// //                var appendString = "<tr><td><input type='checkbox' name='chartStock' value='"+tickername+"'> "+ tickername +"</input></td></tr>";
+// //                console.log(appendString);
 
-}
+// }
 
 
 

@@ -149,8 +149,12 @@ object ScalaTest {
 
   def main(args: Array[String]) {
 
-    val fromDate: Calendar = new GregorianCalendar(args(0).toInt, args(1).toInt, args(2).toInt)
-    val toDate: Calendar = new GregorianCalendar(args(3).toInt, args(4).toInt, args(5).toInt)
+    val fromDate: Calendar = new GregorianCalendar(args(0).toInt, args(1).toInt-1, args(2).toInt)
+    val toDate: Calendar = new GregorianCalendar(args(3).toInt, args(4).toInt-1, args(5).toInt)
+    System.err.println("\n\n\n\n\n\n\n\n\n\n\n")
+    System.err.println(fromDate);
+    System.err.println(toDate);
+    System.err.println("\n\n\n\n\n\n\n\n\n\n\n")
     val percent_threshold = args(6).toDouble
     val interval: Interval =
       if(args(7) == "Daily") Interval.DAILY

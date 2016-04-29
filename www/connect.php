@@ -12,7 +12,7 @@ if ($dbconn->connect_error) {
 }
 */
 
-$servername = "localhost";
+$servername = "127.0.0.1";
 $connectUname = "root";
 $connectPass = "";
 $db = "stockstalk";

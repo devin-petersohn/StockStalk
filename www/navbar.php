@@ -1,5 +1,11 @@
 <?php
 	session_start();
+  ini_set('display_errors', '1');
+   ini_set('error_reporting', E_ALL);
+  if(!isset($_SESSION['username']))
+  {
+    $_SESSION['username']="";
+  }
 	$log_display = $_SESSION['username'] ? "Logout" : " ";
 	$href_page = $_SESSION['username'] ? "logout.php" : " ";
 	
@@ -18,17 +24,20 @@
   function checkUserPass($username,$password) {
 		
 			//$dbconn =pg_connect("servername=dbhost-mysql.cs.missouri.edu username=mmhkwc password=RgS8HC6L") or die("Could not connect: " . pg_last_error());
-      $servername = "localhost";
-        $uname = "root";
-        $pword = "";
-
+      // $servername = "127.0.0.1";
+      //   $uname = "root";
+      //   $pword = "";
+      //   $db = "stockstalk";
+    include "connect.php";
 
 // Create connection
-$dbconn = new mysqli($servername, $uname, $pword);
+// $dbconn = new mysqli($servername, $uname, $pword, $db);
       
-			
+		if ($dbconn->connect_error) {
+      die("Connection failed: " . $dbconn->connect_error);
+    }
       
-      $query="SELECT hashpass, salt FROM stockstalk.loginInfo WHERE username=?";
+      $query="SELECT hashpass, salt FROM loginInfo WHERE username=?";
 //Prepared statement
 			$stmt=$dbconn->prepare($query) or die("Query failed");
 			$stmt->bind_param("s",$username);
@@ -106,8 +115,7 @@ $dbconn = new mysqli($servername, $uname, $pword);
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
-      $('#beforeLogin').show();    var auth2 = gapi.auth2.getAuthInstance();
-
+      $('#beforeLogin').show();    
       $('#afterLogin').hide();
       $('#loginStatus').text("Login");
       $.post('setSession.php', {googleInfo: null});
@@ -184,7 +192,14 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                         <table class="table table-striped table-bordered table-hover">
                                             <tbody class="checkbox-queuestocks">
                                                 <?php 
-                                                    include "connect.php";
+                                                    // $servername = "127.0.0.1";
+                                                    // $uname = "root";
+                                                    // $pword = "";
+                                                    // $db = "stockstalk";
+                                                include "connect.php";
+
+                                            // Create connection
+                                                    //$dbconn = new mysqli($servername, $uname, $pword, $db);
                                                     if($dbconn){
 //                                                        if(!$_SESSION['username']){
 //                                                            echo $_SESSION['username'];
@@ -290,7 +305,7 @@ $dbconn = new mysqli($servername, $uname, $pword);
 
                     </div>
                 </li>
-                <li id =" " display="none">
+                <li id ="afterLogin"display="none">
                     success!    <a href="#" onclick="signOut();">Sign out</a>
 
                 </li>

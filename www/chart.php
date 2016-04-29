@@ -36,9 +36,9 @@
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
 
-            $homeDir = "/";
+            $homeDir = "../";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
-            //chdir($homeDir);
+            chdir($homeDir);
             $usr=$_SESSION['username'];
             if(!file_exists('user_data'))
             {
@@ -61,9 +61,9 @@
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
 
-            $homeDir = "/";
+            $homeDir = "../";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
-            //chdir($homeDir);
+            chdir($homeDir);
             shell_exec("spark-submit --class ScalaTest All_Against_All/target/stockStalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." "."1.0 "."Daily ".$ticker1);
             $usr=$_SESSION['username'];
             if(!file_exists('user_data'))
@@ -74,7 +74,8 @@
             {
                 mkdir('user_data/'.$usr);
             }
-            copy("temp_data/AllvsAll_".$fromDates[0]."_".$fromDates[1]."_".$fromDates[2]."_".$toDates[0]."_".$toDates[1]."_".$toDates[2]."_1.0_Daily_".$ticker1.".json","user_data/".$usr."/AllvsAll_".$fromDates[0]."_".$fromDates[1]."_".$fromDates[2]."_".$toDates[0]."_".$toDates[1]."_".$toDates[2]."_1.0_Daily_".$ticker1.".json");
+            $tickerCollection = str_replace("  ", "_", $ticker1);
+            copy("temp_data/AllvsAll__".$fromDates[0]."_".$fromDates[1]."_".$fromDates[2]."_".$toDates[0]."_".$toDates[1]."_".$toDates[2]."_1.0_Daily_".$tickerCollection.".json","user_data/".$usr."/AllvsAll_".$fromDates[0]."_".$fromDates[1]."_".$fromDates[2]."_".$toDates[0]."_".$toDates[1]."_".$toDates[2]."_1.0_Daily_".$tickerCollection.".json");
 
         }
     ?>
@@ -84,7 +85,7 @@
     <script>
         $( document ).ready(function() {
             
-            var homeDir = "/";
+            var homeDir = "../";
             var data = <?php
             $searchtype = $_GET['searchtype'];
             
@@ -206,7 +207,7 @@
                             items1 = items1.concat(header);
                             var table = "<div style='margin-top:8px;'><table width='100%' class='table table-striped table-bordered table-hover' id='table"+i+"'>";
                             items1 = items1.concat(table);
-                            var thead = "<thead><tr><th>Ticker</th><th>Company Name</th><th>Start Date</th><th>Days stays similar</th><th>Add to Queue</th><th>Add to Portfolio</th></tr></thead>"
+                            var thead = "<thead><tr><th>Ticker</th><th>Start Date</th><th>Days stays similar</th><th>Add to Queue</th><th>Add to Portfolio</th></tr></thead>"
                             items1 = items1.concat(thead);
                             var tickernames = value.names;
                             var ticker_number = (value.names).length;
@@ -217,7 +218,7 @@
                             var tbody = "<tbody>";
                             items1 = items1.concat(tbody);
                             for(var j = 0; j < ticker_number; j ++){
-                                var temp = "<tr><td id='name"+i+"_"+j+"'>"+value.names[j]+"</td><td>unknown</td><td>"+date_start+"</td><td>"+Number_of_Intervals+"</td><td><button onclick='addToQueue(name"+i+"_"+j+")' class='btn'>add to queue</button></td><td><button onclick='addToQueueMS(name"+i+"_"+j+")'' class='btn'>＋</button></td></tr>";
+                                var temp = "<tr><td id='name"+i+"_"+j+"'>"+value.names[j]+"</td><td>"+date_start+"</td><td>"+Number_of_Intervals+"</td><td><button onclick='addToQueue(name"+i+"_"+j+")' class='btn'>add to queue</button></td><td><button onclick='addToQueueMS(name"+i+"_"+j+")'' class='btn'>＋</button></td></tr>";
                                 items1 = items1.concat(temp);
                             }  
                             var endtbody = "</tbody>";
@@ -250,7 +251,7 @@
                 var enddate;
                 var tickernames=[];
                 var Number_of_Intervals;
-                 var homeDir = "/";
+                 var homeDir = "../";
             var data = <?php
             $searchtype = $_GET['searchtype'];
             
@@ -647,7 +648,12 @@
     //function to add to portfolio page  
     var arrayMS = [];
     var m;
-    var user = "<?php echo $user; ?>"
+    var user = <?php
+        
+        $user = $_SESSION['username'];
+        echo '"'.$user.'"';
+    ?>;
+    console.log(user);
     function addToQueueMS(name){
         var same = 0;
         var tickername = name.innerHTML;
@@ -664,10 +670,10 @@
         $.ajax({
             type: "POST",
             url: "PortfolioAdd.php",
-            data: {action:'add', tickername: tickername, username: user}, 
-            dataType: "json",
+            data: {action:"add", tickername: tickername, username: user}, 
             success: function(response){
-                alert(response.msg);
+                console.log(response);
+                alert(response);
             },
             error: function(){
                 alert("Unexpected error! Try again.");
@@ -681,11 +687,10 @@
 <body>
 
     <!---Navbar call -->
-    <?php 
+  
+    <?php
         include "navbar.php";
-        $user = $_SESSION['username'];
     ?>
-    
     
 	<h1>Chart Your Stocks</h1>
 
