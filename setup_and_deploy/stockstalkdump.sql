@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 25, 2016 at 04:12 AM
+-- Generation Time: Apr 29, 2016 at 03:09 AM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -30,7 +30,7 @@ CREATE TABLE `loginInfo` (
   `username` varchar(40) NOT NULL,
   `name` varchar(30) DEFAULT NULL,
   `hashpass` varchar(255) DEFAULT NULL,
-  `salt` varchar(30) NOT NULL
+  `salt` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -38,7 +38,12 @@ CREATE TABLE `loginInfo` (
 --
 
 INSERT INTO `loginInfo` (`username`, `name`, `hashpass`, `salt`) VALUES
-('123', '123', '860baa83b58359f8603ee9173505ddfe12288896', '1638636655');
+('123', NULL, '860baa83b58359f8603ee9173505ddfe12288896', '1638636655'),
+('mabrm9', NULL, 'pass', 'word'),
+('mabrm9@mail.missouri.edu', 'Malcolm', 'a5578f0eafecf8c36dc4162ac0418e68d384378d', '1347313578'),
+('mac', NULL, '4a3f13105577edee5739c2280fc233255c8dc2ef', '542519083'),
+('mac1117@yahoo.com', 'Malcolm Bouchee', '7938bb54941f3ac5ec9080872493df0633315983', '401383325'),
+('mac@yahoo.com', 'Malcolm', 'cca547ee5cc607ff52ffa071e2ffc13f425c49cd', '275608982');
 
 -- --------------------------------------------------------
 
@@ -66,12 +71,20 @@ INSERT INTO `portfolio` (`username`, `ticker`, `amount`) VALUES
 --
 
 CREATE TABLE `search_history` (
-  `username` varchar(25) NOT NULL,
+  `searchID` int(10) UNSIGNED NOT NULL,
   `search_date` datetime NOT NULL,
   `search_type` varchar(25) NOT NULL,
   `search_parameter` varchar(1500) NOT NULL,
   `filepath` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `search_history`
+--
+
+INSERT INTO `search_history` (`searchID`, `search_date`, `search_type`, `search_parameter`, `filepath`) VALUES
+(1, '2016-04-25 00:00:00', 'All against All', 'GOOG', '/test/testing.txt'),
+(2, '2016-04-26 00:00:00', 'One against all', 'FACE', '/test2/testing2.txt');
 
 -- --------------------------------------------------------
 
@@ -600,6 +613,25 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('ZION', 'Zions Bancorp', 'Financials'),
 ('ZTS', 'Zoetis', 'Health Care');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userHasSearch`
+--
+
+CREATE TABLE `userHasSearch` (
+  `username` varchar(40) NOT NULL,
+  `searchID` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userHasSearch`
+--
+
+INSERT INTO `userHasSearch` (`username`, `searchID`) VALUES
+('123', 1),
+('mabrm9', 2);
+
 --
 -- Indexes for dumped tables
 --
@@ -621,7 +653,8 @@ ALTER TABLE `portfolio`
 -- Indexes for table `search_history`
 --
 ALTER TABLE `search_history`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`searchID`),
+  ADD UNIQUE KEY `searchID` (`searchID`);
 
 --
 -- Indexes for table `stocks`
@@ -629,6 +662,27 @@ ALTER TABLE `search_history`
 ALTER TABLE `stocks`
   ADD PRIMARY KEY (`ticker`);
 
+--
+-- Indexes for table `userHasSearch`
+--
+ALTER TABLE `userHasSearch`
+  ADD PRIMARY KEY (`username`,`searchID`),
+  ADD UNIQUE KEY `searchID` (`searchID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `search_history`
+--
+ALTER TABLE `search_history`
+  MODIFY `searchID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `userHasSearch`
+--
+ALTER TABLE `userHasSearch`
+  MODIFY `searchID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -641,10 +695,11 @@ ALTER TABLE `portfolio`
   ADD CONSTRAINT `portfolio_ibfk_2` FOREIGN KEY (`ticker`) REFERENCES `stocks` (`ticker`);
 
 --
--- Constraints for table `search_history`
+-- Constraints for table `userHasSearch`
 --
-ALTER TABLE `search_history`
-  ADD CONSTRAINT `search_history_ibfk_1` FOREIGN KEY (`username`) REFERENCES `loginInfo` (`username`);
+ALTER TABLE `userHasSearch`
+  ADD CONSTRAINT `userhassearch_ibfk_1` FOREIGN KEY (`username`) REFERENCES `loginInfo` (`username`),
+  ADD CONSTRAINT `userhassearch_ibfk_2` FOREIGN KEY (`searchID`) REFERENCES `search_history` (`searchID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
