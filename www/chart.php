@@ -36,9 +36,9 @@
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
 
-            $homeDir = "/home/".get_current_user()."/StockStalk";
+            $homeDir = "/";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
-            chdir($homeDir);
+            //chdir($homeDir);
             $usr=$_SESSION['username'];
             if(!file_exists('user_data'))
             {
@@ -61,9 +61,9 @@
             $fromDates = explode("-", $fromDate1);
             $toDates = explode("-", $toDate1);
 
-            $homeDir = "/home/".get_current_user()."/StockStalk";
+            $homeDir = "/";
             // shell_exec("spark-submit --class Search /home/`whoami`/StockStalk/One_Against_All/target/stockstalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." ".$ticker1);
-            chdir($homeDir);
+            //chdir($homeDir);
             shell_exec("spark-submit --class ScalaTest All_Against_All/target/stockStalk-1.0-SNAPSHOT.jar ".$fromDates[0]." ".$fromDates[1]." ".$fromDates[2]." ".$toDates[0]." ".$toDates[1]." ".$toDates[2]." "."1.0 "."Daily ".$ticker1);
             $usr=$_SESSION['username'];
             if(!file_exists('user_data'))
@@ -84,7 +84,7 @@
     <script>
         $( document ).ready(function() {
             
-            var homeDir = "/~xltz6/capstone/";
+            var homeDir = "/";
             var data = <?php
             $searchtype = $_GET['searchtype'];
             
@@ -250,7 +250,7 @@
                 var enddate;
                 var tickernames=[];
                 var Number_of_Intervals;
-                 var homeDir = "/~xltz6/capstone/";
+                 var homeDir = "/";
             var data = <?php
             $searchtype = $_GET['searchtype'];
             
@@ -837,7 +837,7 @@
                                         include "connect.php";
                                         
                                         if($dbconn){
-                                            $sql = "SELECT name from xltz6.stocks where ticker ='".$ticker2."'";
+                                            $sql = "SELECT name from stocks where ticker ='".$ticker2."'";
             
                                             if($res = $dbconn->query($sql)){
                                                 while ($row = $res->fetch_assoc()) {
