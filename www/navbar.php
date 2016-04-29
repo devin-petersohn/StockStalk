@@ -70,7 +70,65 @@ $dbconn = new mysqli($servername, $uname, $pword);
 <html>
 <head>
 
-<script src="js/queues.js"></script>    
+<script src="js/queues.js"></script> 
+    <meta name="google-signin-cookiepolicy" content="single_host_origin" />
+<meta name="google-signin-requestvisibleactions" content="https://schema.org/AddAction" />
+<meta name="google-signin-client_id" content="530255349944-p7s3mbjiv8j2hj74panami9gsr4l0113.apps.googleusercontent.com">
+
+<meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+        function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+  var info = [];
+  info.push(profile.getName());
+  info.push(profile.getEmail());
+
+  $.post('setSession.php', {googleInfo: info});
+
+  $('#beforeLogin').hide();
+  $('#afterLogin').show();
+  $('#loginStatus').text(profile.getName());
+  console.log(
+      <?php
+          echo '"The session is '.$_SESSION['username'].'"';
+      ?>
+    );
+}
+
+
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+      $('#beforeLogin').show();    var auth2 = gapi.auth2.getAuthInstance();
+
+      $('#afterLogin').hide();
+      $('#loginStatus').text("Login");
+      $.post('setSession.php', {googleInfo: null});
+      console.log(
+      <?php
+          echo '"The session is '.$_SESSION['username'].'"';
+      ?>
+    );
+    });
+  }
+
+
+
+    </script>
+    <style type="text/css">
+      #GoogleBtn{
+        width: 50%;
+        float:right;
+      }
+    </style>
+
     </head>
     
     <body>
@@ -122,30 +180,29 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                       
                                     
                                                     
-                                     <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                        <div class="checkbox-mystocks">
-                                            
-                                            <tbody id="addTableRowMS" class="checkbox-queuestocks">
+                                     <div class="checkbox-mystocks" style="padding-left:0px;">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <tbody class="checkbox-queuestocks">
+                                                <?php 
+                                                    include "connect.php";
+                                                    if($dbconn){
+//                                                        if(!$_SESSION['username']){
+//                                                            echo $_SESSION['username'];
+                                                        $sql = "SELECT ticker from xltz6.portfolio";
 
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
+                                                        if($res = $dbconn->query($sql)){
+                                                            while ($row = $res->fetch_assoc()) {
+                                                                echo "<tr style='margin-bottom:8px;'><td style='border-right:0px' id='mystock_".$row['ticker']."'>".$row['ticker']."</td><td style='border-left:0px;'><button type='submit' onclick='addToQueue(mystock_".$row['ticker'].")' class='btn btn-sm btn-secondary'>+</button></td></tr>";
+                                                            }
+                                                        }
+                                                        //}
+                                                    }
+                                                ?>
+
                                             </tbody>
-                                            
-                                             
-                                        </div>
-                                    </form>
+
+                                        </table>
+                                    </div>
                                 </div>
                             <div class="bottom text-center">
                             
@@ -164,20 +221,27 @@ $dbconn = new mysqli($servername, $uname, $pword);
                         
                         
                         
-                        
+                         
                         
         <!-- THE LOGIN BUTTON -->
+
+
+
+
+
                         <li class="dropdown navbar-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b id="loginStatus">Login</b> <span class="caret"></span></a>
                         <ul id="login-dp" class="dropdown-menu pull-right">
-                            <li>
+                            <li id="beforeLogin">
                                <div class="row">
                                   <div class="col-md-12">
                                     <div <?php if ($_SESSION['username']){ echo 'style="display:none;"'; } ?>>
                                     Login via
                                     <div class="social-buttons">
                                       <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                      <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+                                      <div class="g-signin2" data-onsuccess="onSignIn" id="GoogleBtn"></div>
+
+
                                         
                                     </div>
                                                     or
@@ -189,11 +253,11 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                     <?php  
                                       if($_SESSION['username']){
                                     ?>
-			                             <li>
+                                   <li>
                                       Welcome, <?php echo ucfirst($_SESSION['username']); ?>!
                                    </li>
                                     <li><a href= <?=$href_page?> ><?=$log_display ?></a></li>
-			                             <?php 
+                                   <?php 
 
                                       }
 
@@ -225,6 +289,10 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                 </div>
 
                     </div>
+                </li>
+                <li id =" " display="none">
+                    success!    <a href="#" onclick="signOut();">Sign out</a>
+
                 </li>
                 </ul>
                         </li>
