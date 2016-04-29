@@ -188,7 +188,7 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                                     if($dbconn){
 //                                                        if(!$_SESSION['username']){
 //                                                            echo $_SESSION['username'];
-                                                        $sql = "SELECT ticker from xltz6.portfolio";
+                                                        $sql = "SELECT ticker from portfolio where username = '".$_SESSION['username']."'";
 
                                                         if($res = $dbconn->query($sql)){
                                                             while ($row = $res->fetch_assoc()) {
