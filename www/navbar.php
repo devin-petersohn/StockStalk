@@ -180,30 +180,29 @@ $dbconn = new mysqli($servername, $uname, $pword);
                                       
                                     
                                                     
-                                     <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                        <div class="checkbox-mystocks">
-                                            
-                                            <tbody id="addTableRowMS" class="checkbox-queuestocks">
+                                     <div class="checkbox-mystocks" style="padding-left:0px;">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <tbody class="checkbox-queuestocks">
+                                                <?php 
+                                                    include "connect.php";
+                                                    if($dbconn){
+//                                                        if(!$_SESSION['username']){
+//                                                            echo $_SESSION['username'];
+                                                        $sql = "SELECT ticker from xltz6.portfolio";
 
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
+                                                        if($res = $dbconn->query($sql)){
+                                                            while ($row = $res->fetch_assoc()) {
+                                                                echo "<tr style='margin-bottom:8px;'><td style='border-right:0px' id='mystock_".$row['ticker']."'>".$row['ticker']."</td><td style='border-left:0px;'><button type='submit' onclick='addToQueue(mystock_".$row['ticker'].")' class='btn btn-sm btn-secondary'>+</button></td></tr>";
+                                                            }
+                                                        }
+                                                        //}
+                                                    }
+                                                ?>
+
                                             </tbody>
-                                            
-                                             
-                                        </div>
-                                    </form>
+
+                                        </table>
+                                    </div>
                                 </div>
                             <div class="bottom text-center">
                             
