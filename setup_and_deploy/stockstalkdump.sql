@@ -586,7 +586,7 @@ INSERT INTO `stocks` (`ticker`, `name`, `sector`) VALUES
 ('YUM', 'Yum! Brands Inc', 'Consumer Discretionary'),
 ('ZBH', 'Zimmer Biomet Holdings', 'Health Care'),
 ('ZION', 'Zions Bancorp', 'Financials'),
-('ZTS', 'Zoetis', 'Health Care') ON DUPLICATE KEY UPDATE ticker = ticker;
+('ZTS', 'Zoetis', 'Health Care') ON DUPLICATE KEY UPDATE 'ticker' = 'ticker';
 
 -- --------------------------------------------------------
 
