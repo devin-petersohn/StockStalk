@@ -77,7 +77,7 @@ $dbconn = new mysqli($servername, $uname, $pword);
 
 <meta name="google-signin-scope" content="https://www.googleapis.com/auth/plus.login" />
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script>
         function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
@@ -101,11 +101,13 @@ $dbconn = new mysqli($servername, $uname, $pword);
     );
 }
 
-function signOut() {
+
+  function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
-      $('#beforeLogin').show();
+      $('#beforeLogin').show();    var auth2 = gapi.auth2.getAuthInstance();
+
       $('#afterLogin').hide();
       $('#loginStatus').text("Login");
       $.post('setSession.php', {googleInfo: null});
@@ -114,9 +116,10 @@ function signOut() {
           echo '"The session is '.$_SESSION['username'].'"';
       ?>
     );
-
     });
   }
+
+
 
     </script>
     <style type="text/css">
