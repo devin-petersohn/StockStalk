@@ -135,6 +135,11 @@
             document.getElementById('alltoall').style.display = "none";
             document.getElementById('specific').style.display = "block";
         }
+            
+        else if(data.length == 0){
+            
+        }     
+            
         else{
             var fromDates = data[2].split("-");
             var toDates = data[3].split("-");
